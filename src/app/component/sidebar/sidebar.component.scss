@@ -1,8 +1,36 @@
-/* :host {
+:host {
     .sidebar {
-        width: 200px;
-        position: fixed;
-        height: calc(100% - 110px);
-        background-color: green;
+        padding: 10px;
+        .sidebarheadding {
+            font: normal normal normal 12px/18px Wipro Akkurat TT;
+            letter-spacing: 0px;
+            color: #9EA0A5;
+            opacity: 1;
+        }
+        nav {
+            margin-top: 10px;
+
+            li {
+                width: 80%;
+                height: 30px;
+                border-radius: 2px;
+                margin: 10px 0;
+                text-align: left;
+                
+                a {
+                    font: normal normal normal 14px/40px Roboto;
+                    letter-spacing: 0px;
+                    color: #FFFFFF;
+                }
+
+                &:first-child {
+                    margin-top: 0;
+                }
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
     }
-} */
+}

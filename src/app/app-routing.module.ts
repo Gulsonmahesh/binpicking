@@ -4,7 +4,7 @@ import { ObjectsComponent } from './component/steps/objects/objects.component';
 import { GripperComponent } from './component/steps/gripper/gripper.component';
 
 const routes: Routes = [
-  {path: 'objects', component: ObjectsComponent },
+  {path: 'object', component: ObjectsComponent },
   {path: 'gripper', component: GripperComponent }
 ];
 
