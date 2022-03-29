@@ -5,7 +5,7 @@
         justify-content: center;
         // height: 93.5vh;
         position: fixed;
-        top: 23px;
+        top: 18px;
         left: 20px;
         bottom: 20px;
         background-color: rgba(0, 0, 0, 0.3);
@@ -22,19 +22,31 @@
         width: 650px;
         max-height: max-content;
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         justify-content: center;
         background-color: #fff;
-        padding: 30px 40px;
+        // padding: 20px;
         border-radius: 5px;
+        flex-direction: column;
     }
     .modelheader {
+        padding: 10px;
         width: 100%;
         display: flex;
-        align-items: center;
+        // align-items: center;
         justify-content: space-between;
+        margin-bottom: 10px;
+        border-bottom: 1px solid lightgray;
+
+        h1 {
+            font-size: 16px;
+            font-weight: 700;
+            // padding: 0 0 10px 0;
+        }
     }
     .modelcontent {
         display: block;
+        padding: 10px;
+        width: 100%;
     }
 }

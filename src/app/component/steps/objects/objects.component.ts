@@ -9,8 +9,7 @@ export class ObjectsComponent implements OnInit {
   model = false;
 
   @HostListener('document:keyup', ['$event']) closeModel(event: KeyboardEvent) {
-    console.log(event.key);
-    if(event.key == 'Escape') {
+    if(this.model && event.key == 'Escape') {
       this.model = false;
     }
   }
@@ -20,7 +19,7 @@ export class ObjectsComponent implements OnInit {
   ngOnInit(): void {
   }
   
-  showModel(event: any) {    
+  showModel(event: any) {
     this.model = event;
   }
 

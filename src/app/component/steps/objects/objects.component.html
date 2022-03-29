@@ -1,5 +1,12 @@
-<div id="objectcontainer" >
-    <app-model *ngIf="model" (closeModelEmit) = "showModel($event)">Test;</app-model>
+<div id="objectcontainer" class="wrappercontainer">
+    <app-model *ngIf="model" (closeModelEmit) = "showModel($event)">
+        <div id="newobjectform">
+            <label for="objectname">Object Name <sup>*</sup></label>
+            <input type="text" id="objectname" />
+            <label for="description">Description</label>
+            <input type="text" id="description" />
+        </div>
+    </app-model>
     <h3>Picked Object</h3>
     <div class="cards">
         <app-card (buttonSelected) = "showModel($event)"></app-card>

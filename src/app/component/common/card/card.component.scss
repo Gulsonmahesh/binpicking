@@ -10,8 +10,8 @@
         color: #35AFF8;
     }
     .card {
-        width: 160px;
-        height: 160px;
+        width: 125px;
+        height: 125px;
         background: #F7F8F8 0% 0% no-repeat padding-box;
         border: 1px dashed #707070;
         border-radius: 10px;
@@ -20,13 +20,16 @@
         justify-content: center;
         flex-direction: column;
 
+        &:focus {
+            border: 1px dashed #707070;
+        }
         img {
             width: 35px;
             height: 35px;
         }
         .cardname {
             text-align: left;
-            font: normal normal normal 16px/24px Roboto;
+            font: normal normal normal 12px Roboto;
             letter-spacing: 0px;
             color: #000000;
             opacity: 1;
