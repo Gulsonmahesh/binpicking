@@ -1,0 +1,42 @@
+:host {
+    .buttoncontainer {
+        display: flex;
+        align-items:center;
+        justify-content: flex-end;
+
+        button {
+            margin: 0 10px;
+            border: 0;
+            outline: 0;
+            padding: 5px;          
+            font: normal normal normal 14px/19px Roboto;
+            letter-spacing: 0px;
+            text-align: center;
+            opacity: 1;
+
+            &:first-child {
+                margin-left: 0px;
+            }
+        }
+        .cancel {
+            background: transparent;
+        }
+        .back {
+            width: 70px;
+            height: 33px;
+            border: 1px solid #35AFF8;
+            border-radius: 4px;            
+            color: #35AFF8;            
+        }
+
+        .submit {
+            background: #35AFF8 0% 0% no-repeat padding-box;
+            border-radius: 4px;
+            color: #FFFFFF;
+
+            &:hover {
+                background: #1D97E0 0% 0% no-repeat padding-box;
+            }
+        }
+    }
+}

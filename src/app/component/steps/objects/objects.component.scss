@@ -1,0 +1,19 @@
+:host {
+    #objectcontainer {
+        padding: 10px;
+        display: grid;
+        
+        h3 {
+            // margin-bottom: 10px;
+            display: flex            ;
+            align-items: center;
+            height: 5vh;
+        }
+        .cards {
+            height: 72vh;
+            margin-top: 5px;
+            max-height: 100%;
+            overflow: auto;
+        }
+    }
+}

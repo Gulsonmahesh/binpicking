@@ -1,0 +1,35 @@
+:host {
+  .grid-container {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 3px;
+
+    .grid-header {
+      height: 50px;
+    }
+    .grid-main {
+      width:100%;
+      height: calc( 100vh - 100px);
+      background-color: lightgray;
+      top: 52px;
+      left: 0;
+
+      .inner-wrapper {
+        display: grid;
+        grid-template-columns: 200px auto;
+        grid-gap: 10px;
+        gap: 1px;
+        height: calc( 100vh - 100px);
+
+        .sidebar {
+          background-color: red;
+          color: blue;
+        }
+        .maincontent {
+          background: #F7F8F8 0% 0% no-repeat padding-box;
+        }
+      }
+    }
+  }
+}
