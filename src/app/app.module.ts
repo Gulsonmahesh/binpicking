@@ -10,7 +10,8 @@ import { ObjectsComponent } from './component/steps/objects/objects.component';
 import { GripperComponent } from './component/steps/gripper/gripper.component';
 import { CardComponent } from './component/common/card/card.component';
 import { MainfooterComponent } from './component/mainfooter/mainfooter.component';
-import { ButtonComponent } from './component/common/button/button.component'
+import { ButtonComponent } from './component/common/button/button.component';
+import { ModelComponent } from './component/common/model/model.component'
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ButtonComponent } from './component/common/button/button.component'
     GripperComponent,
     CardComponent,
     MainfooterComponent,
-    ButtonComponent
+    ButtonComponent,
+    ModelComponent
   ],
   imports: [
     BrowserModule,

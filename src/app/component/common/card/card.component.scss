@@ -1,7 +1,7 @@
 :host {
     .cardcontainer {
         display: inline-flex;
-        gap: 10px;
+        gap: 20px;
         flex-wrap: wrap;        
     }
     .circle {
@@ -10,8 +10,8 @@
         color: #35AFF8;
     }
     .card {
-        width: 150px;
-        height: 150px;
+        width: 160px;
+        height: 160px;
         background: #F7F8F8 0% 0% no-repeat padding-box;
         border: 1px dashed #707070;
         border-radius: 10px;

@@ -1,0 +1,40 @@
+:host {
+    .modelcontainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        // height: 93.5vh;
+        position: fixed;
+        top: 23px;
+        left: 20px;
+        bottom: 20px;
+        background-color: rgba(0, 0, 0, 0.3);
+        z-index: 200;
+        width: calc(100% - 40px);
+        height: calc(100% - 40px);
+        max-width: 100%;
+        // padding: 25%;
+    }
+
+    .model {
+        height: auto;
+        max-width: 100%;
+        width: 650px;
+        max-height: max-content;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #fff;
+        padding: 30px 40px;
+        border-radius: 5px;
+    }
+    .modelheader {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .modelcontent {
+        display: block;
+    }
+}

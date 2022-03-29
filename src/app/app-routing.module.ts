@@ -5,7 +5,7 @@ import { GripperComponent } from './component/steps/gripper/gripper.component';
 
 const routes: Routes = [
   {path: 'object', component: ObjectsComponent },
-  {path: 'gripper', component: GripperComponent }
+  {path: 'grippingpoints', component: GripperComponent }
 ];
 
 @NgModule({

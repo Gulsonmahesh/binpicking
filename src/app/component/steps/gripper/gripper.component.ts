@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./gripper.component.scss']
 })
 export class GripperComponent implements OnInit {
-
+  model = false;
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  showModel(event: any) {    
+    this.model = event;
   }
 
 }

@@ -1,7 +1,8 @@
 <div id="objectcontainer" >
+    <app-model *ngIf="model" (closeModelEmit) = "showModel($event)">Test;</app-model>
     <h3>Picked Object</h3>
     <div class="cards">
-        <app-card></app-card>        
+        <app-card (buttonSelected) = "showModel($event)"></app-card>
     </div>
     <app-mainfooter></app-mainfooter>
 </div>

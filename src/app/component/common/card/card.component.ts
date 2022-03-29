@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-card',
@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardComponent implements OnInit {
 
+  @Output() buttonSelected =  new EventEmitter();
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  openModal() {
+    this.buttonSelected.emit(true);
+  }
 }

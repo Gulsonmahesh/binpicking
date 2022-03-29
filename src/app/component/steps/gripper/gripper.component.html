@@ -1,1 +1,8 @@
-<p>gripper works!</p>
+<div id="grippercontainer" >
+    <app-model *ngIf="model" (closeModelEmit) = "showModel($event)">Test;</app-model>
+    <h3>Picked Object</h3>
+    <div class="cards">
+        <app-card (buttonSelected) = "showModel($event)"></app-card>
+    </div>
+    <app-mainfooter></app-mainfooter>
+</div>

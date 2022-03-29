@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-objects',
@@ -6,10 +6,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./objects.component.scss']
 })
 export class ObjectsComponent implements OnInit {
+  model = false;
 
+  @HostListener('document:keyup', ['$event']) closeModel(event: KeyboardEvent) {
+    console.log(event.key);
+    if(event.key == 'Escape') {
+      this.model = false;
+    }
+  }
+  
   constructor() { }
 
   ngOnInit(): void {
+  }
+  
+  showModel(event: any) {    
+    this.model = event;
   }
 
 }
