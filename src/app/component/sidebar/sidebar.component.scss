@@ -9,20 +9,22 @@
         }
         nav {
             margin-top: 10px;
-
             li {
                 width: 80%;
                 height: 30px;
                 border-radius: 2px;
                 margin: 10px 0;
                 text-align: left;
-                
                 a {
                     font: normal normal normal 14px/40px Roboto;
                     letter-spacing: 0px;
                     color: #FFFFFF;
                 }
-
+                .numbercss {
+                    font: normal normal normal 14px/40px Roboto;
+                    letter-spacing: 10px;
+                    color: #FFFFFF;
+                }
                 &:first-child {
                     margin-top: 0;
                 }
@@ -30,7 +32,19 @@
                     margin-bottom: 0;
                 }
             }
+            .li.active {
+                color: red;
+                // This works! :)
+            }
         }
-
     }
 }
+
+// .nonactive {
+//     background-color: #000000;
+//     color: #ffffff;
+// }
+// .active {
+//     background-color: #ffffff;
+//     color: #000000;
+// }

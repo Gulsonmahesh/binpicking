@@ -11,8 +11,14 @@ import { GripperComponent } from './component/steps/gripper/gripper.component';
 import { CardComponent } from './component/common/card/card.component';
 import { MainfooterComponent } from './component/mainfooter/mainfooter.component';
 import { ButtonComponent } from './component/common/button/button.component';
-import { ModelComponent } from './component/common/model/model.component'
+import { ModelComponent } from './component/common/model/model.component';
+import { ProjectdetailsComponent } from './component/steps/projectdetails/projectdetails.component'
 
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
+
+const material=[MatFormFieldModule,MatInputModule,MatSelectModule,]
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,12 +30,15 @@ import { ModelComponent } from './component/common/model/model.component'
     CardComponent,
     MainfooterComponent,
     ButtonComponent,
-    ModelComponent
+    ModelComponent,
+    ProjectdetailsComponent
   ],
   imports: [
+    material,
     BrowserModule,
     AppRoutingModule
   ],
+  exports: [material],
   providers: [],
   bootstrap: [AppComponent]
 })

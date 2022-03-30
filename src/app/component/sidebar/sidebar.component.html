@@ -1,10 +1,12 @@
 <div class="sidebar">
-  <p class="sidebarheadding">Steps Bin Picking</p>
-  <nav>
-    <ul>
-      <li class="listitem w-full mb-3" *ngFor="let item of steps">
-        <a href="/{{ item.value }}">{{ item.title }}</a>
-      </li>
-    </ul>
-  </nav>
+    <p class="sidebarheadding">Steps Bin Picking</p>
+    <nav>
+        <ul>
+
+            <li class="listitem w-full mb-3" *ngFor="let item of steps" [ngClass]="checked ? 'active' : 'nonactive'" (click)="selectedItem()">
+                <span class="numbercss">{{item.number}}</span>
+                <a href="/{{ item.value }}">{{ item.title }}</a>
+            </li>
+        </ul>
+    </nav>
 </div>
