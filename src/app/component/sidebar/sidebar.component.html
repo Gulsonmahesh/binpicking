@@ -3,8 +3,8 @@
     <nav>
         <ul>
 
-            <li class="listitem w-full mb-3" *ngFor="let item of steps" [ngClass]="checked ? 'active' : 'nonactive'" (click)="selectedItem()">
-                <span class="numbercss">{{item.number}}</span>
+            <li class="listitem w-full mb-3" *ngFor="let item of steps;let i = index" [ngClass]="checked ? 'active' : 'nonactive'" (click)="selectedItem()">
+                <span class="numbercss">{{i+1}}</span>
                 <a href="/{{ item.value }}">{{ item.title }}</a>
             </li>
         </ul>

@@ -9,12 +9,38 @@
         }
         nav {
             margin-top: 10px;
+            ul {
+                padding: 10px;
+                margin: 0;
+            }
             li {
-                width: 80%;
+                display: flex;
+                align-items: center;
+                justify-content: start;
+                span  {
+                    background-color: #FFFFFF;
+                    width: 25px;
+                    height:25px;
+                    display: inline-flex;
+                    border: 0;
+                    border-radius: 100%;
+                    align-items: center;
+                    justify-content: center;
+                }
+                
                 height: 30px;
                 border-radius: 2px;
                 margin: 10px 0;
                 text-align: left;
+                
+                .success {
+                    background: #70BF4B 0% 0% no-repeat padding-box;
+                }
+
+                .error {
+                    background: #D91E27 0% 0% no-repeat padding-box;
+                }
+
                 a {
                     font: normal normal normal 14px/40px Roboto;
                     letter-spacing: 0px;
@@ -22,8 +48,8 @@
                 }
                 .numbercss {
                     font: normal normal normal 14px/40px Roboto;
-                    letter-spacing: 10px;
-                    color: #FFFFFF;
+                    letter-spacing: 1px;
+                    margin-right: 5px;
                 }
                 &:first-child {
                     margin-top: 0;
@@ -34,17 +60,7 @@
             }
             .li.active {
                 color: red;
-                // This works! :)
             }
         }
     }
 }
-
-// .nonactive {
-//     background-color: #000000;
-//     color: #ffffff;
-// }
-// .active {
-//     background-color: #ffffff;
-//     color: #000000;
-// }

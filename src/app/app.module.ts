@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,11 +18,15 @@ import { ProjectdetailsComponent } from './component/steps/projectdetails/projec
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
+import {MatDialogModule} from '@angular/material/dialog';
+
 import {MatIconModule} from '@angular/material/icon';
 import { DeployComponent } from './component/steps/deploy/deploy.component';
 import { CalibrationComponent } from './component/steps/calibration/calibration.component';
+import { GrippingpointsdialogComponent } from './component/steps/gripper/grippingpointsdialog/grippingpointsdialog.component';
 
-const material=[MatFormFieldModule,MatInputModule,MatSelectModule,MatIconModule]
+const material=[MatFormFieldModule,MatInputModule,MatSelectModule,MatIconModule, MatDialogModule];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,11 +41,13 @@ const material=[MatFormFieldModule,MatInputModule,MatSelectModule,MatIconModule]
     ModelComponent,
     ProjectdetailsComponent,
     DeployComponent,
-    CalibrationComponent
+    CalibrationComponent,
+    GrippingpointsdialogComponent
   ],
   imports: [
     material,
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule
   ],
   exports: [material],
