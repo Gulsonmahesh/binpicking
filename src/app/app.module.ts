@@ -17,8 +17,11 @@ import { ProjectdetailsComponent } from './component/steps/projectdetails/projec
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
+import {MatIconModule} from '@angular/material/icon';
+import { DeployComponent } from './component/steps/deploy/deploy.component';
+import { CalibrationComponent } from './component/steps/calibration/calibration.component';
 
-const material=[MatFormFieldModule,MatInputModule,MatSelectModule,]
+const material=[MatFormFieldModule,MatInputModule,MatSelectModule,MatIconModule]
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +34,9 @@ const material=[MatFormFieldModule,MatInputModule,MatSelectModule,]
     MainfooterComponent,
     ButtonComponent,
     ModelComponent,
-    ProjectdetailsComponent
+    ProjectdetailsComponent,
+    DeployComponent,
+    CalibrationComponent
   ],
   imports: [
     material,
