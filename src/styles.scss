@@ -59,3 +59,11 @@ img[alt='info'] {
     width: 20px;
     height: 20px;
 }
+.tip {
+    border-radius: 8px;
+    position: absolute;
+    display: block;
+    color: white;
+    background-color: black;
+    padding: inherit;
+}

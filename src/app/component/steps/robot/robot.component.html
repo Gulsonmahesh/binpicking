@@ -1,7 +1,10 @@
 <div class="header p-2">
+    <div class="tip" *ngIf="showTip">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum aperiam cumque autem, iure ab quod vero beatae amet itaque ex quia! Aperiam adipisci quasi vitae?
+    </div>
     <h3 class="d-inline-flex align-items-center">
         <span>Select Robot</span>
-        <img src="../../../../assets/info_black_24dp.svg" alt="info">
+        <img src="../../../../assets/info_black_24dp.svg" alt="info" tabindex="0" (mouseover)="showTip = true" (mouseleave)="showTip = false"/>
     </h3>
 </div>
 <div class="innermaincontainer p-2">

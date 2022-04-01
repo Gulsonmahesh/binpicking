@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./robot.component.scss']
 })
 export class RobotComponent implements OnInit {
-
+  showTip = false;
+  
   constructor() { }
 
   ngOnInit(): void {
