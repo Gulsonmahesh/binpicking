@@ -3,7 +3,6 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        // height: 93.5vh;
         position: fixed;
         top: 0;
         left: 20px;
@@ -11,9 +10,7 @@
         background-color: rgba(0, 0, 0, 0.3);
         z-index: 200;
         width: calc(100% - 40px);
-        // height: calc(100% - 40px);
         max-width: 100%;
-        // padding: 25%;
     }
 
     .model {
@@ -25,9 +22,8 @@
         align-items: flex-start;
         justify-content: center;
         background-color: #fff;
-        // padding: 20px;
         border-radius: 5px;
-        flex-direction: column;
+        flex-direction: column;        
     }
     .modelheader {
         padding: 10px;
@@ -39,14 +35,14 @@
         border-bottom: 1px solid lightgray;
 
         h1 {
-            font-size: 16px;
-            font-weight: 700;
+            font-size: 12px;
+            font-weight: bold;
             // padding: 0 0 10px 0;
         }
 
         .modalclose {
-            width: 13px;
-            height: 13px;
+            width: 10px;
+            height: 10px;
             background: transparent url('../../../../assets/modalclose.svg') 0% 0% no-repeat padding-box;
             background-size: cover;
             border: none;
