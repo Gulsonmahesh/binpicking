@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, HostListener, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'app-model',
@@ -9,7 +9,7 @@ export class ModelComponent implements OnInit {
 
   constructor() { }
   @Output() closeModelEmit = new EventEmitter();
-
+  @Input() headertitle = '';
   ngOnInit(): void {
   }
   

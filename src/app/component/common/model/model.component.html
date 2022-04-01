@@ -1,10 +1,8 @@
 <div class="modelcontainer">
     <div class="model">
         <div class="modelheader">
-            <h1>Add New Object</h1>
-            <button (click) ="closeModelclick()">
-                <img src="../../../../assets/close.png" alt="clode modal" />
-            </button>
+            <h1>{{headertitle}}</h1>
+            <button (click) ="closeModelclick()" class="modalclose"></button>
         </div>
         <div class="modelcontent">
             <ng-content></ng-content>

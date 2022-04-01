@@ -33,7 +33,7 @@
         padding: 10px;
         width: 100%;
         display: flex;
-        // align-items: center;
+        align-items: center;
         justify-content: space-between;
         margin-bottom: 10px;
         border-bottom: 1px solid lightgray;
@@ -42,6 +42,14 @@
             font-size: 16px;
             font-weight: 700;
             // padding: 0 0 10px 0;
+        }
+
+        .modalclose {
+            width: 13px;
+            height: 13px;
+            background: transparent url('../../../../assets/modalclose.svg') 0% 0% no-repeat padding-box;
+            background-size: cover;
+            border: none;
         }
     }
     .modelcontent {
