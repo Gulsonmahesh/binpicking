@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {MatDialog} from '@angular/material/dialog';
-import { GrippingpointsdialogComponent } from './grippingpointsdialog/grippingpointsdialog.component';
 
 @Component({
   selector: 'app-gripper',
@@ -9,13 +7,12 @@ import { GrippingpointsdialogComponent } from './grippingpointsdialog/grippingpo
 })
 export class GripperComponent implements OnInit {
   model = false;
-  constructor(private dialog: MatDialog) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
 
   showModel(event: any) {    
-    this.dialog.open(GrippingpointsdialogComponent);
+    this.model = event;
   }
-
 }

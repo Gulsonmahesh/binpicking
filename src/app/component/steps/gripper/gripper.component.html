@@ -1,4 +1,6 @@
 <div id="grippercontainer" class="wrappercontainer">
+    <app-model *ngIf="model" (closeModelEmit) = "showModel($event)">            
+    </app-model>
     <h3>Picked Object</h3>
     <div class="cards">
         <app-card (buttonSelected) = "showModel($event)"></app-card>

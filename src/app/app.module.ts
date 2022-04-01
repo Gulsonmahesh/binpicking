@@ -18,14 +18,14 @@ import { ProjectdetailsComponent } from './component/steps/projectdetails/projec
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
-import {MatDialogModule} from '@angular/material/dialog';
-
 import {MatIconModule} from '@angular/material/icon';
+
 import { DeployComponent } from './component/steps/deploy/deploy.component';
 import { CalibrationComponent } from './component/steps/calibration/calibration.component';
-import { GrippingpointsdialogComponent } from './component/steps/gripper/grippingpointsdialog/grippingpointsdialog.component';
 
-const material=[MatFormFieldModule,MatInputModule,MatSelectModule,MatIconModule, MatDialogModule];
+const material=[
+  MatFormFieldModule, MatInputModule, MatSelectModule, MatIconModule
+];
 
 @NgModule({
   declarations: [
@@ -41,8 +41,7 @@ const material=[MatFormFieldModule,MatInputModule,MatSelectModule,MatIconModule,
     ModelComponent,
     ProjectdetailsComponent,
     DeployComponent,
-    CalibrationComponent,
-    GrippingpointsdialogComponent
+    CalibrationComponent
   ],
   imports: [
     material,

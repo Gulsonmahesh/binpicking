@@ -28,12 +28,9 @@ export class SidebarComponent implements OnInit {
   public activeElement = 1;  
  
   public selectedItem() {
-      // this.activeElement = id;
       this.checked= true;
    }
   ngOnInit(): void {
-    console.log(this.steps);
-    
   }
   
 }
