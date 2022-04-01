@@ -4,7 +4,7 @@
     <div class="gripper">
         <div class="position">
             <h3 class="m-0">Position</h3>
-            <div class="positioncontainer mb-1">
+            <div class="positioncontainer mb-2">
                 <div class="mb-1">
                     <label for="x" class="form-label">X(mm)</label>
                     <input type="text" class="form-control" id="x" placeholder="0.0">
@@ -18,14 +18,44 @@
                     <input type="text" class="form-control" id="z" placeholder="0.0">
                 </div>
             </div>
-            <div class="rotationcontainer mb-1">
+            <div class="rotationcontainer mb-2">
+                <h3 class="m-0 mb-2">Rotation</h3>
                 <div class="mb-1">
-                    <label for=""></label>
-                    <input type="range" name="" id="">
+                    <label for="xdeg" class="mb-1">X <span>deg</span></label>
+                    <div class="d-flex">
+                        <span>-180</span>
+                        <input type="range" name="xdeg" id="xdeg">
+                        <span>180</span>
+                    </div>
+                </div>
+                <div class="mb-1">
+                    <label for="ydeg" class="mb-1">Y <span>deg</span></label>
+                    <div class="d-flex">
+                        <span>-180</span>
+                        <input type="range" name="ydeg" id="ydeg">
+                        <span>180</span>
+                    </div>
+                </div>
+                <div class="mb-1">
+                    <label for="zdeg" class="mb-1">Z <span>deg</span></label>
+                    <div class="d-flex">
+                        <span>-180</span>
+                        <input type="range" name="zdeg" id="zdeg">
+                        <span>180</span>
+                    </div>
                 </div>
             </div>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="enablerotation">
+                <label class="form-check-label" for="enablerotation">Enable rotation invarience</label>
+            </div>
+            
         </div>
         <div class="viewer">STL Viewer Placeholder</div>
+    </div>
+    <div class="d-flex align-content-center justify-content-end mt-1 footerpanel">
+        <button class="cancel border-1 p-0">Cancel</button>
+        <button class="save mx-3 border-0 p-0">Save</button>
     </div>
     </app-model>
     <h3>Picked Object</h3>
