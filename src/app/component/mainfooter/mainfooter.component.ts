@@ -8,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class MainfooterComponent implements OnInit {
 
   constructor() { }
+  
   @Input() showCancal = true;
   @Input() showBack = true;
 

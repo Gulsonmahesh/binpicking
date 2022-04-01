@@ -22,6 +22,7 @@ import {MatIconModule} from '@angular/material/icon';
 
 import { DeployComponent } from './component/steps/deploy/deploy.component';
 import { CalibrationComponent } from './component/steps/calibration/calibration.component';
+import { RobotComponent } from './component/steps/robot/robot.component';
 
 const material=[
   MatFormFieldModule, MatInputModule, MatSelectModule, MatIconModule
@@ -41,7 +42,8 @@ const material=[
     ModelComponent,
     ProjectdetailsComponent,
     DeployComponent,
-    CalibrationComponent
+    CalibrationComponent,
+    RobotComponent
   ],
   imports: [
     material,

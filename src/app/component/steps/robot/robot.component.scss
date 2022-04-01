@@ -1,0 +1,6 @@
+:host {
+    .innermaincontainer {
+        display: grid;
+        grid-template-rows: 50px 1fr 50px;
+    }
+}

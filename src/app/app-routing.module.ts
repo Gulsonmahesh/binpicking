@@ -5,13 +5,15 @@ import { GripperComponent } from './component/steps/gripper/gripper.component';
 import { ProjectdetailsComponent} from './component/steps/projectdetails/projectdetails.component';
 import { DeployComponent } from './component/steps/deploy/deploy.component';
 import { CalibrationComponent} from './component/steps/calibration/calibration.component';
+import { RobotComponent } from './component/steps/robot/robot.component';
 
 const routes: Routes = [
   {path: 'object', component: ObjectsComponent },
   {path: 'grippingpoints', component: GripperComponent },
   {path: 'project-details', component: ProjectdetailsComponent},
   {path: 'deploy', component: DeployComponent},
-  {path: 'calibration', component: CalibrationComponent}
+  {path: 'calibration', component: CalibrationComponent},
+  {path:'robot', component: RobotComponent}
 ];
 
 @NgModule({
