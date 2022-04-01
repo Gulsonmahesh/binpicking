@@ -1,1 +1,7 @@
-<footer><app-button></app-button></footer>
+<footer>
+    <div class="buttoncontainer">
+        <button class="cancel" *ngIf="showCancal">Cancel</button>
+        <button class="back" *ngIf="showBack">Back</button>
+        <button class="submit">Submit and Continue</button>
+    </div>
+</footer>

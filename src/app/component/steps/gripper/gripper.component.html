@@ -1,9 +1,35 @@
 <div id="grippercontainer" class="wrappercontainer">
-    <app-model *ngIf="model" (closeModelEmit) = "showModel($event)" headertitle ='Configure Grasp Poses - Object 1'>
+    <app-model *ngIf="model" (closeModelEmit) = "showModel($event)" 
+    headertitle ='Configure Grasp Poses - Object 1' customclass="gripperpoints">
+    <div class="gripper">
+        <div class="position">
+            <h3 class="m-0">Position</h3>
+            <div class="positioncontainer mb-1">
+                <div class="mb-1">
+                    <label for="x" class="form-label">X(mm)</label>
+                    <input type="text" class="form-control" id="x" placeholder="0.0">
+                </div>
+                <div class="mb-1">
+                    <label for="y" class="form-label">Y(mm)</label>
+                    <input type="text" class="form-control" id="y" placeholder="0.0">
+                </div>
+                <div class="mb-1">
+                    <label for="z" class="form-label">Z(mm)</label>
+                    <input type="text" class="form-control" id="z" placeholder="0.0">
+                </div>
+            </div>
+            <div class="rotationcontainer mb-1">
+                <div class="mb-1">
+                    <label for=""></label>
+                    <input type="range" name="" id="">
+                </div>
+            </div>
+        </div>
+        <div class="viewer">STL Viewer Placeholder</div>
+    </div>
     </app-model>
     <h3>Picked Object</h3>
     <div class="cards">
         <app-card (buttonSelected) = "showModel($event)"></app-card>
     </div>
-    <app-mainfooter></app-mainfooter>
 </div>

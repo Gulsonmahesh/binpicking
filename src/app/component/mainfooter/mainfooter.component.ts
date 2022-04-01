@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-mainfooter',
@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class MainfooterComponent implements OnInit {
 
   constructor() { }
+  @Input() showCancal = true;
+  @Input() showBack = true;
 
   ngOnInit(): void {
   }

@@ -10,6 +10,8 @@ export class ModelComponent implements OnInit {
   constructor() { }
   @Output() closeModelEmit = new EventEmitter();
   @Input() headertitle = '';
+  @Input() customclass = '';
+  
   ngOnInit(): void {
   }
   
