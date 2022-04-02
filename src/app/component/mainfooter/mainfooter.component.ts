@@ -11,6 +11,8 @@ export class MainfooterComponent implements OnInit {
   
   @Input() showCancal = true;
   @Input() showBack = true;
+  @Input() submitname = 'Select and Continue';
+  @Input() backname = 'Back';
 
   ngOnInit(): void {
   }

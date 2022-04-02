@@ -23,6 +23,9 @@ import {MatIconModule} from '@angular/material/icon';
 import { DeployComponent } from './component/steps/deploy/deploy.component';
 import { CalibrationComponent } from './component/steps/calibration/calibration.component';
 import { RobotComponent } from './component/steps/robot/robot.component';
+import { TooltipComponent } from './component/common/tooltip/tooltip.component';
+import { RobotdetailsComponent } from './component/common/robotdetails/robotdetails.component';
+
 
 const material=[
   MatFormFieldModule, MatInputModule, MatSelectModule, MatIconModule
@@ -43,7 +46,9 @@ const material=[
     ProjectdetailsComponent,
     DeployComponent,
     CalibrationComponent,
-    RobotComponent
+    RobotComponent,
+    TooltipComponent,
+    RobotdetailsComponent    
   ],
   imports: [
     material,

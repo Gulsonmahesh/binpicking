@@ -1,0 +1,5 @@
+<div class="tip" *ngIf="showTip">
+    <ng-content></ng-content>
+</div>
+
+<img src="../../../../assets/info_black_24dp.svg" alt="info" tabindex="0" (mouseover)="showTip = true" (mouseleave)="showTip = false"/>
