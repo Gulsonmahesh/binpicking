@@ -11,8 +11,4 @@ export class GripperComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  showModel(event: any) {
-    this.model = event;
-  }
 }

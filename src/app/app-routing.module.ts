@@ -6,11 +6,15 @@ import { ProjectdetailsComponent} from './component/steps/projectdetails/project
 import { DeployComponent } from './component/steps/deploy/deploy.component';
 import { CalibrationComponent} from './component/steps/calibration/calibration.component';
 import { RobotComponent } from './component/steps/robot/robot.component';
+import { GrippertcpComponent } from './component/steps/grippertcp/grippertcp.component';
+import { GripperpointsComponent } from './component/steps/gripperpoints/gripperpoints.component';
 
 const routes: Routes = [
   {path: 'object', component: ObjectsComponent },
-  {path: 'grippingpoints', component: GripperComponent },
+  {path: 'grippingpoints', component: GripperpointsComponent },
+  {path: 'gripper', component: GripperComponent},
   {path: 'project-details', component: ProjectdetailsComponent},
+  {path: 'grippertcp', component: GrippertcpComponent},
   {path: 'deploy', component: DeployComponent},
   {path: 'calibration', component: CalibrationComponent},
   {path:'robot', component: RobotComponent}

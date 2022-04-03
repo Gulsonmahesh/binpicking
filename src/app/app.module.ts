@@ -25,6 +25,9 @@ import { CalibrationComponent } from './component/steps/calibration/calibration.
 import { RobotComponent } from './component/steps/robot/robot.component';
 import { TooltipComponent } from './component/common/tooltip/tooltip.component';
 import { RobotdetailsComponent } from './component/common/robotdetails/robotdetails.component';
+import { GrippercommonconterComponent } from './component/common/grippercommonconter/grippercommonconter.component';
+import { GripperpointsComponent } from './component/steps/gripperpoints/gripperpoints.component';
+import { GrippertcpComponent } from './component/steps/grippertcp/grippertcp.component';
 
 
 const material=[
@@ -48,7 +51,10 @@ const material=[
     CalibrationComponent,
     RobotComponent,
     TooltipComponent,
-    RobotdetailsComponent    
+    RobotdetailsComponent,
+    GrippercommonconterComponent,
+    GripperpointsComponent,
+    GrippertcpComponent    
   ],
   imports: [
     material,

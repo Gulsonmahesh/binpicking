@@ -1,0 +1,73 @@
+<div class="gripper">
+    <div class="position">
+        <h3 class="m-0">Position</h3>
+        <div class="positioncontainer mb-2">
+            <div class="mb-1">
+                <label for="x" class="form-label">X(mm)</label>
+                <input type="text" class="form-control" id="x" placeholder="0.0">
+            </div>
+            <div class="mb-1">
+                <label for="y" class="form-label">Y(mm)</label>
+                <input type="text" class="form-control" id="y" placeholder="0.0">
+            </div>
+            <div class="mb-1">
+                <label for="z" class="form-label">Z(mm)</label>
+                <input type="text" class="form-control" id="z" placeholder="0.0">
+            </div>
+        </div>
+        <div class="rotationcontainer mb-2">
+            <h3 class="m-0 mb-2">Rotation</h3>
+            <div class="mb-1">
+                <label for="xdeg" class="mb-1">X <span>deg</span></label>
+                <div class="d-flex">
+                    <span>-180</span>
+                    <input type="range" name="xdeg" id="xdeg">
+                    <span>180</span>
+                </div>
+            </div>
+            <div class="mb-1">
+                <label for="ydeg" class="mb-1">Y <span>deg</span></label>
+                <div class="d-flex">
+                    <span>-180</span>
+                    <input type="range" name="ydeg" id="ydeg">
+                    <span>180</span>
+                </div>
+            </div>
+            <div class="mb-1">
+                <label for="zdeg" class="mb-1">Z <span>deg</span></label>
+                <div class="d-flex">
+                    <span>-180</span>
+                    <input type="range" name="zdeg" id="zdeg">
+                    <span>180</span>
+                </div>
+            </div>
+        </div>
+        <div class="form-check mb-2">
+            <input type="checkbox" class="form-check-input" id="enablerotation">
+            <label class="form-check-label" for="enablerotation">Enable rotation invarience</label>
+        </div>
+        <div class="mb-2 m-0 fw-bold">
+            Rotation invarience around axis
+        </div>
+        <div class="d-flex align-content-center justify-content-between">
+            <input class="mt-0" type="radio" name="axis" value="" aria-label="Radio button for following text input">X-axis
+            <input class="mt-0" type="radio" name="axis" value="" aria-label="Radio button for following text input">Y-axis
+            <input class="mt-0" type="radio" name="axis" value="" aria-label="Radio button for following text input">X-axis
+        </div>
+        <div class="rotationcontainer my-2">
+            <div class="mb-1">
+                <label for="xrotate" class="form-label">Rotation lower limit(deg)</label>
+                <input type="text" class="form-control" id="xrotate" placeholder="-">
+            </div>
+            <div class="mb-1">
+                <label for="yrotate" class="form-label">Rotation upper limit(deg)</label>
+                <input type="text" class="form-control" id="yrotate" placeholder="-">
+            </div>
+            <div class="mb-1">
+                <label for="zrotate" class="form-label">Rotation number of stages</label>
+                <input type="text" class="form-control" id="zrotate" placeholder="5">
+            </div>
+        </div>
+    </div>
+    <div class="viewer">STL Viewer Placeholder</div>
+</div>
