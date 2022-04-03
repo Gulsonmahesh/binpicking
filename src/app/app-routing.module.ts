@@ -6,7 +6,6 @@ import { ProjectdetailsComponent} from './component/steps/projectdetails/project
 import { DeployComponent } from './component/steps/deploy/deploy.component';
 import { CalibrationComponent} from './component/steps/calibration/calibration.component';
 import { RobotComponent } from './component/steps/robot/robot.component';
-
 const routes: Routes = [
   {path: 'object', component: ObjectsComponent },
   {path: 'grippingpoints', component: GripperComponent },

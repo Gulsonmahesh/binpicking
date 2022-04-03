@@ -2,7 +2,7 @@
     border: 1px solid gray;
     padding: 5px;
     font-size: 14px;
-    width: 280px;
+    width: 219px;
     height: 34px;
     border-radius: 5px;
 }
@@ -12,22 +12,24 @@
     border: 1px solid #80808059;
     padding: 7px;
     position: relative;
-    height: 200px;
+    height: 230px;
 }
 
 .pad20 {
     padding: 20px;
 }
 
-.submit {
-    background: #35AFF8 0% 0% no-repeat padding-box;
+.calibrationbtns {
+    background: #ffffff 0% 0% no-repeat padding-box;
     padding: 7px 24px;
     font-size: 14px;
     border: none;
-    color: white;
+    color: #35AFF8;
     border-radius: 4px;
+    border: 1px solid #35AFF8;
     &:hover {
         background: #1D97E0 0% 0% no-repeat padding-box;
+        color: #ffffff;
     }
 }
 
