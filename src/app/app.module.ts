@@ -32,6 +32,9 @@ import { ProjectsummaryComponent } from './component/steps/projectsummary/projec
 import { LoginpageComponent } from './component/loginpage/loginpage.component';
 
 
+import { MatPaginatorModule } from '@angular/material/paginator';
+import {MatTableModule} from '@angular/material/table';
+
 const material=[
   MatFormFieldModule, MatInputModule, MatSelectModule, MatIconModule
 ];
@@ -64,7 +67,9 @@ const material=[
     material,
     BrowserModule,
     BrowserAnimationsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatPaginatorModule,
+    MatTableModule
   ],
   exports: [material],
   providers: [],

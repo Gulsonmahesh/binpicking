@@ -1,5 +1,7 @@
 import { Component,Input, OnInit, ViewChild } from '@angular/core';
-// import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource, MatRow } from '@angular/material/table';
 
 @Component({
   selector: 'app-projectsummary',
@@ -7,64 +9,65 @@ import { Component,Input, OnInit, ViewChild } from '@angular/core';
   styleUrls: ['./projectsummary.component.scss']
 })
 export class ProjectsummaryComponent implements OnInit {
-//   displayedColumns = ['id', 'name', 'progress', 'color'];
-//   dataSource: MatTableDataSource<UserData>;
+  displayedColumns = ['id', 'name', 'progress', 'color'];
+  dataSource: any = null;
 
-//   @ViewChild(MatPaginator) paginator: MatPaginator;
-//   @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatPaginator) paginator ? : MatPaginator;
+  @ViewChild(MatSort) sort ?: MatSort;
 
   constructor() { 
-        // Create 100 users
-        // const users: UserData[] = [];
-        // for (let i = 1; i <= 100; i++) { users.push(createNewUser(i)); }
     
-        // // Assign the data to the data source for the table to render
-        // this.dataSource = new MatTableDataSource(users);
   }
  
-//   ngAfterViewInit() {
-//     this.dataSource.paginator = this.paginator;
-//     this.dataSource.sort = this.sort;
-//   }
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
+  }
 
-//   applyFilter(filterValue: string) {
-//     filterValue = filterValue.trim(); // Remove whitespace
-//     filterValue = filterValue.toLowerCase(); // Datasource defaults to lowercase matches
-//     this.dataSource.filter = filterValue;
-//   }
+  applyFilter(filterValue: KeyboardEvent) {
+    // filterValue = filterValue.trim(); // Remove whitespace
+    // filterValue = filterValue.toLowerCase(); // Datasource defaults to lowercase matches
+    this.dataSource.filter = filterValue;
+  }
   ngOnInit(): void {
+        // Create 100 users
+        const users: UserData[] = [];
+        for (let i = 1; i <= 100; i++) { users.push(createNewUser(i)); }
+    
+        // Assign the data to the data source for the table to render
+        this.dataSource = new MatTableDataSource(users);
   }
 
 }
 
 
 /** Builds and returns a new User. */
-// function createNewUser(id: number): UserData {
-//   const name =
-//       NAMES[Math.round(Math.random() * (NAMES.length - 1))] + ' ' +
-//       NAMES[Math.round(Math.random() * (NAMES.length - 1))].charAt(0) + '.';
+function createNewUser(id: number): UserData {
+  const name =
+      NAMES[Math.round(Math.random() * (NAMES.length - 1))] + ' ' +
+      NAMES[Math.round(Math.random() * (NAMES.length - 1))].charAt(0) + '.';
 
-//   return {
-//     id: id.toString(),
-//     name: name,
-//     progress: Math.round(Math.random() * 100).toString(),
-//     color: COLORS[Math.round(Math.random() * (COLORS.length - 1))]
-//   };
-// }
+  return {
+    id: id.toString(),
+    name: name,
+    progress: Math.round(Math.random() * 100).toString(),
+    color: COLORS[Math.round(Math.random() * (COLORS.length - 1))]
+  };
+}
 
-// /** Constants used to fill up our data base. */
-// const COLORS = ['maroon', 'red', 'orange', 'yellow', 'olive', 'green', 'purple',
-//   'fuchsia', 'lime', 'teal', 'aqua', 'blue', 'navy', 'black', 'gray'];
-// const NAMES = ['Maia', 'Asher', 'Olivia', 'Atticus', 'Amelia', 'Jack',
-//   'Charlotte', 'Theodore', 'Isla', 'Oliver', 'Isabella', 'Jasper',
-//   'Cora', 'Levi', 'Violet', 'Arthur', 'Mia', 'Thomas', 'Elizabeth'];
+/** Constants used to fill up our data base. */
+const COLORS = ['maroon', 'red', 'orange', 'yellow', 'olive', 'green', 'purple',
+  'fuchsia', 'lime', 'teal', 'aqua', 'blue', 'navy', 'black', 'gray'];
+const NAMES = ['Maia', 'Asher', 'Olivia', 'Atticus', 'Amelia', 'Jack',
+  'Charlotte', 'Theodore', 'Isla', 'Oliver', 'Isabella', 'Jasper',
+  'Cora', 'Levi', 'Violet', 'Arthur', 'Mia', 'Thomas', 'Elizabeth'];
 
-// export interface UserData {
-//   id: string;
-//   name: string;
-//   progress: string;
-//   color: string;
-// }
+export interface UserData {
+  id: string;
+  name: string;
+  progress: string;
+  color: string;
+}
 
 
 /**  Copyright 2018 Google Inc. All Rights Reserved.
