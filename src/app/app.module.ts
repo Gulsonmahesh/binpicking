@@ -34,6 +34,8 @@ import { LoginpageComponent } from './component/loginpage/loginpage.component';
 
 import { MatPaginatorModule } from '@angular/material/paginator';
 import {MatTableModule} from '@angular/material/table';
+import {  TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
+import { EditorModule } from '@tinymce/tinymce-angular';
 
 const material=[
   MatFormFieldModule, MatInputModule, MatSelectModule, MatIconModule
@@ -69,10 +71,11 @@ const material=[
     BrowserAnimationsModule,
     AppRoutingModule,
     MatPaginatorModule,
-    MatTableModule
+    MatTableModule,
+    EditorModule
   ],
   exports: [material],
-  providers: [],
+  providers: [{ provide: TINYMCE_SCRIPT_SRC, useValue: 'tinymce/tinymce.min.js' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

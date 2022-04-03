@@ -13,6 +13,43 @@
                 </mat-form-field>
             </form>
             <span class=" f-14 mt-10"> Project Description</span>
+
+            <h1>TinyMCE 5 Angular Demo</h1>
+            <span>
+                
+                <editor [init]="{plugins: 'link'}"></editor>
+            <!-- <editor 
+            apiKey="9x98p6u4qeidajuf25isv052g0lgdwnq5njs2ryw1m03mecx" 
+            plugins="code"
+            outputFormat="text"
+            [init]="{
+                height: 500,
+                menubar: false,
+                plugins: [
+                  'advlist autolink lists link image charmap print preview anchor',
+                  'searchreplace visualblocks code fullscreen',
+                  'insertdatetime media table paste code help wordcount'
+                ],
+                toolbar:
+                  'undo redo | formatselect | bold italic backcolor | \
+                  alignleft aligncenter alignright alignjustify | \
+                  bullist numlist outdent indent | removeformat | help'
+              }"
+              
+              [init]="{
+                plugins: [
+                 'lists link image paste help wordcount'
+                ],
+                toolbar: 'undo redo | formatselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | help'
+              }"
+              ></editor> -->
+         
+              
+            <!-- <editor [init]="{
+            base_url: '/tinymce', // Root for resources
+            suffix: '.min'        // Suffix to use when loading resources
+          }"></editor> -->
+        </span>
         </div>
     </div>
     <app-mainfooter></app-mainfooter>

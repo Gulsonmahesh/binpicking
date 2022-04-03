@@ -31,14 +31,15 @@
                         "inlineStyleLanguage": "scss",
                         "assets": [
                             "src/favicon.ico",
-                            "src/assets"
+                            "src/assets",
+                            { "glob": "**/*", "input": "node_modules/tinymce", "output": "/tinymce/" }
                         ],
                         "styles": [
                             "src/styles.scss",
                             "src/common.scss",
                             "./node_modules/bootstrap/dist/css/bootstrap.css"
                         ],
-                        "scripts": []
+                        "scripts": ["node_modules/tinymce/tinymce.min.js"]
                     },
                     "configurations": {
                         "production": {
