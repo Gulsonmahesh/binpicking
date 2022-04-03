@@ -23,6 +23,13 @@ import {MatIconModule} from '@angular/material/icon';
 import { DeployComponent } from './component/steps/deploy/deploy.component';
 import { CalibrationComponent } from './component/steps/calibration/calibration.component';
 import { RobotComponent } from './component/steps/robot/robot.component';
+import { TooltipComponent } from './component/common/tooltip/tooltip.component';
+import { RobotdetailsComponent } from './component/common/robotdetails/robotdetails.component';
+import { GrippercommonconterComponent } from './component/common/grippercommonconter/grippercommonconter.component';
+import { GripperpointsComponent } from './component/steps/gripperpoints/gripperpoints.component';
+import { GrippertcpComponent } from './component/steps/grippertcp/grippertcp.component';
+import { ProjectsummaryComponent } from './component/steps/projectsummary/projectsummary.component';
+import { LoginpageComponent } from './component/loginpage/loginpage.component';
 
 
 const material=[
@@ -44,7 +51,14 @@ const material=[
     ProjectdetailsComponent,
     DeployComponent,
     CalibrationComponent,
-    RobotComponent 
+    RobotComponent,
+    TooltipComponent,
+    RobotdetailsComponent,
+    GrippercommonconterComponent,
+    GripperpointsComponent,
+    GrippertcpComponent,
+    ProjectsummaryComponent,
+    LoginpageComponent    
   ],
   imports: [
     material,

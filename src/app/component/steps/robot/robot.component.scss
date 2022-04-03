@@ -6,17 +6,11 @@
         text-align: left;
         vertical-align: middle;
         position: relative;
-
         min-height: 40px;
+
         h3 span{
             font-size: 15px;
             font-weight: bold;
-        }
-        .tip {
-            top: 0;
-            left: 20%;
-            transform: translate(-50%, 50%);
-            width: 300px;
         }
     }
     .footer {
@@ -28,6 +22,15 @@
     .innermaincontainer {
         display: grid;
         grid-template-columns: 100%;
-        min-height: calc(100% - 94px);
+        height: calc(100% - 150px);
+        overflow: auto;
+    }
+    .robotcontainer {
+        display: flex;
+        flex-wrap: wrap;
+        align-self: flex-start;
+        align-items: center;
+        justify-content: space-between;
+        gap: 5px;
     }
 }

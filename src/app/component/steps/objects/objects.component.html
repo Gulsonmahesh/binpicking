@@ -1,10 +1,19 @@
 <div id="objectcontainer" class="wrappercontainer">
-    <app-model *ngIf="model" (closeModelEmit) = "showModel($event)">
+    <app-model headertitle="Add New Object" *ngIf="model" (closeModelEmit) = "showModel($event)">
         <div id="newobjectform">
             <label for="objectname">Object Name <sup>*</sup></label>
             <input type="text" id="objectname" />
             <label for="description">Description</label>
             <input type="text" id="description" />
+            <label for="uploadobject" class="fw-bold mb-3">Upload Object Mess</label>
+            <div id="drop_zone" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);">
+                <p class="m-0 mb-1">Drag one or more files to this Drop Zone ...</p>
+                <a href="#">Click here to upload</a>
+            </div>
+            <div class="modelfooter">
+                <button (click)="model=false">Cancel</button>
+                <button class="mx-4">Save</button>
+            </div>
         </div>
     </app-model>
     <h3>Picked Object</h3>

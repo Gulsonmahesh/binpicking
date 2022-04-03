@@ -18,4 +18,37 @@
     #description {
         height: 40px;   
     }
+    #drop_zone {
+        border: 2px dotted #e3e3e3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 100px;
+
+        a {
+            text-decoration: none;
+            color: lightskyblue;
+        }
+    }
+    .modelfooter {
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;        
+        button {
+            min-width: 80px;
+            border-radius: 5px;
+            border: 1px solid;
+            
+            &:first-child {
+                background-color: #fff;
+            }
+            &:last-child {
+                background-color: #e3e3e3;
+                border: none;
+            }
+        }
+    }
+
 }

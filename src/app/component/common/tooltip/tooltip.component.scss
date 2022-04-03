@@ -1,0 +1,16 @@
+:host {
+    .tip {
+        left: 10%;
+        transform: translate(-50%, 50%);
+        width: 300px;
+        max-width: 300px;
+        overflow: auto;
+        height: auto;
+        max-height: 300px;
+        top: 0;
+        width: 300px;
+        padding: 10px;
+        position: absolute;
+
+    }
+}

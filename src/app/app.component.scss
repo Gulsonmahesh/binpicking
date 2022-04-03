@@ -4,7 +4,6 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-row-gap: 1px;
-    overflow: hidden;
 
     .grid-header {
       height: 50px;
@@ -22,7 +21,7 @@
         grid-template-columns: 200px auto;
         grid-gap: 10px;
         gap: 1px;
-        height: calc( 100vh - 93px);
+        height: inherit;
 
         .sidebar {
           background: #21386E 0% 0% no-repeat padding-box;
