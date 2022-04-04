@@ -39,7 +39,7 @@
                             "src/common.scss",
                             "./node_modules/bootstrap/dist/css/bootstrap.css"
                         ],
-                        "scripts": ["node_modules/tinymce/tinymce.min.js"]
+                        "scripts": ["./node_modules/tinymce/tinymce.min.js"]
                     },
                     "configurations": {
                         "production": {

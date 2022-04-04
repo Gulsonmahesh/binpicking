@@ -1,17 +1,31 @@
-<div class="header p-2">
-    <h3 class="d-inline-flex align-items-center">
-        <span>Select Robot</span>
-        <app-tooltip>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore iusto reiciendis laborum nisi porro, voluptate pariatur impedit illo cum velit rerum corrupti quos ratione ad. Animi, amet quaerat officiis molestias id nulla ad non cumque. Adipisci itaque
-            sint saepe, iusto accusantium fugiat quod doloremque. Alias, fugit. Repudiandae tempore iusto tempora.
-        </app-tooltip>
-    </h3>
-</div>
-<div class="innermaincontainer p-2">
-    <div class="robotcontainer border-1">
-        <ng-container *ngFor="let robot of robotDetails; let i = index">
-            <app-robotdetails [details]="robot"></app-robotdetails>
-        </ng-container>
+<div class="grid-container">
+    <div class="grid-header">
+        <app-header></app-header>
+    </div>
+    <div class="grid-main">
+        <div class="inner-wrapper">
+            <div class="sidebar">
+                <app-sidebar></app-sidebar>
+            </div>
+            <div class="maincontent">
+                <div class="header p-2">
+                    <h3 class="d-inline-flex align-items-center">
+                        <span>Select Robot</span>
+                        <app-tooltip>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore iusto reiciendis laborum nisi porro, voluptate pariatur impedit illo cum velit rerum corrupti quos ratione ad. Animi, amet quaerat officiis molestias id nulla ad non cumque. Adipisci itaque
+                            sint saepe, iusto accusantium fugiat quod doloremque. Alias, fugit. Repudiandae tempore iusto tempora.
+                        </app-tooltip>
+                    </h3>
+                </div>
+                <div class="innermaincontainer p-2">
+                    <div class="robotcontainer border-1">
+                        <ng-container *ngFor="let robot of robotDetails; let i = index">
+                            <app-robotdetails [details]="robot"></app-robotdetails>
+                        </ng-container>
+                    </div>
+                </div>
+                <app-mainfooter></app-mainfooter>
+            </div>
+        </div>
     </div>
 </div>
-<app-mainfooter></app-mainfooter>

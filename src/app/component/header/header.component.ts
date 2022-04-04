@@ -6,10 +6,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  back(){
-    this.router.navigate(['/projectsummary']);
-  }
   constructor( private router: Router) { }
+  
   ngOnInit(): void {
+  }
+  
+  back(){
+    this.router.navigate(['/project-details']);
   }
 }

@@ -10,6 +10,9 @@ import { GrippertcpComponent } from './component/steps/grippertcp/grippertcp.com
 import { GripperpointsComponent } from './component/steps/gripperpoints/gripperpoints.component';
 import { ProjectsummaryComponent } from './component/steps/projectsummary/projectsummary.component';
 import { LoginpageComponent} from './component/loginpage/loginpage.component';
+import { EnvironmentComponent } from './component/steps/environment/environment.component';
+import { ExecutebinComponent } from './component/steps/executebin/executebin.component';
+
 const routes: Routes = [
   { path: '', redirectTo: 'loginpage', pathMatch: 'full' },
   {path: 'loginpage', component: LoginpageComponent},
@@ -22,6 +25,8 @@ const routes: Routes = [
   {path: 'calibration', component: CalibrationComponent},
   {path: 'robot', component: RobotComponent},
   {path: 'projectsummary', component: ProjectsummaryComponent },
+  {path: 'environment', component: EnvironmentComponent},
+  {path: 'executebin', component: ExecutebinComponent},
 ];
 
 @NgModule({

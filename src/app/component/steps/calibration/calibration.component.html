@@ -1,48 +1,94 @@
-<div id="projectdetailcontainer" class="pad20">
-    <!-- <app-model *ngIf="model" (closeModelEmit) = "showModel($event)">Test;</app-model> -->
-    <h3 class="f-18 bold">Scanner Robot Calibration Module</h3>
-    <div class="col-sm-12 col-xl-12 cards background_template">
-        <div class="container-lg col-sm-12 col-xl-12 ">
-
-            <span class="col-sm-12 col-xl-12">
+<div class="grid-container">
+  <div class="grid-header">
+    <app-header></app-header>
+  </div>
+  <div class="grid-main">
+    <div class="inner-wrapper">
+      <div class="sidebar">
+        <app-sidebar></app-sidebar>
+      </div>
+      <div class="maincontent">
+        <div id="projectdetailcontainer" class="pad20">
+          <!-- <app-model *ngIf="model" (closeModelEmit) = "showModel($event)">Test;</app-model> -->
+          <h3 class="f-18 bold">Scanner Robot Calibration Module</h3>
+          <div class="col-sm-12 col-xl-12 cards background_template">
+            <div class="container-lg col-sm-12 col-xl-12">
+              <span class="col-sm-12 col-xl-12">
                 <span class="col-sm-12 col-xl-12 floatleft">
-            <form class="col-sm-12 col-xl-12 example-form mb-10 floatleft">
-                <p class="col-sm-12 col-xl-12 f-14 mb-10"> Please enter the scanner robot transformation matrix
-                <mat-icon class="icon_size example-tab-icon uploadiconss"> info
-                </mat-icon></p>
+                  <form
+                    class="col-sm-12 col-xl-12 example-form mb-10 floatleft"
+                  >
+                    <p class="col-sm-12 col-xl-12 f-14 mb-10">
+                      Please enter the scanner robot transformation matrix
+                      <mat-icon class="icon_size example-tab-icon uploadiconss">
+                        info
+                      </mat-icon>
+                    </p>
 
-                <span class="" *ngFor="let n of numSequence(4)" >
-                <span class="col-sm-12 col-xl-12 floatleft" >
-                    <span class="col-sm3 col-xl-3 floatleft mb-10">
-                <mat-form-field class=" example-full-width floatleft" appearance="fill">
-                    <input matInput placeholder="Ex. Pizza" value="-123.123.123.123">
-                </mat-form-field></span>
-            <span class="col-sm3 col-xl-3 floatleft  mb-10">
-                <mat-form-field class=" example-full-width floatleft" appearance="fill">
-                    <input matInput placeholder="Ex. Pizza" value="-123.123.123.123">
-                </mat-form-field></span>
-            <span class="col-sm3 col-xl-3 floatleft  mb-10">
-                <mat-form-field class="example-full-width floatleft" appearance="fill">
-                    <input matInput placeholder="Ex. Pizza" value="-123.123.123.123">
-                </mat-form-field></span>
-            <span class="col-sm3 col-xl-3 floatleft  mb-10">
-                <mat-form-field class=" example-full-width floatleft" appearance="fill">
-                    <input matInput placeholder="Ex. Pizza" value="-123.123.123.123">
-                </mat-form-field></span>
-            </span>
-            </span>
-            </form>
-
-            </span>
-            </span>
-
+                    <span class="" *ngFor="let n of numSequence(4)">
+                      <span class="col-sm-12 col-xl-12 floatleft">
+                        <span class="col-sm3 col-xl-3 floatleft mb-10">
+                          <mat-form-field
+                            class="example-full-width floatleft"
+                            appearance="fill"
+                          >
+                            <input
+                              matInput
+                              placeholder="Ex. Pizza"
+                              value="-123.123.123.123"
+                            /> </mat-form-field
+                        ></span>
+                        <span class="col-sm3 col-xl-3 floatleft mb-10">
+                          <mat-form-field
+                            class="example-full-width floatleft"
+                            appearance="fill"
+                          >
+                            <input
+                              matInput
+                              placeholder="Ex. Pizza"
+                              value="-123.123.123.123"
+                            /> </mat-form-field
+                        ></span>
+                        <span class="col-sm3 col-xl-3 floatleft mb-10">
+                          <mat-form-field
+                            class="example-full-width floatleft"
+                            appearance="fill"
+                          >
+                            <input
+                              matInput
+                              placeholder="Ex. Pizza"
+                              value="-123.123.123.123"
+                            /> </mat-form-field
+                        ></span>
+                        <span class="col-sm3 col-xl-3 floatleft mb-10">
+                          <mat-form-field
+                            class="example-full-width floatleft"
+                            appearance="fill"
+                          >
+                            <input
+                              matInput
+                              placeholder="Ex. Pizza"
+                              value="-123.123.123.123"
+                            /> </mat-form-field
+                        ></span>
+                      </span>
+                    </span>
+                  </form>
+                </span>
+              </span>
+            </div>
+          </div>
+          <div class="buttoncontainer mt-10 floatright">
+            <button class="calibrationbtns mr-10">Reset All</button>
+            <button class="calibrationbtns mr-10">
+              Download Transformation
+            </button>
+            <button class="calibrationbtns mr-10">
+              Upload Transformation from file
+            </button>
+          </div>
         </div>
+      </div>
     </div>
-    <div class="buttoncontainer mt-10 floatright">
-        <button class="calibrationbtns mr-10">Reset All</button>
-        <button class="calibrationbtns mr-10">Download Transformation</button>
-        <button class="calibrationbtns mr-10">Upload Transformation from file</button>
-    </div>
-
-
+  </div>
 </div>

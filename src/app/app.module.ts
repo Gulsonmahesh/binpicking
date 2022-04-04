@@ -15,10 +15,10 @@ import { ButtonComponent } from './component/common/button/button.component';
 import { ModelComponent } from './component/common/model/model.component';
 import { ProjectdetailsComponent } from './component/steps/projectdetails/projectdetails.component'
 
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatSelectModule} from '@angular/material/select';
-import {MatIconModule} from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule} from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatIconModule } from '@angular/material/icon';
 
 import { DeployComponent } from './component/steps/deploy/deploy.component';
 import { CalibrationComponent } from './component/steps/calibration/calibration.component';
@@ -33,9 +33,11 @@ import { LoginpageComponent } from './component/loginpage/loginpage.component';
 
 
 import { MatPaginatorModule } from '@angular/material/paginator';
-import {MatTableModule} from '@angular/material/table';
+import { MatTableModule } from '@angular/material/table';
 import {  TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
 import { EditorModule } from '@tinymce/tinymce-angular';
+import { EnvironmentComponent } from './component/steps/environment/environment.component';
+import { ExecutebinComponent } from './component/steps/executebin/executebin.component';
 
 const material=[
   MatFormFieldModule, MatInputModule, MatSelectModule, MatIconModule
@@ -63,7 +65,9 @@ const material=[
     GripperpointsComponent,
     GrippertcpComponent,
     ProjectsummaryComponent,
-    LoginpageComponent    
+    LoginpageComponent,
+    EnvironmentComponent,
+    ExecutebinComponent    
   ],
   imports: [
     material,
