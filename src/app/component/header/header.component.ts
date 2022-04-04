@@ -12,6 +12,6 @@ export class HeaderComponent implements OnInit {
   }
   
   back(){
-    this.router.navigate(['/project-details']);
+    this.router.navigate(['/projectsummary']);
   }
 }

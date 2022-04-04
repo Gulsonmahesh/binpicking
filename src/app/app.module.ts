@@ -30,7 +30,9 @@ import { GripperpointsComponent } from './component/steps/gripperpoints/gripperp
 import { GrippertcpComponent } from './component/steps/grippertcp/grippertcp.component';
 import { ProjectsummaryComponent } from './component/steps/projectsummary/projectsummary.component';
 import { LoginpageComponent } from './component/loginpage/loginpage.component';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatSliderModule} from '@angular/material/slider';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
@@ -40,7 +42,8 @@ import { EnvironmentComponent } from './component/steps/environment/environment.
 import { ExecutebinComponent } from './component/steps/executebin/executebin.component';
 
 const material=[
-  MatFormFieldModule, MatInputModule, MatSelectModule, MatIconModule
+  MatFormFieldModule, MatInputModule, MatSelectModule, MatIconModule,FormsModule,ReactiveFormsModule,MatSlideToggleModule,
+  MatSliderModule
 ];
 
 @NgModule({

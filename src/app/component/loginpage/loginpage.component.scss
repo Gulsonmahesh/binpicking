@@ -1,0 +1,224 @@
+// X-Small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+    .p-5r {
+        padding: 1rem;
+    }
+    .d-none-mobile {
+        display: none;
+    }
+    .bg_blue_mb {
+        background: #007ccc;
+    }
+}
+
+.rightside {
+    background: #ffffff;
+    padding: 0px 70px;
+}
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) {}
+
+.button {
+    position: relative;
+}
+
+.button--loading .button__text {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.button--loading::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: transparent;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border: 5px solid transparent;
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: button-loading-spinner 1s ease infinite;
+}
+
+@keyframes button-loading-spinner {
+    from {
+        transform: rotate(0turn);
+    }
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+img {
+    width: 20px;
+    height: 20px;
+}
+
+// login
+.leftside {
+    // background: transparent linear-gradient(347deg, #051727a2 0%, #05182b00 100%) 0% 0% no-repeat padding-box;
+    background-image: url("../../../assets/Images/iStock-1022237064.png");
+    padding: 67px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.logo_bg {
+    background: #ffffff;
+    padding: 5px 40px;
+}
+
+.signin_btn {
+    background: #35AFF8 0% 0% no-repeat padding-box;
+    border-radius: 4px;
+    letter-spacing: 0px;
+    color: #ffffff;
+    width: 106px;
+    height: 33px;
+    border: none;
+    // float: right;
+}
+
+.back_arrow {
+    // background-image: url("./assets/Images/back_arrow_2.png");
+    width: 20px;
+    height: 20px;
+}
+
+.cp {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.largescreen {
+    max-width: 1367px;
+    margin: 0px auto;
+}
+
+.content {
+    margin-left: 60px;
+    padding: 1.5rem;
+    padding-top: 7rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.d-flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.d-fl-sp-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.highcharts-credits {
+    opacity: 0;
+}
+
+.mobileShow {
+    display: none;
+}
+
+.mobileHide {
+    display: block;
+}
+
+.bothnone {
+    display: none;
+}
+
+.card {
+    border-radius: 20px;
+}
+
+.p-25 {
+    padding: 25px;
+}
+
+ ::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
+    background-color: #ddd;
+}
+
+ ::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    width: 6px;
+    background-color: #ddd;
+}
+
+ ::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+    background-color: #f8dbdd;
+}
+
+body::-webkit-scrollbar {
+    width: 8px;
+}
+
+.btn_close {
+    background: transparent;
+    border: transparent;
+}
+
+.popup_head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.header_css {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.close_icon {
+    background: transparent;
+    border: transparent;
+}
+
+.popup_scr {
+    max-height: 510px;
+    overflow: auto;
+}
+
+.content-wrapper .mat-form-field-underline {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .content {
+        margin-left: 0px;
+    }
+}
+
+@media (max-width: 992px) {
+    .mobileHide {
+        display: none;
+    }
+    .mobileShow {
+        display: block;
+    }
+}
+
+.width {
+    height: 36px !important;
+    width: 405px !important;
+}
+
+.nonebg {
+    background: transparent;
+    border: none;
+}

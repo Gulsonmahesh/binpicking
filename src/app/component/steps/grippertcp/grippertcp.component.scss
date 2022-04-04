@@ -17,12 +17,14 @@
         }
         .save {
             background: #35AFF8 0% 0% no-repeat padding-box;
-            border: 1px solid #35AFF8;    
+            border: 1px solid #35AFF8;
             color: white;
+            padding: 7px !important;
         }
         .cancel {
             background: #FFFFFF 0% 0% no-repeat padding-box;
             border: 1px solid #333333;
+            padding: 7px !important;
         }
     }
 }
