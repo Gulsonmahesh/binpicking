@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RouterService } from 'src/app/service/router.service';
 
 @Component({
   selector: 'app-robot',
@@ -7,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RobotComponent implements OnInit {
   
-  constructor() { }
+  constructor(public routeService: RouterService) { }
+  
   robotDetails? = [
     {
       robotimg: 'assets/robot.webp', manufacturename: 'Universal Robot',model: 'UR56',

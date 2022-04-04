@@ -1,4 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { RouterService } from 'src/app/service/router.service';
 
 @Component({
   selector: 'app-objects',
@@ -14,7 +15,7 @@ export class ObjectsComponent implements OnInit {
     }
   }
   
-  constructor() { }
+  constructor(public routeService: RouterService) { }
 
   ngOnInit(): void {
   }

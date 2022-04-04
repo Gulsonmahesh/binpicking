@@ -62,7 +62,12 @@
                   </span>
                   </div>
               </div>
-              <app-mainfooter></app-mainfooter>
+              <app-mainfooter
+                [showBack] = "false"
+                (movetonext) = "routeService.movetonextpage('robot')"
+                (movetoback) = "routeService.movetonextpage('project-details')"
+                submitname = "Create and Continue">
+              </app-mainfooter>
           </div>
           </div>
       </div>

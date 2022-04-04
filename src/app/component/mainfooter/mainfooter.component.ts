@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-mainfooter',
@@ -13,8 +13,10 @@ export class MainfooterComponent implements OnInit {
   @Input() showBack = true;
   @Input() submitname = 'Select and Continue';
   @Input() backname = 'Back';
+  @Output() movetonext = new EventEmitter();
+  @Output() movetoback = new EventEmitter();
 
   ngOnInit(): void {
   }
-
+  
 }

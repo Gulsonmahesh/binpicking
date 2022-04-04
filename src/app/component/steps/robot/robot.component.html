@@ -24,7 +24,10 @@
                         </ng-container>
                     </div>
                 </div>
-                <app-mainfooter></app-mainfooter>
+                <app-mainfooter
+                (movetonext) = "routeService.movetonextpage('gripper')"
+                (movetoback) = "routeService.movetonextpage('project-details')">
+              </app-mainfooter>
             </div>
         </div>
     </div>

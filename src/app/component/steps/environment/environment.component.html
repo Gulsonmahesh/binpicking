@@ -8,7 +8,13 @@
                 <app-sidebar></app-sidebar>
             </div>
             <div class="maincontent">
-                <p>environment works!</p>
+                <div id="grippercontainer" class="wrappercontainer">
+                    <h2 class="fw-bold fs-5 mb-3">Environment</h2>                    
+                    <app-mainfooter
+                        (movetonext) = "routeService.movetonextpage('calibration')"
+                        (movetoback) = "routeService.movetonextpage('grippingpoints')"
+                    ></app-mainfooter>
+                </div>
             </div>
         </div>
     </div>

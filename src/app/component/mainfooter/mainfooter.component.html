@@ -1,11 +1,11 @@
 <footer>
     <div class="buttoncontainer">
         <button class="cancel" *ngIf="showCancal">Cancel</button>
-        <button class="back" *ngIf="showBack">
+        <button class="back" *ngIf="showBack" (click) = "movetoback.emit('')">
             <img src="../../../assets/west_white_24dp.svg" alt="">
             <span class="buttontext">{{backname}}</span>
         </button>
-        <button class="submit">
+        <button class="submit" (click) = "movetonext.emit('')">
             <span class="buttontext">{{submitname}}</span>
             <img src="../../../assets/west_white_24dp.svg" alt="">
         </button>

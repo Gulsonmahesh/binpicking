@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RouterService } from 'src/app/service/router.service';
 
 @Component({
   selector: 'app-gripperpoints',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GripperpointsComponent implements OnInit {
   model = false;
-  constructor() { }
+  constructor(public routeService: RouterService) { }
 
   ngOnInit(): void {
   }

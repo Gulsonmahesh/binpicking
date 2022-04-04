@@ -21,6 +21,10 @@
                     <div class="cards">
                         <app-card (buttonSelected) = "showModel($event)"></app-card>
                     </div>
+                    <app-mainfooter
+                        (movetonext) = "routeService.movetonextpage('calibration')"
+                        (movetoback) = "routeService.movetonextpage('grippingpoints')"
+                    ></app-mainfooter>
                 </div>
             </div>
         </div>
