@@ -7,22 +7,31 @@
         font-size: 15px;
         font-weight: bold;
     }
-    .footerpanel {
-        button {
-            min-width: 70px;
-            min-height: 20px;
-            opacity: 1;
-            border-radius: 3px;
-            font-size: 11px;
+    .wrappercontainer {
+        position: relative;
+        .gripperContainer {
+            position: absolute;
+            height: 100%;
+            background-color: #333333;
+            top: 50px;
         }
-        .save {
-            background: #35AFF8 0% 0% no-repeat padding-box;
-            border: 1px solid #35AFF8;    
-            color: white;
-        }
-        .cancel {
-            background: #FFFFFF 0% 0% no-repeat padding-box;
-            border: 1px solid #333333;
+    }
+    .innermaincontainer {
+        display: grid;
+        grid-template-columns: 100%;
+        height: calc(100% - 100px);
+        overflow: auto;
+    }
+    .grippercontainer {
+        max-height: 450px;
+    }
+    .card {
+        width: 150px;
+        height: 200px;
+        padding: 10px;
+        position: relative;
+        p {
+            margin: 0;
         }
     }
 }

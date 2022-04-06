@@ -2,6 +2,7 @@ import { Component,Input, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource, MatRow } from '@angular/material/table';
+import { RouterService } from '../../../service/router.service';
 
 @Component({
   selector: 'app-projectsummary',
@@ -15,7 +16,7 @@ export class ProjectsummaryComponent implements OnInit {
   @ViewChild(MatPaginator) paginator ? : MatPaginator;
   @ViewChild(MatSort) sort ?: MatSort;
 
-  constructor() { 
+  constructor(public routerService: RouterService) { 
     
   }
  

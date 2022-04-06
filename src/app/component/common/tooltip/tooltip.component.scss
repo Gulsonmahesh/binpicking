@@ -2,7 +2,8 @@
     .tip {
         left: 10%;
         transform: translate(-50%, 50%);
-        width: 300px;
+        min-width: 100px;
+        width: auto;
         max-width: 300px;
         overflow: auto;
         height: auto;
@@ -11,6 +12,6 @@
         width: 300px;
         padding: 10px;
         position: absolute;
-
+        z-index: 100;
     }
 }
