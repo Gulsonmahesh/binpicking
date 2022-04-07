@@ -10,33 +10,37 @@
         </div>
         <div class="rightside col-xl-5 col-lg-5 col-sm-12">
 
+            <span class="col-xl-12 col-sm-12 floatleft mb-10">
+                <span class=" floatleft">
+                    <img class="logo" src="../../../assets/logo.png" alt="logo" /> 
+                </span>
+            <span class="f-18 floatleft ml-10 mt-20 bold line">Bin Picking</span>
+            <!-- <div class="appname">
+                <span class="appname-circle"></span>
+                <h1 class="appname-title">Bin Picking</h1>
+            </div> -->
+
+            </span>
+
             <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
-                <div class=" d-flex align-items-center  col-xl-12 col-sm-12 mb-35 commonstyle justify-content-end">
-                    <span class="col-xl-12 col-sm-12 floatleft f-16">Welcome back! Please login to your account.</span>
-                </div>
+
                 <div class="col-xl-12 col-sm-12 floatleft" *ngIf="signinShow">
                     <!-- After password reset -->
-
-                    <!-- <div class="" *ngIf="afterResetSuccess">
-                        <div>
-                            <span><img src="./assets/Images/reset_succes.png" /></span>
-                            <span class="font16_medium_green">Password reset successfully!</span>
-                        </div>
-                    </div> -->
-
-
-                    <div class="col-xl-12 col-sm-12 floatleft usename f-14 mb-20">
+                    <div class=" d-flex align-items-center  col-xl-12 col-sm-12 mb-30 commonstyle justify-content-end">
+                        <span class="col-xl-12 col-sm-12 floatleft f-16">Welcome back! Please login to your account.</span>
+                    </div>
+                    <div class="col-xl-12 col-sm-12 floatleft usename f-14 mb-15">
                         <span class="col-xl-12 col-sm-12 floatleft f-14 ">User Name</span>
-                        <mat-form-field appearance="outline" class="col-12 width">
-                            <input matInput>
+                        <mat-form-field appearance="outline" class="col-12  ">
+                            <input matInput class="mt-7">
                         </mat-form-field>
                     </div>
-                    <div class="col-xl-12 col-sm-12 floatleft f-14 mb-40">
+                    <div class="col-xl-12 col-sm-12 floatleft f-14 mb-35">
                         <span class="col-xl-12 col-sm-12 floatleft f-14 ">Password</span>
-                        <mat-form-field appearance="outline" class="col-12 width">
-                            <input matInput [type]="hide ? 'password' : 'text'">
+                        <mat-form-field appearance="outline" class="col-12 ">
+                            <input matInput class="mb-2" [type]="hide ? 'password' : 'text'">
                             <button class="nonebg" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-                                <mat-icon class="material-icons-outlined">
+                                <mat-icon class="material-icons-outlined eyeicon">
                                     visibility
                                     </mat-icon>
                             </button>
@@ -44,14 +48,15 @@
                     </div>
                     <span class="col-xl-12 col-sm-12 floatleft f-14 mr-20 mb-35">
                         <span class="col-xl-6 col-sm-6 floatleft f-14 ">
+                        
                 </span>
-                    <span class="col-xl-6 col-sm-6 floatleft f-14 ">
-                        <button class="signin_btn" routerLink="/project-details" >Sign in</button>
+                    <span class="col-xl-6 col-sm-6 floatright ">
+                        <button class="signin_btn f-14 " routerLink="/project-details" >Sign in</button>
 
                     </span></span>
-                    <span class="col-xl-6 col-sm-6 cp pull-right mb-3 mr-10" (click)="successOtp()">Reset
+                    <span class="col-xl-6 col-sm-6 cp pull-right mb-3 mr-10 f-14" (click)="successOtp()">Reset
                     password</span>
-                    <span class="col-xl-6 col-sm-6 cp pull-right mb-3" (click)="forgotPasswordClick()">Forgot
+                    <span class="col-xl-6 col-sm-6 cp pull-right mb-3 f-14 line" (click)="forgotPasswordClick()">Forgot
                         password</span>
 
                 </div>
@@ -65,15 +70,15 @@
 
 
                 <div class="col-xl-12 col-sm-12 floatleft f-14  usename">
-                    <span class="col-xl-12 col-sm-12 floatleft f-14 mb-20">Please enter the code</span>
-                    <mat-form-field appearance="outline" class="col-12 width mb-20">
+                    <span class="col-xl-12 col-sm-12 floatleft f-14 mb-10">Please enter the code</span>
+                    <mat-form-field appearance="outline" class="col-12  mb-20">
                         <input matInput>
                     </mat-form-field>
                 </div>
                 <div>
-                    <button class="signin_btn mb-40" routerLink="/project-details">Verify</button>
+                    <button class="signin_btn mb-40" (click)="openverify()">Verify</button>
                 </div>
-                <span class="col-xl-12 col-sm-12 floatleft f-14  mb-10 "> Having trouble? Sign in another way</span>
+                <span class="col-xl-12 col-sm-12 floatleft f-14  mb-10 "> Having trouble? <span class="colorblue">Sign in another way</span></span>
                 <span class="col-xl-12 col-sm-12 floatleft f-14 "> More information</span>
 
 
@@ -84,45 +89,71 @@
 
             <div class="col-12 p-5r" *ngIf="otpShow">
                 <label role="button" tabindex="0" aria-label="back" class="back_arrow"></label>
-                <h2>OTP Verification</h2>
 
-                <p>Please enter the OTP sent to your Email ID</p>
+                <span class="col-xl-12 col-sm-12 floatleft f-14 mb-10">Get a verification code for Reset Password</span>
 
-                <div class="col-12 input-container d-flex flex-row justify-content-center mt-2">
-                    <input type="text" class="form-control m-2 rounded text-center" maxlength="1" />
-                    <input type="text" class="form-control m-2 rounded text-center" maxlength="1" />
-                    <input type="text" class="form-control m-2 rounded text-center" maxlength="1" />
-                    <input type="text" class="form-control m-2 rounded text-center" maxlength="1" />
-                    <input type="text" class="form-control m-2 rounded text-center" maxlength="1" />
+                <div class="col-xl-12 col-sm-12 floatleft f-14 mb-20 mail">
+                    <span class="col-xl-1 col-sm-1 floatleft ">
+                    <mat-icon class="material-icons-outlined eyeicon">
+                        email
+                    </mat-icon></span>
+                    <span class="col-xl-10 col-sm-10 floatleft ">
+                        Mail XXXXXX@wipro.com
+                </span>
+                    <span class="col-xl-1 col-sm-1 floatleft">
+                    <mat-icon class="material-icons-outlined arrowicon">
+                        arrow_forward_ios
+                    </mat-icon>
+                </span>
                 </div>
-                <div>
-                    <small>Didn’t receive OTP? <a routerLink="">Resend</a> </small>
+                <div class="col-xl-12 col-sm-12 floatleft f-14 mb-20 mail">
+                    <span class="col-xl-1 col-sm-1 floatleft ">
+                    <mat-icon class="material-icons-outlined eyeicon">
+                        chat_bubble
+                    </mat-icon></span>
+                    <span class="col-xl-10 col-sm-10 floatleft ">
+                        Text +XX XXXXXXXX12
+                </span>
+                    <span class="col-xl-1 col-sm-1 floatleft">
+                    <mat-icon class="material-icons-outlined arrowicon">
+                        arrow_forward_ios
+                    </mat-icon>
+                </span>
                 </div>
+                <div class="col-xl-12 col-sm-12 floatleft usename f-14 mb-15">
+                    <span class="col-xl-12 col-sm-12 floatleft f-14 ">Enter verification code</span>
+                    <mat-form-field appearance="outline" class="col-12  ">
+                        <input matInput class="mt-7">
+                    </mat-form-field>
+                </div>
+
+
+
                 <div>
                     <!-- <button class="signin_btn" (click)="nextOtp()">Confirm</button> -->
                     <button class="button signin_btn" [disabled]="" isLoading>
 
                         <span class="button__text" *ngIf="isLoadingfal" (click)="loadingData()">Verify</span>
-                        <span class="button--loading" *ngIf="isLoading"></span>
-                        <span class="button__text" *ngIf="isLoadingTrue" (click)="successOtp()">Verified</span>
+                        <!-- <span class="button--loading" *ngIf="isLoading"></span> -->
+                        <span class="button__text" *ngIf="isLoadingTrue" (click)="verifiedotp()">Verified</span>
                     </button>
                 </div>
-                <small>Incorrect OTP</small>
+                <!-- <small>Incorrect OTP</small> -->
             </div>
 
             <!-- Reset password start -->
 
             <div class="col-12 p-5r" *ngIf="resetShow">
-                <span class="col-xl-12 col-sm-12 floatleft f-16 bold mb-40">Reset Password</span>
+                <span class="col-xl-12 col-sm-12 floatleft f-16 bold mb-30">Reset Password</span>
 
 
                 <div class="col-12">
                     <span class="col-xl-12 col-sm-12 floatleft f-14 ">Enter New Password</span>
-                    <mat-form-field appearance="outline" class="col-xl-12 col-sm-12 floatleft mb-25">
+                    <mat-form-field appearance="outline" class="col-xl-12 col-sm-12 floatleft mb-20">
                         <!-- <mat-label>New Password</mat-label> -->
                         <input matInput [type]="hide ? 'password' : 'text'">
                         <button class="nonebg" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-                            <mat-icon class="material-icons-outlined">
+                            <mat-icon class="material-icons-outlined eyeicon">
                                 visibility
                                 </mat-icon>
                         </button>
@@ -134,7 +165,7 @@
                         <!-- <mat-label>Re-enter New Password</mat-label> -->
                         <input matInput [type]="hide ? 'password' : 'text'">
                         <button class="nonebg" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-                            <mat-icon class="material-icons-outlined">
+                            <mat-icon class="material-icons-outlined eyeicon">
                                 visibility
                                 </mat-icon>
                         </button>

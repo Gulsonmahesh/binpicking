@@ -21,6 +21,7 @@ export class LoginpageComponent implements OnInit {
 
     })
   }
+
   forgotPasswordClick() {
     this.forgotShow = true;
     this.otpShow = false;
@@ -38,11 +39,19 @@ export class LoginpageComponent implements OnInit {
     this.signinShow = false;
     // this.route.navigate(['/project-details']);
   }
+  openverify(){
+    this.otpShow=false;
+    this.resetShow= true;
+  }
   successOtp() {
-    this.otpShow = false;
+    this.otpShow = true;
     this.forgotShow = false;
-    this.resetShow = true;
+    this.resetShow = false;
     this.signinShow = false;
+  }
+  verifiedotp(){
+    this.otpShow= false;
+    this.resetShow= true;
   }
 
   isLoadingfal: boolean = true;
