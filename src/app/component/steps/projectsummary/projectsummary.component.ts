@@ -10,7 +10,7 @@ import { RouterService } from '../../../service/router.service';
   styleUrls: ['./projectsummary.component.scss']
 })
 export class ProjectsummaryComponent implements OnInit {
-  displayedColumns = ['id', 'name', 'progress', 'status'];
+  displayedColumns = ['id', 'name', 'progress', 'status', 'action'];
   dataSource: any = null;
 
   @ViewChild(MatPaginator) paginator ? : MatPaginator;
@@ -47,12 +47,15 @@ function createNewUser(id: number): UserData {
   const name =
       NAMES[Math.round(Math.random() * (NAMES.length - 1))] + ' ' +
       NAMES[Math.round(Math.random() * (NAMES.length - 1))].charAt(0) + '.';
+ 
+
 
   return {
     id: id.toString(),
     name: name,
     progress: PROGRESS[Math.round(Math.random() * (PROGRESS.length - 1))],
-    status: STATUS[Math.round(Math.random() * (STATUS.length - 1))]
+    status: STATUS[Math.round(Math.random() * (STATUS.length - 1))],
+    action: ACTION[Math.round(Math.random() * (ACTION.length - 1))],
   };
 }
 
@@ -64,11 +67,12 @@ const NAMES = ['Project robotics calibrations with one gripper 1', 'Project robo
   'Project robotics calibrations with one gripper 1', 'Project robotics calibrations with one gripper 1', 'Project robotics calibrations with one gripper 1', 'Project robotics calibrations with one gripper 1', 'Project robotics calibrations with one gripper 1', 'Project robotics calibrations with one gripper 1', 'Project robotics calibrations with one gripper 1'];
 const PROGRESS = ['Ready for Deployment', 'Configuration Incomplete', 'Configuration Incomplete', 'Configuration Incomplete', 'Configuration Incomplete', 'Configuration Incomplete', 'Configuration Incomplete',
   'Configuration Incomplete', 'Configuration Incomplete', 'Configuration Incomplete', 'Configuration Incomplete', 'Configuration Incomplete', 'Configuration Incomplete', 'Configuration Incomplete', 'Configuration Incomplete'];
-
+const ACTION = ['Deploy'];
 export interface UserData {
   id: string;
   name: string;
   progress: string;
   status: string;
+  action: string;
 }
 

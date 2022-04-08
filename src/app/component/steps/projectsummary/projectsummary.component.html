@@ -15,16 +15,37 @@
                             <app-tooltip>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga nemo, culpa nostrum asperiores animi, sed dolorem repellendus suscipit temporibus debitis optio nobis vero veritatis dolorum quam commodi reprehenderit officiis
                                 corrupti.
                             </app-tooltip>
-                        </p>
-                        <div class="d-flex justify-content-between align-items-center mb-10">
-                            <form class="example-form mb-10">
-                                <mat-form-field class="example-full-width" appearance="fill">
-                                    <input matInput placeholder="Ex. Pizza" value="Sushi">
-                                </mat-form-field>
-                            </form>
-                            <button class="calibrationbtns " (click)="routerService.movetonextpage('project-details')">Create New Project</button>
-                        </div>
-                        <!-- <div class="example-header">
+
+                            <div class="d-flex justify-content-between align-items-center mb-10">
+                                <!-- <form class="example-form mb-10 searchfield">
+                                    <mat-form-field class="example-full-width searchfield" appearance="fill" class="p-0">
+                                        <input matInput>
+                                        <mat-icon class="material-icons-outlined searchicon">
+                                            search
+                                        </mat-icon>
+
+                                    </mat-form-field>
+                                    
+                                </form> -->
+
+
+                                <form class="example-form mb-10">
+                                    <mat-form-field class="example-full-width" appearance="fill">
+                                        <!-- <mat-label>Favorite food</mat-label> -->
+
+                                        <input matInput placeholder="Ex. Pizza" value="Sushi">
+                                        <mat-icon class="material-icons-outlined searchicon">
+                                            search
+                                        </mat-icon>
+                                    </mat-form-field>
+                                </form>
+                                <button class="calibrationbtns " (click)="routerService.movetonextpage('project-details')">
+                                    <mat-icon class="material-icons-outlined addicon f-16">
+                                        add_circle
+                                    </mat-icon>
+                                   <span class="mt-10"> Create New Project</span></button>
+                            </div>
+                            <!-- <div class="example-header">
                             <mat-form-field>
                                 <input matInput (keyup)="applyFilter($event)" placeholder="Filter">
                             </mat-form-field>
@@ -32,7 +53,7 @@
                     </div>
                     <div class="cards background_template">
 
-                        <div class="example-container mat-elevation-z8">
+                        <div class="example-container mat-elevation-z8 mb-15">
                             <mat-table [dataSource]="dataSource" matSort>
 
                                 <!-- Project ID Column -->

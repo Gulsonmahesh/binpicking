@@ -8,7 +8,7 @@
     }
     .example-full-width {
         border: 1px solid gray;
-        padding: 5px;
+        // padding: 5px;
         font-size: 14px;
         width: 236px;
         // height: 34px;
@@ -25,7 +25,7 @@
     }
     .calibrationbtns {
         background: #35AFF8 0% 0% no-repeat padding-box;
-        padding: 7px 24px;
+        padding: 0px 10px;
         font-size: 14px;
         border: none;
         color: #ffffff;
@@ -33,8 +33,8 @@
         border: 1px solid #35AFF8;
         float: right;
         &:hover {
-            background: #ffffff 0% 0% no-repeat padding-box;
-            color: #1D97E0;
+            background: #096ca5 0% 0% no-repeat padding-box;
+            color: #FFFFFF;
         }
     }
     .example-container {
@@ -75,4 +75,10 @@
     background: #D9EFF9 !important;
     padding: 0px !important;
     border-bottom-width: 0px !important;
+}
+
+.searchicon {
+    position: relative;
+    margin-top: -10px;
+    font-size: 18px;
 }
