@@ -9,11 +9,13 @@
             </div>
             <div class="maincontent">
                 <div id="grippercontainer" class="wrappercontainer">
-                    <h2 class="fw-bold fs-5 mb-3">Environment</h2>                    
-                    <app-mainfooter
-                        (movetonext) = "routeService.movetonextpage('calibration')"
-                        (movetoback) = "routeService.movetonextpage('grippingpoints')"
-                    ></app-mainfooter>
+                    <h2 class="bold f-18">Upload CAD model of the Enviroment and Bin</h2>
+
+
+
+
+
+                    <app-mainfooter (movetonext)="routeService.movetonextpage('calibration')" (movetoback)="routeService.movetonextpage('grippingpoints')"></app-mainfooter>
                 </div>
             </div>
         </div>

@@ -13,7 +13,7 @@
 
 .rightside {
     background: #ffffff;
-    padding: 0px 90px;
+    padding: 0px 0px;
 }
 
 // Small devices (landscape phones, less than 768px)
@@ -62,12 +62,11 @@ img {
 // login
 .leftside {
     // background: transparent linear-gradient(347deg, #051727a2 0%, #05182b00 100%) 0% 0% no-repeat padding-box;
-    background-image: url("../../../assets/Images/iStock-1022237064.png");
-    padding: 67px;
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
+    background-image: url("../../../assets/Images/bg-md.jpg");
+    width: 100%;
     flex-direction: column;
+    background-repeat: no-repeat;
+    height: 700px;
 }
 
 .logo_bg {
@@ -287,4 +286,8 @@ body::-webkit-scrollbar {
     color: #666666;
     float: right;
     text-align: right;
+}
+
+.pad {
+    padding: 30px 70px;
 }

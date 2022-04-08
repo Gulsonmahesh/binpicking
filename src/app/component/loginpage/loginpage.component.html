@@ -1,25 +1,16 @@
 <div class="commonstyle box-form h-100">
-    <div class="d-flex h-100 row m-0">
-        <div class="leftside col-xl-7 col-lg-7 col-sm-12 ">
-            <div>
-                <p class="font28_white_bold">Bin Picking is a robot vision solution that guides your robot to pick and place a wide range of products for various service
-                </p>
-            </div>
-            <div>
+    <div class="col-xl-12 col-lg-12 col-sm-12 floatleft">
+        <div class=" col-xl-8 col-lg-8 col-sm-12 floatleft">
+            <div class="col-xl-12 col-lg-12 col-sm-12 floatleft">
+                <div class="col-xl-12 col-lg-12 col-sm-12 floatleft leftside"></div>
             </div>
         </div>
-        <div class="rightside col-xl-5 col-lg-5 col-sm-12">
-
-            <span class="col-xl-12 col-sm-12 floatleft mb-10">
+        <div class=" col-xl-4 col-lg-4 col-sm-12 floatleft pad">
+            <span class="rightside col-xl-12 col-sm-12 floatleft mb-10">
                 <span class=" floatleft">
                     <img class="logo" src="../../../assets/logo.png" alt="logo" /> 
                 </span>
             <span class="f-18 floatleft ml-10 mt-20 bold line">Bin Picking</span>
-            <!-- <div class="appname">
-                <span class="appname-circle"></span>
-                <h1 class="appname-title">Bin Picking</h1>
-            </div> -->
-
             </span>
 
             <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
@@ -51,7 +42,7 @@
                         
                 </span>
                     <span class="col-xl-6 col-sm-6 floatright ">
-                        <button class="signin_btn f-14 " routerLink="/project-details" >Sign in</button>
+                        <button class="signin_btn f-14 " routerLink="/projectsummary" >Sign in</button>
 
                     </span></span>
                     <span class="col-xl-6 col-sm-6 cp pull-right mb-3 mr-10 f-14" (click)="successOtp()">Reset

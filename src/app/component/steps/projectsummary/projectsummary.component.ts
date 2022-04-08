@@ -10,7 +10,7 @@ import { RouterService } from '../../../service/router.service';
   styleUrls: ['./projectsummary.component.scss']
 })
 export class ProjectsummaryComponent implements OnInit {
-  displayedColumns = ['id', 'name', 'progress', 'color'];
+  displayedColumns = ['id', 'name', 'progress', 'status'];
   dataSource: any = null;
 
   @ViewChild(MatPaginator) paginator ? : MatPaginator;
@@ -51,26 +51,24 @@ function createNewUser(id: number): UserData {
   return {
     id: id.toString(),
     name: name,
-    progress: Math.round(Math.random() * 100).toString(),
-    color: COLORS[Math.round(Math.random() * (COLORS.length - 1))]
+    progress: PROGRESS[Math.round(Math.random() * (PROGRESS.length - 1))],
+    status: STATUS[Math.round(Math.random() * (STATUS.length - 1))]
   };
 }
 
 /** Constants used to fill up our data base. */
-const COLORS = ['maroon', 'red', 'orange', 'yellow', 'olive', 'green', 'purple',
-  'fuchsia', 'lime', 'teal', 'aqua', 'blue', 'navy', 'black', 'gray'];
-const NAMES = ['Maia', 'Asher', 'Olivia', 'Atticus', 'Amelia', 'Jack',
-  'Charlotte', 'Theodore', 'Isla', 'Oliver', 'Isabella', 'Jasper',
-  'Cora', 'Levi', 'Violet', 'Arthur', 'Mia', 'Thomas', 'Elizabeth'];
+const STATUS = ['Ready for Deployment', 'Configuration Incomplete', 'Configuration Incomplete', 'Configuration Incomplete', 'Configuration Incomplete', 'Configuration Incomplete', 'Configuration Incomplete',
+  'Configuration Incomplete', 'Configuration Incomplete', 'Configuration Incomplete', 'Configuration Incomplete', 'Configuration Incomplete', 'Configuration Incomplete', 'Configuration Incomplete', 'Configuration Incomplete'];
+const NAMES = ['Project robotics calibrations with one gripper 1', 'Project robotics calibrations with one gripper 1', 'Project robotics calibrations with one gripper 1', 'Project robotics calibrations with one gripper 1', 'Project robotics calibrations with one gripper 1', 'Project robotics calibrations with one gripper 1',
+  'Project robotics calibrations with one gripper 1', 'Project robotics calibrations with one gripper 1', 'Project robotics calibrations with one gripper 1', 'Project robotics calibrations with one gripper 1', 'Project robotics calibrations with one gripper 1', 'Project robotics calibrations with one gripper 1',
+  'Project robotics calibrations with one gripper 1', 'Project robotics calibrations with one gripper 1', 'Project robotics calibrations with one gripper 1', 'Project robotics calibrations with one gripper 1', 'Project robotics calibrations with one gripper 1', 'Project robotics calibrations with one gripper 1', 'Project robotics calibrations with one gripper 1'];
+const PROGRESS = ['Ready for Deployment', 'Configuration Incomplete', 'Configuration Incomplete', 'Configuration Incomplete', 'Configuration Incomplete', 'Configuration Incomplete', 'Configuration Incomplete',
+  'Configuration Incomplete', 'Configuration Incomplete', 'Configuration Incomplete', 'Configuration Incomplete', 'Configuration Incomplete', 'Configuration Incomplete', 'Configuration Incomplete', 'Configuration Incomplete'];
 
 export interface UserData {
   id: string;
   name: string;
   progress: string;
-  color: string;
+  status: string;
 }
 
-
-/**  Copyright 2018 Google Inc. All Rights Reserved.
-    Use of this source code is governed by an MIT-style license that
-    can be found in the LICENSE file at http://angular.io/license */
