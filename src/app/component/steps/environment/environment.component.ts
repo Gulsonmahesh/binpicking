@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterService } from 'src/app/service/router.service';
-
 @Component({
   selector: 'app-environment',
   templateUrl: './environment.component.html',
@@ -8,7 +7,11 @@ import { RouterService } from 'src/app/service/router.service';
 })
 export class EnvironmentComponent implements OnInit {
 
+ 
   constructor(public routeService: RouterService) { }
+
+
+
 
   ngOnInit(): void {
   }

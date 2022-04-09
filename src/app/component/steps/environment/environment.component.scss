@@ -2,6 +2,7 @@
     border: 1px dashed gray;
     padding: 30px;
     background: white !important;
+    height: 110px;
 }
 
 .centeralign {
@@ -10,4 +11,11 @@
     right: 0;
     display: flex;
     margin: 0 auto;
+}
+
+.uploadbtn {
+    position: relative !important;
+    left: 183px !important;
+    bottom: 29px !important;
+    opacity: 0 !important;
 }

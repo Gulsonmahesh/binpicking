@@ -14,6 +14,8 @@
             height: 100%;
             background-color: #333333;
             top: 50px;
+            float: left;
+            width: 100%;
         }
     }
     .innermaincontainer {
@@ -26,12 +28,35 @@
         max-height: 450px;
     }
     .card {
-        width: 150px;
-        height: 200px;
-        padding: 10px;
-        position: relative;
+        width: 261px;
+        height: 270px;
+        background: #FFFFFF 0% 0% no-repeat padding-box;
+        border: 2px solid #E3E3E3;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 10px 20px 10px;
+        margin: 0px 11px;
         p {
             margin: 0;
         }
     }
+    .margn {
+        padding: 0px 15px !important;
+    }
+    .brdr {
+        border-bottom: 1px solid #80808059;
+        width: 167px !important;
+        height: 180px !important;
+    }
+}
+
+.widthbtm {
+    width: 100% !important;
+    padding: 0px 0px 0px 0px !important;
+}
+
+input[name="selected"] {
+    accent-color: green;
 }

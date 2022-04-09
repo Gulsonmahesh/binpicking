@@ -42,6 +42,7 @@ export class LoginpageComponent implements OnInit {
   openverify(){
     this.otpShow=false;
     this.resetShow= true;
+    this.forgotShow=false;
   }
   successOtp() {
     this.otpShow = true;

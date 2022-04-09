@@ -2,13 +2,12 @@
     * {
         font-size: 11px;
     }
-    .header{
+    .header {
         text-align: left;
         vertical-align: middle;
         position: relative;
         min-height: 40px;
-
-        h3 span{
+        h3 span {
             font-size: 15px;
             font-weight: bold;
         }
@@ -32,5 +31,6 @@
         align-items: center;
         justify-content: flex-start;
         gap: 5px;
+        max-height: 490px;
     }
 }
