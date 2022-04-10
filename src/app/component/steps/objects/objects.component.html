@@ -8,8 +8,8 @@
                 <app-sidebar></app-sidebar>
             </div>
             <div class="maincontent">
-                <div id="objectcontainer" class="wrappercontainer">
-                    <app-model headertitle="Add New Object" *ngIf="model" (closeModelEmit) = "showModel($event)">
+                <div id="objectcontainer" class="wrappercontainer p-20">
+                    <app-model headertitle="Add New Object" *ngIf="model" (closeModelEmit)="showModel($event)">
                         <div id="newobjectform">
                             <label for="objectname">Object Name <sup>*</sup></label>
                             <input type="text" id="objectname" />
@@ -26,13 +26,11 @@
                             </div>
                         </div>
                     </app-model>
-                    <h3>Picked Object</h3>
+                    <h3 class="bold mb-20 f-18">Picked Object</h3>
                     <div class="cards">
-                        <app-card (buttonSelected) = "showModel($event)"></app-card>
+                        <app-card (buttonSelected)="showModel($event)"></app-card>
                     </div>
-                    <app-mainfooter
-                        (movetonext) = "routeService.movetonextpage('grippingpoints')"
-                        (movetoback) = "routeService.movetonextpage('grippertcp')">    
+                    <app-mainfooter (movetonext)="routeService.movetonextpage('grippingpoints')" (movetoback)="routeService.movetonextpage('grippertcp')">
                     </app-mainfooter>
                 </div>
             </div>

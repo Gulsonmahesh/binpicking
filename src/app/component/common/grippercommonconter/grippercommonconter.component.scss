@@ -2,23 +2,21 @@
     .gripper {
         display: grid;
         grid-template-columns: 200px auto;
-        height: 70vh;
-        gap: 10px;        
-
-        .position, .viewer {
+        height: 78vh;
+        gap: 10px;
+        .position,
+        .viewer {
             border: 1px solid #ECECED;
             border-radius: 10px;
             min-width: 100%;
             overflow-y: auto;
             overflow-x: hidden;
             padding: 10px;
-
             h3 {
                 font-size: 13px;
                 font-weight: bold;
             }
         }
-
         .viewer {
             background: #FCFAF8 0% 0% no-repeat padding-box;
             display: flex;
@@ -30,7 +28,6 @@
         }
         .position {
             font-size: 11px;
-
             .form-check-input[type=checkbox] {
                 border-radius: 0;
             }
@@ -53,7 +50,7 @@
             input[type='text'] {
                 height: 20px;
                 border-radius: 0px;
-                border-color: #333333;         
+                border-color: #333333;
             }
             input[type='range'] {
                 height: 3px;
