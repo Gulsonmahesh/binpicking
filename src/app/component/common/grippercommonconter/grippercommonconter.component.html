@@ -42,30 +42,32 @@
                 </div>
             </div>
         </div>
-        <div class="form-check mb-2">
-            <input type="checkbox" class="form-check-input" id="enablerotation">
-            <label class="form-check-label" for="enablerotation">Enable rotation invarience</label>
+        <div class="form-check mb-2 p-0">
+            <input (click)="toggleShow()" type="checkbox" class="pt-10" />
+            <label class="form-check-label pl-10" for="enablerotation">Enable rotation invarience</label>
         </div>
-        <div class="mb-2 m-0 fw-bold">
-            Rotation invarience around axis
-        </div>
-        <div class="d-flex align-content-center justify-content-between">
-            <input class="mt-0" type="radio" name="axis" value="" aria-label="Radio button for following text input">X-axis
-            <input class="mt-0" type="radio" name="axis" value="" aria-label="Radio button for following text input">Y-axis
-            <input class="mt-0" type="radio" name="axis" value="" aria-label="Radio button for following text input">X-axis
-        </div>
-        <div class="rotationcontainer my-2">
-            <div class="mb-1">
-                <label for="xrotate" class="form-label">Rotation lower limit(deg)</label>
-                <input type="text" class="form-control" id="xrotate" placeholder="-">
+        <div class="" *ngIf="isShown">
+            <div class="mb-2 m-0 fw-bold">
+                Rotation invarience around axis
             </div>
-            <div class="mb-1">
-                <label for="yrotate" class="form-label">Rotation upper limit(deg)</label>
-                <input type="text" class="form-control" id="yrotate" placeholder="-">
+            <div class="d-flex align-content-center justify-content-between">
+                <input class="mt-0" type="radio" name="axis" value="" aria-label="Radio button for following text input">X-axis
+                <input class="mt-0" type="radio" name="axis" value="" aria-label="Radio button for following text input">Y-axis
+                <input class="mt-0" type="radio" name="axis" value="" aria-label="Radio button for following text input">X-axis
             </div>
-            <div class="mb-1">
-                <label for="zrotate" class="form-label">Rotation number of stages</label>
-                <input type="text" class="form-control" id="zrotate" placeholder="5">
+            <div class="rotationcontainer my-2">
+                <div class="mb-1">
+                    <label for="xrotate" class="form-label">Rotation lower limit(deg)</label>
+                    <input type="text" class="form-control" id="xrotate" placeholder="-">
+                </div>
+                <div class="mb-1">
+                    <label for="yrotate" class="form-label">Rotation upper limit(deg)</label>
+                    <input type="text" class="form-control" id="yrotate" placeholder="-">
+                </div>
+                <div class="mb-1">
+                    <label for="zrotate" class="form-label">Rotation number of stages</label>
+                    <input type="text" class="form-control" id="zrotate" placeholder="5">
+                </div>
             </div>
         </div>
     </div>

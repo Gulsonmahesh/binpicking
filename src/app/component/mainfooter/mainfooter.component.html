@@ -1,14 +1,14 @@
 <footer>
-    <div class="buttoncontainer">
-        <button class="cancel f-14 bold " *ngIf="showCancal">Cancel</button>
-        <button class="back f-14 bols" *ngIf="showBack" (click)="movetoback.emit('')">
+    <div class="buttoncontainer pr-30">
+        <button class="cancel f-14  mr-15" *ngIf="showCancal">Cancel</button>
+        <button class="back f-14 bols mr-15" *ngIf="showBack" (click)="movetoback.emit('')">
             <!-- <img src="../../../assets/west_white_24dp.svg" alt=""> -->
             <mat-icon class="icon_size example-tab-icon uploadiconss"> arrow_back
             </mat-icon>
-            <span class="buttontext bold f-14">{{backname}}</span>
+            <span class="buttontext  f-14">{{backname}}</span>
         </button>
-        <button class="submit bold f-14" (click)="movetonext.emit('')">
-            <span class="buttontext f-14 bold">{{submitname}}</span>
+        <button class="submit  f-14 mr-15" (click)="movetonext.emit('')">
+            <span class="buttontext f-14 ">{{submitname}}</span>
             <img src="../../../assets/west_white_24dp.svg" alt="">
         </button>
     </div>

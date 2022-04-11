@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { RouterService } from 'src/app/service/router.service';
 @Component({
   selector: 'app-grippertcp',
   templateUrl: './grippertcp.component.html',
@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GrippertcpComponent implements OnInit {
   
-  constructor() { }
+  constructor(public routeService: RouterService) { }
 
   ngOnInit(): void {
   }

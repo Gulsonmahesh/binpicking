@@ -9,9 +9,14 @@ import { RouterService } from '../../../service/router.service';
 })
 export class ProjectdetailsComponent implements OnInit {
 
-  constructor(public routeService: RouterService) { }
+  constructor(public routeService: RouterService) {
+
+    
+   }
 
   ngOnInit(): void {
+
+    
   }
 
 }

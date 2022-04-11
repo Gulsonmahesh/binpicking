@@ -20,9 +20,9 @@
                   >
                     <p class="col-sm-12 col-xl-12 f-14 mb-10">
                       Please enter the scanner robot transformation matrix
-                      <mat-icon class="icon_size example-tab-icon uploadiconss">
-                        info
-                      </mat-icon>
+                      <app-tooltip>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    </app-tooltip>
                     </p>
 
                     <span class="" *ngFor="let n of numSequence(4)">
@@ -74,20 +74,22 @@
                             </span>
                             </span>
                             </form>
+                            <div class="buttoncontainer mt-10 floatright">
+                                <button class="calibrationbtns mr-10">Reset All</button>
+                                <button class="calibrationbtns mr-10">
+                    Download Transformation
+                  </button>
+                                <button class="calibrationbtns mr-10">
+                    Upload Transformation from file
+                  </button>
+                            </div>
                             </span>
                             </span>
                         </div>
                     </div>
-                    <div class="buttoncontainer mt-10 floatright">
-                        <button class="calibrationbtns mr-10">Reset All</button>
-                        <button class="calibrationbtns mr-10">
-              Download Transformation
-            </button>
-                        <button class="calibrationbtns mr-10">
-              Upload Transformation from file
-            </button>
-                    </div>
+
                 </div>
+                <app-mainfooter (movetonext)="routeService.movetonextpage('deploy')" (movetoback)="routeService.movetonextpage('environment')" submitname="Execute Bin Picking"></app-mainfooter>
             </div>
         </div>
     </div>

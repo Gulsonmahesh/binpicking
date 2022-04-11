@@ -16,13 +16,23 @@
                             <label for="description">Description</label>
                             <input type="text" id="description" />
                             <label for="uploadobject" class="fw-bold mb-3">Upload Object Mess</label>
+                            <label for="description" class="col-12 col-sm-12">  Only .stl file format accept</label>
+
                             <div id="drop_zone" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);">
                                 <p class="m-0 mb-1">Drag one or more files to this Drop Zone ...</p>
-                                <a href="#">Click here to upload</a>
+                                <!-- <a href="#">Click here to upload</a> -->
+                                <label class="image-upload-container btn btn-bwm">
+                                    <span class="uploadbtn">  
+                                        <!-- <label class=""> Select Image</label> -->
+                                <input Input type="file" accept="image/*">
+
+                                </span>
+
+                                </label>
                             </div>
                             <div class="modelfooter">
                                 <button (click)="model=false">Cancel</button>
-                                <button class="mx-4">Save</button>
+                                <button (click)="model=false" class="mx-4">Save</button>
                             </div>
                         </div>
                     </app-model>
@@ -30,7 +40,7 @@
                     <div class="cards">
                         <app-card (buttonSelected)="showModel($event)"></app-card>
                     </div>
-                    <app-mainfooter (movetonext)="routeService.movetonextpage('grippingpoints')" (movetoback)="routeService.movetonextpage('grippertcp')">
+                    <app-mainfooter (movetonext)="routeService.movetonextpage('grippingpoints')" (movetoback)="routeService.movetonextpage('grippertcp')" submitname="Submit and Continue">
                     </app-mainfooter>
                 </div>
             </div>

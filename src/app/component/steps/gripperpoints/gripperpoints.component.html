@@ -9,22 +9,18 @@
             </div>
             <div class="maincontent">
                 <div id="grippercontainer" class="wrappercontainer">
-                    <app-model *ngIf="model" (closeModelEmit) = "showModel($event)" 
-                    headertitle ='Configure Grasp Poses - Object 1' customclass="gripperpoints">
-                    <app-grippercommonconter></app-grippercommonconter>
-                    <div class="d-flex align-content-center justify-content-end mt-2 footerpanel">
-                        <button class="cancel border-1 p-0" (click)="model = false">Cancel</button>
-                        <button class="save mx-3 border-0 p-0">Save</button>
-                    </div>
+                    <app-model *ngIf="model" (closeModelEmit)="showModel($event)" headertitle='Configure Grasp Poses - Object 1' customclass="gripperpoints">
+                        <app-grippercommonconter></app-grippercommonconter>
+                        <div class="d-flex align-content-center justify-content-end mt-2 footerpanel">
+                            <button class="cancel border-1 p-0" (click)="model = false">Cancel</button>
+                            <button class="save mx-3 border-0 p-0" (click)="model = false">Save</button>
+                        </div>
                     </app-model>
-                    <h3 class="my-1">Poses</h3>
+                    <h3 class="my-1 f-18">Poses</h3>
                     <div class="cards">
-                        <app-card (buttonSelected) = "showModel($event)"></app-card>
+                        <app-card (buttonSelected)="showModel($event)"></app-card>
                     </div>
-                    <app-mainfooter
-                        (movetonext) = "routeService.movetonextpage('calibration')"
-                        (movetoback) = "routeService.movetonextpage('grippingpoints')"
-                    ></app-mainfooter>
+                    <app-mainfooter (movetonext)="routeService.movetonextpage('environment')" (movetoback)="routeService.movetonextpage('object')" submitname="Submit and Continue"></app-mainfooter>
                 </div>
             </div>
         </div>

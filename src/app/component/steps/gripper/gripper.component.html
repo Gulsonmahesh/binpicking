@@ -8,36 +8,39 @@
                 <app-sidebar></app-sidebar>
             </div>
             <div class="maincontent">
-                <div class="pb-25 pl-15 pt-20">
+                <div class="pb-20 pl-15 pt-20">
                     <h3 class="d-inline-flex align-items-center ">
-                        <span class="f-16 bold">Select Robot</span>
+                        <span class="f-16 bold">Select Gripper</span>
                         <app-tooltip>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore iusto reiciendis laborum nisi porro, voluptate pariatur impedit illo cum velit rerum corrupti quos ratione ad. Animi, amet quaerat officiis molestias id nulla ad non cumque. Adipisci itaque
-                            sint saepe, iusto accusantium fugiat quod doloremque. Alias, fugit. Repudiandae tempore iusto tempora.
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                         </app-tooltip>
                     </h3>
                 </div>
                 <div class="innermaincontainer ">
-                    <div class="border-1">
+                    <div class="border-1 brdrheight">
                         <div class=" d-flex align-items-center flex-wrap gap-1 grippercontainer widthbtm">
                             <ng-container *ngFor="let gripper of gripperDetails; let i = index">
                                 <div class="card">
                                     <img src="{{gripper.image}}" class="brdr" alt="gripper" />
 
                                     <div class="wid100 d-flex align-items-center justify-content-between floatleft">
-                                        <span class="col-12 col-sm-12 col-xl-12 bold f-14 pt-20">
+                                        <span class="col-12 col-sm-12 col-xl-12 bold f-14 pt-20 bordertop">
                                         <span class="col-11 col-sm-11 col-xl-11 floatleft">{{gripper.name}}</span>
                                         <span class="col-1 col-sm-1 col-xl-1 floatright">
-                                        <input type="radio" name="selected" id="" checked="{{gripper.selected}}" />
+                                        <input type="radio" name="selected" id="" class="radiobtn" checked="{{gripper.selected}}" />
                                         </span>
                                         </span>
                                     </div>
                                 </div>
                             </ng-container>
+                            <button class="card" (click)="openModal()">
+                                    <div class="circle">+</div>
+                                    <span class="cardname">Add New Gripper</span>
+                                </button>
                         </div>
                     </div>
                 </div>
-                <app-mainfooter (movetonext)="routeService.movetonextpage('grippertcp')" (movetoback)="routeService.movetonextpage('robot')" submitname="Save">
+                <app-mainfooter (movetonext)="routeService.movetonextpage('grippertcp')" (movetoback)="routeService.movetonextpage('robot')" submitname="Select and Continue">
                 </app-mainfooter>
             </div>
         </div>

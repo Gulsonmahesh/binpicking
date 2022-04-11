@@ -8,7 +8,7 @@
                 <app-sidebar></app-sidebar>
             </div>
             <div class="maincontent">
-                <div class="pb-25 pl-25 pt-20 ">
+                <div class="pb-20 pl-25 pt-20 ">
                     <h3 class="d-inline-flex align-items-center">
                         <span class="f-16 bold">Select Robot</span>
                         <app-tooltip>
@@ -18,7 +18,7 @@
                     </h3>
                 </div>
                 <div class="innermaincontainer pl-20">
-                    <div class="robotcontainer border-1 pb-20 pr-10 pl-10">
+                    <div class="robotcontainer border-1 pb-20 ">
                         <ng-container *ngFor="let robot of robotDetails; let i = index">
                             <app-robotdetails [details]="robot" class="pr-10"></app-robotdetails>
                         </ng-container>

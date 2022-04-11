@@ -7,8 +7,13 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class GrippercommonconterComponent implements OnInit {
   @Input() model = false;
+  isShown: boolean = false ; 
   constructor() { }
+  toggleShow() {
 
+    this.isShown = ! this.isShown;
+    
+    }
   ngOnInit(): void {
   }
 

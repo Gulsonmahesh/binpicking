@@ -14,12 +14,14 @@
                     <div class="cards background_template mb-30 pl-15 pr-15 pt-20 pb-20">
                         <div class="container-lg col-sm-12 p-0">
                             <span class="col-sm-12 f-14">Project ID</span>
-                            <mat-icon class="icon_size example-tab-icon uploadiconss infoicon"> info
-                            </mat-icon>
+                            <app-tooltip>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            </app-tooltip>
                             <p class="col-sm-12 f-14 bold">33431276</p>
-                            <p class="col-sm-12 f-14 mb-0"> Project Name
-                                <mat-icon class="icon_size example-tab-icon uploadiconss infoicon"> info
-                                </mat-icon>
+                            <p class="col-sm-12 f-14 mb-10"> Project Name<span class="colorred">*</span>
+                                <app-tooltip>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                </app-tooltip>
 
                             </p>
 
@@ -29,22 +31,24 @@
                                     <input matInput placeholder="Ex. Pizza" value="Sushi">
                                 </mat-form-field>
                             </form>
-                            <span class=" f-14 mt-10"> Project Description
-                                <mat-icon class="icon_size example-tab-icon uploadiconss infoicon"> info
-                                </mat-icon>
+                            <p class=" f-14 mt-10 mb-10"> Project Description
+                                <app-tooltip>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                </app-tooltip>
 
-                            </span>
+                            </p>
 
                             <span>
                           
-                          <!-- <editor [init]="{plugins: 'link'}"></editor> -->
                       <editor 
                       apiKey="9x98p6u4qeidajuf25isv052g0lgdwnq5njs2ryw1m03mecx" 
                       plugins="code"
-                      outputFormat="text" class="mb-30"
+                      outputFormat="text" class="mb-30" style="height: 180px !important;"
+                     
                         [init]="{
+                            height: 200,
                             base_url: '/tinymce', 
-                            suffix: '.min' ,       
+                            suffix: '.min' ,
                           plugins: [
                           'advlist autolink lists link image charmap print preview anchor',
                             'searchreplace visualblocks code fullscreen',
@@ -57,11 +61,6 @@
                           content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'  }"
                         ></editor> 
                    
-                        
-                      <!-- <editor [init]="{
-                      base_url: '/tinymce', // Root for resources
-                      suffix: '.min'        // Suffix to use when loading resources
-                    }"></editor> -->
                   </span>
                         </div>
                     </div>

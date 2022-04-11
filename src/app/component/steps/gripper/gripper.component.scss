@@ -25,19 +25,20 @@
         overflow: auto;
     }
     .grippercontainer {
-        max-height: 450px;
+        max-height: 480px;
     }
     .card {
         width: 261px;
         height: 270px;
         background: #FFFFFF 0% 0% no-repeat padding-box;
-        border: 2px solid #E3E3E3;
+        border: 1px solid #E3E3E3;
         border-radius: 10px;
         display: flex;
         flex-direction: column;
         align-items: center;
         padding: 30px 10px 20px 10px;
         margin: 0px 11px;
+        margin-bottom: 10px;
         p {
             margin: 0;
         }
@@ -46,7 +47,7 @@
         padding: 0px 15px !important;
     }
     .brdr {
-        border-bottom: 1px solid #80808059;
+        // border-bottom: 1px solid #80808059;
         width: 167px !important;
         height: 180px !important;
     }
@@ -59,4 +60,31 @@
 
 input[name="selected"] {
     accent-color: green;
+}
+
+.radiobtn {
+    width: 20px;
+    height: 20px;
+}
+
+.bordertop {
+    border-top: 1px solid #80808021;
+}
+
+.circle {
+    background-color: inherit;
+    font-size: 50px;
+    color: #35AFF8;
+}
+
+.cardname {
+    text-align: left;
+    font: normal normal normal 12px Roboto;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+}
+
+.brdrheight {
+    height: 480px;
 }
