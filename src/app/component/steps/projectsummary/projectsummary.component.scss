@@ -24,6 +24,8 @@
         padding: 20px;
     }
     .calibrationbtns {
+        display: flex;
+        align-items: center;
         background: #35AFF8 0% 0% no-repeat padding-box;
         padding: 0px 10px;
         font-size: 14px;
@@ -79,6 +81,18 @@
 
 .searchicon {
     position: relative;
-    margin-top: -10px;
+    top: 0;
     font-size: 18px;
+    transform: rotate(90deg);
+}
+
+.btncreate {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #80808075;
+}
+
+.innerbtn {
+    height: 10px;
+    width: 10px;
 }

@@ -1,5 +1,5 @@
 <footer>
-    <div class="buttoncontainer pr-30">
+    <div class="buttoncontainer ">
         <button class="cancel f-14  mr-15" *ngIf="showCancal">Cancel</button>
         <button class="back f-14 bols mr-15" *ngIf="showBack" (click)="movetoback.emit('')">
             <!-- <img src="../../../assets/west_white_24dp.svg" alt=""> -->
@@ -7,7 +7,7 @@
             </mat-icon>
             <span class="buttontext  f-14">{{backname}}</span>
         </button>
-        <button class="submit  f-14 mr-15" (click)="movetonext.emit('')">
+        <button class="submit  f-14 " (click)="movetonext.emit('')">
             <span class="buttontext f-14 ">{{submitname}}</span>
             <img src="../../../assets/west_white_24dp.svg" alt="">
         </button>

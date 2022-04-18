@@ -1,4 +1,9 @@
 :host {
+    &::ng-deep {
+        #robotcontainer footer .buttoncontainer {
+            padding-right: 30px;
+        }
+    }
     * {
         font-size: 11px;
     }

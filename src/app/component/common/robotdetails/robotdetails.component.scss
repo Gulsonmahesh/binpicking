@@ -60,5 +60,9 @@
             width: 20px;
             height: 20px;
         }
+        input[type=radio] {
+            // accent-color: green !important;
+            background-image: url(../../../../assets/close.png) !important;
+        }
     }
 }

@@ -1,4 +1,9 @@
 :host {
+    &::ng-deep {
+        #grippermaincontainer footer .buttoncontainer {
+            padding-right: 30px;
+        }
+    }
     * {
         font-family: Roboto;
         font-size: 11px;

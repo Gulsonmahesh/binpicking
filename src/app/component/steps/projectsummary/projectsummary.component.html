@@ -33,17 +33,17 @@
                                     <mat-form-field class="example-full-width" appearance="fill">
                                         <!-- <mat-label>Favorite food</mat-label> -->
 
-                                        <input matInput placeholder="Ex. Pizza" value="Sushi">
+                                        <input matInput>
                                         <mat-icon class="material-icons-outlined searchicon">
                                             search
                                         </mat-icon>
                                     </mat-form-field>
                                 </form>
                                 <button class="calibrationbtns " (click)="routerService.movetonextpage('project-details')">
-                                    <mat-icon class="material-icons-outlined addicon f-16">
+                                    <mat-icon class="material-icons-outlined addicon f-16 ptn-4">
                                         add_circle
                                     </mat-icon>
-                                   <span class="mt-10"> Create New Project</span></button>
+                                   <span class=""> Create New Project</span></button>
                             </div>
                             <!-- <div class="example-header">
                             <mat-form-field>
@@ -83,7 +83,10 @@
                                 <!-- Action Column -->
                                 <ng-container matColumnDef="action">
                                     <mat-header-cell *matHeaderCellDef mat-sort-header class="f-14 bold"> Action </mat-header-cell>
-                                    <mat-cell *matCellDef="let row" [style.action]="row.action"> {{row.action}} </mat-cell>
+                                    <mat-cell *matCellDef="let row" [style.action]="row.action">
+                                        <!-- <img src="../../../../assets/close.png" /> -->
+                                        <button class="btncreate"><img src="../../../../assets/close.png" class="innerbtn"/> {{row.action}} </button>
+                                    </mat-cell>
                                 </ng-container>
 
                                 <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
