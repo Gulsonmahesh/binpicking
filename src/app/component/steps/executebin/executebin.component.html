@@ -58,7 +58,7 @@
                         <div class="col-xl-3 col-sm-3 col-xs-12 floatleft p-10">
                             <div class="col-xl-12 col-sm-12 col-xs-12 mb-30 floatleft heightcontainer bgcolor">
                                 <div class="col-xl-12 col-sm-12 col-xs-12 mb-10 p-10 height  ">
-                                    <div class="col-xl-3 col-sm-3 col-xs-12 floatleft pb-10 brdrbtn">
+                                    <div class="col-xl-3 col-sm-3 col-xs-12 floatleft pb-10">
                                         <div class="col-xl-12 col-sm-12 col-xs-12 f-13   ">
                                             <div class="col-xl-12 col-sm-12 col-xs-12 floatleft brdright">
                                                 <div class="col-xl-12 col-sm-12 col-xs-12 pt-0 ">
@@ -76,7 +76,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-xl-4 col-sm-4 col-xs-12 floatleft pb-10 brdrbtn ml-10">
+                                    <div class="col-xl-4 col-sm-4 col-xs-12 floatleft pb-10  ml-10">
                                         <div class="col-xl-12 col-sm-12 col-xs-12 f-13   ">
                                             <div class="col-xl-12 col-sm-12 col-xs-12 floatleft brdright">
                                                 <div class="col-xl-12 col-sm-12 col-xs-12 pt-0 ">
@@ -94,7 +94,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-xl-4 col-sm-4 col-xs-12 floatleft pb-10 brdrbtn ml-10">
+                                    <div class="col-xl-4 col-sm-4 col-xs-12 floatleft pb-10  ml-10">
                                         <div class="col-xl-12 col-sm-12 col-xs-12 f-13   ">
                                             <div class="col-xl-12 col-sm-12 col-xs-12 floatleft">
                                                 <div class="col-xl-12 col-sm-12 col-xs-12 pt-0 ">
@@ -140,7 +140,7 @@
                                     <div class="col-xl-12 col-sm-12 col-xs-12 f-13 mb-10  ">
                                         15:10:12 [INFO] Successfully connected
                                     </div>
-                                    <div class="col-xl-12 col-sm-12 col-xs-12 f-13 mb-10  ">
+                                    <!-- <div class="col-xl-12 col-sm-12 col-xs-12 f-13 mb-10  ">
                                         15:10:12 [INFO] Successfully connected
                                     </div>
                                     <div class="col-xl-12 col-sm-12 col-xs-12 f-13 mb-10  ">
@@ -148,24 +148,29 @@
                                     </div>
                                     <div class="col-xl-12 col-sm-12 col-xs-12 f-13 mb-10  ">
                                         15:10:12 [INFO] Successfully connected
-                                    </div>
+                                    </div> -->
                                     <div class="col-xl-12 col-sm-12 col-xs-12 f-13 mb-10  ">
-                                        15:10:12 [INFO] Successfully connected
+                                        16:43:12 [INFO] Stop Bin Picking
                                     </div>
                                 </div>
                                 <div class="col-xl-12 col-sm-12 col-xs-12 pl-15 pr-15 mb-30 ">
-                                    <div class="buttoncontainer ">
-                                        <button class="cancel f-14  mr-15" routerLink="/projectsummary">Exit</button>
-                                        <button class="back f-14 bols mr-15">
-                                            <mat-icon class="icon_size example-tab-icon uploadiconss"> arrow_back
+                                    <div class="buttoncontainer btntop">
+                                        <!-- <button class="cancel f-14  mr-15" routerLink="/projectsummary"></button> -->
+                                        <button class="btn_exit" routerLink="/projectsummary">
+                                            <mat-icon class="material-icons-outlined download" alt="faq">
+                                                close
                                             </mat-icon>
-                                            <span class="  f-14">Restart</span>
-                                        </button>
-                                        <button class="submit  f-14 ">
-                                            <span class="buttontext f-14 "></span>
-                                            <img src="../../../assets/west_white_24dp.svg" alt="">
-                                        </button>
-                                        <button class="deploy f-14  mr-15">Stop Bin Picking</button>
+                                          <span class="deploylabel"> Exit </span> </button>
+                                        <button class="btn_restart">
+                                            <mat-icon class="material-icons-outlined download" alt="faq">
+                                                settings_backup_restore
+                                            </mat-icon>
+                                          <span class="deploylabel"> Restart </span> </button>
+                                        <button class="btn_stop">
+                                            <mat-icon class="material-icons-outlined download" alt="faq">
+                                                not_interested
+                                            </mat-icon>
+                                          <span class="deploylabel"> Stop Bin Picking </span> </button>
                                     </div>
 
                                 </div>

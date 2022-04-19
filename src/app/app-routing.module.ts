@@ -12,6 +12,7 @@ import { ProjectsummaryComponent } from './component/steps/projectsummary/projec
 import { LoginpageComponent} from './component/loginpage/loginpage.component';
 import { EnvironmentComponent } from './component/steps/environment/environment.component';
 import { ExecutebinComponent } from './component/steps/executebin/executebin.component';
+import { ProgressPopupComponent } from './component/steps/progress-popup/progress-popup.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'loginpage', pathMatch: 'full' },
@@ -27,6 +28,7 @@ const routes: Routes = [
   {path: 'projectsummary', component: ProjectsummaryComponent },
   {path: 'environment', component: EnvironmentComponent},
   {path: 'executebin', component: ExecutebinComponent},
+  {path: 'progresspopup', component: ProgressPopupComponent },
 ];
 
 @NgModule({

@@ -33,7 +33,7 @@
         // height: 300px;
     }
     .pad20 {
-        padding: 20px;
+        padding: 20px 20px 80px 20px;
     }
     .calibrationbtns {
         display: flex;
@@ -129,10 +129,16 @@
 }
 
 .btndeploy {
-    padding: 4px;
+    padding: 4px 7px 4px 1px;
+    ;
     border-radius: 4px;
     border: 1px solid #333333;
     background: #fff;
+    &:hover {
+        background: #35aff8;
+        color: white;
+        border: #35aff8;
+    }
 }
 
 .innerbtn {

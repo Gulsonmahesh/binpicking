@@ -10,7 +10,7 @@
 .background_template {
     background: white;
     border: 1px solid #80808059;
-    padding: 7px;
+    padding: 20px 10px;
     position: relative;
     height: 439px;
 }
@@ -33,7 +33,7 @@
 
 .button_container {
     position: relative;
-    margin: 32px 0px;
+    margin: 18px 0px;
 }
 
 .rightcontainer {
@@ -48,12 +48,14 @@
 }
 
 .iconsize_verify {
-    font-size: 16px;
+    font-size: 9px;
     position: relative;
     border: 1px solid gray;
-    border-radius: 15px;
-    padding: 2px;
+    border-radius: 16px;
+    padding: 3px 3px;
     background: #6DC14B;
     color: white;
     margin: 1px 8px 0px 0px;
+    width: 18px;
+    height: 18px;
 }

@@ -9,9 +9,9 @@
             </div>
             <div class="maincontent">
                 <div id="projectdetailcontainer" class="pad20">
-                    <h3 class="col-sm-12 col- f-18 bold mb-15">Current Projects Summary</h3>
-                    <div class=" col-sm-12 col-xl-12 search mb-10">
-                        <p class="col-sm-12 col-xl-12 f-14 mb-1">Search
+                    <h3 class="col-sm-12 col- f-16 bold mb-20">Current Projects Summary</h3>
+                    <div class=" col-sm-12 col-xl-12 search mb-20">
+                        <p class="col-sm-12 col-xl-12 f-12 mb-1">Search
                             <app-tooltip>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga nemo, culpa nostrum asperiores animi, sed dolorem repellendus suscipit temporibus debitis optio nobis vero veritatis dolorum quam commodi reprehenderit officiis
                                 corrupti.
                             </app-tooltip>
@@ -79,9 +79,11 @@
                                 <mat-row *matRowDef="let row; columns: displayedColumns;">
                                 </mat-row>
                             </mat-table>
-                            <mat-paginator #MatPaginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+
                         </div>
+
                     </div>
+                    <mat-paginator #MatPaginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
                 </div>
             </div>
         </div>

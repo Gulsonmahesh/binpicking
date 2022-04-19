@@ -40,6 +40,7 @@ import {  TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
 import { EditorModule } from '@tinymce/tinymce-angular';
 import { EnvironmentComponent } from './component/steps/environment/environment.component';
 import { ExecutebinComponent } from './component/steps/executebin/executebin.component';
+import { ProgressPopupComponent } from './component/steps/progress-popup/progress-popup.component';
 
 const material=[
   MatFormFieldModule, MatInputModule, MatSelectModule, MatIconModule,FormsModule,ReactiveFormsModule,MatSlideToggleModule,
@@ -70,7 +71,8 @@ const material=[
     ProjectsummaryComponent,
     LoginpageComponent,
     EnvironmentComponent,
-    ExecutebinComponent    
+    ExecutebinComponent,
+    ProgressPopupComponent    
   ],
   imports: [
     material,

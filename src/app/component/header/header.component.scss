@@ -4,8 +4,8 @@
         height: 50px;
         box-shadow: 4px 4px 10px rgb(0, 0, 0, 0.5);
         .homebutton {
-            width: 27px;
-            height: 27px;
+            width: 23px;
+            height: 23px;
             background: #F7F8F8 0% 0% no-repeat padding-box;
             border: 1px solid #707070;
             opacity: 1;
@@ -14,9 +14,9 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             place-content: space-evenly;
-            padding: 5px;
+            padding: 4px;
             position: relative;
-            top: 0px;
+            top: 5px;
             cursor: pointer;
             .buttonrec {
                 width: 5px;

@@ -7,6 +7,8 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class MainfooterComponent implements OnInit {
 
+  @Output() buttonpopupSelected =  new EventEmitter();
+  model = true;
   constructor() { }
   
   @Input() showCancal = true;
@@ -19,5 +21,7 @@ export class MainfooterComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  
+  openModal() {
+    this.buttonpopupSelected.emit(true);
+  }
 }
