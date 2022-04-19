@@ -10,52 +10,27 @@
             <div class="maincontent">
                 <div id="projectdetailcontainer" class="pad20">
                     <h3 class="col-sm-12 col- f-18 bold mb-15">Current Projects Summary</h3>
-                    <div class=" col-sm-12 col-xl-12 search">
+                    <div class=" col-sm-12 col-xl-12 search mb-10">
                         <p class="col-sm-12 col-xl-12 f-14 mb-1">Search
                             <app-tooltip>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga nemo, culpa nostrum asperiores animi, sed dolorem repellendus suscipit temporibus debitis optio nobis vero veritatis dolorum quam commodi reprehenderit officiis
                                 corrupti.
                             </app-tooltip>
 
-                            <div class="d-flex justify-content-between align-items-center mb-10">
-                                <!-- <form class="example-form mb-10 searchfield">
-                                    <mat-form-field class="example-full-width searchfield" appearance="fill" class="p-0">
-                                        <input matInput>
-                                        <mat-icon class="material-icons-outlined searchicon">
-                                            search
-                                        </mat-icon>
-
-                                    </mat-form-field>
-                                    
-                                </form> -->
-
-
-                                <form class="example-form mb-10">
-                                    <mat-form-field class="example-full-width" appearance="fill">
-                                        <!-- <mat-label>Favorite food</mat-label> -->
-
-                                        <input matInput>
-                                        <mat-icon class="material-icons-outlined searchicon">
-                                            search
-                                        </mat-icon>
-                                    </mat-form-field>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <form class="example-form">
+                                    <div class="inputwrap">
+                                        <input placeholder="-" value="" />
+                                        <img class="searchicon" src="../../../../assets/search_black_18dp.svg" alt="search">
+                                    </div>
                                 </form>
-                                <button class="calibrationbtns " (click)="routerService.movetonextpage('project-details')">
-                                    <mat-icon class="material-icons-outlined addicon f-16 ptn-4">
-                                        add_circle
-                                    </mat-icon>
-                                   <span class=""> Create New Project</span></button>
+                                <button class="calibrationbtns d-flex align-items-center justify-content-between" (click)="routerService.movetonextpage('project-details')">
+                                    <img class="addcircle" src="../../../../assets/add_circle_outline_white_48dp.svg" alt="add project">
+                                    <span class="m-0">Create New Project</span></button>
                             </div>
-                            <!-- <div class="example-header">
-                            <mat-form-field>
-                                <input matInput (keyup)="applyFilter($event)" placeholder="Filter">
-                            </mat-form-field>
-                        </div> -->
                     </div>
                     <div class="cards background_template">
-
                         <div class="example-container mat-elevation-z8 mb-15">
                             <mat-table [dataSource]="dataSource" matSort>
-
                                 <!-- Project ID Column -->
                                 <ng-container matColumnDef="id">
                                     <mat-header-cell *matHeaderCellDef mat-sort-header class="f-14 bold"> Project ID </mat-header-cell>
@@ -93,12 +68,8 @@
                                 <mat-row *matRowDef="let row; columns: displayedColumns;">
                                 </mat-row>
                             </mat-table>
-
                             <mat-paginator #MatPaginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
                         </div>
-
-
-
                     </div>
                 </div>
             </div>

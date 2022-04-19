@@ -3,14 +3,26 @@
         font-size: 11px;
         line-height: 1;
     }
+    .addcircle {
+        width: 15px;
+        height: 15px;
+        margin-right: 5px;
+    }
     .calibrationbtns {
         height: 30px;
+        .addicon {
+            width: 16px;
+            height: 16px;
+        }
+        span {
+            font-size: 13px !important;
+        }
     }
     .example-full-width {
         border: 1px solid gray;
-        padding: 0px;
+        padding: 0;
         font-size: 14px;
-        width: 236px;
+        // width: 236px;
         // height: 34px;
         border-radius: 5px;
     }
@@ -79,20 +91,41 @@
     border-bottom-width: 0px !important;
 }
 
-.searchicon {
-    position: relative;
-    top: 0;
-    font-size: 18px;
-    transform: rotate(90deg);
+.inputwrap {
+    position: absolute;
+    top: 20px;
+    <<<<<<< HEAD .searchicon {
+        position: relative;
+        top: 0;
+        font-size: 18px;
+        transform: rotate(90deg);
+    }
+    .btncreate {
+        padding: 8px;
+        border-radius: 4px;
+        border: 1px solid #80808075;
+    }
+    .innerbtn {
+        height: 10px;
+        width: 10px;
+    }
+    =======input {
+        height: 25px;
+        border-radius: 5px;
+        border-color: gray;
+        border: 1px solid;
+        padding: 0 20px;
+        height: 30px;
+    }
+    .searchicon {
+        top: 27%;
+        left: 10px;
+        font-size: 18px;
+        transform: rotate(90deg);
+        width: 15px;
+        height: 15px;
+        position: absolute;
+    }
 }
 
-.btncreate {
-    padding: 8px;
-    border-radius: 4px;
-    border: 1px solid #80808075;
-}
-
-.innerbtn {
-    height: 10px;
-    width: 10px;
-}
+>>>>>>>b5a38e74519f7fcb21b3aebc2c0b5ed22811b2d5
