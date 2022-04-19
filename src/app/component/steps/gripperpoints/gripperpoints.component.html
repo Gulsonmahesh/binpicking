@@ -18,7 +18,7 @@
                     </app-model>
                     <h3 class="my-1 f-16"> Poses</h3>
                     <div class="cards">
-                        <app-card (buttonSelected)="showModel($event)"></app-card>
+                        <app-card addText="Add New Poses" (buttonSelected)="showModel($event)"></app-card>
                     </div>
                     <!-- <app-mainfooter class="routeService.movetonextpage('environment') " (movetoback)="routeService.movetonextpage('object')" submitname="Submit and Continue"></app-mainfooter> -->
                     <app-mainfooter [showdeploy]="false" (movetonext)="routeService.movetonextpage('object')" (movetoback)="routeService.movetonextpage('object')" submitname="Submit and Continue">

@@ -48,7 +48,7 @@
                     </app-model>
                     <h3 class="bold mb-20 f-16">Picked Object</h3>
                     <div class="cards">
-                        <app-card (buttonSelected)="showModel($event)"></app-card>
+                        <app-card addText="Add new object" (buttonSelected)="showModel($event)"></app-card>
                     </div>
                     <app-mainfooter [showdeploy]="false" (movetonext)="routeService.movetonextpage('environment')" (movetoback)="routeService.movetonextpage('grippertcp')" submitname="Submit and Continue">
                     </app-mainfooter>

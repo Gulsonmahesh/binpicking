@@ -2,7 +2,6 @@
     <p class="sidebarheadding">Steps Bin Picking</p>
     <nav>
         <ul>
-
             <li class="listitem w-full" *ngFor="let item of steps;let i = index" [ngClass]="checked ? 'active' : 'nonactive'" (click)="selectedItem()">
                 <span class="numbercss">{{i+1}}</span>
                 <a href="/{{ item.value }}">{{ item.title }}</a>

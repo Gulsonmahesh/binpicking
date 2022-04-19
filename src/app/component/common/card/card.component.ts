@@ -1,4 +1,4 @@
-import { Component, OnInit,Output, EventEmitter } from '@angular/core';
+import { Component, OnInit,Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'app-card',
@@ -8,7 +8,7 @@ import { Component, OnInit,Output, EventEmitter } from '@angular/core';
 export class CardComponent implements OnInit {
 
   @Output() buttonSelected =  new EventEmitter();
-
+  @Input() addText = '';
   constructor() { }
 
   ngOnInit(): void {
