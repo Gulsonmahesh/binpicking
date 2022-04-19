@@ -52,3 +52,10 @@
         display: none !important;
     }
 }
+
+.innermaincontainer {
+    display: grid;
+    grid-template-columns: 100%;
+    height: calc(100% - 110px);
+    overflow: auto;
+}

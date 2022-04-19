@@ -65,8 +65,8 @@ const STATUS = ['Ready for Deployment', 'Configuration Incomplete', 'Configurati
 const NAMES = ['Project robotics calibrations with one gripper 1', 'Project robotics calibrations with one gripper 1', 'Project robotics calibrations with one gripper 1', 'Project robotics calibrations with one gripper 1', 'Project robotics calibrations with one gripper 1', 'Project robotics calibrations with one gripper 1',
   'Project robotics calibrations with one gripper 1', 'Project robotics calibrations with one gripper 1', 'Project robotics calibrations with one gripper 1', 'Project robotics calibrations with one gripper 1', 'Project robotics calibrations with one gripper 1', 'Project robotics calibrations with one gripper 1',
   'Project robotics calibrations with one gripper 1', 'Project robotics calibrations with one gripper 1', 'Project robotics calibrations with one gripper 1', 'Project robotics calibrations with one gripper 1', 'Project robotics calibrations with one gripper 1', 'Project robotics calibrations with one gripper 1', 'Project robotics calibrations with one gripper 1'];
-const PROGRESS = ['Ready for Deployment', 'Configuration Incomplete', 'Configuration Incomplete', 'Configuration Incomplete', 'Configuration Incomplete', 'Configuration Incomplete', 'Configuration Incomplete',
-  'Configuration Incomplete', 'Configuration Incomplete', 'Configuration Incomplete', 'Configuration Incomplete', 'Configuration Incomplete', 'Configuration Incomplete', 'Configuration Incomplete', 'Configuration Incomplete'];
+const PROGRESS = ['06/10/2021 10:00 AM', '06/10/2021 10:00 AM', '06/10/2021 10:00 AM', '06/10/2021 10:00 AM', '06/10/2021 10:00 AM', '06/10/2021 10:00 AM', '06/10/2021 10:00 AM',
+  '06/10/2021 10:00 AM', '06/10/2021 10:00 AM', '06/10/2021 10:00 AM', '06/10/2021 10:00 AM', '06/10/2021 10:00 AM', '06/10/2021 10:00 AM', '06/10/2021 10:00 AM', '06/10/2021 10:00 AM'];
 const ACTION = ['Deploy'];
 export interface UserData {
   id: string;

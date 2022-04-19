@@ -1,25 +1,29 @@
-.bgwhite {
-    border: 1px dashed gray;
-    padding: 30px;
-    background: white !important;
-    height: 110px;
-}
-
-.centeralign {
-    top: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    margin: 0 auto;
-}
-
-.uploadbtn {
-    position: relative !important;
-    left: 183px !important;
-    bottom: 29px !important;
-    opacity: 0 !important;
-}
-
-.height {
-    height: 419px;
+:host {
+    &::ng-deep {
+        #grippercontainer footer .buttoncontainer {
+            margin-right: 20px;
+        }
+    }
+    .bgwhite {
+        border: 1px dashed gray;
+        padding: 30px;
+        background: white !important;
+        height: 110px;
+    }
+    .centeralign {
+        top: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        margin: 0 auto;
+    }
+    .uploadbtn {
+        position: relative !important;
+        left: 183px !important;
+        bottom: 29px !important;
+        opacity: 0 !important;
+    }
+    .height {
+        height: 419px;
+    }
 }

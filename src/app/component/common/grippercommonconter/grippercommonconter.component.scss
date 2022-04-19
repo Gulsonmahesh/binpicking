@@ -2,8 +2,10 @@
     .gripper {
         display: grid;
         grid-template-columns: 200px auto;
-        height: 74vh;
+        height: 68vh;
+        grid-gap: 10px;
         gap: 10px;
+        margin-bottom: 39px;
         .position,
         .viewer {
             border: 1px solid #ECECED;
@@ -12,6 +14,7 @@
             overflow-y: auto;
             overflow-x: hidden;
             padding: 10px;
+            background: #fff;
             h3 {
                 font-size: 13px;
                 font-weight: bold;

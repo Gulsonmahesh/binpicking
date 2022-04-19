@@ -1,7 +1,18 @@
 :host {
+    &::ng-deep {
+        #grippercontainer footer .buttoncontainer {
+            padding-right: 30px;
+        }
+    }
     * {
         font-family: Roboto;
         font-size: 11px;
+    }
+    .wrappercontainer {
+        display: grid;
+        grid-template-columns: 100%;
+        height: calc(100% - 50px);
+        overflow: auto;
     }
     h3 {
         font-size: 15px;

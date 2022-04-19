@@ -1,6 +1,6 @@
 :host {
     * {
-        font-size: 11px;
+        font-size: 13px;
         line-height: 1;
     }
     .addcircle {
@@ -100,11 +100,11 @@
         font-size: 18px;
         transform: rotate(90deg);
     }
-    .btncreate {
-        padding: 8px;
-        border-radius: 4px;
-        border: 1px solid #80808075;
-    }
+    // .btncreate {
+    //     padding: 8px;
+    //     border-radius: 4px;
+    //     border: 1px solid #80808075;
+    // }
     .innerbtn {
         height: 10px;
         width: 10px;
@@ -126,4 +126,42 @@
         height: 15px;
         position: absolute;
     }
+}
+
+.btndeploy {
+    padding: 4px;
+    border-radius: 4px;
+    border: 1px solid #333333;
+    background: #fff;
+}
+
+.innerbtn {
+    height: 10px;
+    width: 10px;
+}
+
+.editdelete {
+    position: relative;
+    padding: 3px 0px;
+    cursor: pointer;
+    font-size: 19px !important;
+}
+
+.download {
+    margin: 2px 0px -9px 0px;
+    cursor: pointer;
+    font-size: 19px !important;
+}
+
+.dotcolr {
+    width: 10px;
+    height: 10px;
+    background-color: #70BF4B;
+    border-radius: 6px;
+    margin-right: 10px;
+}
+
+.deploylabel {
+    position: relative;
+    bottom: 4px;
 }

@@ -1,4 +1,10 @@
 :host {
+    &::ng-deep {
+        #grippercontainer footer .buttoncontainer {
+            margin-right: 20px;
+            margin-top: 27px;
+        }
+    }
     * {
         font-family: Roboto;
         font-size: 11px;
@@ -17,7 +23,7 @@
         }
         .save {
             background: #35AFF8 0% 0% no-repeat padding-box;
-            border: 1px solid #35AFF8;    
+            border: 1px solid #35AFF8;
             color: white;
         }
         .cancel {

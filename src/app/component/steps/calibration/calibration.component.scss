@@ -1,62 +1,68 @@
-.example-full-width {
-    border: 1px solid gray;
-    padding: 5px;
-    font-size: 14px;
-    width: 219px;
-    height: 34px;
-    border-radius: 5px;
-}
-
-.background_template {
-    background: white;
-    border: 1px solid #80808059;
-    padding: 7px;
-    position: relative;
-    height: 455px;
-}
-
-.pad20 {
-    padding: 20px;
-    height: 541px;
-}
-
-.calibrationbtns {
-    background: #ffffff 0% 0% no-repeat padding-box;
-    padding: 7px 24px;
-    font-size: 14px;
-    border: none;
-    color: #35AFF8;
-    border-radius: 4px;
-    border: 1px solid #35AFF8;
-    &:hover {
-        background: #1D97E0 0% 0% no-repeat padding-box;
-        color: #ffffff;
+:host {
+    &::ng-deep {
+        #projectdetailcontainer footer .buttoncontainer {
+            margin-right: 30px;
+        }
     }
-}
-
-.button_container {
-    position: relative;
-    margin: 32px 0px;
-}
-
-.rightcontainer {
-    position: relative;
-    margin: 13px 0px;
-}
-
-.icon_size {
-    font-size: 16px;
-    position: relative;
-    margin: 6px 0px 4px 2px;
-}
-
-.iconsize_verify {
-    font-size: 16px;
-    position: relative;
-    border: 1px solid gray;
-    border-radius: 15px;
-    padding: 2px;
-    background: #6DC14B;
-    color: white;
-    margin: 1px 8px 0px 0px;
+    .calibration {
+        display: grid;
+        grid-template-columns: 100%;
+        height: calc(100% - 150px);
+        overflow: auto;
+        margin-bottom: 50px;
+    }
+    .example-full-width {
+        border: 1px solid gray;
+        padding: 5px;
+        font-size: 14px;
+        width: 219px;
+        height: 34px;
+        border-radius: 5px;
+    }
+    .background_template {
+        background: white;
+        border: 1px solid #80808059;
+        padding: 7px;
+        position: relative;
+        height: 455px;
+    }
+    .pad20 {
+        padding: 20px;
+    }
+    .calibrationbtns {
+        background: #ffffff 0% 0% no-repeat padding-box;
+        padding: 7px 24px;
+        font-size: 14px;
+        border: none;
+        color: #35AFF8;
+        border-radius: 4px;
+        border: 1px solid #35AFF8;
+        &:hover {
+            background: #1D97E0 0% 0% no-repeat padding-box;
+            color: #ffffff;
+        }
+    }
+    .button_container {
+        position: relative;
+        margin: 32px 0px;
+    }
+    .rightcontainer {
+        position: relative;
+        margin: 13px 0px;
+    }
+    .icon_size {
+        font-size: 16px;
+        position: relative;
+        margin: 6px 0px 4px 2px;
+    }
+    .iconsize_verify {
+        font-size: 16px;
+        position: relative;
+        border: 1px solid gray;
+        border-radius: 15px;
+        padding: 2px;
+        background: #6DC14B;
+        color: white;
+        margin: 1px 8px 0px 0px;
+    }
 }

@@ -1,4 +1,4 @@
-<div class="grid-container">
+<div class="grid-container" id="grippercontainer">
     <div class="grid-header">
         <app-header></app-header>
     </div>
@@ -68,7 +68,7 @@
 
 
 
-                    <app-mainfooter (movetonext)="routeService.movetonextpage('calibration')" (movetoback)="routeService.movetonextpage('grippingpoints')"></app-mainfooter>
+                    <app-mainfooter [showdeploy]="false" (movetonext)="routeService.movetonextpage('calibration')" (movetoback)="routeService.movetonextpage('grippingpoints')"></app-mainfooter>
                 </div>
             </div>
         </div>

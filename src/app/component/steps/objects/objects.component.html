@@ -50,7 +50,7 @@
                     <div class="cards">
                         <app-card (buttonSelected)="showModel($event)"></app-card>
                     </div>
-                    <app-mainfooter (movetonext)="routeService.movetonextpage('grippingpoints')" (movetoback)="routeService.movetonextpage('grippertcp')" submitname="Submit and Continue">
+                    <app-mainfooter [showdeploy]="false" (movetonext)="routeService.movetonextpage('environment')" (movetoback)="routeService.movetonextpage('grippertcp')" submitname="Submit and Continue">
                     </app-mainfooter>
                 </div>
             </div>

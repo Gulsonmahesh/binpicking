@@ -1,4 +1,4 @@
-<div class="grid-container">
+<div class="grid-container" id="grippercontainer">
     <div class="grid-header">
         <app-header></app-header>
     </div>
@@ -18,7 +18,7 @@
                         <button class="save mx-3 border-0 p-0 f-14 bold">Save and Continue</button>
                     </div> -->
                 </div>
-                <app-mainfooter (movetonext)="routeService.movetonextpage('object')" (movetoback)="routeService.movetonextpage('gripper')" submitname="Select and Continue">
+                <app-mainfooter [showdeploy]="false" (movetonext)="routeService.movetonextpage('object')" (movetoback)="routeService.movetonextpage('gripper')" submitname="Save and Continue">
                 </app-mainfooter>
             </div>
         </div>

@@ -163,3 +163,8 @@ img[alt='info'] {
 .align-items-center .mat-form-field-appearance-fill .mat-form-field-flex {
     padding: 0 !important;
 }
+
+.tox-statusbar {
+    display: none !important;
+    pointer-events: none !important;
+}

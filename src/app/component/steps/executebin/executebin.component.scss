@@ -1,11 +1,49 @@
 :host {
     * {
-        font-family: Roboto;
-        font-size: 11px;
+        font-size: 13px;
+        line-height: 1;
+    }
+    .addcircle {
+        width: 15px;
+        height: 15px;
+        margin-right: 5px;
+    }
+    .calibrationbtns {
+        height: 30px;
+        .addicon {
+            width: 16px;
+            height: 16px;
+        }
+        span {
+            font-size: 13px !important;
+        }
+    }
+    .example-full-width {
+        border: 1px solid gray;
+        padding: 0;
+        font-size: 14px;
+        // width: 236px;
+        // height: 34px;
+        border-radius: 5px;
+    }
+    .background_template {
+        background: white;
+        border: 1px solid #80808059;
+        // padding: 7px;
+        // height: 300px;
+    }
+    .pad20 {
+        padding: 20px;
+    }
+    .inner-wrapper {
+        display: block;
     }
     h3 {
         font-size: 15px;
         font-weight: bold;
+    }
+    .inner-wrapper {
+        display: block;
     }
     .footerpanel {
         button {
@@ -32,15 +70,15 @@
 .height {
     border-radius: 6px;
     min-width: 100%;
-    overflow-y: auto;
-    overflow-x: hidden;
+    // overflow-y: auto;
+    // overflow-x: hidden;
 }
 
 .overflowheight {
     min-width: 100%;
     overflow-y: auto;
     overflow-x: hidden;
-    height: 175px;
+    height: 300px;
 }
 
 .bigcontainer {
@@ -62,7 +100,7 @@
 
 .heightcontainer {
     position: relative;
-    height: 368px;
+    height: 450px;
 }
 
 .buttoncontainer {
@@ -104,4 +142,24 @@
             background: #1D97E0 0% 0% no-repeat padding-box;
         }
     }
+}
+
+.backicon {
+    background: #D8D8D9;
+    border-radius: 19px;
+    color: #989898;
+    height: 34px;
+    width: 34px;
+    font-size: 17px;
+    padding: 8px;
+}
+
+.check {
+    background: #6DC14B;
+    padding: 3px 3px;
+    border-radius: 13px;
+    color: #FFFFFF;
+    font-size: 9px;
+    height: 16px;
+    width: 16px;
 }

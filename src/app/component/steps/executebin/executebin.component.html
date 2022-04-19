@@ -5,21 +5,23 @@
     <div class="grid-main">
         <div class="inner-wrapper">
             <div class="sidebar">
-                <app-sidebar></app-sidebar>
+                <!-- <app-sidebar></app-sidebar> -->
             </div>
             <div class="maincontent">
                 <div id="grippercontainer" class="wrappercontainer ">
-                    <div class="col-xl-12 col-sm-12 col-xs-12 mb-30 height">
-                        <div class="col-xl-1 col-sm-1 col-xs-12 floatleft">
+                    <div class="col-xl-12 col-sm-12 col-xs-12 mb-30 height mt-15">
+                        <div class=" floatleft">
                             <div class="col-xl-12 col-sm-12 col-xs-12 pt-0 pl-10 pr-10">
-                                <mat-icon class="icon_size example-tab-icon uploadiconss"> info
+
+                                <mat-icon class="material-icons-outlined  backicon" alt="faq" routerLink="/deploy">
+                                    arrow_back
                                 </mat-icon>
                             </div>
                         </div>
 
-                        <div class="col-xl-2 col-sm-2 col-xs-12 floatleft">
-                            <div class="col-xl-12 col-sm-12 col-xs-12 pt-0 pr-10">
-                                <div class="col-xl-12 col-sm-12 col-xs-12 f-14   ">
+                        <div class="col-xl-1 col-sm-1 col-xs-1 floatleft">
+                            <div class="col-xl-12 col-sm-12 col-xs-12 pt-0 pr-10 brdright">
+                                <div class="col-xl-12 col-sm-12 col-xs-12 f-14  pb-6 ">
                                     Project ID
                                 </div>
                                 <div class="col-xl-12 col-sm-12 col-xs-12 f-14  bold ">
@@ -28,9 +30,9 @@
 
                             </div>
                         </div>
-                        <div class="col-xl-2 col-sm-2 col-xs-12 floatleft">
-                            <div class="col-xl-12 col-sm-12 col-xs-12 pt-0  pr-10">
-                                <div class="col-xl-12 col-sm-12 col-xs-12 f-14   ">
+                        <div class="col-xl-1 col-sm-1 col-xs-1 floatleft ml-20">
+                            <div class="col-xl-12 col-sm-12 col-xs-12 pt-0  pr-10 brdright">
+                                <div class="col-xl-12 col-sm-12 col-xs-12 f-14  pb-6 ">
                                     Project Name
                                 </div>
                                 <div class="col-xl-12 col-sm-12 col-xs-12 f-14  bold ">
@@ -39,9 +41,9 @@
 
                             </div>
                         </div>
-                        <div class="col-xl-2 col-sm-2 col-xs-12 floatleft">
+                        <div class="col-xl-1 col-sm-1 col-xs-1 floatleft ml-50">
                             <div class="col-xl-12 col-sm-12 col-xs-12 pt-0 pr-10">
-                                <div class="col-xl-12 col-sm-12 col-xs-12 f-14   ">
+                                <div class="col-xl-12 col-sm-12 col-xs-12 f-14  pb-6 ">
                                     Project Name
                                 </div>
                                 <div class="col-xl-12 col-sm-12 col-xs-12 f-14   ">
@@ -51,50 +53,59 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-12 col-sm-12 col-xs-12 mb-30 height">
+                    <div class="col-xl-12 col-sm-12 col-xs-12  height">
 
-                        <div class="col-xl-4 col-sm-4 col-xs-12 floatleft p-10">
-                            <div class="col-xl-12 col-sm-12 col-xs-12 mb-30 floatleft height bgcolor">
+                        <div class="col-xl-3 col-sm-3 col-xs-12 floatleft p-10">
+                            <div class="col-xl-12 col-sm-12 col-xs-12 mb-30 floatleft heightcontainer bgcolor">
                                 <div class="col-xl-12 col-sm-12 col-xs-12 mb-10 p-10 height  ">
-                                    <div class="col-xl-4 col-sm-4 col-xs-12 floatleft pb-10 brdrbtn">
-                                        <div class="col-xl-12 col-sm-12 col-xs-12 f-14   ">
-                                            <div class="col-xl-2 col-sm-2 col-xs-12 floatleft">
-                                                <div class="col-xl-12 col-sm-12 col-xs-12 pt-0 pr-10">
-                                                    <span class="col-xl-12 col-sm-12 col-xs-12 f-13   ">
+                                    <div class="col-xl-3 col-sm-3 col-xs-12 floatleft pb-10 brdrbtn">
+                                        <div class="col-xl-12 col-sm-12 col-xs-12 f-13   ">
+                                            <div class="col-xl-12 col-sm-12 col-xs-12 floatleft brdright">
+                                                <div class="col-xl-12 col-sm-12 col-xs-12 pt-0 ">
+                                                    <label class="col-xl-12 col-sm-12 col-xs-12 f-11 pb-6  ">
                                                     Bin Picking
-                                                </span>
-                                                    <span class="col-xl-12 col-sm-12 col-xs-12 f-14   ">
-                                                    Description
+                                                </label>
+                                                    <span class="col-xl-12 col-sm-12 col-xs-12 f-12  bold ">
+                                                        <mat-icon class="material-icons-outlined check" alt="faq">
+                                                            check
+                                                        </mat-icon>
+                                                        Running
                                                 </span>
 
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-xl-4 col-sm-4 col-xs-12 floatleft pb-10 brdrbtn">
-                                        <div class="col-xl-12 col-sm-12 col-xs-12 f-14   ">
-                                            <div class="col-xl-2 col-sm-2 col-xs-12 floatleft">
-                                                <div class="col-xl-12 col-sm-12 col-xs-12 pt-0  pr-10">
-                                                    <span class="col-xl-12 col-sm-12 col-xs-12 f-13   ">
-                                                    Bin Picking
-                                                </span>
-                                                    <span class="col-xl-12 col-sm-12 col-xs-12 f-14   ">
-                                                    Description
+                                    <div class="col-xl-4 col-sm-4 col-xs-12 floatleft pb-10 brdrbtn ml-10">
+                                        <div class="col-xl-12 col-sm-12 col-xs-12 f-13   ">
+                                            <div class="col-xl-12 col-sm-12 col-xs-12 floatleft brdright">
+                                                <div class="col-xl-12 col-sm-12 col-xs-12 pt-0 ">
+                                                    <label class="col-xl-12 col-sm-12 col-xs-12 f-11  pb-6 ">
+                                                        Robot State Server
+                                                </label>
+                                                    <span class="col-xl-12 col-sm-12 col-xs-12 f-12  bold ">
+                                                        <mat-icon class="material-icons-outlined check" alt="faq">
+                                                            check
+                                                        </mat-icon>
+                                                        Connected
                                                 </span>
 
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-xl-4 col-sm-4 col-xs-12 floatleft pb-10 brdrbtn">
-                                        <div class="col-xl-12 col-sm-12 col-xs-12 f-14   ">
-                                            <div class="col-xl-2 col-sm-2 col-xs-12 floatleft">
-                                                <div class="col-xl-12 col-sm-12 col-xs-12 pt-0  pr-10">
-                                                    <span class="col-xl-12 col-sm-12 col-xs-12 f-13   ">
-                                                    Bin Picking
-                                                </span>
-                                                    <span class="col-xl-12 col-sm-12 col-xs-12 f-14   ">
-                                                    Description
+                                    <div class="col-xl-4 col-sm-4 col-xs-12 floatleft pb-10 brdrbtn ml-10">
+                                        <div class="col-xl-12 col-sm-12 col-xs-12 f-13   ">
+                                            <div class="col-xl-12 col-sm-12 col-xs-12 floatleft">
+                                                <div class="col-xl-12 col-sm-12 col-xs-12 pt-0 ">
+                                                    <label class="col-xl-12 col-sm-12 col-xs-12 f-11 pb-6  ">
+                                                        Robot State Server
+                                                </label>
+                                                    <span class="col-xl-12 col-sm-12 col-xs-12 f-12  bold ">
+                                                        <mat-icon class="material-icons-outlined check" alt="faq">
+                                                            check
+                                                        </mat-icon>
+                                                        Connected
                                                 </span>
 
                                                 </div>
@@ -104,59 +115,67 @@
 
                                 </div>
 
-                                <div class="col-xl-12 col-sm-12 col-xs-12 pl-15 pr-15 mb-30 overflowheight">
-                                    <div class="col-xl-12 col-sm-12 col-xs-12 f-13  mb-7 ">
+                                <div class="col-xl-12 col-sm-12 col-xs-12 p-20 mb-30 overflowheight">
+                                    <div class="col-xl-12 col-sm-12 col-xs-12 f-13  mb-10 ">
                                         15:10:12 [INFO] Successfully connected
                                     </div>
-                                    <div class="col-xl-12 col-sm-12 col-xs-12 f-13 mb-7  ">
+                                    <div class="col-xl-12 col-sm-12 col-xs-12 f-13 mb-10  ">
                                         15:10:12 [INFO] Successfully connected
                                     </div>
-                                    <div class="col-xl-12 col-sm-12 col-xs-12 f-13 mb-7  ">
+                                    <div class="col-xl-12 col-sm-12 col-xs-12 f-13 mb-10  ">
                                         15:10:12 [INFO] Successfully connected
                                     </div>
-                                    <div class="col-xl-12 col-sm-12 col-xs-12 f-13 mb-7  ">
+                                    <div class="col-xl-12 col-sm-12 col-xs-12 f-13 mb-10  ">
                                         15:10:12 [INFO] Successfully connected
                                     </div>
-                                    <div class="col-xl-12 col-sm-12 col-xs-12 f-13 mb-7  ">
+                                    <div class="col-xl-12 col-sm-12 col-xs-12 f-13 mb-10  ">
                                         15:10:12 [INFO] Successfully connected
                                     </div>
-                                    <div class="col-xl-12 col-sm-12 col-xs-12 f-13 mb-7  ">
+                                    <div class="col-xl-12 col-sm-12 col-xs-12 f-13 mb-10  ">
                                         15:10:12 [INFO] Successfully connected
                                     </div>
-                                    <div class="col-xl-12 col-sm-12 col-xs-12 f-13  mb-7 ">
+                                    <div class="col-xl-12 col-sm-12 col-xs-12 f-13  mb-10 ">
                                         15:10:12 [INFO] Successfully connected
                                     </div>
-                                    <div class="col-xl-12 col-sm-12 col-xs-12 f-13 mb-7  ">
+                                    <div class="col-xl-12 col-sm-12 col-xs-12 f-13 mb-10  ">
                                         15:10:12 [INFO] Successfully connected
                                     </div>
-                                    <div class="col-xl-12 col-sm-12 col-xs-12 f-13 mb-7  ">
+                                    <div class="col-xl-12 col-sm-12 col-xs-12 f-13 mb-10  ">
                                         15:10:12 [INFO] Successfully connected
                                     </div>
-                                    <div class="col-xl-12 col-sm-12 col-xs-12 f-13 mb-7  ">
+                                    <div class="col-xl-12 col-sm-12 col-xs-12 f-13 mb-10  ">
                                         15:10:12 [INFO] Successfully connected
                                     </div>
-                                    <div class="col-xl-12 col-sm-12 col-xs-12 f-13 mb-7  ">
+                                    <div class="col-xl-12 col-sm-12 col-xs-12 f-13 mb-10  ">
                                         15:10:12 [INFO] Successfully connected
                                     </div>
-                                    <div class="col-xl-12 col-sm-12 col-xs-12 f-13 mb-7  ">
+                                    <div class="col-xl-12 col-sm-12 col-xs-12 f-13 mb-10  ">
                                         15:10:12 [INFO] Successfully connected
                                     </div>
                                 </div>
                                 <div class="col-xl-12 col-sm-12 col-xs-12 pl-15 pr-15 mb-30 ">
-                                    <div class="buttoncontainer">
-                                        <button class="cancel">Exit</button>
-                                        <button class="back">Restart</button>
-                                        <button class="submit">Stop Bin Picking</button>
+                                    <div class="buttoncontainer ">
+                                        <button class="cancel f-14  mr-15" routerLink="/projectsummary">Exit</button>
+                                        <button class="back f-14 bols mr-15">
+                                            <mat-icon class="icon_size example-tab-icon uploadiconss"> arrow_back
+                                            </mat-icon>
+                                            <span class="  f-14">Restart</span>
+                                        </button>
+                                        <button class="submit  f-14 ">
+                                            <span class="buttontext f-14 "></span>
+                                            <img src="../../../assets/west_white_24dp.svg" alt="">
+                                        </button>
+                                        <button class="deploy f-14  mr-15">Stop Bin Picking</button>
                                     </div>
 
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-8 col-sm-8 col-xs-12 floatleft p-10">
+                        <div class="col-xl-9 col-sm-9 col-xs-12 floatleft p-10">
                             <div class="col-xl-12 col-sm-12 col-xs-12 mb-30 floatleft height bigcontainer">
                                 <div class="col-xl-12 col-sm-12 col-xs-12 pt-0 pr-10 heightcontainer">
                                     <div class="col-xl-12 col-sm-12 col-xs-12 f-14  placeholderdetail ">
-                                        Description
+                                        Viewer Placeholder
                                     </div>
 
                                 </div>
@@ -164,12 +183,9 @@
                         </div>
 
                     </div>
-
-
-
-                    <app-mainfooter (movetonext)="routeService.movetonextpage('calibration')" (movetoback)="routeService.movetonextpage('grippingpoints')"></app-mainfooter>
                 </div>
             </div>
         </div>
+
     </div>
 </div>

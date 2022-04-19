@@ -4,9 +4,9 @@
     </div>
     <div class="grid-main">
         <div class="inner-wrapper">
-            <!-- <div class="sidebar">
-                <app-sidebar></app-sidebar>
-            </div> -->
+            <div class="sidebar">
+                <!-- <app-sidebar></app-sidebar> -->
+            </div>
             <div class="maincontent">
                 <div id="projectdetailcontainer" class="pad20">
                     <h3 class="col-sm-12 col- f-18 bold mb-15">Current Projects Summary</h3>
@@ -52,15 +52,26 @@
                                 <!-- Status Column -->
                                 <ng-container matColumnDef="status">
                                     <mat-header-cell *matHeaderCellDef mat-sort-header class="f-14 bold"> Status </mat-header-cell>
-                                    <mat-cell *matCellDef="let row" [style.status]="row.status"> {{row.status}} </mat-cell>
+                                    <mat-cell *matCellDef="let row" [style.status]="row.status">
+                                        <span class="dotcolr"></span> {{row.status}} </mat-cell>
                                 </ng-container>
 
                                 <!-- Action Column -->
                                 <ng-container matColumnDef="action">
                                     <mat-header-cell *matHeaderCellDef mat-sort-header class="f-14 bold"> Action </mat-header-cell>
                                     <mat-cell *matCellDef="let row" [style.action]="row.action">
-                                        <!-- <img src="../../../../assets/close.png" /> -->
-                                        <button class="btncreate"><img src="../../../../assets/close.png" class="innerbtn"/> {{row.action}} </button>
+                                        <!-- <img src="../../../../assets/close.png" class="innerbtn" /> -->
+                                        <mat-icon class="material-icons-outlined mr-10 editdelete" alt="faq">
+                                            edit
+                                        </mat-icon>
+                                        <mat-icon class="material-icons-outlined mr-10 editdelete" alt="faq">
+                                            delete
+                                        </mat-icon>
+                                        <button class="btncreate btndeploy">
+                                            <mat-icon class="material-icons-outlined download" alt="faq">
+                                                download
+                                            </mat-icon>
+                                          <span class="deploylabel"> {{row.action}} </span> </button>
                                     </mat-cell>
                                 </ng-container>
 
