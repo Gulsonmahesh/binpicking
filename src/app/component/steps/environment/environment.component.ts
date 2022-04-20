@@ -7,6 +7,8 @@ import { RouterService } from 'src/app/service/router.service';
 })
 export class EnvironmentComponent implements OnInit {
 
+  uploadenvmnt=true;
+  uploadcad=false;
  
   constructor(public routeService: RouterService) { }
 
