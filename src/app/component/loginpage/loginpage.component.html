@@ -8,12 +8,12 @@
         <div class=" col-xl-4 col-lg-4 col-sm-12 floatleft pad">
             <span class="rightside col-xl-12 col-sm-12 floatleft mb-10">
                 <span class=" floatleft">
-                    <img class="logo" src="../../../assets/logo.png" alt="logo" /> 
+                    <img class="logo" src="../../../assets/logo.png" alt="logo" />
                 </span>
             <span class="f-18 floatleft ml-10 mt-20 bold line">Bin Picking</span>
             </span>
 
-            <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+            <form [formGroup]="signInForm" (ngSubmit)="onSubmit($event)">
 
                 <div class="col-xl-12 col-sm-12 floatleft" *ngIf="signinShow">
                     <!-- After password reset -->
@@ -37,15 +37,16 @@
                             </button>
                         </mat-form-field>
                     </div>
-                    <span class="col-xl-12 col-sm-12 floatleft f-14 mr-20 mb-35">
+                    <span class="col-xl-12 col-sm-12 floatleft f-14 mr-20 mb-35 d-flex align-items-center">
                         <span class="col-xl-6 col-sm-6 floatleft f-14 ">
                             <label class="switch">
-                                <input type="checkbox" checked>
+                                <input type="checkbox" name="usertype" />
                                 <span class="slider round"></span>
                     </label>
                     </span>
                     <span class="col-xl-6 col-sm-6 floatright ">
-                        <button class="signin_btn f-14 " routerLink="/projectsummary" >Sign in</button>
+                        <!-- <button class="signin_btn f-14 " routerLink="/projectsummary" >Sign in</button> -->
+                        <button class="signin_btn f-14" type="submit" >Sign in</button>
 
                     </span></span>
                     <span class="col-xl-6 col-sm-6 cp pull-right mb-3 mr-10 f-14" (click)="successOtp()">Reset
