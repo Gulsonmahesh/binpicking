@@ -64,6 +64,7 @@
 
                     &.active {
                         background-color: $activeColor;
+                        color: #FFFFFF;
                     }
                 }
                 
@@ -99,6 +100,10 @@
                     font: normal normal normal 10px Roboto;
                     letter-spacing: 1px;
                     margin-right: 10px;
+
+                    &:active {
+                        color: #FFFFFF;
+                    }
                 }
                 &:first-child {
                     margin-top: 0;
