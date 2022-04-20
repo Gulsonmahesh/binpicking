@@ -15,6 +15,8 @@ export class LoginpageComponent implements OnInit {
   resetShow: any;
   afterResetSuccess: any;
   signinShow: boolean = true;
+  isAdmin = false;
+
   constructor(public fb: FormBuilder, public router: ActivatedRoute, public route: Router) { }
 
   ngOnInit(): void {
@@ -30,8 +32,11 @@ export class LoginpageComponent implements OnInit {
     this.signinShow = false;
   }
 
-  onSubmit() {
-    this.route.navigate(['/project-details']);
+  onSubmit(event:any) {
+    event.preventDefault();
+    console.log(this.signInForm);
+    return;
+    // this.route.navigate(['/project-details']);
   }
   nextOtp() {
     this.otpShow = true;
@@ -79,5 +84,8 @@ export class LoginpageComponent implements OnInit {
   }
   btnClick() {
     this.route.navigate(['/project-details']);
-};
+  }
+  setAdmin() {
+    console.log(this.isAdmin)
+  }
 }
