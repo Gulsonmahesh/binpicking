@@ -7,8 +7,8 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 
 export class SidebarComponent implements OnInit {
-  
-  steps = [
+  steps: any = [];
+  usersteps = [
     {value: 'project-details', title:'Project Details', number: '1',checked: true},
     {value: 'robot', title: 'Robot', number: '2',checked: false},
     {value: 'gripper', title: 'Gripper', number: '3',checked: false},
@@ -21,6 +21,11 @@ export class SidebarComponent implements OnInit {
     {value: 'executebin', title: 'Execute Bin Picking', number: '10',checked: false}
   ];
 
+  adminsteps = [
+    {value: 'robot', title: 'Robot', number: '2',checked: true},
+    {value: 'gripper', title: 'Gripper', number: '3',checked: false},
+    {value: 'grippertcp', title: 'Gripper TCP', number: '4',checked: false},
+  ];
   constructor() { 
    
   }
@@ -32,6 +37,8 @@ export class SidebarComponent implements OnInit {
   }
   @Input() showsidebar = true;
   ngOnInit(): void {
+    this.steps= this.adminsteps
+
   }
 
 }
