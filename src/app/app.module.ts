@@ -33,6 +33,7 @@ import { LoginpageComponent } from './component/loginpage/loginpage.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatTabsModule} from '@angular/material/tabs';
 
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
@@ -44,7 +45,7 @@ import { ProgressPopupComponent } from './component/steps/progress-popup/progres
 
 const material=[
   MatFormFieldModule, MatInputModule, MatSelectModule, MatIconModule,FormsModule,ReactiveFormsModule,MatSlideToggleModule,
-  MatSliderModule
+  MatSliderModule,MatTabsModule
 ];
 
 @NgModule({

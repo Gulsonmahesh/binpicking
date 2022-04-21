@@ -9,9 +9,9 @@
             </div>
             <div class="maincontent">
                 <div id="grippercontainer" class="wrappercontainer ">
-                    <h2 class="bold f-16 mt-20 mb-30 pl-10">Upload CAD model of the Enviroment and Bin</h2>
+                    <h2 class="bold f-16 mt-20 mb-20 pl-10">Upload CAD model of the Enviroment and Bin</h2>
 
-                    <div class="col-xl-12 col-sm-12 col-xs-12 mb-30 height">
+                    <div class="col-xl-12 col-sm-12 col-xs-12 mb-30 height" *ngIf="uploadenvmnt">
                         <div class="col-xl-6 col-sm-6 col-xs-12 floatleft">
                             <div class="col-xl-12 col-sm-12 col-xs-12 pt-0 pl-10 pr-10">
                                 <div class="col-xl-12 col-sm-12 col-xs-12 f-14 bold mb-10">
@@ -65,10 +65,25 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-xl-12 col-sm-12 col-xs-12 mb-30 height" *ngIf="uploadcad">
+                        <div class="col-xl-12 col-sm-12 col-xs-12">
+                            <mat-tab-group>
+                                <mat-tab label="Robot">
+                                    <app-grippercommonconter></app-grippercommonconter>
+                                </mat-tab>
+                                <mat-tab label="Enviroment">
+                                    <app-grippercommonconter></app-grippercommonconter>
+                                </mat-tab>
+                                <mat-tab label="Bin">
+                                    <app-grippercommonconter></app-grippercommonconter>
+                                </mat-tab>
+                            </mat-tab-group>
+                        </div>
+
+                    </div>
 
 
-
-                    <app-mainfooter [showdeploy]="false" (movetonext)="routeService.movetonextpage('calibration')" (movetoback)="routeService.movetonextpage('grippingpoints')"></app-mainfooter>
+                    <app-mainfooter [showdeploy]="false" (movetonext)="routeService.movetonextpage('calibration')" (movetoback)="routeService.movetonextpage('object')" submitname="Submit and Continue"></app-mainfooter>
                 </div>
             </div>
         </div>

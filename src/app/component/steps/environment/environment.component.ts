@@ -8,6 +8,8 @@ import { EnvironmentService } from 'src/app/service/environment.service';
 })
 export class EnvironmentComponent implements OnInit {
 
+  uploadenvmnt=true;
+  uploadcad=false;
  
   constructor(public routeService: RouterService,private environmentservice: EnvironmentService) { }
 

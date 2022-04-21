@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,9 +8,9 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 
 export class SidebarComponent implements OnInit {
-  
-  steps = [
-    {value: 'project-details', title:'Project Details', number: '1',checked: true},
+  steps: any = [];
+  usersteps = [
+    {value: 'project-details', title:'Project Details', number: '1',checked: false},
     {value: 'robot', title: 'Robot', number: '2',checked: false},
     {value: 'gripper', title: 'Gripper', number: '3',checked: false},
     {value: 'grippertcp', title: 'Gripper TCP', number: '4',checked: false},
@@ -21,17 +22,28 @@ export class SidebarComponent implements OnInit {
     {value: 'executebin', title: 'Execute Bin Picking', number: '10',checked: false}
   ];
 
-  constructor() { 
-   
+  adminsteps = [
+    {value: 'robot', title: 'Robot', number: '2',checked: false},
+    {value: 'gripper', title: 'Gripper', number: '3',checked: false},
+    {value: 'grippertcp', title: 'Gripper TCP', number: '4',checked: false},
+  ];
+  currentRoute = '';
+
+  constructor(private router: Router) {
+    console.log(this.router);
   }
   // checked: boolean = false;
-  public activeElement = 1;  
- 
+  public activeElement = 1;
+
   public selectedItem() {
       // this.checked= true;
   }
   @Input() showsidebar = true;
   ngOnInit(): void {
+    const isAdmin = sessionStorage.getItem('isAdmin');
+    this.currentRoute = this.router.url.replace('/', '');
+    console.log(this.currentRoute);
+    this.steps= isAdmin === 'true' ? this.adminsteps : this.usersteps;
   }
 
 }

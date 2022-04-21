@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormControl, Validators, FormBuilder }  from '@angular/forms';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 @Component({
   selector: 'app-loginpage',
   templateUrl: './loginpage.component.html',
@@ -14,11 +15,15 @@ export class LoginpageComponent implements OnInit {
   resetShow: any;
   afterResetSuccess: any;
   signinShow: boolean = true;
+  // isAdmin = false;
+
   constructor(public fb: FormBuilder, public router: ActivatedRoute, public route: Router) { }
 
   ngOnInit(): void {
     this.signInForm = this.fb.group({
-
+      username: new FormControl('',[Validators.required, Validators.nullValidator]),
+      password: new FormControl('',[Validators.required, Validators.nullValidator]),
+      isAdmin: new FormControl(false)
     })
   }
 
@@ -29,8 +34,18 @@ export class LoginpageComponent implements OnInit {
     this.signinShow = false;
   }
 
-  onSubmit() {
-    this.route.navigate(['/project-details']);
+  onSubmit(event:any) {
+    event.preventDefault();
+    if(this.signInForm.status === 'VALID') {
+      sessionStorage.setItem('isAdmin', this.signInForm.controls.isAdmin.value);
+      if(this.signInForm.controls.isAdmin.value === true) {
+      this.route.navigate(['/robot']);
+      } else {
+        this.route.navigate(['/project-details']);
+      }
+
+    }
+    return;
   }
   nextOtp() {
     this.otpShow = true;
@@ -78,5 +93,8 @@ export class LoginpageComponent implements OnInit {
   }
   btnClick() {
     this.route.navigate(['/project-details']);
-};
+  }
+  setAdmin() {
+    // console.log(this.isAdmin)
+  }
 }
