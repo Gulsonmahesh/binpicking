@@ -17,7 +17,7 @@
                             <app-tooltip>
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                             </app-tooltip>
-                            <p class="col-sm-12 f-14 bold">33431276</p>
+                            <p class="col-sm-12 f-14 bold">{{project_id}}</p>
                             <p class="col-sm-12 f-14 mb-10"> Project Name<span class="colorred">*</span>
                                 <app-tooltip>
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -28,7 +28,7 @@
                             <form class="example-form mb-20">
                                 <mat-form-field class="example-full-width" appearance="fill">
                                     <!-- <mat-label>Favorite food</mat-label> -->
-                                    <input matInput placeholder="Ex. Pizza" value="Sushi">
+                                    <input [(ngModel)]="projectName" name="projectName" matInput placeholder="Ex. Pizza">
                                 </mat-form-field>
                             </form>
                             <p class=" f-14 mt-10 mb-10"> Project Description
@@ -66,12 +66,13 @@
                     </div>
                     <app-mainfooter (buttonpopupSelected)="openpop()" [showBack]="false" [showdeploy]="false" (movetonext)="routeService.movetonextpage('robot')" (movetoback)="routeService.movetonextpage('project-details')" submitname="Create and Continue">
 
+                        <app-mainfooter [showBack]="false" [showdeploy]="false" (movetonext)="createProjectDetails()" (movetoback)="routeService.movetonextpage('project-details')" submitname="Create and Continue">
+                        </app-mainfooter>
+                        <app-model *ngIf="showClosePopup" customclass="closemodal">
+                            Srevin
+                        </app-model>
                     </app-mainfooter>
-                    <app-model *ngIf="showClosePopup" customclass="closemodal">
-                        Srevin
-                    </app-model>
                 </div>
             </div>
         </div>
     </div>
-</div>
