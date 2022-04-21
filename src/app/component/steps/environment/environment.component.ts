@@ -19,5 +19,17 @@ export class EnvironmentComponent implements OnInit {
       console.log(data)
     })
   }
+  environmentPageData(){
+    const master_environment_data = {env_name:"environment",env_file:"file need to select",bin_name:"bin",bin_file:"fille need to select",project_id:1}
+    this.environmentservice.environmentDetails(master_environment_data).subscribe((data:any) => {
+      if(data.status==="success")
+      this.routeService.movetonextpage('calibration')
+    else
+    console.log("error occured",data)
+  },
+  (error:any)=> {
+    console.log(error)
+  });
+  }
 
 }

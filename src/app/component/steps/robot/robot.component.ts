@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterService } from 'src/app/service/router.service';
 import { RobotService } from 'src/app/service/robot.service';
+import { RobotDetailsComponent } from '../../common/robot-details/robot-details.component';
 @Component({
   selector: 'app-robot',
   templateUrl: './robot.component.html',

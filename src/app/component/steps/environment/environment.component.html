@@ -32,7 +32,6 @@
                                                     type="file"
                                                     accept="image/*" >
                                                     Select Image</span>
-                                              
                                               </label>
                                     </div>
                                 </div>
@@ -41,7 +40,7 @@
                         <div class="col-xl-6 col-sm-6 col-xs-12 floatleft">
                             <div class="col-xl-12 col-sm-12 col-xs-12 pt-0 pl-10 pr-10">
                                 <div class="col-xl-12 col-sm-12 col-xs-12 f-14 bold mb-10">
-                                    Upload Enviroment
+                                    Upload Bin
                                 </div>
                                 <div class="col-xl-12 col-sm-12 col-xs-12 f-14 mb-10">
                                     Only <b>.stl</b> file format accept
@@ -82,8 +81,7 @@
 
                     </div>
 
-
-                    <app-mainfooter [showdeploy]="false" (movetonext)="routeService.movetonextpage('calibration')" (movetoback)="routeService.movetonextpage('object')" submitname="Submit and Continue"></app-mainfooter>
+                    <app-mainfooter [showdeploy]="false" (movetonext)="environmentPageData()" (movetoback)="routeService.movetonextpage('object')" submitname="Submit and Continue"></app-mainfooter>
                 </div>
             </div>
         </div>

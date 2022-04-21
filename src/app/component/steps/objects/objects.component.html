@@ -50,7 +50,7 @@
                     <div class="cards">
                         <app-card addText="Add new object" (buttonSelected)="showModel($event)"></app-card>
                     </div>
-                    <app-mainfooter [showdeploy]="false" (movetonext)="routeService.movetonextpage('environment')" (movetoback)="routeService.movetonextpage('grippertcp')" submitname="Submit and Continue">
+                    <app-mainfooter [showdeploy]="false" (movetonext)="createObject()" (movetoback)="routeService.movetonextpage('grippertcp')" submitname="Submit and Continue">
                     </app-mainfooter>
                 </div>
             </div>

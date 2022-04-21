@@ -9,4 +9,7 @@ export class GrippertcpService {
   getgripper(){
     return this.http.get<any>("http://127.0.0.1:8000/get_admin_grippers/"+1)
   }
+  gripperTcpDetails(grippertcpdata:any){
+    return this.http.post<any>("http://127.0.0.1:8000/gripper_tcp",grippertcpdata)
+  }
 }
