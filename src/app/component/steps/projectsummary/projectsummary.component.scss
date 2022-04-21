@@ -71,10 +71,7 @@
     .inner-wrapper {
         display: block;
     }
-    &:ng-deep {
-        .mat-paginator-container {
-            justify-content: space-between !important;
-        }
+    &:ng-deep {        
     }
     .search {
         position: relative;

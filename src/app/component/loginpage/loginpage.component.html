@@ -23,24 +23,24 @@
                     <div class="col-xl-12 col-sm-12 floatleft usename f-14 mb-15">
                         <span class="col-xl-12 col-sm-12 floatleft f-14 ">User Name</span>
                         <mat-form-field appearance="outline" class="col-12  ">
-                            <input matInput class="mt-7">
+                            <input matInput class="mt-7" formControlName="username">
                         </mat-form-field>
                     </div>
                     <div class="col-xl-12 col-sm-12 floatleft f-14 mb-35">
                         <span class="col-xl-12 col-sm-12 floatleft f-14 ">Password</span>
                         <mat-form-field appearance="outline" class="col-12 ">
-                            <input matInput class="mb-2" [type]="hide ? 'password' : 'text'">
+                            <input matInput class="mt-7" [type]="hide ? 'password' : 'text'" formControlName="password" style="height:20px;padding-top:3px">
                             <button class="nonebg" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-                                <mat-icon class="material-icons-outlined eyeicon">
+                                <mat-icon class="material-icons-outlined eyeicon" style="position:relative;top:-1px">
                                     visibility
-                                    </mat-icon>
+                                </mat-icon>
                             </button>
                         </mat-form-field>
                     </div>
                     <span class="col-xl-12 col-sm-12 floatleft f-14 mr-20 mb-35 d-flex align-items-center">
                         <span class="col-xl-6 col-sm-6 floatleft f-14 ">
                             <label class="switch">
-                                <input type="checkbox" name="usertype" />
+                                <input type="checkbox" name="usertype" formControlName="isAdmin" />
                                 <span class="slider round"></span>
                     </label>
                     </span>

@@ -26,7 +26,7 @@
                 display: flex;
                 align-items: center;
                 justify-content: flex-start;
-                
+
                 &:hover,
                 &:focus,
                 &:hover:focus {
@@ -49,7 +49,7 @@
                     z-index: 0;
                     opacity: 0.1;
                 }
-                
+
                 span  {
                     background-color: #FFFFFF;
                     width: 20px;
@@ -67,12 +67,12 @@
                         color: #FFFFFF;
                     }
                 }
-                
+
                 height: 30px;
                 border-radius: 2px;
                 margin: 3px 0;
                 text-align: left;
-                
+
                 .success {
                     background: $activeColor 0% 0% no-repeat padding-box;
                 }
@@ -109,7 +109,7 @@
                     margin-top: 0;
                 }
                 &:last-child {
-                    margin-bottom: 0;
+                    margin-bottom: -21px;
                 }
             }
             .li.active {

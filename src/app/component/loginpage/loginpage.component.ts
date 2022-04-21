@@ -15,13 +15,15 @@ export class LoginpageComponent implements OnInit {
   resetShow: any;
   afterResetSuccess: any;
   signinShow: boolean = true;
-  isAdmin = false;
+  // isAdmin = false;
 
   constructor(public fb: FormBuilder, public router: ActivatedRoute, public route: Router) { }
 
   ngOnInit(): void {
     this.signInForm = this.fb.group({
-
+      username: new FormControl('',[Validators.required, Validators.nullValidator]),
+      password: new FormControl('',[Validators.required, Validators.nullValidator]),
+      isAdmin: new FormControl(false)
     })
   }
 
@@ -34,9 +36,11 @@ export class LoginpageComponent implements OnInit {
 
   onSubmit(event:any) {
     event.preventDefault();
-    console.log(this.signInForm);
+    if(this.signInForm.status === 'VALID') {
+      sessionStorage.setItem('isAdmin', this.signInForm.controls.isAdmin.value);
+      (this.route.navigate(['/project-details']));
+    }
     return;
-    // this.route.navigate(['/project-details']);
   }
   nextOtp() {
     this.otpShow = true;
@@ -86,6 +90,6 @@ export class LoginpageComponent implements OnInit {
     this.route.navigate(['/project-details']);
   }
   setAdmin() {
-    console.log(this.isAdmin)
+    // console.log(this.isAdmin)
   }
 }

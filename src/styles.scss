@@ -177,3 +177,11 @@ img[alt='info'] {
     padding: 0 0px !important;
     min-width: 90px !important;
 }
+.mat-paginator-container {
+    justify-content: space-between !important;
+    padding: 0 !important;
+
+    .mat-paginator-range-label::before {
+      content: "Showing";
+    }
+}
