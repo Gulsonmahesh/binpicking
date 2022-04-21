@@ -1,5 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { RouterService } from 'src/app/service/router.service';
+import { ObjectService } from 'src/app/service/object.service';
 
 @Component({
   selector: 'app-objects',
@@ -15,9 +16,12 @@ export class ObjectsComponent implements OnInit {
     }
   }
   
-  constructor(public routeService: RouterService) { }
+  constructor(public routeService: RouterService,private objectservice: ObjectService) { }
 
   ngOnInit(): void {
+    this.objectservice.getobjects().subscribe((data:any) => {
+      console.log(data)
+    })
   }
   
   showModel(event: any) {

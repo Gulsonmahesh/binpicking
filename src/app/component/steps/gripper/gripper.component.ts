@@ -1,5 +1,6 @@
 import { Component, OnInit,Output, EventEmitter } from '@angular/core';
 import { RouterService } from 'src/app/service/router.service';
+import { GripperService } from 'src/app/service/gripper.service';
 
 @Component({
   selector: 'app-gripper',
@@ -15,9 +16,13 @@ export class GripperComponent implements OnInit {
     {image: 'assets/robot.webp', name:'Vaccum Gripper' , selected: false}
 
   ];
-  constructor(public routeService: RouterService) { }
+  constructor(public routeService: RouterService,private gripperservice: GripperService) { }
 
   ngOnInit(): void {
+    this.gripperservice.getgrippers().subscribe((data:any) => {
+      console.log(data)
+    })
+
   }
   openModal() {
     this.buttonSelected.emit(true);
