@@ -64,8 +64,12 @@
                   </span>
                         </div>
                     </div>
-                    <app-mainfooter [showBack]="false" [showdeploy]="false" (movetonext)="routeService.movetonextpage('robot')" (movetoback)="routeService.movetonextpage('project-details')" submitname="Create and Continue">
+                    <app-mainfooter (buttonpopupSelected)="openpop()" [showBack]="false" [showdeploy]="false" (movetonext)="routeService.movetonextpage('robot')" (movetoback)="routeService.movetonextpage('project-details')" submitname="Create and Continue">
+
                     </app-mainfooter>
+                    <app-model *ngIf="showClosePopup" customclass="closemodal">
+                        Srevin
+                    </app-model>
                 </div>
             </div>
         </div>

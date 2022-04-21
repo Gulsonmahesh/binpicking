@@ -9,6 +9,10 @@ import { RouterService } from '../../../service/router.service';
 })
 export class ProjectdetailsComponent implements OnInit {
 
+  showClosePopup = false;
+  openpop(){
+    this.showClosePopup = true;
+  }
   constructor(public routeService: RouterService) {
 
     
