@@ -38,4 +38,41 @@
         gap: 5px;
         max-height: 520px;
     }
+    .color {
+        background: #35AFF8;
+        padding: 3px 3px;
+        border-radius: 13px;
+        font-size: 10px;
+        height: 16px;
+        width: 16px;
+        margin-right: 5px;
+        color: #fff;
+        position: relative;
+        top: 0px;
+    }
+    .gray {
+        background: transparent;
+        padding: 0px 0px 0px 0px;
+        border-radius: 13px;
+        font-size: 17px;
+        height: 16px;
+        width: 16px;
+        position: relative;
+        margin: 0px 6px 0px 4px;
+        color: #a9a9a9cc;
+        position: relative;
+        top: 4px;
+    }
+    .aligntext {
+        margin-right: 15px;
+        border-right: 1px solid gray;
+        padding-right: 10px;
+    }
+    .aligntext1 {
+        margin-right: 15px;
+        padding-right: 10px;
+    }
+    .colorgray {
+        color: #a9a9a9cc;
+    }
 }

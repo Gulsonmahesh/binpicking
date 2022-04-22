@@ -9,6 +9,8 @@ import { RobotDetailsComponent } from '../../common/robot-details/robot-details.
 })
 export class RobotComponent implements OnInit {
   
+
+  isAdmin = false;
   constructor(public routeService: RouterService,private robotservice: RobotService) { }
   
   robotDetails? = [
@@ -38,6 +40,8 @@ export class RobotComponent implements OnInit {
     this.robotservice.getrobots().subscribe((data:any) => {
     console.log(data)
     })
+
+    this.isAdmin= sessionStorage.getItem('isAdmin') === 'true' ? true: false;
   }
 
 }

@@ -66,12 +66,13 @@
                     </div>
                     <app-mainfooter (buttonpopupSelected)="openpop()" [showBack]="false" [showdeploy]="false" (movetonext)="routeService.movetonextpage('robot')" (movetoback)="routeService.movetonextpage('project-details')" submitname="Create and Continue">
 
-                        <app-mainfooter [showBack]="false" [showdeploy]="false" (movetonext)="createProjectDetails()" (movetoback)="routeService.movetonextpage('project-details')" submitname="Create and Continue">
-                        </app-mainfooter>
-                        <app-model *ngIf="showClosePopup" customclass="closemodal">
-                            Srevin
-                        </app-model>
+                        <!-- <app-mainfooter [showBack]="false" [showdeploy]="false" (movetonext)="createProjectDetails()" (movetoback)="routeService.movetonextpage('project-details')" submitname="Create and Continue">
+                        </app-mainfooter> -->
+
                     </app-mainfooter>
+                    <app-model *ngIf="showClosePopup" customclass="closemodal">
+                        Srevin
+                    </app-model>
                 </div>
             </div>
         </div>

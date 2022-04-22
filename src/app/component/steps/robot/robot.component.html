@@ -8,14 +8,44 @@
                 <app-sidebar></app-sidebar>
             </div>
             <div class="maincontent">
-                <div class="pb-20 pl-25 pt-20 ">
+                <div class="pb-20 pl-25 pt-20" [ngClass]="{'d-flex align-items-center justify-content-between' : isAdmin }">
                     <h3 class="d-inline-flex align-items-center">
-                        <span class="f-16 bold">Select Robot</span>
-                        <app-tooltip>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore iusto reiciendis laborum nisi porro, voluptate pariatur impedit illo cum velit rerum corrupti quos ratione ad. Animi, amet quaerat officiis molestias id nulla ad non cumque. Adipisci itaque
-                            sint saepe, iusto accusantium fugiat quod doloremque. Alias, fugit. Repudiandae tempore iusto tempora.
-                        </app-tooltip>
+                        <span class="f-16 bold">{{isAdmin? 'List of Robots' : 'Select Robot'}}
+                            <app-tooltip>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore iusto reiciendis laborum nisi porro, voluptate pariatur impedit illo cum velit rerum corrupti quos ratione ad. Animi, amet quaerat officiis molestias id nulla ad non cumque. Adipisci itaque
+                                sint saepe, iusto accusantium fugiat quod doloremque. Alias, fugit. Repudiandae tempore iusto tempora.
+                            </app-tooltip>
+                        </span>
                     </h3>
+                    <div class="" *ngIf=isAdmin>
+                        <div class="pr-20">
+                            <span class="col-xl-12 col-sm-12 col-xs-12 f-12  cursorpointer aligntext">
+                                <mat-icon class="material-icons-outlined color" alt="faq">
+                                    add
+                                </mat-icon>
+                               <label class="f-13">Add Robot</label> 
+                        </span>
+                            <span class="col-xl-12 col-sm-12 col-xs-12 f-12 cursorpointer  aligntext">
+                            <mat-icon class="material-icons-outlined color" alt="faq">
+                                add
+                            </mat-icon>
+                            <label class="f-13">Add Gripper</label>
+                    </span>
+                            <span class="col-xl-12 col-sm-12 col-xs-12 f-12  cursorpointer aligntext">
+                        <mat-icon class="material-icons-outlined gray" alt="faq">
+                            edit
+                        </mat-icon>
+                        <label class="f-13 colorgray">  Edit Gripper</label>
+                </span>
+                            <span class="col-xl-12 col-sm-12 col-xs-12 f-12  cursorpointer aligntext1">
+                    <mat-icon class="material-icons-outlined gray" alt="faq">
+                        delete
+                    </mat-icon>
+                    <label class="f-13 colorgray">  Delete Gripper</label>
+            </span>
+
+                        </div>
+                    </div>
                 </div>
                 <div class="innermaincontainer pl-20">
                     <div class="robotcontainer border-1 pb-20 ">
@@ -24,7 +54,7 @@
                         </ng-container>
                     </div>
                 </div>
-                <app-mainfooter [showdeploy]="false" (movetonext)="routeService.movetonextpage('gripper')" (movetoback)="routeService.movetonextpage('project-details')">
+                <app-mainfooter *ngIf="!isAdmin" [showdeploy]="false" (movetonext)="routeService.movetonextpage('gripper')" (movetoback)="routeService.movetonextpage('project-details')">
                 </app-mainfooter>
             </div>
         </div>
