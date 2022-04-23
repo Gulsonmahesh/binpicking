@@ -177,11 +177,34 @@ img[alt='info'] {
     padding: 0 0px !important;
     min-width: 90px !important;
 }
+
 .mat-paginator-container {
     justify-content: space-between !important;
     padding: 0 !important;
-
     .mat-paginator-range-label::before {
-      content: "Showing";
+        content: "Showing";
+    }
+}
+
+.modelfooter {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    button {
+        min-width: 74px;
+        border-radius: 5px;
+        border: 1px solid;
+        padding: 3px !important;
+        font-size: 12px;
+        &:first-child {
+            background-color: #fff;
+            color: #333333;
+        }
+        &:last-child {
+            background-color: #35AFF8;
+            border: 1px solid #35AFF8;
+            color: #FFFFFF;
+        }
     }
 }

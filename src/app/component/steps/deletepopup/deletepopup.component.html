@@ -1,0 +1,11 @@
+<div class="modelcontainer {{customclass}}">
+    <div class="model">
+        <div class="modelheader">
+            <h1 class="m-0">{{headertitle}}</h1>
+            <button (click)="closeModelclick()" class="modalclose"></button>
+        </div>
+        <div class="modelcontent">
+            <ng-content></ng-content>
+        </div>
+    </div>
+</div>

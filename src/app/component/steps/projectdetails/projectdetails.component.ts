@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { CreateprojectService } from 'src/app/service/createproject.service';
 import { RouterService } from '../../../service/router.service';
 
@@ -9,6 +9,14 @@ import { RouterService } from '../../../service/router.service';
   
 })
 export class ProjectdetailsComponent implements OnInit {
+  
+  model = false;
+  @HostListener('document:keyup', ['$event']) closeModel(event: KeyboardEvent) {
+    if(this.model && event.key == 'Escape') {
+      this.model = false;
+    }
+  }
+
 
   showClosePopup = false;
   openpop(){
@@ -42,5 +50,7 @@ export class ProjectdetailsComponent implements OnInit {
     });
     // this.routeService.movetonextpage('robot')
   }
-
+  showModel(event: any) {
+    this.model = event;
+  }
 }

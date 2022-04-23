@@ -291,20 +291,21 @@ body::-webkit-scrollbar {
 .pad {
     padding: 30px 70px;
 }
+
 .switch {
     position: relative;
     display: inline-block;
     width: 40px;
     height: 20px;
-  }
+}
 
-  .switch input {
+.switch input {
     opacity: 0;
     width: 0;
     height: 0;
-  }
+}
 
-  .slider {
+.slider {
     position: absolute;
     cursor: pointer;
     top: 0;
@@ -314,9 +315,9 @@ body::-webkit-scrollbar {
     background-color: #ccc;
     -webkit-transition: .4s;
     transition: .4s;
-  }
+}
 
-  .slider:before {
+.slider:before {
     position: absolute;
     content: "";
     height: 12px;
@@ -326,26 +327,34 @@ body::-webkit-scrollbar {
     background-color: white;
     -webkit-transition: .4s;
     transition: .4s;
-  }
+}
 
-  input:checked + .slider {
+input:checked+.slider {
     background-color: #2196F3;
-  }
+}
 
-  input:focus + .slider {
+input:focus+.slider {
     box-shadow: 0 0 1px #2196F3;
-  }
+}
 
-  input:checked + .slider:before {
+input:checked+.slider:before {
     -webkit-transform: translateX(20px);
     transform: translateX(20px);
-  }
+}
 
-  /* Rounded sliders */
-  .slider.round {
+
+/* Rounded sliders */
+
+.slider.round {
     border-radius: 34px;
-  }
+}
 
-  .slider.round:before {
+.slider.round:before {
     border-radius: 50%;
-  }
+}
+
+.label {
+    position: relative;
+    left: 44px;
+    font-size: 12px;
+}

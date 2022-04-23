@@ -42,6 +42,7 @@ import { EditorModule } from '@tinymce/tinymce-angular';
 import { EnvironmentComponent } from './component/steps/environment/environment.component';
 import { ExecutebinComponent } from './component/steps/executebin/executebin.component';
 import { ProgressPopupComponent } from './component/steps/progress-popup/progress-popup.component';
+import { DeletepopupComponent } from './component/steps/deletepopup/deletepopup.component';
 
 const material=[
   MatFormFieldModule, MatInputModule, MatSelectModule, MatIconModule,FormsModule,ReactiveFormsModule,MatSlideToggleModule,
@@ -73,7 +74,8 @@ const material=[
     LoginpageComponent,
     EnvironmentComponent,
     ExecutebinComponent,
-    ProgressPopupComponent    
+    ProgressPopupComponent,
+    DeletepopupComponent    
   ],
   imports: [
     material,
