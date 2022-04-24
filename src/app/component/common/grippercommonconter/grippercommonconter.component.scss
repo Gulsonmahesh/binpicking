@@ -1,4 +1,9 @@
 :host {
+    #model {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
     .gripper {
         display: grid;
         grid-template-columns: 200px auto;
