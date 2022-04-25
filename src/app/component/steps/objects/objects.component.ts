@@ -13,6 +13,8 @@ export class ObjectsComponent implements OnInit {
   objectName = '';
   description = '';
 
+  objects_details = {};
+
   @HostListener('document:keyup', ['$event']) closeModel(event: KeyboardEvent) {
     if(this.model && event.key == 'Escape') {
       this.model = false;
@@ -22,9 +24,7 @@ export class ObjectsComponent implements OnInit {
   constructor(public routeService: RouterService,private objectservice: ObjectService) { }
 
   ngOnInit(): void {
-    this.objectservice.getobjects().subscribe((data:any) => {
-      console.log(data)
-    })
+    this.getObjectDetails()
   }
 
   onFileSelecetd (event: any) {
@@ -32,19 +32,29 @@ export class ObjectsComponent implements OnInit {
     this.selectedFile = <File>event.target.files[0];
   }
 
+  getObjectDetails(){
+    this.objectservice.getobjects().subscribe((object_data:any) => {
+      console.log("object_data",object_data)
+
+    })
+  }
+
   createObject(){
-    const proJectId = sessionStorage.getItem('project_id') ? sessionStorage.getItem('project_id') : 1;
+    // const proJectId = sessionStorage.getItem('project_id') ? sessionStorage.getItem('project_id') : 1;
+    const proJectId = 1;
     const objectData = new FormData();
     objectData.append('object_file', <File>this.selectedFile, this.selectedFile?.name );
-    objectData.append("project_id", <string>proJectId );
+    objectData.append("project_id", <any>proJectId );
     objectData.append("description", <string>this.description );
     objectData.append("object_name", <string>this.objectName );
 
+    console.log("objectData",objectData)
 
     this.objectservice.objectDetails(objectData).subscribe((data:any) => {
       if(data.status==="success") {
         this.model=false;
-        this.routeService.movetonextpage('environment')
+
+        // this.routeService.movetonextpage('environment')
       }
       else
       console.log("Error",data)

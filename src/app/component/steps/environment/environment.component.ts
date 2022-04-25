@@ -13,7 +13,6 @@ export class EnvironmentComponent implements OnInit {
  
   constructor(public routeService: RouterService,private environmentservice: EnvironmentService) { }
 
-
   ngOnInit(): void {
     this.environmentservice.getenvironmentdetails().subscribe((data:any) => {
       console.log(data)
