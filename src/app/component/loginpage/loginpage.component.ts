@@ -41,7 +41,7 @@ export class LoginpageComponent implements OnInit {
       if(this.signInForm.controls.isAdmin.value === true) {
       this.route.navigate(['/robot']);
       } else {
-        this.route.navigate(['/project-details']);
+        this.route.navigate(['/projectsummary']);
       }
 
     }
