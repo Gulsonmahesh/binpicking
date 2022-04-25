@@ -64,10 +64,26 @@
                   </span>
                         </div>
                     </div>
-                    <app-mainfooter [showBack]="false" [showdeploy]="false" (movetonext)="createProjectDetails()" (movetoback)="routeService.movetonextpage('project-details')" submitname="Create and Continue">
+                    <app-mainfooter (buttonpopupSelected)="openpop()" [showBack]="false" [showdeploy]="false" (movetonext)="routeService.movetonextpage('robot')" (movetoback)="routeService.movetonextpage('project-details')" submitname="Create and Continue">
+
+                        <!-- <app-mainfooter [showBack]="false" [showdeploy]="false" (movetonext)="createProjectDetails()" (movetoback)="routeService.movetonextpage('project-details')" submitname="Create and Continue">
+                        </app-mainfooter> -->
+
                     </app-mainfooter>
+                    <!-- <app-deletepopup *ngIf="showClosePopup" customclass="closemodal">
+                        <div>
+                           
+                        </div>
+                    </app-deletepopup> -->
+                    <app-deletepopup headertitle="Save Progress" *ngIf="showClosePopup" customclass="closemodal" (closeModelEmit)="showModel($event)">
+
+                        <label for="uploadobject" class="mb-3 f-12">Do you want to save this project to process later?</label>
+                        <div class="modelfooter">
+                            <button (click)="model=false">NO</button>
+                            <button (click)="model=false" class="ml-10">YES</button>
+                        </div>
+                    </app-deletepopup>
                 </div>
             </div>
         </div>
     </div>
-</div>

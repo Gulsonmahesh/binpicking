@@ -1,0 +1,53 @@
+:host {
+    .modelcontainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        left: 20px;
+        bottom: 20px;
+        background-color: rgba(0, 0, 0, 0.3);
+        z-index: 200;
+        width: calc(100% - 40px);
+        max-width: 100%;
+    }
+    .model {
+        height: auto;
+        max-width: 100%;
+        width: 430px;
+        max-height: max-content;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        background-color: #fff;
+        border-radius: 5px;
+        flex-direction: column;
+    }
+    .modelheader {
+        padding: 20px 20px 10px 20px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        // margin-bottom: 10px;
+        border-bottom: 1px solid lightgray;
+        h1 {
+            font-size: 14px;
+            font-weight: bold;
+            // padding: 0 0 10px 0;
+        }
+        .modalclose {
+            width: 10px;
+            height: 10px;
+            background: transparent url('../../../../assets/modalclose.svg') 0% 0% no-repeat padding-box;
+            background-size: cover;
+            border: none;
+        }
+    }
+    .modelcontent {
+        display: block;
+        padding: 20px 20px;
+        width: 100%;
+    }
+}

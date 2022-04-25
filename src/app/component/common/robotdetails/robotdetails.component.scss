@@ -1,14 +1,14 @@
 :host {
     .robot {
         width: 261px;
-        height: 330px;
+        height: auto;
         background: #FFFFFF 0% 0% no-repeat padding-box;
         border: 2px solid #E3E3E3;
         border-radius: 10px;
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 30px 10px 7px 10px;
+        padding: 10px 10px 7px 10px;
         margin-bottom: 15px;
         &:hover {
             box-shadow: 0px 3px 10px #35AFF898;
@@ -63,6 +63,34 @@
         input[type=radio] {
             // accent-color: green !important;
             background-image: url(../../../../assets/close.png) !important;
+        }
+        .color {
+            background: #35AFF8;
+            padding: 3px 3px;
+            border-radius: 13px;
+            font-size: 10px;
+            height: 16px;
+            width: 16px;
+            margin-right: 5px;
+            color: #fff;
+            position: relative;
+            top: 0px;
+        }
+        .viewgripper {
+            float: left;
+            width: 100%;
+            color: #35AFF8;
+            padding: 10px 1px 10px 0px;
+        }
+        .viewgrprhead {
+            padding: 3px 3px;
+            font-size: 17px;
+            height: 22px;
+            width: 22px;
+            margin-left: 5px;
+            color: #35AFF8;
+            position: relative;
+            top: 4px;
         }
     }
 }
