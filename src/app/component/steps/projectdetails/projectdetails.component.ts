@@ -32,8 +32,8 @@ export class ProjectdetailsComponent implements OnInit {
 
     this.createprojectservice.getproject_id().subscribe((data:any) => {
     console.log(data)
-    this.project_id = data.id+1
-    sessionStorage.setItem("project_id",this.project_id)
+    this.project_id = data.id+1;
+    sessionStorage.setItem('project_id', this.project_id);
     })
   }
 

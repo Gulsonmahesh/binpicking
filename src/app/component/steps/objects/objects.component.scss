@@ -44,7 +44,7 @@
                 background-color: #fff;
             }
             &:last-child {
-                background-color: #e3e3e3;
+                // background-color: #e3e3e3;
                 border: none;
             }
         }
@@ -57,9 +57,10 @@
     bottom: 5px !important;
 }
 
-.labeluploade {
+.labelupload {
     position: relative !important;
     left: 80px !important;
     color: #35AFF8;
     font-size: 14px;
+    cursor: pointer;
 }

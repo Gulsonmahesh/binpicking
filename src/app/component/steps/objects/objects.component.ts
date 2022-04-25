@@ -9,6 +9,9 @@ import { ObjectService } from 'src/app/service/object.service';
 })
 export class ObjectsComponent implements OnInit {
   model = false;
+  selectedFile?: File ;
+  objectName = '';
+  description = '';
 
   @HostListener('document:keyup', ['$event']) closeModel(event: KeyboardEvent) {
     if(this.model && event.key == 'Escape') {
@@ -24,11 +27,25 @@ export class ObjectsComponent implements OnInit {
     })
   }
 
+  onFileSelecetd (event: any) {
+    console.log(event);
+    this.selectedFile = <File>event.target.files[0];
+  }
+
   createObject(){
-    const objectdata = {object_name:"wiprohinge",description:"updated hinge",object_file:"file need to send",project_id:1}
-    this.objectservice.objectDetails(objectdata).subscribe((data:any) => {
-      if(data.status==="success")
-      this.routeService.movetonextpage('environment')
+    const proJectId = sessionStorage.getItem('project_id') ? sessionStorage.getItem('project_id') : 1;
+    const objectData = new FormData();
+    objectData.append('object_file', <File>this.selectedFile, this.selectedFile?.name );
+    objectData.append("project_id", <string>proJectId );
+    objectData.append("description", <string>this.description );
+    objectData.append("object_name", <string>this.objectName );
+
+
+    this.objectservice.objectDetails(objectData).subscribe((data:any) => {
+      if(data.status==="success") {
+        this.model=false;
+        this.routeService.movetonextpage('environment')
+      }
       else
       console.log("Error",data)
     },
@@ -42,3 +59,4 @@ export class ObjectsComponent implements OnInit {
   }
 
 }
+
