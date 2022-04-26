@@ -29,7 +29,6 @@ export class ProjectdetailsComponent implements OnInit {
    projectName = "";
 
   ngOnInit(): void {
-
     this.createprojectservice.getproject_id().subscribe((data:any) => {
     console.log(data)
     this.project_id = data.id+1;
