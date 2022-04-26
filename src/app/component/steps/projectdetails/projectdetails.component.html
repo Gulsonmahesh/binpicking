@@ -41,14 +41,14 @@
                             <span>
                           
                       <editor 
-                      apiKey="9x98p6u4qeidajuf25isv052g0lgdwnq5njs2ryw1m03mecx" 
-                      plugins="code"
-                      outputFormat="text" class="mb-30" style="height: 180px !important;"
-                     
+                        apiKey="9x98p6u4qeidajuf25isv052g0lgdwnq5njs2ryw1m03mecx" 
+                        plugins="code" outputFormat="text" class="mb-30" style="height: 180px !important;"
+                        [(ngModel)]="projectDescription"
                         [init]="{
                             height: 200,
                             base_url: '/tinymce', 
                             suffix: '.min' ,
+                            element_format: 'html',
                           plugins: [
                           'advlist autolink lists link image charmap print preview anchor',
                             'searchreplace visualblocks code fullscreen',
@@ -64,7 +64,7 @@
                   </span>
                         </div>
                     </div>
-                    <app-mainfooter (buttonpopupSelected)="openpop()" [showBack]="false" [showdeploy]="false" (movetonext)="routeService.movetonextpage('robot')" (movetoback)="routeService.movetonextpage('project-details')" submitname="Create and Continue">
+                    <app-mainfooter (buttonpopupSelected)="openpop()" [showBack]="false" [showdeploy]="false" (movetonext)="createProjectDetails()" (movetoback)="routeService.movetonextpage('project-details')" submitname="Create and Continue">
 
                         <!-- <app-mainfooter [showBack]="false" [showdeploy]="false" (movetonext)="createProjectDetails()" (movetoback)="routeService.movetonextpage('project-details')" submitname="Create and Continue">
                         </app-mainfooter> -->

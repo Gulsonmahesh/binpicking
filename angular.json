@@ -39,7 +39,10 @@
                             "src/common.scss",
                             "./node_modules/bootstrap/dist/css/bootstrap.css"
                         ],
-                        "scripts": ["./node_modules/tinymce/tinymce.min.js"]
+                        "scripts": [
+                            "./node_modules/tinymce/tinymce.min.js",
+                            "src/assets/js/stl_viewer/js/stl_viewer.min.js"
+                        ]
                     },
                     "configurations": {
                         "production": {
@@ -105,7 +108,9 @@
                             "src/styles.scss",
                             "src/common.scss"
                         ],
-                        "scripts": []
+                        "scripts": [
+                            "src/assets/js/stl_viewer/js/stl_viewer.min.js"
+                        ]
                     }
                 }
             }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterService } from 'src/app/service/router.service';
 import { GrippertcpService } from 'src/app/service/grippertcp.service';
+
 @Component({
   selector: 'app-grippertcp',
   templateUrl: './grippertcp.component.html',

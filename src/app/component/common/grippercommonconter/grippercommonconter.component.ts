@@ -1,8 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-// import * as THREE from 'three';
-// import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-// import { STLLoader } from 'three/examples/jsm/loaders/STLLoader';
-// import Stats from 'three/examples/jsm/libs/stats.module';
+declare var StlViewer: any;
 
 @Component({
   selector: 'app-grippercommonconter',
@@ -17,7 +14,14 @@ export class GrippercommonconterComponent implements OnInit {
   renderer?: any;
   controls?: any;
   scene?: any;
-
+  stl_viewer?: any;
+  xdegValue?: any;
+  ydegValue?: any;
+  zdegValue?: any;
+  xAxis?: any;
+  yAxis?: any;
+  zAxis?: any;
+  
   constructor() { }
   
   toggleShow() {
@@ -25,6 +29,12 @@ export class GrippercommonconterComponent implements OnInit {
   }
   
   ngOnInit(): void {    
+    this.stl_viewer=new StlViewer(document.getElementById("model"),
+    {
+      zoom:380,
+      models: [ {id:1,filename: "../../assets/stl/peter.stl",color:"#DFFF00", view_edges:true } ]
+      }
+    )
   }
 
 }
