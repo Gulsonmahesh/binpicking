@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+    <title>Welcome to stlviewer</title>
+    <!-- <script src="/home/satya/Documents/stl_viewer/newmethod/stl_viewer.min.js"></script>
+    <script src="/home/satya/Documents/stl_viewer/newmethod/three.min.js"></script>
+    <script src="/home/satya/Documents/stl_viewer/newmethod/CanvasRenderer.js"></script>
+    <script src="/home/satya/Documents/stl_viewer/newmethod/ie_polyfills.js"></script>
+    <script src="/home/satya/Documents/stl_viewer/newmethod/load_stl.min.js"></script>
+    <script src="/home/satya/Documents/stl_viewer/newmethod/Orbitcontrols.js"></script>
+    <script src="/home/satya/Documents/stl_viewer/newmethod/parser.min.js"></script>
+    <script src="/home/satya/Documents/stl_viewer/newmethod/Projector.js"></script>
+    <script src="/home/satya/Documents/stl_viewer/newmethod/TrackballControls.js"></script>
+    <script src="/home/satya/Documents/stl_viewer/newmethod/TransformControls.js"></script>
+    <script src="/home/satya/Documents/stl_viewer/newmethod/webgl_detector.js"></script> -->
+</head>
+<body>
+    <h1>helo </h1>
+    <div id="stl_cont"></div>
+    <script>
+        // gripper_path = "/home/satya/Documents/stl_viewer/gripper/Robotiqgripper.stl"
+        // object_name = "/home/satya/Documents/stl_viewer/gripper/Robotiqgripper.stl"
+        var stl_viewer1=new StlViewer
+        (
+            document.getElementById("stl_cont"),
+            {
+            zoom:380,
+            models:
+            [
+                {id:1,filename: gripper_path,color:"#DFFF00", view_edges:true },
+                {id:2,filename: object_name,color:"#FF1212",view_edges:true},
+            ]
+
+            }
+        )
+    </script>
+</body>

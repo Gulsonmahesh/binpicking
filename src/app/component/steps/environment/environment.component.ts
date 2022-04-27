@@ -9,8 +9,12 @@ import { EnvironmentService } from 'src/app/service/environment.service';
 export class EnvironmentComponent implements OnInit {
 
   uploadenvmnt=true;
-  uploadcad=false;
- 
+  uploadcad=true;
+  selectedEnvFile?: File ;
+  selecteBinFile?: File ;
+  step1 = true;
+  step2 = false;
+
   constructor(public routeService: RouterService,private environmentservice: EnvironmentService) { }
 
   ngOnInit(): void {
@@ -18,8 +22,22 @@ export class EnvironmentComponent implements OnInit {
       console.log(data)
     })
   }
+
+  onchangeEnvFile(event:any) {
+    this.selectedEnvFile = <File>event.target.files[0];    
+  }
+  onchangeBinFile(event:any) {
+    this.selecteBinFile = <File>event.target.files[0];
+  }
   environmentPageData(){
-    const master_environment_data = {env_name:"environment",env_file:"file need to select",bin_name:"bin",bin_file:"fille need to select",project_id:1}
+    const master_environment_data = {
+      env_name:"environment",
+      env_file:"file need to select",
+      bin_name:"bin",
+      bin_file:"fille need to select",
+      project_id:1
+    }
+
     this.environmentservice.environmentDetails(master_environment_data).subscribe((data:any) => {
       if(data.status==="success")
       this.routeService.movetonextpage('calibration')

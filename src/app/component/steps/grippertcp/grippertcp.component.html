@@ -12,7 +12,87 @@
                     <h2 class="f-16 bold pb-20">Configure Gripper TCP
                         <app-tooltip>Test</app-tooltip>
                     </h2>
-                    <app-grippercommonconter></app-grippercommonconter>
+                    <div class="col-12 col-sm-12 col-xs-12 col-md-12 gripper">
+                        <div class="col-5 col-sm-5 col-xs-5 col-md-5 position">
+                            <h3 class="m-0">Position</h3>
+                            <div class="positioncontainer mb-2">
+                                <div class="mb-1">
+                                    <label for="x" class="form-label">X(mm)</label>
+                                    <input type="text" class="form-control" id="x" placeholder="0.0" [(ngModel)]="xValue">
+                                </div>
+                                <div class="mb-1">
+                                    <label for="y" class="form-label">Y(mm)</label>
+                                    <input type="text" class="form-control" id="y" placeholder="0.0"  [(ngModel)]="yValue">
+                                </div>
+                                <div class="mb-1">
+                                    <label for="z" class="form-label">Z(mm)</label>
+                                    <input type="text" class="form-control" id="z" placeholder="0.0"  [(ngModel)]="zValue">
+                                </div>
+                            </div>
+                            <div class="rotationcontainer mb-2">
+                                <h3 class="m-0 mb-2">Rotation</h3>
+                                <div class="mb-1">
+                                    <label for="xdeg" class="mb-1">X <span>deg</span></label>
+                                    <div class="d-inline-flex align-items-center justify-content-between">
+                                        <span>-180</span>
+                                        <input type="range" name="xdeg" id="xdeg" min="-180" max="180" [(ngModel)]="xdegValue">
+                                        <span>180</span>
+                                        <input type="text" class="disabledinput" name="xdegvalue" id="xdegvalue" disabled value="{{xdegValue}}"/>
+                                    </div>
+                                </div>
+                                <div class="mb-1">
+                                    <label for="ydeg" class="mb-1">Y <span>deg</span></label>
+                                    <div class="d-inline-flex align-items-center justify-content-between">
+                                        <span>-180</span>
+                                        <input type="range" name="ydeg" id="ydeg" min="-180" max="180" [(ngModel)]="ydegValue">
+                                        <span>180</span>
+                                        <input type="text" class="disabledinput" name="ydegvalue" id="ydegvalue" disabled value="{{ydegValue}}"/>
+                                    </div>
+                                </div>
+                                <div class="mb-1">
+                                    <label for="zdeg" class="mb-1">Z <span>deg</span></label>
+                                    <div class="d-inline-flex align-items-center justify-content-between">
+                                        <span>-180</span>
+                                        <input type="range" name="zdeg" id="zdeg" min="-180" max="180" [(ngModel)]="zdegValue">
+                                        <span>180</span>
+                                        <input type="text" class="disabledinput" name="zdegvalue" id="zdegvalue" disabled value="{{zdegValue}}"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-check mb-2 p-0">
+                                <input (click)="toggleShow()" type="checkbox" class="pt-10" />
+                                <label class="form-check-label pl-10" for="enablerotation">Enable rotation invarience</label>
+                            </div>
+                            <div class="" *ngIf="isShown">
+                                <div class="mb-2 m-0 fw-bold">
+                                    Rotation invarience around axis
+                                </div>
+                                <div class="d-flex align-content-center justify-content-between">
+                                    <input class="mt-0" type="radio" name="axis" value=""  min="0" max="360" [(ngModel)]="xAxis" aria-label="Radio button for following text input">X-axis
+                                    <input class="mt-0" type="radio" name="axis" value=""  min="0" max="360" [(ngModel)]="yAxis" aria-label="Radio button for following text input">Y-axis
+                                    <input class="mt-0" type="radio" name="axis" value=""  min="0" max="360" [(ngModel)]="zAxis" aria-label="Radio button for following text input">Z-axis
+                                </div>
+                                <div class="rotationcontainer my-2">
+                                    <div class="mb-1">
+                                        <label for="xrotate" class="form-label">Rotation lower limit(deg)</label>
+                                        <input type="number" class="form-control" id="xrotate" placeholder="-" [(ngModel)]="xDegree">
+                                    </div>
+                                    <div class="mb-1">
+                                        <label for="yrotate" class="form-label">Rotation upper limit(deg)</label>
+                                        <input type="number" class="form-control" id="yrotate" placeholder="-" [(ngModel)]="yDegree">
+                                    </div>
+                                    <div class="mb-1">
+                                        <label for="zrotate" class="form-label">Rotation number of stages</label>
+                                        <input type="number" class="form-control" id="zrotate" placeholder="5" [(ngModel)]="zDegree">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-7 col-sm-7 col-xs-7 col-md-7 viewer">
+                            <div id="model" #model></div>
+                        </div>
+                    </div>
+                    <!-- <app-grippercommonconter></app-grippercommonconter> -->
                     <!-- <div class="d-flex align-content-center justify-content-end mt-2 footerpanel">
                         <button class="cancel border-1 p-0 f-14 bold">Cancel</button>
                         <button class="save mx-3 border-0 p-0 f-14 bold">Save and Continue</button>

@@ -8,10 +8,10 @@
                 <app-sidebar></app-sidebar>
             </div>
             <div class="maincontent">
-                <div id="grippercontainer" class="wrappercontainer ">
+                <div id="grippercontainer" class="wrappercontainer">
                     <h2 class="bold f-16 mt-20 mb-20 pl-10">Upload CAD model of the Enviroment and Bin</h2>
 
-                    <div class="col-xl-12 col-sm-12 col-xs-12 mb-30 height" *ngIf="uploadenvmnt">
+                    <div class="col-xl-12 col-sm-12 col-xs-12 mb-30 height" *ngIf="step1">
                         <div class="col-xl-6 col-sm-6 col-xs-12 floatleft">
                             <div class="col-xl-12 col-sm-12 col-xs-12 pt-0 pl-10 pr-10">
                                 <div class="col-xl-12 col-sm-12 col-xs-12 f-14 bold mb-10">
@@ -24,15 +24,11 @@
                                     <div class="col-xl-12 col-sm-12 col-xs-12  bgwhite">
                                         <div class="col-xl-12 col-sm-12 col-xs-12 floatleft f-14 flexCenter"> Drag and drop ﬁle here or </div>
                                         <div class="col-xl-12 col-sm-12 col-xs-12 floatleft f-14 flexCenter color">
-
                                             Click here to upload </div>
                                         <label class="image-upload-container btn btn-bwm">
-                                                <span class="uploadbtn">  
-                                                    <input  Input
-                                                    type="file"
-                                                    accept="image/*" >
-                                                    Select Image</span>
-                                              </label>
+                                        <span class="uploadbtn">  
+                                            <input Input type="file" accept="image/*" (change)="onchangeEnvFile($event)" >Select Image</span>
+                                        </label>
                                     </div>
                                 </div>
                             </div>
@@ -53,10 +49,7 @@
                                             Click here to upload </div>
                                         <label class="image-upload-container btn btn-bwm">
                                                 <span class="uploadbtn">  
-                                                    <input  Input
-                                                    type="file"
-                                                    accept="image/*" >
-                                                    Select Image</span>
+                                                    <input  Input type="file" accept="image/*" (change)="onchangeBinFile($event)">Select Image</span>
                                               
                                               </label>
                                     </div>
@@ -64,7 +57,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-12 col-sm-12 col-xs-12 mb-30 height" *ngIf="uploadcad">
+                    <div class="col-xl-12 col-sm-12 col-xs-12 mb-30 height" *ngIf="step2">
                         <div class="col-xl-12 col-sm-12 col-xs-12">
                             <mat-tab-group>
                                 <mat-tab label="Robot">
