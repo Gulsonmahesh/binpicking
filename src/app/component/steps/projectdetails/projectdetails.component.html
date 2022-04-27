@@ -75,12 +75,12 @@
                            
                         </div>
                     </app-deletepopup> -->
-                    <app-deletepopup headertitle="Save Progress" *ngIf="showClosePopup" customclass="closemodal" (closeModelEmit)="showModel($event)">
+                    <app-deletepopup headertitle="Save Progress" *ngIf="showClosePopup" customclass="closemodal" (closeModelEmit)="showClosePopup=false">
 
                         <label for="uploadobject" class="mb-3 f-12">Do you want to save this project to process later?</label>
                         <div class="modelfooter">
-                            <button (click)="model=false">NO</button>
-                            <button (click)="model=false" class="ml-10">YES</button>
+                            <button (click)="showClosePopup=false">NO</button>
+                            <button (click)="showClosePopup=false" class="ml-10">YES</button>
                         </div>
                     </app-deletepopup>
                 </div>

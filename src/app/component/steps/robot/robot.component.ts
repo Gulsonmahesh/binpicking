@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { RouterService } from 'src/app/service/router.service';
 import { RobotService } from 'src/app/service/robot.service';
 import { RobotDetailsComponent } from '../../common/robot-details/robot-details.component';
@@ -9,7 +9,13 @@ import { RobotDetailsComponent } from '../../common/robot-details/robot-details.
 })
 export class RobotComponent implements OnInit {
   
+  model = false;
 
+  @HostListener('document:keyup', ['$event']) closeModel(event: KeyboardEvent) {
+    if(this.model && event.key == 'Escape') {
+      this.model = false;
+    }
+  }
   isAdmin = false;
   constructor(public routeService: RouterService,private robotservice: RobotService) { }
   
@@ -45,5 +51,10 @@ export class RobotComponent implements OnInit {
 
     this.isAdmin= sessionStorage.getItem('isAdmin') === 'true' ? true: false;
   }
+
+  showModel() {
+    this.model = true;
+  }
+
 
 }

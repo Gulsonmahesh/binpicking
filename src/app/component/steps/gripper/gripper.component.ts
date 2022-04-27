@@ -8,6 +8,8 @@ import { GripperService } from 'src/app/service/gripper.service';
   styleUrls: ['./gripper.component.scss']
 })
 export class GripperComponent implements OnInit {
+
+  isAdmin = false;
   @Output() buttonSelected =  new EventEmitter();
   model = false;
   gripperDetails: any = [
@@ -23,6 +25,7 @@ export class GripperComponent implements OnInit {
       console.log(data)
     })
 
+    this.isAdmin= sessionStorage.getItem('isAdmin') === 'true' ? true: false;
   }
   openModal() {
     this.buttonSelected.emit(true);
