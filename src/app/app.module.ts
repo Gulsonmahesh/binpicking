@@ -44,6 +44,7 @@ import { EnvironmentComponent } from './component/steps/environment/environment.
 import { ExecutebinComponent } from './component/steps/executebin/executebin.component';
 import { ProgressPopupComponent } from './component/steps/progress-popup/progress-popup.component';
 import { DeletepopupComponent } from './component/steps/deletepopup/deletepopup.component';
+import { AddrobotComponent } from './component/steps/robot/addrobot/addrobot.component';
 
 const material=[
   MatFormFieldModule, MatInputModule, MatSelectModule, MatIconModule,FormsModule,ReactiveFormsModule,MatSlideToggleModule,
@@ -76,7 +77,8 @@ const material=[
     EnvironmentComponent,
     ExecutebinComponent,
     ProgressPopupComponent,
-    DeletepopupComponent    
+    DeletepopupComponent,
+    AddrobotComponent    
   ],
   imports: [
     material,

@@ -2,7 +2,6 @@ import { Component, HostListener, OnInit, ViewChild,ElementRef  } from '@angular
 import { RouterService } from 'src/app/service/router.service';
 import { RobotService } from 'src/app/service/robot.service';
 import { RobotDetailsComponent } from '../../common/robot-details/robot-details.component';
-import { FormControl, FormGroup, FormBuilder, FormArray, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-robot',
@@ -10,27 +9,16 @@ import { FormControl, FormGroup, FormBuilder, FormArray, Validators } from '@ang
   styleUrls: ['./robot.component.scss']
 })
 export class RobotComponent implements OnInit {
-  imageFileName = '';
-  stlFileName = '';
-  imageFile?: File;
-  stlFile?: File;
-  model = false;
+  
   showRobotModel = false;
-  @ViewChild('imgfileUpload') imgfileUpload?:ElementRef;
-  @ViewChild('stlfileUpload') stlfileUpload?:ElementRef;
-
-  addRobot = new FormGroup({
-    robotName: new FormControl('', Validators.required),
-    manufacturename: new FormControl('', Validators.required),
-    reach: new FormControl('', Validators.required),
-    playload: new FormControl('', Validators.required),
-    uploadRobotImage: new FormControl('', Validators.required),
-    uploadRobotstl: new FormControl('', Validators.required)
-  });
-
+  deleteModel = false;
+  
   @HostListener('document:keyup', ['$event']) closeModel(event: KeyboardEvent) {
-    if(this.model && event.key == 'Escape') {
+    if(this.showRobotModel && event.key == 'Escape') {
       this.showRobotModel = false;
+    }
+    if(this.deleteModel && event.key == 'Escape') {
+      this.deleteModel = false;
     }
   }
   isAdmin = false;
@@ -73,19 +61,12 @@ export class RobotComponent implements OnInit {
     this.showRobotModel = modelStatus;
   }
 
-  onSubmit(event: any) {
-    event.preventDefault();
-    console.log(this.addRobot);
+  createRobot(event: any) {
+    console.log(event);
   }
 
-  imagefileupload(event: any) {
-    this.imageFileName = event.target.files[0].name;
-    this.imageFile = <File>event.target.files[0];
-  }
-
-  stlfileupload(event: any) {
-    this.stlFileName = event.target.files[0].name;
-    this.stlFile = <File>event.target.files[0];
+  openDeleteModel(status: boolean) {
+    this.deleteModel = status;
   }
 
 }
