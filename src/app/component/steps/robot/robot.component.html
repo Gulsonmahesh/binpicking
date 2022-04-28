@@ -1,5 +1,63 @@
 <app-deletepopup *ngIf="isAdmin && model" (closeModelEmit)="model=false">
+
 </app-deletepopup>
+<app-model headertitle="Add New Robot" *ngIf="isAdmin && showRobotModel" (closeModelEmit)="showModel(false)">
+    <div class='addrobot'>
+        <form [formGroup]='addRobot' (ngSubmit)="onSubmit($event)" >
+            <div class="form-group mb-4">
+              <label for="robotname">Name<span>*</span></label>
+              <input formControlName='robotName' type="text" name="robotname" id="robotname" class="form-control" placeholder="" aria-describedby="helpId">
+              <!-- <small id="helpId" class="text-muted sr-only">Enter Robot Name</small> -->
+            </div>
+            <div class="mb-4 form-group mb-2 d-inline-flex align-items-center justify-content-between">
+                <div style="margin-right: 20px">
+                    <label for="manufacturename">Manufacturer Name<span>*</span></label>
+                    <input formControlName='manufacturename' type="text" name="manufacturename" id="manufacturename" class="form-control" placeholder="" aria-describedby="menufacture">
+                    <!-- <small id="menufacture" class="text-muted sr-only">Enter Manufacturer Name</small> -->
+                </div>
+                <div style="margin-right: 10px">
+                    <label for="reach">Reach<span>*</span></label>
+                    <input formControlName='reach' type="text" name="reach" id="reach" class="form-control" placeholder="" aria-describedby="reach">
+                    <!-- <small id="menufacture" class="text-muted sr-only">Enter Manufacturer Name</small> -->
+                </div>
+                <div>
+                    <label for="playload">Playload<span>*</span></label>
+                    <input formControlName='reach' type="text" name="playload" id="playload" class="form-control" placeholder="" aria-describedby="reach">
+                    <!-- <small id="menufacture" class="text-muted sr-only">Enter Manufacturer Name</small> -->
+                </div>
+              </div>
+              <div class="form-group mb-2">
+                <label for="uploadimg">Upload Robot Image<span>*</span></label>
+                <p class="my-2">Only .jpg, .png file format accept</p>
+                <input type="file" class="file-input-img" accept="image/png, image/jpeg" #imgfileUpload style="display: none;" (change)="imagefileupload($event)">
+                <div class="file-upload">
+                    <p *ngIf="imageFileName !==''">{{imageFileName || "No file uploaded yet."}}<p>
+                    <span class="d-block">Drag and Drop file here of</span>
+                    <button color="primary" class="d-block btn btn-primary uploadbutton" (click)="imgfileUpload.click()">
+                         Click Here to Upload
+                     </button>
+                 </div>
+              </div>
+              <div class="form-group mb-2">
+                <label for="uploadimg">Upload Robot<span>*</span></label>
+                <p class="my-2">Only .stl file format accept</p>
+                <input type="file" class="file-input-img" accept="*/stl" #stlfileUpload style="display: none;" (change)="stlfileupload($event)">
+                <div class="file-upload">
+                    <p *ngIf="stlFileName !==''">{{stlFileName || "No file uploaded yet."}}<p>
+                    <span class="d-block">Drag and Drop file here of</span>
+                    <button color="primary" class="d-block btn btn-primary uploadbutton" (click)="stlfileUpload.click()">
+                         Click Here to Upload
+                     </button>
+                 </div>
+              </div>
+              <div class="d-flex align-items-center justify-content-end">
+                  <button class="btn btn-light">Cancel</button>
+                  <button class="btn btn-primary ml-4">Submit</button>
+              </div>
+        </form>
+
+    </div>
+</app-model>
 <div class="grid-container" id="robotcontainer">
     <div class="grid-header">
         <app-header></app-header>
@@ -21,7 +79,7 @@
                     </h3>
                     <div class="" *ngIf="isAdmin">
                         <div class="pr-20">
-                            <button (click)="showModel()">
+                            <button (click)="showModel(true)">
                             <span  class="col-xl-12 col-sm-12 col-xs-12 f-12  cursorpointer aligntext">
                                 <mat-icon class="material-icons-outlined color" alt="faq">
                                     add

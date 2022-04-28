@@ -1,19 +1,35 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit, ViewChild,ElementRef  } from '@angular/core';
 import { RouterService } from 'src/app/service/router.service';
 import { RobotService } from 'src/app/service/robot.service';
 import { RobotDetailsComponent } from '../../common/robot-details/robot-details.component';
+import { FormControl, FormGroup, FormBuilder, FormArray, Validators } from '@angular/forms';
+
 @Component({
   selector: 'app-robot',
   templateUrl: './robot.component.html',
   styleUrls: ['./robot.component.scss']
 })
 export class RobotComponent implements OnInit {
-  
+  imageFileName = '';
+  stlFileName = '';
+  imageFile?: File;
   model = false;
+  showRobotModel = false;
+  @ViewChild('imgfileUpload') imgfileUpload?:ElementRef;
+  @ViewChild('stlfileUpload') stlfileUpload?:ElementRef;
+  
+  addRobot = new FormGroup({
+    robotName: new FormControl(null, Validators.required),
+    manufacturename: new FormControl(null, Validators.required),
+    reach: new FormControl(null, Validators.required),
+    playload: new FormControl(null, Validators.required),
+    uploadRobotImage: new FormControl(null, Validators.required),
+    uploadRobotstl: new FormControl(null, Validators.required)
+  });
 
   @HostListener('document:keyup', ['$event']) closeModel(event: KeyboardEvent) {
     if(this.model && event.key == 'Escape') {
-      this.model = false;
+      this.showRobotModel = false;
     }
   }
   isAdmin = false;
@@ -41,20 +57,32 @@ export class RobotComponent implements OnInit {
     //   robotname: 'UR5', reach: '1.3M', payload: '10Kg', selected: false
     // }
   ];
+
   
   ngOnInit(): void {
     this.robotservice.getrobots().subscribe((data:any) => {
-    // console.log(data)
-    this.robotDetails=data
-    console.log(this.robotDetails)
+      this.robotDetails=data;
+      console.log(this.robotDetails)
     })
 
     this.isAdmin= sessionStorage.getItem('isAdmin') === 'true' ? true: false;
   }
 
-  showModel() {
-    this.model = true;
+  showModel(modelStatus: boolean = false) {
+    this.showRobotModel = modelStatus;
   }
 
+  onSubmit(event: any) {
+    event.preventDefault();
+  }
 
+  imagefileupload(event: any) {
+    this.imageFileName = event.target.files[0].name;
+    this.imageFile = <File>event.target.files[0];
+  }
+
+  stlfileupload(event: any) {
+
+  }
 }
+

@@ -75,4 +75,25 @@
     .colorgray {
         color: #a9a9a9cc;
     }
+    #manufacturename {
+        min-width: 300px;
+    }
+    .file-upload {
+        height: 50px;
+        border: 1px dashed gray;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px;
+    }
+
+    .uploadbutton {
+        background: transparent;
+        border: 0;
+        text-decoration: none;
+        color: blue;
+        padding: 0;
+        margin: 0 10px;
+    }
 }
