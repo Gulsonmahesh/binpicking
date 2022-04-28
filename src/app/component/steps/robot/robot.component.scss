@@ -79,13 +79,10 @@
         min-width: 300px;
     }
     .file-upload {
-        height: 50px;
+        height: 70px;
         border: 1px dashed gray;
         border-radius: 5px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 40px;
+        position: relative;
     }
 
     .uploadbutton {
@@ -95,5 +92,31 @@
         color: blue;
         padding: 0;
         margin: 0 10px;
+    }
+
+    .cancel {
+        margin-right: 15px;
+    }
+    .submit {
+        width: 90px;
+    }
+    .file-input-img {
+        opacity: 0;
+        width:100%;
+        height: 70px;        
+    }
+    .uploadbuttoncontainer {
+        position: absolute;
+        transform: translate(-50%, 50%);
+        top: 0;
+        left: 50%;
+        width: auto;
+    }
+    .admincontrols {
+        button {
+            border: 0;
+            background: transparent;
+            padding:10px;
+        }
     }
 }

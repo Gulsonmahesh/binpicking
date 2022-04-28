@@ -13,18 +13,19 @@ export class RobotComponent implements OnInit {
   imageFileName = '';
   stlFileName = '';
   imageFile?: File;
+  stlFile?: File;
   model = false;
   showRobotModel = false;
   @ViewChild('imgfileUpload') imgfileUpload?:ElementRef;
   @ViewChild('stlfileUpload') stlfileUpload?:ElementRef;
-  
+
   addRobot = new FormGroup({
-    robotName: new FormControl(null, Validators.required),
-    manufacturename: new FormControl(null, Validators.required),
-    reach: new FormControl(null, Validators.required),
-    playload: new FormControl(null, Validators.required),
-    uploadRobotImage: new FormControl(null, Validators.required),
-    uploadRobotstl: new FormControl(null, Validators.required)
+    robotName: new FormControl('', Validators.required),
+    manufacturename: new FormControl('', Validators.required),
+    reach: new FormControl('', Validators.required),
+    playload: new FormControl('', Validators.required),
+    uploadRobotImage: new FormControl('', Validators.required),
+    uploadRobotstl: new FormControl('', Validators.required)
   });
 
   @HostListener('document:keyup', ['$event']) closeModel(event: KeyboardEvent) {
@@ -74,6 +75,7 @@ export class RobotComponent implements OnInit {
 
   onSubmit(event: any) {
     event.preventDefault();
+    console.log(this.addRobot);
   }
 
   imagefileupload(event: any) {
@@ -82,7 +84,9 @@ export class RobotComponent implements OnInit {
   }
 
   stlfileupload(event: any) {
-
+    this.stlFileName = event.target.files[0].name;
+    this.stlFile = <File>event.target.files[0];
   }
+
 }
 

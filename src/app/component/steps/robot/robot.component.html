@@ -22,37 +22,43 @@
                 </div>
                 <div>
                     <label for="playload">Playload<span>*</span></label>
-                    <input formControlName='reach' type="text" name="playload" id="playload" class="form-control" placeholder="" aria-describedby="reach">
+                    <input formControlName='playload' type="text" name="playload" id="playload" class="form-control" placeholder="" aria-describedby="reach">
                     <!-- <small id="menufacture" class="text-muted sr-only">Enter Manufacturer Name</small> -->
                 </div>
               </div>
               <div class="form-group mb-2">
                 <label for="uploadimg">Upload Robot Image<span>*</span></label>
                 <p class="my-2">Only .jpg, .png file format accept</p>
-                <input type="file" class="file-input-img" accept="image/png, image/jpeg" #imgfileUpload style="display: none;" (change)="imagefileupload($event)">
-                <div class="file-upload">
-                    <p *ngIf="imageFileName !==''">{{imageFileName || "No file uploaded yet."}}<p>
-                    <span class="d-block">Drag and Drop file here of</span>
-                    <button color="primary" class="d-block btn btn-primary uploadbutton" (click)="imgfileUpload.click()">
-                         Click Here to Upload
-                     </button>
+                <div class="file-upload mb-2">
+                    <input type="file" class="file-input-img" accept="image/png, image/jpeg" 
+                    formControlName='uploadRobotImage' #imgfileUpload (change)="imagefileupload($event)">
+                    <div class="uploadbuttoncontainer d-flex flex-column align-items-center justify-content-between">
+                        <span>Drag and Drop file here</span>
+                        <button color="primary" class="d-block btn btn-primary uploadbutton" (click)="imgfileUpload.click()">
+                            Click Here to Upload
+                        </button>
+                    </div>                    
                  </div>
-              </div>
+                 <p class="fw-bold mb-2" *ngIf="imageFileName !==''">{{imageFileName}}<p>
+                </div>
               <div class="form-group mb-2">
-                <label for="uploadimg">Upload Robot<span>*</span></label>
+                <label for="uploadimg" class="text-bold">Upload Robot<span>*</span></label>
                 <p class="my-2">Only .stl file format accept</p>
-                <input type="file" class="file-input-img" accept="*/stl" #stlfileUpload style="display: none;" (change)="stlfileupload($event)">
-                <div class="file-upload">
-                    <p *ngIf="stlFileName !==''">{{stlFileName || "No file uploaded yet."}}<p>
-                    <span class="d-block">Drag and Drop file here of</span>
-                    <button color="primary" class="d-block btn btn-primary uploadbutton" (click)="stlfileUpload.click()">
-                         Click Here to Upload
-                     </button>
+                <div class="file-upload mb-2">
+                    <input type="file" class="file-input-img" accept="stl" #stlfileUpload 
+                    formControlName='uploadRobotstl' (change)="stlfileupload($event)">
+                    <div class="uploadbuttoncontainer d-flex flex-column align-items-center justify-content-between">
+                        <span>Drag and Drop file here</span>
+                        <button color="primary" class="d-block btn btn-primary uploadbutton" (click)="stlfileUpload.click()">
+                            Click Here to Upload
+                        </button>
+                    </div>
+                    <p class="fw-bold mt-2" *ngIf="stlFileName !==''">{{stlFileName}}<p>
                  </div>
               </div>
               <div class="d-flex align-items-center justify-content-end">
-                  <button class="btn btn-light">Cancel</button>
-                  <button class="btn btn-primary ml-4">Submit</button>
+                  <button class="btn btn-light cancel noborder " (click)="showRobotModel=false">Cancel</button>
+                  <button class="btn btn-primary submit ml-4 noborder">Submit</button>
               </div>
         </form>
 
@@ -78,34 +84,23 @@
                         </span>
                     </h3>
                     <div class="" *ngIf="isAdmin">
-                        <div class="pr-20">
+                        <div class="pr-20 admincontrols">
                             <button (click)="showModel(true)">
-                            <span  class="col-xl-12 col-sm-12 col-xs-12 f-12  cursorpointer aligntext">
-                                <mat-icon class="material-icons-outlined color" alt="faq">
-                                    add
-                                </mat-icon>
-                               <label class="f-13" >Add Robot</label> 
-                        </span>
-                    </button>
-                            <span class="col-xl-12 col-sm-12 col-xs-12 f-12 cursorpointer  aligntext">
-                            <mat-icon class="material-icons-outlined color" alt="faq">
-                                add
-                            </mat-icon>
-                            <label class="f-13" >Add Gripper</label>
-                    </span>
-                            <span class="col-xl-12 col-sm-12 col-xs-12 f-12  cursorpointer aligntext">
-                        <mat-icon class="material-icons-outlined gray" alt="faq">
-                            edit
-                        </mat-icon>
-                        <label class="f-13 colorgray">  Edit Gripper</label>
-                </span>
-                            <span class="col-xl-12 col-sm-12 col-xs-12 f-12  cursorpointer aligntext1">
-                    <mat-icon class="material-icons-outlined gray" alt="faq">
-                        delete
-                    </mat-icon>
-                    <label class="f-13 colorgray">  Delete Gripper</label>
-            </span>
-
+                                <mat-icon class="material-icons-outlined color" alt="faq">add</mat-icon>
+                                <span class="f-13" >Add Robot</span> 
+                            </button>
+                            <button (click)="showModel(true)">
+                                <mat-icon class="material-icons-outlined color" alt="faq">add</mat-icon>
+                                <span class="f-13" >Add Gripper</span>
+                            </button>
+                            <button (click)="showModel(true)">
+                                <mat-icon class="material-icons-outlined gray" alt="faq">edit</mat-icon>
+                                <span class="f-13 colorgray">Edit Gripper</span>
+                            </button>
+                            <button (click)="showModel(true)">
+                                <mat-icon class="material-icons-outlined gray" alt="faq">delete</mat-icon>
+                                <span class="f-13 colorgray">Delete Gripper</span>
+                            </button>
                         </div>
                     </div>
                 </div>
