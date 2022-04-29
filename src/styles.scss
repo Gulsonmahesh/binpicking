@@ -208,15 +208,21 @@ img[alt='info'] {
         }
     }
 }
+
 stl-model-viewer {
     width: 100%;
     height: 100%;
     display: block;
 }
+
 .uploadfilename {
     width: 40%;
     height: 35px;
     // color: #FFFFFF;
-    background-color: lightgray;    
+    background-color: lightgray;
     font-size: 14px;
+}
+
+.enternewpassword .mat-form-field-appearance-outline .mat-form-field-outline {
+    top: 0em !important
 }

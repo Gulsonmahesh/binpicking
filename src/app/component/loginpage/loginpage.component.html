@@ -38,14 +38,14 @@
                         </mat-form-field>
                     </div>
                     <span class="col-xl-12 col-sm-12 floatleft f-14 mr-20 mb-35 d-flex align-items-center">
-                        <span class="col-xl-6 col-sm-6 floatleft f-14 ">
+                        <span class="col-xl-4 col-sm-4 floatleft f-14 ">
                             <label class="switch">
                                 <input type="checkbox" name="usertype" formControlName="isAdmin" />
                                 <span class="slider round"></span>
-                    <label for="" class="label"> Admin </label>
-                    </label>
+
+                    </label> <label for="" class="label"> Admin Signin</label>
                     </span>
-                    <span class="col-xl-6 col-sm-6 floatright ">
+                    <span class="col-xl-8 col-sm-8 floatright ">
                         <!-- <button class="signin_btn f-14 " routerLink="/projectsummary" >Sign in</button> -->
                         <button class="signin_btn f-14" type="submit" >Sign in</button>
 
@@ -143,9 +143,9 @@
                 <span class="col-xl-12 col-sm-12 floatleft f-16 bold mb-30">Reset Password</span>
 
 
-                <div class="col-12">
+                <div class="col-12 enternewpassword">
                     <span class="col-xl-12 col-sm-12 floatleft f-14 ">Enter New Password</span>
-                    <mat-form-field appearance="outline" class="col-xl-12 col-sm-12 floatleft mb-20">
+                    <mat-form-field appearance="outline" class="col-xl-12 col-sm-12 floatleft mb-20 ">
                         <!-- <mat-label>New Password</mat-label> -->
                         <input matInput [type]="hide ? 'password' : 'text'">
                         <button class="nonebg" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
@@ -155,7 +155,7 @@
                         </button>
                     </mat-form-field>
                 </div>
-                <div class="col-12">
+                <div class="col-12 enternewpassword">
                     <span class="col-xl-12 col-sm-12 floatleft f-14 ">Retype Password</span>
                     <mat-form-field appearance="outline" class="col-xl-12 col-sm-12 floatleft mb-25">
                         <!-- <mat-label>Re-enter New Password</mat-label> -->

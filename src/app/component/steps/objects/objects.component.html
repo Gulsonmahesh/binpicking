@@ -23,8 +23,7 @@
                                 <label class="image-upload-container btn btn-bwm">
                                 <span class="uploadbtn">
                                     <label class="labelupload">Select Image</label>
-                                    <input id="objectFile" Input type="file" accept="image/*" style="visibility: hidden;"
-                                    (change)="onFileSelecetd($event)" />
+                                <input id="objectFile" Input type="file" accept="image/*" style="visibility: hidden;" (change)="onFileSelecetd($event)" />
                                 </span>
                                 </label>
                             </div>
@@ -38,8 +37,7 @@
                     <div class="cards">
                         <app-card addText="Add new object" (buttonSelected)="showModel($event)"></app-card>
                     </div>
-                    <app-mainfooter [showdeploy]="false" (movetonext)="routeService.movetonextpage('environment')"
-                        (movetoback)="routeService.movetonextpage('grippertcp')" submitname="Submit and Continue">
+                    <app-mainfooter [showdeploy]="false" (movetonext)="routeService.movetonextpage('environment')" (movetoback)="routeService.movetonextpage('grippertcp')" submitname="Submit and Continue">
                     </app-mainfooter>
                 </div>
             </div>

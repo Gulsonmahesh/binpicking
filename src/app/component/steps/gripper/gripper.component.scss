@@ -48,6 +48,11 @@
             margin: 0;
         }
     }
+    .card:hover {
+        box-shadow: 0px 0px 12px #00000042;
+        border: 2px solid #35AFF8;
+        border-radius: 10px;
+    }
     .margn {
         padding: 0px 15px !important;
     }
