@@ -39,7 +39,7 @@ export class LoginpageComponent implements OnInit {
     if(this.signInForm.status === 'VALID') {
       sessionStorage.setItem('isAdmin', this.signInForm.controls.isAdmin.value);
       if(this.signInForm.controls.isAdmin.value === true) {
-      this.route.navigate(['/robot']);
+      this.route.navigate(['/gripper']);
       } else {
         this.route.navigate(['/projectsummary']);
       }
