@@ -45,6 +45,7 @@ import { ExecutebinComponent } from './component/steps/executebin/executebin.com
 import { ProgressPopupComponent } from './component/steps/progress-popup/progress-popup.component';
 import { DeletepopupComponent } from './component/steps/deletepopup/deletepopup.component';
 import { AddrobotComponent } from './component/steps/robot/addrobot/addrobot.component';
+import { AddGripperComponent } from './component/steps/robot/add-gripper/add-gripper.component';
 
 const material=[
   MatFormFieldModule, MatInputModule, MatSelectModule, MatIconModule,FormsModule,ReactiveFormsModule,MatSlideToggleModule,
@@ -78,7 +79,8 @@ const material=[
     ExecutebinComponent,
     ProgressPopupComponent,
     DeletepopupComponent,
-    AddrobotComponent    
+    AddrobotComponent,
+    AddGripperComponent    
   ],
   imports: [
     material,

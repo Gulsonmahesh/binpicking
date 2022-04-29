@@ -10,9 +10,11 @@ import { RobotDetailsComponent } from '../../common/robot-details/robot-details.
 })
 export class RobotComponent implements OnInit {
   
+  isAdmin = false;
   showRobotModel = false;
   deleteModel = false;
-  
+  showGripperModel = false;
+
   @HostListener('document:keyup', ['$event']) closeModel(event: KeyboardEvent) {
     if(this.showRobotModel && event.key == 'Escape') {
       this.showRobotModel = false;
@@ -20,8 +22,11 @@ export class RobotComponent implements OnInit {
     if(this.deleteModel && event.key == 'Escape') {
       this.deleteModel = false;
     }
+    if(this.showGripperModel && event.key == 'Escape') {
+      this.showGripperModel = false;
+    }
   }
-  isAdmin = false;
+  
   constructor(public routeService: RouterService,private robotservice: RobotService) { }
   
   robotDetails? = [
@@ -59,6 +64,9 @@ export class RobotComponent implements OnInit {
 
   showModel(modelStatus: boolean = false) {
     this.showRobotModel = modelStatus;
+  }
+  showGripper(modelStatus: boolean = false) {
+    this.showGripperModel = modelStatus;
   }
 
   createRobot(event: any) {

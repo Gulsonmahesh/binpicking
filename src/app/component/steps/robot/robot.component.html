@@ -2,6 +2,11 @@
 <app-model headertitle="Add New Robot" *ngIf="isAdmin && showRobotModel" (closeModelEmit)="showModel(false)">
     <app-addrobot (cancelEvent)="showRobotModel = false" (formSubmit) = "createRobot($event)"></app-addrobot>
 </app-model>
+
+<app-model headertitle="Add New Gripper" *ngIf="isAdmin && showGripperModel" (closeModelEmit)="showGripper(false)">
+    <app-add-gripper (cancelEvent)="showGripperModel = false" (formSubmit) = "createRobot($event)"></app-add-gripper>
+</app-model>
+
 <div class="grid-container" id="robotcontainer">
     <div class="grid-header">
         <app-header></app-header>
@@ -27,7 +32,7 @@
                                 <mat-icon class="material-icons-outlined color" alt="faq">add</mat-icon>
                                 <span class="f-13" >Add Robot</span> 
                             </button>
-                            <button (click)="showModel(true)">
+                            <button (click)="showGripper(true)">
                                 <mat-icon class="material-icons-outlined color" alt="faq">add</mat-icon>
                                 <span class="f-13" >Add Gripper</span>
                             </button>
