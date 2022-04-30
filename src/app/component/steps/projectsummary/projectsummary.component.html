@@ -19,7 +19,7 @@
                             <div class="d-flex justify-content-between align-items-center">
                                 <form class="example-form">
                                     <div class="inputwrap">
-                                        <input placeholder="-" value="" />
+                                        <input value="" />
                                         <img class="searchicon" src="../../../../assets/search_black_18dp.svg" alt="search">
                                     </div>
                                 </form>
@@ -53,7 +53,11 @@
                                 <ng-container matColumnDef="status">
                                     <mat-header-cell *matHeaderCellDef mat-sort-header class="f-14 bold"> Status </mat-header-cell>
                                     <mat-cell *matCellDef="let row" [style.status]="row.status">
-                                        <span class="dotcolr"></span> {{row.status}} </mat-cell>
+                                        <!-- <span class="dotcolrgreen"></span> -->
+                                        <span [ngClass]="{
+                                            'dotcolrgreen' : row.status == 'Configuration Incomplete',
+                                            'dotcolrorange' : row.status == 'Ready for Deployment'
+                                         }"></span> {{row.status}} </mat-cell>
                                 </ng-container>
 
                                 <!-- Action Column -->
@@ -83,7 +87,8 @@
                         </div>
 
                     </div>
-                    <mat-paginator #MatPaginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+                    <mat-paginator class="mt-10" #paginator [pageSizeOptions]="[5]" showFirstLastButtons></mat-paginator>
+                    <!-- <mat-paginator #MatPaginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator> -->
                 </div>
             </div>
         </div>

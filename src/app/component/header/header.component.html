@@ -6,12 +6,17 @@
                 <span class="appname-circle"></span>
                 <h1 class="appname-title">Bin Picking</h1>
             </div>
-            <button class="homebutton ml-25" (click)="back()">
+            <!-- <button class="homebutton ml-25" (click)="back()">
                 <div class="buttonrec"></div>
                 <div class="buttonrec"></div>
                 <div class="buttonrec"></div>
                 <div class="buttonrec"></div>
-            </button>
+            </button> -->
+            <div class="tip" *ngIf="showTip">
+                <span class="tooltipvalue">Home</span>
+            </div>
+
+            <img src="../../../assets/Images/iconhome.svg" class="imgcss" alt="info" tabindex="0" (mouseover)="showTip = true" (mouseleave)="showTip = false" />
         </div>
         <div class="user-wrapper d-flex">
             <!-- <span class="appname-circle"></span> -->
@@ -22,11 +27,16 @@
                 <p class="logintime m-0">Last Login 26/12/2021 : 15:30</p>
             </div>
             <img src="../../../assets/AvatarCircleNeutral.svg" class="mr-10" alt="user logo" />
-            <mat-icon class="material-icons-outlined mr-10" alt="faq">
+            <div class="tip" *ngIf="showTip1">
+                <span class="tooltipvalue">FAQ</span>
+            </div>
+            <mat-icon class="material-icons-outlined mr-10" (mouseover)="showTip1 = true" (mouseleave)="showTip1 = false" alt="faq">
                 help_outline
             </mat-icon>
-            <!-- <img src="../../../assets/fag.png" class="mr-10" alt="faq" /> -->
-            <img src="../../../assets/signout.svg" alt="logout" (click)="onlogoutpage()" />
+            <div class="tip" *ngIf="showTip2">
+                <span class="tooltipvalue">SignOut</span>
+            </div>
+            <img src="../../../assets/signout.svg" alt="logout" (mouseover)="showTip2 = true" (mouseleave)="showTip2 = false" (click)="onlogoutpage()" />
         </div>
     </div>
 </header>

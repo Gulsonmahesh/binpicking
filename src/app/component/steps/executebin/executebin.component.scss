@@ -147,10 +147,20 @@
     }
 }
 
-.backicon {
+.backblueicon {
     background: #35AFF8;
     border-radius: 19px;
     color: #FFFFFF;
+    height: 34px;
+    width: 34px;
+    font-size: 17px;
+    padding: 8px;
+}
+
+.backgrayicon {
+    background: #D8D8D9;
+    border-radius: 19px;
+    color: #989898;
     height: 34px;
     width: 34px;
     font-size: 17px;
@@ -196,12 +206,28 @@
     color: #35AFF8;
 }
 
-.btn_restart {
+.btn_grayexit {
+    width: 61px;
+    border: 1px solid #D8D8D9 !important;
+    border-radius: 4px;
+    background: #D8D8D9;
+    color: #4b4b4b;
+}
+
+.btn_bluerestart {
     width: 76px;
     border: 1px solid #35AFF8 !important;
     border-radius: 4px;
-    background: #fff;
-    color: #35AFF8;
+    background: #35AFF8;
+    color: #ffffff;
+}
+
+.btn_grayrestart {
+    width: 76px;
+    border: 1px solid #D8D8D9 !important;
+    border-radius: 4px;
+    background: #D8D8D9;
+    color: #4b4b4b;
 }
 
 .btn_stop {
@@ -210,7 +236,6 @@
     border-radius: 4px;
     background: #fff;
     color: #FFFFFF;
-    ;
     background: #35AFF8 0% 0% no-repeat padding-box;
     &:hover {
         background: #1D97E0 0% 0% no-repeat padding-box;
@@ -218,7 +243,22 @@
     }
 }
 
+.btn_graystop {
+    width: 130px;
+    border: 1px solid #D8D8D9 !important;
+    border-radius: 4px;
+    background: #D8D8D9;
+    color: #989898;
+    background: #D8D8D9 0% 0% no-repeat padding-box;
+}
+
 .btntop {
     border-top: 1px solid #80808036;
     padding-top: 15px;
+}
+
+.scrollarrow {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 300px;
 }

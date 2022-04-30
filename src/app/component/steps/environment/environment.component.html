@@ -14,45 +14,49 @@
                     <div class="col-xl-12 col-sm-12 col-xs-12 mb-30 height" *ngIf="step1">
                         <div class="col-xl-6 col-sm-6 col-xs-12 floatleft">
                             <div class="col-xl-12 col-sm-12 col-xs-12 pt-0 pl-10 pr-10">
-                                <div class="col-xl-12 col-sm-12 col-xs-12 f-14 bold mb-10">
-                                    Upload Enviroment
-                                </div>
-                                <div class="col-xl-12 col-sm-12 col-xs-12 f-14 mb-10">
-                                    Only <b>.stl</b> file format accept
-                                </div>
-                                <div class="col-xl-12 col-sm-12 col-xs-12">
-                                    <div class="col-xl-12 col-sm-12 col-xs-12  bgwhite">
-                                        <div class="col-xl-12 col-sm-12 col-xs-12 floatleft f-14 flexCenter"> Drag and drop ﬁle here or </div>
-                                        <div class="col-xl-12 col-sm-12 col-xs-12 floatleft f-14 flexCenter color">
-                                            Click here to upload </div>
-                                        <label class="image-upload-container btn btn-bwm">
-                                        <span class="uploadbtn">  
-                                            <input Input type="file" accept="image/*" (change)="onchangeEnvFile($event)" >Select Image</span>
-                                        </label>
+                                <div class="form-group mb-2">
+                                    <label for="uploadimg " class=" f-12 bold">Upload Enviroment</label>
+                                    <p class="my-2 f-12 ">Only .stl file format accept</p>
+                                    <div class="file-upload mb-2">
+                                        <input type="file" class="file-input-img" accept="image/png, image/jpeg" formControlName='uploadRobotImage' #imgfileUpload (change)="imagefileupload($event)">
+                                        <div class="uploadbuttoncontainer d-flex flex-column align-items-center justify-content-between">
+                                            <span class=" f-12 mb-7">Drag and Drop file here or</span>
+                                            <button color="primary" class=" f-12 d-block btn btn-primary uploadbutton m-0" (click)="imgfileUpload.click()">
+                                                Click here to upload
+                                            </button>
+                                        </div>
                                     </div>
+                                    <span class="col-xl-6 col-sm-6 col-xs-12 floatleft" *ngIf="downloaddoc">
+                                        <span class=" mb-2 uploadeddoc" *ngIf="imageFileName !==''">{{imageFileName}}
+                                            <mat-icon class="material-icons-outlined mr-10 maticondownload" alt="faq"  (click)="closebtn()">
+                                                close
+                                            </mat-icon>
+                                            </span>
+                                    </span>
                                 </div>
                             </div>
                         </div>
                         <div class="col-xl-6 col-sm-6 col-xs-12 floatleft">
                             <div class="col-xl-12 col-sm-12 col-xs-12 pt-0 pl-10 pr-10">
-                                <div class="col-xl-12 col-sm-12 col-xs-12 f-14 bold mb-10">
-                                    Upload Bin
-                                </div>
-                                <div class="col-xl-12 col-sm-12 col-xs-12 f-14 mb-10">
-                                    Only <b>.stl</b> file format accept
-                                </div>
-                                <div class="col-xl-12 col-sm-12 col-xs-12">
-                                    <div class="col-xl-12 col-sm-12 col-xs-12  bgwhite">
-                                        <div class="col-xl-12 col-sm-12 col-xs-12 floatleft f-14 flexCenter"> Drag and drop ﬁle here or </div>
-                                        <div class="col-xl-12 col-sm-12 col-xs-12 floatleft f-14 flexCenter color">
-
-                                            Click here to upload </div>
-                                        <label class="image-upload-container btn btn-bwm">
-                                                <span class="uploadbtn">  
-                                                    <input  Input type="file" accept="image/*" (change)="onchangeBinFile($event)">Select Image</span>
-                                              
-                                              </label>
+                                <div class="form-group mb-2">
+                                    <label for="uploadimg " class=" f-12 bold">Upload Bin</label>
+                                    <p class="my-2 f-12 ">Only .jpg, .png file format accept</p>
+                                    <div class="file-upload mb-2">
+                                        <input type="file" class="file-input-img" accept="image/png, image/jpeg" formControlName='uploadRobotImage1' #imgfileUpload1 (change)="imagefileupload1($event)">
+                                        <div class="uploadbuttoncontainer d-flex flex-column align-items-center justify-content-between">
+                                            <span class=" f-12 mb-7">Drag and Drop file here</span>
+                                            <button color="primary" class=" f-12 d-block btn btn-primary uploadbutton m-0" (click)="imgfileUpload1.click()">
+                                                Click Here to Upload
+                                            </button>
+                                        </div>
                                     </div>
+                                    <span class="col-xl-6 col-sm-6 col-xs-12 floatleft" *ngIf="downloaddoc1">
+                                        <span class="mb-2 uploadeddoc" *ngIf="imageFileName1 !==''">{{imageFileName1}}
+                                            <mat-icon class="material-icons-outlined mr-10 maticondownload" alt="faq"  (click)="closebtn1()">
+                                                close
+                                            </mat-icon>
+                                            </span>
+                                    </span>
                                 </div>
                             </div>
                         </div>

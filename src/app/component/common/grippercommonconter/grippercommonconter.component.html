@@ -23,7 +23,7 @@
                     <span>-180</span>
                     <input type="range" name="xdeg" id="xdeg" min="-180" max="180" [(ngModel)]="xdegValue">
                     <span>180</span>
-                    <input type="text" class="disabledinput" name="xdegvalue" id="xdegvalue" disabled value="{{xdegValue}}"/>
+                    <input type="text" class="disabledinput" name="xdegvalue" id="xdegvalue" disabled value="{{xdegValue}}" />
                 </div>
             </div>
             <div class="mb-1">
@@ -32,7 +32,7 @@
                     <span>-180</span>
                     <input type="range" name="ydeg" id="ydeg" min="-180" max="180" [(ngModel)]="ydegValue">
                     <span>180</span>
-                    <input type="text" class="disabledinput" name="ydegvalue" id="ydegvalue" disabled value="{{ydegValue}}"/>
+                    <input type="text" class="disabledinput" name="ydegvalue" id="ydegvalue" disabled value="{{ydegValue}}" />
                 </div>
             </div>
             <div class="mb-1">
@@ -41,7 +41,7 @@
                     <span>-180</span>
                     <input type="range" name="zdeg" id="zdeg" min="-180" max="180" [(ngModel)]="zdegValue">
                     <span>180</span>
-                    <input type="text" class="disabledinput" name="zdegvalue" id="zdegvalue" disabled value="{{zdegValue}}"/>
+                    <input type="text" class="disabledinput" name="zdegvalue" id="zdegvalue" disabled value="{{zdegValue}}" />
                 </div>
             </div>
         </div>
@@ -54,14 +54,14 @@
                 Rotation invarience around axis
             </div>
             <div class="d-flex align-content-center justify-content-between">
-                <input class="mt-0" type="radio" name="axis" value=""  min="0" max="360" [(ngModel)]="xAxis" aria-label="Radio button for following text input">X-axis
-                <input class="mt-0" type="radio" name="axis" value=""  min="0" max="360" [(ngModel)]="yAxis" aria-label="Radio button for following text input">Y-axis
-                <input class="mt-0" type="radio" name="axis" value=""  min="0" max="360" [(ngModel)]="zAxis" aria-label="Radio button for following text input">Z-axis
+                <input class="mt-0" type="radio" name="axis" value="" min="0" max="360" [(ngModel)]="xAxis" aria-label="Radio button for following text input">X-axis
+                <input class="mt-0" type="radio" name="axis" value="" min="0" max="360" [(ngModel)]="yAxis" aria-label="Radio button for following text input">Y-axis
+                <input class="mt-0" type="radio" name="axis" value="" min="0" max="360" [(ngModel)]="zAxis" aria-label="Radio button for following text input">Z-axis
             </div>
             <div class="rotationcontainer my-2">
                 <div class="mb-1">
                     <label for="xrotate" class="form-label">Rotation lower limit(deg)</label>
-                    <input type="number" class="form-control" id="xrotate" placeholder="-" >
+                    <input type="number" class="form-control" id="xrotate" placeholder="-">
                 </div>
                 <div class="mb-1">
                     <label for="yrotate" class="form-label">Rotation upper limit(deg)</label>
@@ -75,6 +75,8 @@
         </div>
     </div>
     <div class="col-7 col-sm-7 col-xs-7 col-md-7 viewer">
-        <div id="model" #model></div>
+        <div id="model" #model>
+            <span class="aligncenterlabele">STL Viewer Placeholder</span>
+        </div>
     </div>
 </div>
