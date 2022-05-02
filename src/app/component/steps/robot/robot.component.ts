@@ -30,32 +30,32 @@ export class RobotComponent implements OnInit {
   constructor(public routeService: RouterService,private robotservice: RobotService) { }
   
   robotDetails? = [
-    // {
-    //   robotimg: 'assets/robot.webp', manufacturename: 'Universal Robot',model: 'UR56',
-    //   robotname: 'UR5', reach: '1.3M', payload: '10Kg', selected: false
-    // },
-    // {
-    //   robotimg: 'assets/robot.webp', manufacturename: 'Universal Robot', model: 'UR56',
-    //   robotname: 'UR5', reach: '1.3M', payload: '10Kg', selected: false
-    // },
-    // {
-    //   robotimg: 'assets/robot.webp', manufacturename: 'Universal Robot', model: 'UR56',
-    //   robotname: 'UR5', reach: '1.3M', payload: '10Kg', selected: false
-    // },
-    // {
-    //   robotimg: 'assets/robot.webp', manufacturename: 'Universal Robot', model: 'UR56',
-    //   robotname: 'UR5', reach: '1.3M', payload: '10Kg', selected: false
-    // },
-    // {
-    //   robotimg: 'assets/robot.webp', manufacturename: 'Universal Robot', model: 'UR56',
-    //   robotname: 'UR5', reach: '1.3M', payload: '10Kg', selected: false
-    // }
+    {
+      robotimg: 'assets/robot.webp', manufacturename: 'Universal Robot',model: 'UR56',
+      robotname: 'UR5', reach: '1.3M', payload: '10Kg', selected: false
+    },
+    {
+      robotimg: 'assets/robot.webp', manufacturename: 'Universal Robot', model: 'UR56',
+      robotname: 'UR5', reach: '1.3M', payload: '10Kg', selected: false
+    },
+    {
+      robotimg: 'assets/robot.webp', manufacturename: 'Universal Robot', model: 'UR56',
+      robotname: 'UR5', reach: '1.3M', payload: '10Kg', selected: false
+    },
+    {
+      robotimg: 'assets/robot.webp', manufacturename: 'Universal Robot', model: 'UR56',
+      robotname: 'UR5', reach: '1.3M', payload: '10Kg', selected: false
+    },
+    {
+      robotimg: 'assets/robot.webp', manufacturename: 'Universal Robot', model: 'UR56',
+      robotname: 'UR5', reach: '1.3M', payload: '10Kg', selected: false
+    }
   ];
 
   
   ngOnInit(): void {
     this.robotservice.getrobots().subscribe((data:any) => {
-      this.robotDetails=data;
+      // this.robotDetails=data;
       console.log(this.robotDetails)
     })
 

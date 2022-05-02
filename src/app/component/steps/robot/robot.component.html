@@ -3,9 +3,9 @@
     <app-addrobot (cancelEvent)="showRobotModel = false" (formSubmit) = "createRobot($event)"></app-addrobot>
 </app-model>
 
-<app-model headertitle="Add New Gripper" *ngIf="isAdmin && showGripperModel" (closeModelEmit)="showGripper(false)">
+<!-- <app-model headertitle="Add New Gripper" *ngIf="isAdmin && showGripperModel" (closeModelEmit)="showGripper(false)">
     <app-add-gripper (cancelEvent)="showGripperModel = false" (formSubmit) = "createRobot($event)"></app-add-gripper>
-</app-model>
+</app-model> -->
 
 <div class="grid-container" id="robotcontainer">
     <div class="grid-header">
@@ -32,17 +32,17 @@
                                 <mat-icon class="material-icons-outlined color" alt="faq">add</mat-icon>
                                 <span class="f-13" >Add Robot</span> 
                             </button>
-                            <button (click)="showGripper(true)">
+                            <!-- <button (click)="showGripper(true)">
                                 <mat-icon class="material-icons-outlined color" alt="faq">add</mat-icon>
                                 <span class="f-13" >Add Gripper</span>
-                            </button>
+                            </button>-->
                             <button (click)="showModel(true)">
                                 <mat-icon class="material-icons-outlined gray" alt="faq">edit</mat-icon>
-                                <span class="f-13 colorgray">Edit Gripper</span>
+                                <span class="f-13 colorgray">Edit Robot</span>
                             </button>
                             <button (click)="openDeleteModel(true)">
                                 <mat-icon class="material-icons-outlined gray" alt="faq">delete</mat-icon>
-                                <span class="f-13 colorgray">Delete Gripper</span>
+                                <span class="f-13 colorgray">Delete Robot</span>
                             </button>
                         </div>
                     </div>

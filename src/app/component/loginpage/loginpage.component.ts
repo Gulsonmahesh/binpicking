@@ -41,6 +41,7 @@ export class LoginpageComponent implements OnInit {
 
   onSubmit(event:any) {
     event.preventDefault();
+    
     if(this.signInForm.status === 'VALID') {
       sessionStorage.setItem('isAdmin', this.signInForm.controls.isAdmin.value);
       if(this.signInForm.controls.isAdmin.value === true) {
@@ -56,6 +57,7 @@ export class LoginpageComponent implements OnInit {
         })
       this.route.navigate(['/gripper']);
       } else {
+        this.route.navigate(['/projectsummary']);
         this.operator = "user"
         console.log(this.signInForm.value)
         const logindetails = new FormData();
