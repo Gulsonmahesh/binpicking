@@ -7,14 +7,22 @@ import { EnvironmentService } from 'src/app/service/environment.service';
   styleUrls: ['./environment.component.scss']
 })
 export class EnvironmentComponent implements OnInit {
-
+  imageFileName = '';
+  stlFileName = '';
+  imageFile?: File;
+  stlFile?: File;  
+  imageFileName1 = '';
+  stlFileName1 = '';
+  imageFile1?: File;
+  stlFile1?: File;  
   uploadenvmnt=true;
   uploadcad=true;
   selectedEnvFile?: File ;
   selecteBinFile?: File ;
-  step1 = true;
-  step2 = false;
-
+  step1 = false;
+  step2 = true;
+  downloaddoc= true;
+  downloaddoc1= true;
   constructor(public routeService: RouterService,private environmentservice: EnvironmentService) { }
 
   ngOnInit(): void {
@@ -22,7 +30,29 @@ export class EnvironmentComponent implements OnInit {
       console.log(data)
     })
   }
+  closebtn(){
+    this.downloaddoc= false;
+  }
+  closebtn1(){
+    this.downloaddoc1= false;
+  }
+  imagefileupload(event: any) {
+    this.imageFileName = event.target.files[0].name;
+    this.imageFile = <File>event.target.files[0];
+  }
+  imagefileupload1(event: any) {
+    this.imageFileName1 = event.target.files[0].name;
+    this.imageFile1 = <File>event.target.files[0];
+  }
 
+  stlfileupload(event: any) {
+    this.stlFileName = event.target.files[0].name;
+    this.stlFile = <File>event.target.files[0];
+  }
+  stlfileupload1(event: any) {
+    this.stlFileName1 = event.target.files[0].name;
+    this.stlFile1 = <File>event.target.files[0];
+  }
   onchangeEnvFile(event:any) {
     this.selectedEnvFile = <File>event.target.files[0];    
   }

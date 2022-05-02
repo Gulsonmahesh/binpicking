@@ -7,7 +7,7 @@
     .gripper {
         display: grid;
         grid-template-columns: 200px auto;
-        height: 68vh;
+        height: 64vh;
         grid-gap: 10px;
         gap: 10px;
         margin-bottom: 39px;
@@ -18,7 +18,7 @@
             min-width: 100%;
             overflow-y: auto;
             overflow-x: hidden;
-            padding: 10px;
+            padding: 15px 10px;
             background: #fff;
             h3 {
                 font-size: 13px;
@@ -33,6 +33,7 @@
             justify-content: center;
             letter-spacing: 0.69px;
             color: darkgray;
+            background: #ECECED;
         }
         .position {
             font-size: 11px;
@@ -67,7 +68,6 @@
             }
         }
     }
-
     .disabledinput {
         width: 30px;
         border-radius: 5px;
@@ -76,4 +76,11 @@
         font-weight: 700;
         padding: 0 5px;
     }
+}
+
+.aligncenterlabele {
+    position: relative;
+    left: 35%;
+    top: 50%;
+    font-size: 22px;
 }

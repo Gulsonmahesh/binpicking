@@ -10,9 +10,10 @@ import { RouterService } from '../../../service/router.service';
   styleUrls: ['./projectsummary.component.scss']
 })
 export class ProjectsummaryComponent implements OnInit {
+  showTip = false;
   displayedColumns = ['id', 'name', 'progress', 'status', 'action'];
   dataSource: any = null;
-
+  // pageSizes = [2,4,6];
   @ViewChild(MatPaginator) paginator ? : MatPaginator;
   @ViewChild(MatSort) sort ?: MatSort;
 
@@ -48,7 +49,7 @@ function createNewUser(id: number): UserData {
       NAMES[Math.round(Math.random() * (NAMES.length - 1))] + ' ' +
       NAMES[Math.round(Math.random() * (NAMES.length - 1))].charAt(0) + '.';
  
-
+    
 
   return {
     id: id.toString(),
@@ -58,6 +59,7 @@ function createNewUser(id: number): UserData {
     action: ACTION[Math.round(Math.random() * (ACTION.length - 1))],
   };
 }
+
 
 /** Constants used to fill up our data base. */
 const STATUS = ['Ready for Deployment', 'Configuration Incomplete', 'Configuration Incomplete', 'Configuration Incomplete', 'Configuration Incomplete', 'Configuration Incomplete', 'Configuration Incomplete',

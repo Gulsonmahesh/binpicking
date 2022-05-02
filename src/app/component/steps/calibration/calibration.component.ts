@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { RouterService } from 'src/app/service/router.service';
 import { CalibrationService } from 'src/app/service/calibration.service';
 @Component({
@@ -7,7 +7,7 @@ import { CalibrationService } from 'src/app/service/calibration.service';
   styleUrls: ['./calibration.component.scss']
 })
 export class CalibrationComponent implements OnInit {
-
+ 
   constructor(public routeService: RouterService,private calibrationService:CalibrationService) { }
 
   ngOnInit(): void {

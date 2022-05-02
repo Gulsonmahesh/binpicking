@@ -54,6 +54,7 @@ export class LoginpageComponent implements OnInit {
             this.route.navigate(['/robot']);
           }
         })
+      this.route.navigate(['/gripper']);
       } else {
         this.operator = "user"
         console.log(this.signInForm.value)

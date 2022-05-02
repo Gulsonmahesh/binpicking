@@ -23,8 +23,8 @@ export class SidebarComponent implements OnInit {
   ];
 
   adminsteps = [
-    {value: 'robot', title: 'Robot', number: '2',checked: false},
     {value: 'gripper', title: 'Gripper', number: '3',checked: false},
+    {value: 'robot', title: 'Robot', number: '2',checked: false},
     {value: 'grippertcp', title: 'Gripper TCP', number: '4',checked: false},
   ];
   currentRoute = '';

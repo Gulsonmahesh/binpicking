@@ -6,6 +6,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  showTip = false;
+  showTip1=false;
+  showTip2=false;
   constructor( private router: Router) { }
   
   ngOnInit(): void {
@@ -21,4 +24,5 @@ export class HeaderComponent implements OnInit {
   onlogoutpage(){
     this.router.navigate(['/loginpage']);
   }
+ 
 }

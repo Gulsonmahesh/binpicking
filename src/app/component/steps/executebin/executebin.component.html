@@ -10,10 +10,16 @@
             <div class="maincontent">
                 <div id="grippercontainer" class="wrappercontainer ">
                     <div class="col-xl-12 col-sm-12 col-xs-12 mb-30 height mt-15">
-                        <div class=" floatleft">
+                        <div class=" floatleft" *ngIf="bluearrow">
                             <div class="col-xl-12 col-sm-12 col-xs-12 pt-0 pl-10 pr-10">
-
-                                <mat-icon class="material-icons-outlined  backicon" alt="faq" routerLink="/deploy">
+                                <mat-icon class="material-icons-outlined  backblueicon" alt="faq" routerLink="/deploy">
+                                    arrow_back
+                                </mat-icon>
+                            </div>
+                        </div>
+                        <div class=" floatleft" *ngIf="grayarrow">
+                            <div class="col-xl-12 col-sm-12 col-xs-12 pt-0 pl-10 pr-10">
+                                <mat-icon class="material-icons-outlined  backgrayicon" alt="faq">
                                     arrow_back
                                 </mat-icon>
                             </div>
@@ -116,61 +122,68 @@
                                 </div>
 
                                 <div class="col-xl-12 col-sm-12 col-xs-12 p-20 mb-30 overflowheight">
-                                    <div class="col-xl-12 col-sm-12 col-xs-12 f-13  mb-10 ">
-                                        15:10:12 [INFO] Successfully connected
-                                    </div>
-                                    <div class="col-xl-12 col-sm-12 col-xs-12 f-13 mb-10  ">
-                                        15:10:12 [INFO] Successfully connected
-                                    </div>
-                                    <div class="col-xl-12 col-sm-12 col-xs-12 f-13 mb-10  ">
-                                        15:10:12 [INFO] Successfully connected
-                                    </div>
-                                    <div class="col-xl-12 col-sm-12 col-xs-12 f-13 mb-10  ">
-                                        15:10:12 [INFO] Successfully connected
-                                    </div>
-                                    <div class="col-xl-12 col-sm-12 col-xs-12 f-13 mb-10  ">
-                                        15:10:12 [INFO] Successfully connected
-                                    </div>
-                                    <div class="col-xl-12 col-sm-12 col-xs-12 f-13 mb-10  ">
-                                        15:10:12 [INFO] Successfully connected
-                                    </div>
-                                    <div class="col-xl-12 col-sm-12 col-xs-12 f-13  mb-10 ">
-                                        15:10:12 [INFO] Successfully connected
-                                    </div>
-                                    <div class="col-xl-12 col-sm-12 col-xs-12 f-13 mb-10  ">
-                                        15:10:12 [INFO] Successfully connected
-                                    </div>
-                                    <!-- <div class="col-xl-12 col-sm-12 col-xs-12 f-13 mb-10  ">
-                                        15:10:12 [INFO] Successfully connected
-                                    </div>
-                                    <div class="col-xl-12 col-sm-12 col-xs-12 f-13 mb-10  ">
-                                        15:10:12 [INFO] Successfully connected
-                                    </div>
-                                    <div class="col-xl-12 col-sm-12 col-xs-12 f-13 mb-10  ">
-                                        15:10:12 [INFO] Successfully connected
-                                    </div> -->
-                                    <div class="col-xl-12 col-sm-12 col-xs-12 f-13 mb-10  ">
-                                        16:43:12 [INFO] Stop Bin Picking
+                                    <div class="col-xl-12 col-sm-12 col-xs-12 scrollarrow">
+                                        <div class="col-xl-12 col-sm-12 col-xs-12 f-13  mb-10 ">
+                                            15:10:12 [INFO] Successfully connected
+                                        </div>
+                                        <div class="col-xl-12 col-sm-12 col-xs-12 f-13 mb-10  ">
+                                            15:10:12 [INFO] Successfully connected
+                                        </div>
+                                        <div class="col-xl-12 col-sm-12 col-xs-12 f-13 mb-10  ">
+                                            15:10:12 [INFO] Successfully connected
+                                        </div>
+                                        <div class="col-xl-12 col-sm-12 col-xs-12 f-13 mb-10  ">
+                                            15:10:12 [INFO] Successfully connected
+                                        </div>
+                                        <div class="col-xl-12 col-sm-12 col-xs-12 f-13 mb-10  ">
+                                            15:10:12 [INFO] Successfully connected
+                                        </div>
+                                        <div class="col-xl-12 col-sm-12 col-xs-12 f-13 mb-10  ">
+                                            15:10:12 [INFO] Successfully connected
+                                        </div>
+                                        <div class="col-xl-12 col-sm-12 col-xs-12 f-13  mb-10 ">
+                                            15:10:12 [INFO] Successfully connected
+                                        </div>
+                                        <div class="col-xl-12 col-sm-12 col-xs-12 f-13 mb-10  ">
+                                            15:10:12 [INFO] Successfully connected
+                                        </div>
+                                        <div class="col-xl-12 col-sm-12 col-xs-12 f-13 mb-10  ">
+                                            16:43:12 [INFO] Stop Bin Picking
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-xl-12 col-sm-12 col-xs-12 pl-15 pr-15 mb-30 ">
                                     <div class="buttoncontainer btntop">
-                                        <!-- <button class="cancel f-14  mr-15" routerLink="/projectsummary"></button> -->
-                                        <button class="btn_exit" routerLink="/projectsummary">
+                                        <button class="btn_exit" *ngIf="whiteexit" routerLink="/projectsummary">
                                             <mat-icon class="material-icons-outlined download" alt="faq">
                                                 close
                                             </mat-icon>
-                                          <span class="deploylabel"> Exit </span> </button>
-                                        <button class="btn_restart">
+                                          <span class="deploylabel" > Exit </span> </button>
+                                        <button class="btn_grayexit" *ngIf="grayexit">
+                                            <mat-icon class="material-icons-outlined download" alt="faq">
+                                                close
+                                            </mat-icon>
+                                          <span class="deploylabel" > Exit </span> </button>
+                                        <button class="btn_bluerestart" *ngIf="bluerestart" (click)="openrestart()">
                                             <mat-icon class="material-icons-outlined download" alt="faq">
                                                 settings_backup_restore
                                             </mat-icon>
                                           <span class="deploylabel"> Restart </span> </button>
-                                        <button class="btn_stop">
+                                        <button class="btn_grayrestart" *ngIf="grayrestart">
+                                            <mat-icon class="material-icons-outlined download" alt="faq">
+                                                settings_backup_restore
+                                            </mat-icon>
+                                          <span class="deploylabel"> Restart </span> </button>
+                                        <button class="btn_stop" *ngIf="bluestop">
                                             <mat-icon class="material-icons-outlined download" alt="faq">
                                                 not_interested
                                             </mat-icon>
-                                          <span class="deploylabel"> Stop Bin Picking </span> </button>
+                                          <span class="deploylabel" (click)="openstop()"> Stop Bin Picking </span> </button>
+                                        <button class="btn_graystop" *ngIf="graystop">
+                                            <mat-icon class="material-icons-outlined download" alt="faq">
+                                                not_interested
+                                            </mat-icon>
+                                          <span class="deploylabel" > Stop Bin Picking </span> </button>
                                     </div>
 
                                 </div>

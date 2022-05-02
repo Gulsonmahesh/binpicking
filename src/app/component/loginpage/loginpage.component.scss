@@ -289,7 +289,7 @@ body::-webkit-scrollbar {
 }
 
 .pad {
-    padding: 30px 70px;
+    padding: 150px 70px 30px 20px;
 }
 
 .switch {
@@ -355,6 +355,7 @@ input:checked+.slider:before {
 
 .label {
     position: relative;
-    left: 44px;
+    left: 13px;
     font-size: 12px;
+    bottom: 0px;
 }

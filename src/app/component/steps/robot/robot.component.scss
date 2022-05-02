@@ -84,7 +84,6 @@
         border-radius: 5px;
         position: relative;
     }
-
     .uploadbutton {
         background: transparent;
         border: 0;
@@ -93,7 +92,6 @@
         padding: 0;
         margin: 0 10px;
     }
-
     .cancel {
         margin-right: 15px;
     }
@@ -102,8 +100,8 @@
     }
     .file-input-img {
         opacity: 0;
-        width:100%;
-        height: 70px;        
+        width: 100%;
+        height: 70px;
     }
     .uploadbuttoncontainer {
         position: absolute;
@@ -116,7 +114,20 @@
         button {
             border: 0;
             background: transparent;
-            padding:10px;
+            padding: 10px;
         }
+    }
+    .gray {
+        background: transparent;
+        padding: 0px 0px 0px 0px;
+        border-radius: 13px;
+        font-size: 17px;
+        height: 16px;
+        width: 16px;
+        position: relative;
+        margin: 0px 6px 0px 4px;
+        color: #a9a9a9cc;
+        position: relative;
+        top: 4px;
     }
 }

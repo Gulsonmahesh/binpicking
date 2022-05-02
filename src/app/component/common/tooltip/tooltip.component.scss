@@ -1,14 +1,17 @@
 :host {
     .tip {
-        left: 10%;
-        transform: translate(-50%, 50%);
+        // left: 10%; */
+        /* transform: translate(-50%, 50%); */
+        background: #4D4D4D;
+        color: white;
+        border-radius: 6px;
         min-width: 100px;
         width: auto;
         max-width: 300px;
         overflow: auto;
         height: auto;
         max-height: 300px;
-        top: 0;
+        /* top: 0; */
         width: 133px;
         padding: 10px;
         position: absolute;

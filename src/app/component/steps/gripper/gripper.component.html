@@ -9,20 +9,22 @@
             </div>
             <div class="maincontent">
                 <div class="col-xl-12 col-sm-12 col-xs-12 f-12 floatleft pl-15 pt-20 pb-20 " *ngIf=isAdmin>
-                    <div class="col-xl-1 col-sm-1 col-xs-1 f-12 floatleft">
-                        <div class="col-xl-12 col-sm-12 col-xs-12 f-12 ">
-                            <span class="col-xl-12 col-sm-12 col-xs-12 f-13 ">Robot</span>
-                            <span class="col-xl-12 col-sm-12 col-xs-12 f-12 cursorpointer  aligntext">
-                                <label class="f-13" >Add Gripper</label>
-                                <mat-icon class="material-icons-outlined color" alt="faq">
-                                    edit
-                                </mat-icon>
+                    <h3 class="d-inline-flex align-items-center lefthead">
+                        <span class="f-13 colorgray">Robot </span>
+                        <span class="f-16 bold">
+                            UR5
                         </span>
-                        </div>
-                    </div>
-                    <div class="col-xl-10 col-sm-10 col-xs-10 f-12 floatright">
-                        <div class="col-xl-12 col-sm-12 col-xs-12 f-12">
-                            rhberher
+                    </h3>
+                    <div class="righthead" *ngIf="isAdmin">
+                        <div class="pr-20 admincontrols">
+                            <button>
+                                <mat-icon class="material-icons-outlined gray" alt="faq">edit</mat-icon>
+                                <span class="f-13 colorgray">Edit Gripper</span>
+                            </button>
+                            <button>
+                                <mat-icon class="material-icons-outlined gray" alt="faq">delete</mat-icon>
+                                <span class="f-13 colorgray">Delete Gripper</span>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -58,6 +60,18 @@
                                     </div>
                                 </button>
                         </div>
+                        <button class="card" (click)="openModal()">
+                            <div class="col-12 col-sm-12 col-xl-12 wid100 d-flex align-items-center justify-content-between floatleft">
+                                <!-- <div class="col-12 col-sm-12 col-xl-12 cardnamenew">Add New Gripper</div> -->
+                                <div class="col-12 col-sm-12 col-xl-12 bold f-14 pt-20 bordertop">
+                                  
+                                <span class="col-11 col-sm-11 col-xl-11 floatleft">New Gripper</span>
+                                <span class="col-1 col-sm-1 col-xl-1 floatright">
+                                <input type="radio" name="selected" id="" class="radiobtn" checked="selected" />
+                                </span>
+                            </div>
+                            </div>
+                            </button>
                     </div>
                 </div>
                 <app-mainfooter [showdeploy]="false" (movetonext)="routeService.movetonextpage('grippertcp')" (movetoback)="routeService.movetonextpage('robot')" submitname="Select and Continue">
