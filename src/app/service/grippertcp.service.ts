@@ -8,7 +8,7 @@ export class GrippertcpService {
 
   constructor(private http: HttpClient) { }
   getgripper(){
-    return this.http.get<any>( `${BASEURL}/get_admin_grippers/1`)
+    return this.http.get<any>( `${BASEURL}/admin/gripper/get_grippers/1`)
   }
   gripperTcpDetails(grippertcpdata:any){
     return this.http.post<any>(`${BASEURL}/gripper_tcp`,grippertcpdata)

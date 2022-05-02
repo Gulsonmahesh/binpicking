@@ -9,7 +9,7 @@ export class RobotService {
 
   constructor(private http: HttpClient) { }
   getrobots(){
-    return this.http.get<any>( `${BASEURL}/get_admin_robots/0`)
+    return this.http.get<any>( `${BASEURL}/admin/robot/get_robots/0`)
   }
 }
 

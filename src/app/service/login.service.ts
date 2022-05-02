@@ -5,13 +5,10 @@ import { BASEURL } from '../constant';
 @Injectable({
   providedIn: 'root'
 })
-export class ObjectService {
+export class LoginService {
 
   constructor(private http: HttpClient) { }
-  getobjects(){
-    return this.http.get<any>(`${BASEURL}/objects/0/2`)
-  }
-  objectDetails(objectdata:any){
-    return this.http.post<any>(`${BASEURL}/objects`,objectdata)
+  loginDetails(logindetails:any){
+    return this.http.post<any>(`${BASEURL}/login`,logindetails)
   }
 }

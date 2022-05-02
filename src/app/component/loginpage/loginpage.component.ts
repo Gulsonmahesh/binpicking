@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormControl, Validators, FormBuilder }  from '@angular/forms';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { LoginService } from 'src/app/service/login.service';
 @Component({
   selector: 'app-loginpage',
   templateUrl: './loginpage.component.html',
@@ -17,7 +18,11 @@ export class LoginpageComponent implements OnInit {
   signinShow: boolean = true;
   // isAdmin = false;
 
-  constructor(public fb: FormBuilder, public router: ActivatedRoute, public route: Router) { }
+  constructor(public fb: FormBuilder, public router: ActivatedRoute, public route: Router,private loginService: LoginService) { }
+
+  name = "";
+  password = "";
+  operator = "";
 
   ngOnInit(): void {
     this.signInForm = this.fb.group({
@@ -39,9 +44,27 @@ export class LoginpageComponent implements OnInit {
     if(this.signInForm.status === 'VALID') {
       sessionStorage.setItem('isAdmin', this.signInForm.controls.isAdmin.value);
       if(this.signInForm.controls.isAdmin.value === true) {
-      this.route.navigate(['/robot']);
+        this.operator = "admin"
+        const logindetails = new FormData();
+        logindetails.append("username", <string>this.signInForm.controls.username.value );
+        logindetails.append("password", <string>this.signInForm.controls.password.value );
+        console.log(this.signInForm.value)
+        this.loginService.loginDetails(logindetails).subscribe((data:any) => {
+          if (data.status === "success") {
+            this.route.navigate(['/robot']);
+          }
+        })
       } else {
-        this.route.navigate(['/projectsummary']);
+        this.operator = "user"
+        console.log(this.signInForm.value)
+        const logindetails = new FormData();
+        logindetails.append("username", <string>this.signInForm.controls.username.value );
+        logindetails.append("password", <string>this.signInForm.controls.password.value );
+        this.loginService.loginDetails(logindetails).subscribe((data:any) => {
+          if (data.status === "success") {
+            this.route.navigate(['/projectsummary']);
+          }
+        });
       }
 
     }

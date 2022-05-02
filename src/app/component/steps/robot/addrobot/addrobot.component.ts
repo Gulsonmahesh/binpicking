@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AddrobotService } from 'src/app/service/addrobot.service';
 
 @Component({
   selector: 'app-addrobot',
@@ -40,9 +41,16 @@ export class AddrobotComponent implements OnInit {
     uploadRobotstl: new FormControl('', Validators.required)
   });
 
-  constructor() { }
+  constructor(private addrobotservice: AddrobotService ) { }
 
   ngOnInit(): void {
+  }
+
+  createRobot(){
+    this.addrobotservice.addRobotData(this.addRobot).subscribe((data:any) => {
+      console.log(data)
+    })
+
   }
 
   cancelModel() {

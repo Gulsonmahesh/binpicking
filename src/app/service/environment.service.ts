@@ -9,7 +9,7 @@ export class EnvironmentService {
 
   constructor(private http: HttpClient) { }
   getenvironmentdetails(){
-    return this.http.get<any>(`${BASEURL}/master_environment/0/19`)
+    return this.http.get<any>(`${BASEURL}/master_environment/0/2`)
   }
   environmentDetails(master_environment_data:any){
     return this.http.post<any>(`${BASEURL}/master_environment`,master_environment_data)

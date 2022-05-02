@@ -5,13 +5,10 @@ import { BASEURL } from '../constant';
 @Injectable({
   providedIn: 'root'
 })
-export class ObjectService {
+export class AddrobotService {
 
   constructor(private http: HttpClient) { }
-  getobjects(){
-    return this.http.get<any>(`${BASEURL}/objects/0/2`)
-  }
-  objectDetails(objectdata:any){
-    return this.http.post<any>(`${BASEURL}/objects`,objectdata)
+  addRobotData(robotData:any){
+    return this.http.post<any>(`${BASEURL}/admin/robot/create_robots`,robotData)
   }
 }
