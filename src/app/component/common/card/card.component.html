@@ -1,36 +1,85 @@
-<div class="cardcontainer mr-15">
-    <button class="card" (click)="openModal()">
-    <span class="col-xl-12 col-sm-12 col-xs-12 f-12  bold ">
-        <span  class="col-xl-6 col-sm-6 col-xs-6 f-12  bold ">Object 1</span>
-        <span  class="col-xl-6 col-sm-6 col-xs-6 f-12  bold ">
-    <mat-icon class="material-icons-outlined check" alt="faq">
-        edit
-    </mat-icon>
-    <mat-icon class="material-icons-outlined check" alt="faq">
-        delete
-    </mat-icon>
-    <mat-icon class="material-icons-outlined check" alt="faq">
-        edit
-    </mat-icon>
-    <label class="switch">
-            <input type="checkbox" name="usertype" formControlName="isAdmin" />
+<div class="d-flex align-items-center flex-wrap gap-1 grippercontainer widthbtm">
+    <!-- object division  -->
+    <div class="cards mr-15 p-10">
+        <span class="col-12 col-sm-12 col-xl-12 floatright pb-10">
+            <span class="col-7 col-sm-7 col-xl-7 floatleft bold"> Object 1</span>
+        <span class="col-5 col-sm-5 col-xl-5 floatright">
+                <span class="mb-2 uploadeddoc">
+                    <mat-icon class="floatleft material-icons-outlined f-15 mr-6 maticondownload" alt="delete">
+                        edit
+                    </mat-icon>
+        <mat-icon class="floatleft material-icons-outlined  f-15 maticondownload" alt="delete">
+            delete
+        </mat-icon>
+      
+        <label class="switch floatright">
+            <input type="checkbox" name="usertype" />
             <span class="slider round"></span>
-
-</label>
-</span>
-    </span>
-    <span class="col-xl-12 col-sm-12 col-xs-12 f-12  bold ">
-        <span class="">
-            <mat-icon class="material-icons-outlined check" alt="faq">
-                edit
-            </mat-icon> 
+        </label>
         </span>
-    </span>
-</button>
-</div>
-<div class="cardcontainer">
-    <button class="card" (click)="openModal()">
+        </span>
+        </span>
+        <span class="col-12 col-sm-12 col-xl-12 floatleft innerbox">
+            <span class="innertext"> 
+
+                <img class="imgs" src="../../../../assets/Images/images.jpg" alt="logo" /> 
+          
+            </span>
+        </span>
+        <div class="col-12 col-sm-12 col-xl-12 namecontainer d-flex align-items-center justify-content-between">
+            <span class="col-12 col-sm-12 col-xl-12 bold f-14 pt-20 bordertop">
+                <span class="col-4 col-sm-4 col-xl-4 floatleft">
+                    <mat-icon class="floatleft 
+                   iconsetting material-icons-outlined  maticondownload" alt="delete">
+                      
+                            manage_accounts
+                    </mat-icon> 
+                  <span class="iconlabel">Configure Grasp Poses</span> </span>
+            <span class="col-2 col-sm-2 col-xl-2 floatleft"></span>
+            <span class="col-6 col-sm-6 col-xl-6 floatright">
+                <mat-icon class="floatleft redcross material-icons-outlined  maticondownload" alt="delete">
+                      
+                    close
+            </mat-icon> 
+            <span class="innertext">  Poses Added</span>
+            <span class="bordercircle"> 00</span>
+            </span>
+            </span>
+        </div>
+    </div>
+    <!-- pose division  -->
+    <div class="cards mr-15 p-10">
+        <span class="col-12 col-sm-12 col-xl-12 floatright pb-10">
+            <span class="col-7 col-sm-7 col-xl-7 floatleft bold"> Pose 1</span>
+        <span class="col-5 col-sm-5 col-xl-5 floatright">
+                <span class="mb-2 uploadeddoc">
+                    <mat-icon class="floatleft material-icons-outlined f-15 mr-6 maticondownload" alt="delete">
+                        edit
+                    </mat-icon>
+        <mat-icon class="floatleft material-icons-outlined  f-15 maticondownload" alt="delete">
+            delete
+        </mat-icon>
+      
+        <label class="switch floatright">
+            <input type="checkbox" name="usertype" />
+            <span class="slider round"></span>
+        </label>
+        <div class="tip" *ngIf="showTip">
+            <span class="tooltipvalue">Enabled object for deployment</span>
+        </div>
+        </span>
+        </span>
+        </span>
+        <span class="col-12 col-sm-12 col-xl-12 floatleft innerbox2">
+            <span class="innertext"> 
+
+                <img class="imgs" src="../../../../assets/Images/images.jpg" alt="logo" /> 
+          
+            </span>
+        </span>
+    </div>
+    <button class="d-flex card" (click)="openModal()">
         <div class="circle">+</div>
-        <span class="cardname">{{addText}}</span>
+        <span class="cardname">{{ addText }}</span>
     </button>
 </div>
