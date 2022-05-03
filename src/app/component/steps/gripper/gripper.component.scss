@@ -30,7 +30,7 @@
         overflow: auto;
     }
     .grippercontainer {
-        max-height: 480px;
+        // max-height: 480px;
         overflow: auto;
     }
     .card {
@@ -104,7 +104,9 @@ input[name="selected"] {
 }
 
 .brdrheight {
-    height: 400px;
+    // height: 400px;
+    max-height: 500px;
+    height: 100%;
 }
 
 .centertext {

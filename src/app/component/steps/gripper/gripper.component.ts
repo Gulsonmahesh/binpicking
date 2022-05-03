@@ -17,7 +17,10 @@ export class GripperComponent implements OnInit {
   gripperDetails: any = [
     {image: 'assets/robot.webp', name:'Parallel Finger Gripper' , selected: false, id:1}, 
     {image: 'assets/robot.webp', name:'Vaccum Gripper' , selected: false, id:2},
-    {image: 'assets/robot.webp', name:'Vaccum Gripper' , selected: false, id:3}
+    {image: 'assets/robot.webp', name:'Vaccum Gripper' , selected: false, id:3},
+    {image: 'assets/robot.webp', name:'Vaccum Gripper' , selected: false, id:4},
+    {image: 'assets/robot.webp', name:'Vaccum Gripper' , selected: false, id:5},
+    {image: 'assets/robot.webp', name:'Vaccum Gripper' , selected: false, id:6}
 
   ];
   showGripperModel = false;
