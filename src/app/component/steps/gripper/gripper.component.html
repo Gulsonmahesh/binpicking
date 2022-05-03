@@ -1,4 +1,4 @@
-<app-model headertitle="Add New Gripper" *ngIf="isAdmin && showGripperModel" (closeModelEmit)="showGripper(false)">
+<app-model headertitle="Add New Gripper" *ngIf="showGripperModel" (closeModelEmit)="showGripper(false)">
     <app-add-gripper (cancelEvent)="showGripperModel = false" (formUpload)="createRobot($event)"></app-add-gripper>
 </app-model>
 
@@ -64,31 +64,13 @@
                                 </div>
 
                             </ng-container>
-                            <div class="card">
-                                <span class="col-12 col-sm-12 col-xl-12 floatright">
-                                <span class="mb-2 uploadeddoc">
-                                    <mat-icon class="floatright material-icons-outlined mr-10 maticondownload" alt="delete"  >
-                                        delete
-                                    </mat-icon>
-                                    </span>
-                                </span>
-                                <span class="col-12 col-sm-12 col-xl-12 floatleft innerbox">
-                              <span class="innertext"> New Gripper Image Placeholder</span> </span>
-                                <div class="namecontainer d-flex align-items-center justify-content-between">
-                                    <span class="col-12 col-sm-12 col-xl-12 bold f-14 pt-20 bordertop">
-                                      <span class="col-11 col-sm-11 col-xl-11 floatleft">
-                                        New Gripper</span>
-                                    <span class="col-1 col-sm-1 col-xl-1 floatright">
-                <input type="radio" name="selected" id="name" class="radiobtn" />
-              </span>
-                                    </span>
-                                </div>
-                            </div>
-                            <button class="d-flex card" (click)="openAddGripperModal()">
-                <div class="circle">+</div>
-                <span class="cardname">Add New Gripper</span>
-              </button>
-                        </div>
+                            <div class="card d-flex align-items-center justify-content-around" style="position: relative">
+                            <button class="d-flex flex-column align-items-center justify-content-between" 
+                            style = "background:transparent; border:0;" (click)="openAddGripperModal()">
+                                <div class="circle">+</div>
+                                <span class="cardname">Add New Gripper</span>
+                            </button>
+                        </div> 
                     </div>
                     <app-grippercommonconter *ngIf="showGrippertcp">
                         <app-mainfooter [showExit]="true" [showdeploy]="false" [showCancal]="false" (movetonext)="routeService.movetonextpage('robot')" (movetoback)="showGrippertcp = false" (buttonExitSelected)="showGrippertcp = true" submitname="Save">

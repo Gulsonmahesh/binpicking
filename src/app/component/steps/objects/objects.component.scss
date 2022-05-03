@@ -64,3 +64,48 @@
     font-size: 14px;
     cursor: pointer;
 }
+
+.file-upload {
+    height: 70px;
+    border: 1px dashed gray;
+    border-radius: 5px;
+    position: relative;
+}
+
+.uploadbutton {
+    background: transparent;
+    border: 0;
+    text-decoration: none;
+    color: lightskyblue;
+    padding: 0;
+    margin: 0 10px;
+}
+
+.cancel {
+    margin-right: 15px;
+}
+.submit {
+    width: 90px;
+}
+.file-input-img {
+    opacity: 0;
+    width:100%;
+    height: 70px;        
+}
+.uploadbuttoncontainer {
+    position: absolute;
+    transform: translate(-50%, 50%);
+    top: 0;
+    left: 50%;
+    width: auto;
+}
+.fileuploadclear {
+border: 0 !important;
+background: transparent;
+margin-right: 10px;
+}
+
+.imgclose {
+width: 10px;
+height: 10px;
+}
