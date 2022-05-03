@@ -14,6 +14,8 @@ export class GripperComponent implements OnInit {
   @Output() buttonSelected =  new EventEmitter();
   model = false;
   showGrippertcp = false;
+  showDeleteGripperModel = false;
+
   gripperDetails: any = [
     {image: 'assets/robot.webp', name:'Parallel Finger Gripper' , selected: false, id:1}, 
     {image: 'assets/robot.webp', name:'Vaccum Gripper' , selected: false, id:2},
@@ -52,12 +54,19 @@ export class GripperComponent implements OnInit {
 
   onSelectGripper(gripper: any) {
     console.log(gripper)
+    this.showDeleteGripperModel = false;
     this.selectedGripper = gripper;
   }
 
   deleteRobot() {
+    this.showDeleteGripperModel = true;
+  }
+
+  onDeleteConfirm() {
     console.log(this.selectedGripper.id)
     this.gripperDetails = this.gripperDetails.filter((gripper: any) => gripper.id !== this.selectedGripper.id)
+    this.selectedGripper = null;
+    this.showDeleteGripperModel = false
   }
 
   gotogrippertcp() {

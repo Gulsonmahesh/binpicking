@@ -16,8 +16,11 @@ export class MainfooterComponent implements OnInit {
   @Input() showBack = true;
   @Input() submitname = 'Select and Continue';
   @Input() backname = 'Back';
+  @Input() showExit = false;
   @Output() movetonext = new EventEmitter();
   @Output() movetoback = new EventEmitter();
+  @Output() buttonExitSelected = new EventEmitter();
+
 
   ngOnInit(): void {
   }
