@@ -1,4 +1,11 @@
-<app-deletepopup *ngIf="isAdmin && deleteModel" (closeModelEmit)="deleteModel=false">Delete </app-deletepopup>
+<app-model headertitle="Delete" *ngIf="isAdmin && showDeleteGripperModel && selectedRobot" (closeModelEmit)="showDeleteGripperModel = false">
+    <p style="margin-bottom: 20px;font-size:large">Are you sure you want to delete this item?</p>
+    <div style="text-align: right;">
+        <button class="btn btn-light" style="margin-right: 10px;width: 50px" (click)="showDeleteGripperModel = false">No</button>
+        <button class="btn btn-primary" style="margin-right: 10px;width: 70px" (click)="onDeleteConfirm()">YES</button>
+    </div>
+</app-model>
+
 <app-model headertitle="Add New Robot" *ngIf="isAdmin && showRobotModel" (closeModelEmit)="showModel(false)">
     <app-addrobot (cancelEvent)="showRobotModel = false" (formSubmit) = "createRobot($event)"></app-addrobot>
 </app-model>
@@ -36,13 +43,13 @@
                                 <mat-icon class="material-icons-outlined color" alt="faq">add</mat-icon>
                                 <span class="f-13" >Add Gripper</span>
                             </button>-->
-                            <button (click)="showModel(true)">
+                            <button [disabled] ="selectedRobot ===null">
                                 <mat-icon class="material-icons-outlined gray" alt="faq">edit</mat-icon>
-                                <span class="f-13 colorgray">Edit Robot</span>
+                                <span class="f-13 colorgray" [ngClass]="{'enabled': selectedRobot !== null}">Edit Robot</span>
                             </button>
-                            <button (click)="openDeleteModel(true)">
+                            <button [disabled] ="selectedRobot ===null" (click)="openDeleteRobot()" >
                                 <mat-icon class="material-icons-outlined gray" alt="faq">delete</mat-icon>
-                                <span class="f-13 colorgray">Delete Robot</span>
+                                <span class="f-13 colorgray" [ngClass]="{'enabled': selectedRobot !== null}">Delete Robot</span>
                             </button>
                         </div>
                     </div>
@@ -50,7 +57,7 @@
                 <div class="innermaincontainer pl-20">
                     <div class="robotcontainer border-1 pb-20 ">
                         <ng-container *ngFor="let robot of robotDetails; let i = index">
-                            <app-robotdetails [details]="robot" class="pr-10"></app-robotdetails>
+                            <app-robotdetails (onSelect)="onselectedRobot($event)" [details]="robot" class="pr-10"></app-robotdetails>
                         </ng-container>
                     </div>
                 </div>
