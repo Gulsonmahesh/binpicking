@@ -7,26 +7,24 @@
         <label for="uploadobject" class="fw-bold mb-2">Upload Object Mess</label>
         <label for="description" class="col-12 col-sm-12 mb-2"> Only .stl file format accept</label>
         <div class="form-group mb-2">
-            <label for="uploadimg">Upload Gripper Image<span>*</span></label>
-            <p class="my-2">Only .jpg, .png file format accept</p>
             <div class="file-upload mb-2">
-                <input type="file" class="file-input-img" accept="image/png, image/jpeg"
-                    formControlName='uploadgripperimage' #imgfileUpload />
+                <input type="file" class="file-input-img" accept="image/png, image/jpeg" formControlName='uploadgripperimage' #imgfileUpload (change)="imagefileupload($event)" />
                 <div class="uploadbuttoncontainer d-flex flex-column align-items-center justify-content-between">
                     <span>Drag and Drop file here</span>
-                    <button color="primary" class="d-block btn btn-primary uploadbutton m-0"
-                        (click)="imgfileUpload.click()">
+                    <button color="primary" class="d-block btn btn-primary uploadbutton m-0" (click)="imgfileUpload.click()">
                         Click Here to Upload
                     </button>
                 </div>
             </div>
         </div>
-        <p class="uploadfilename d-flex align-content-center m-0 mb-2 justify-content-between">
-            <span class="fw-semibold mx-3"></span>
-            <button class="fileuploadclear">
+        <p class="uploadfilename d-flex align-content-center m-0 mb-2 justify-content-between" *ngIf="imageFileName !==''">
+            <span class="fw-semibold mx-3">{{imageFileName}}</span>
+            <button class="fileuploadclear" (click)="clearUpload('image')">
                 <img  class="imgclose" src="./assets/modalclose.svg"  />
             </button>
         </p>
+        <div *ngIf="imageFileName !==''" class="innerboxview">
+            <span class="labelinner"> STL Viewer Placeholder</span> </div>
 
         <!-- <div id="drop_zone" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);">
             <p class="m-0 mb-1">Drag one or more files to this Drop Zone ...</p>
@@ -54,7 +52,7 @@
                 <app-sidebar></app-sidebar>
             </div>
             <div class="maincontent">
-                <div id="objectcontainer" class="wrappercontainer p-20">                    
+                <div id="objectcontainer" class="wrappercontainer p-20">
                     <h3 class="bold mb-20 f-16">Picked Object</h3>
                     <div class="cards">
                         <app-card addText="Add new object" (buttonSelected)="showModel($event)"></app-card>

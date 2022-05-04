@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit, ViewChild,ElementRef  } from '@angular/core';
+import { Component, HostListener, OnInit, ViewChild,ElementRef, Input  } from '@angular/core';
 import { RouterService } from 'src/app/service/router.service';
 import { RobotService } from 'src/app/service/robot.service';
 import { RobotDetailsComponent } from '../../common/robot-details/robot-details.component';
@@ -31,7 +31,6 @@ export class RobotComponent implements OnInit {
   
   constructor(public routeService: RouterService,private robotservice: RobotService) { }
   
-
   robotDetails = [
     {
       robotimg: 'assets/robot.webp', manufacturename: 'Universal Robot',model: 'UR56',
