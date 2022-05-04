@@ -20,9 +20,7 @@ export class LoginpageComponent implements OnInit {
 
   constructor(public fb: FormBuilder, public router: ActivatedRoute, public route: Router,private loginService: LoginService) { }
 
-  name = "";
-  password = "";
-  operator = "";
+  token_data =''
 
   ngOnInit(): void {
     this.signInForm = this.fb.group({
@@ -42,29 +40,31 @@ export class LoginpageComponent implements OnInit {
   onSubmit(event:any) {
     event.preventDefault();
     if(this.signInForm.status === 'VALID') {
+      // this.route.navigate(['/gripper']);
       sessionStorage.setItem('isAdmin', this.signInForm.controls.isAdmin.value);
       if(this.signInForm.controls.isAdmin.value === true) {
-        this.operator = "admin"
+        // this.operator = "admin"
         const logindetails = new FormData();
         logindetails.append("username", <string>this.signInForm.controls.username.value );
         logindetails.append("password", <string>this.signInForm.controls.password.value );
         console.log(this.signInForm.value)
         this.loginService.loginDetails(logindetails).subscribe((data:any) => {
-          if (data.status === "success") {
-            this.route.navigate(['/robot']);
-          }
+          console.log("data",data)
+          this.route.navigate(['/gripper']);
         })
-      this.route.navigate(['/gripper']);
+      // this.route.navigate(['/gripper']);
       } else {
-        this.operator = "user"
+        // this.operator = "user"
         console.log(this.signInForm.value)
         const logindetails = new FormData();
         logindetails.append("username", <string>this.signInForm.controls.username.value );
         logindetails.append("password", <string>this.signInForm.controls.password.value );
         this.loginService.loginDetails(logindetails).subscribe((data:any) => {
-          if (data.status === "success") {
-            this.route.navigate(['/projectsummary']);
-          }
+          console.log("data",data)
+          // this.loginService.UserDetails().subscribe((new_data:any) => {
+          //   console.log(new_data)
+          // });
+          this.route.navigate(['/projectsummary']);
         });
       }
 

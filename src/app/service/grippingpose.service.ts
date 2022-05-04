@@ -5,13 +5,10 @@ import { BASEURL } from '../constant';
 @Injectable({
   providedIn: 'root'
 })
-export class LoginService {
+export class GrippingposeService {
 
   constructor(private http: HttpClient) { }
-  loginDetails(logindetails:any){
-    return this.http.post<any>(`${BASEURL}/login`,logindetails)
-  }
-  UserDetails(){
-    return this.http.get<any>(`${BASEURL}/get_current_active_user`)
+  PoseDetails(pose_details:any){
+    return this.http.post<any>(`${BASEURL}/poses`,pose_details)
   }
 }

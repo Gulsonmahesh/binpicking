@@ -39,9 +39,9 @@ export class ProjectdetailsComponent implements OnInit {
 
   createProjectDetails() {
     console.log(this.project_id, this.projectName);
-    const projectdetails = { 
+    const projectdetails = {
       project_name: this.projectName, description: this.projectDescription, 
-      username: "satya", user_id: "1" 
+      username: "naveen", user_id: "3"
     }
     
     this.createprojectservice.saveProjectDetails(projectdetails).subscribe((data: any) => {
