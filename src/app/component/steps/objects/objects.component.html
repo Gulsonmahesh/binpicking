@@ -4,9 +4,9 @@
         <input type="text" id="objectname" [(ngModel)]="objectName" />
         <label for="description">Description</label>
         <input type="text" id="description" [(ngModel)]="description" />
-        <label for="uploadobject" class="fw-bold mb-2">Upload Object Mess</label>
-        <label for="description" class="col-12 col-sm-12 mb-2"> Only .stl file format accept</label>
-        <div class="form-group mb-2">
+        <div class="form-group mb-2" *ngIf="imageFileName ===''">
+            <label for="uploadobject" class="fw-bold mb-2">Upload Object Mess</label>
+            <label for="description" class="col-12 col-sm-12 mb-2"> Only .stl file format accept</label>
             <div class="file-upload mb-2">
                 <input type="file" class="file-input-img" accept="image/png, image/jpeg" formControlName='uploadgripperimage' #imgfileUpload (change)="imagefileupload($event)" />
                 <div class="uploadbuttoncontainer d-flex flex-column align-items-center justify-content-between">
@@ -24,7 +24,8 @@
             </button>
         </p>
         <div *ngIf="imageFileName !==''" class="innerboxview">
-            <span class="labelinner"> STL Viewer Placeholder</span> </div>
+            <span class="labelinner"> STL Viewer Placeholder</span>
+        </div>
 
         <!-- <div id="drop_zone" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);">
             <p class="m-0 mb-1">Drag one or more files to this Drop Zone ...</p>
