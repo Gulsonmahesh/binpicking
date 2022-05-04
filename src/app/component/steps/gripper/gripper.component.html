@@ -1,3 +1,16 @@
+<app-model headertitle="Add New Gripper" *ngIf="isAdmin && showGripperModel" (closeModelEmit)="showGripper(false)">
+    <app-add-gripper (cancelEvent)="showGripperModel = false" (formUpload)="createRobot($event)"></app-add-gripper>
+</app-model>
+
+<app-model headertitle="Delete" *ngIf="isAdmin && showDeleteGripperModel && selectedGripper" (closeModelEmit)="showGripper(false)">
+    <p style="margin-bottom: 20px;font-size:large">Are you sure you want to delete this item?</p>
+    <div style="text-align: right;">
+        <button class="btn btn-light" style="margin-right: 10px;width: 50px" (click)="showDeleteGripperModel = false">No</button>
+        <button class="btn btn-primary" style="margin-right: 10px;width: 70px" (click)="onDeleteConfirm()">YES</button>
+    </div>
+</app-model>
+
+
 <div class="grid-container" id="grippermaincontainer">
     <div class="grid-header">
         <app-header></app-header>
@@ -8,74 +21,84 @@
                 <app-sidebar></app-sidebar>
             </div>
             <div class="maincontent">
-                <div class="col-xl-12 col-sm-12 col-xs-12 f-12 floatleft pl-15 pt-20 pb-20 " *ngIf=isAdmin>
-                    <h3 class="d-inline-flex align-items-center lefthead">
-                        <span class="f-13 colorgray">Robot </span>
-                        <span class="f-16 bold">
-                            UR5
-                        </span>
-                    </h3>
-                    <div class="righthead" *ngIf="isAdmin">
-                        <div class="pr-20 admincontrols">
-                            <button>
-                                <mat-icon class="material-icons-outlined gray" alt="faq">edit</mat-icon>
-                                <span class="f-13 colorgray">Edit Gripper</span>
-                            </button>
-                            <button>
-                                <mat-icon class="material-icons-outlined gray" alt="faq">delete</mat-icon>
-                                <span class="f-13 colorgray">Delete Gripper</span>
-                            </button>
+                <div class="pb-20 pl-15 pt-20">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <h3 class="d-inline-flex align-items-center">
+                            <span class="f-16 bold">Select Gripper</span>
+                            <app-tooltip>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            </app-tooltip>
+                        </h3>
+                        <div *ngIf="isAdmin" style="padding-left: 10px">
+                            <button class="linkbutton" style="margin-right: 10px" [ngClass]="{ buttondisabled: selectedGripper === null }">
+                      <img src="./assets/edit.png" style="width: 10px; height: 12px" />
+                      <span class="f-13 colorgray">Edit Gripper</span>
+                    </button>
+                            <button class="linkbutton" [ngClass]="{ buttondisabled: selectedGripper === null }" (click)="deleteRobot()">
+                      <img
+                        src="./assets/trash.png"
+                        style="width: 10px; height: 12px; vertical-align: inherit"
+                      />
+                      <span class="f-13 colorgray">Delete Gripper</span>
+                    </button>
                         </div>
                     </div>
                 </div>
-                <div class="pb-20 pl-15 pt-20">
-                    <h3 class="d-inline-flex align-items-center ">
-                        <span class="f-16 bold">Select Gripper</span>
-                        <app-tooltip>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        </app-tooltip>
-                    </h3>
-                </div>
-                <div class="innermaincontainer ">
-                    <div class="border-1 brdrheight">
-                        <div class=" d-flex align-items-center flex-wrap gap-1 grippercontainer widthbtm">
+                <div class="innermaincontainer">
+                    <div *ngIf="showGrippertcp === false" class="border-1 brdrheight">
+                        <div class="d-flex align-items-center flex-wrap gap-1 grippercontainer widthbtm">
                             <ng-container *ngFor="let gripper of gripperDetails; let i = index">
                                 <div class="card">
-                                    <img src="{{gripper.image}}" class="brdr" alt="gripper" />
-
-                                    <div class="wid100 d-flex align-items-center justify-content-between floatleft">
+                                    <img src="{{ gripper.image }}" class="brdr" alt="gripper" />
+                                    <div class="namecontainer d-flex align-items-center justify-content-between">
                                         <span class="col-12 col-sm-12 col-xl-12 bold f-14 pt-20 bordertop">
-                                        <span class="col-11 col-sm-11 col-xl-11 floatleft">{{gripper.name}}</span>
+                      <span class="col-11 col-sm-11 col-xl-11 floatleft">
+                          {{gripper.name}}</span>
                                         <span class="col-1 col-sm-1 col-xl-1 floatright">
-                                        <input type="radio" name="selected" id="" class="radiobtn" checked="{{gripper.selected}}" />
-                                        </span>
+                        <input type="radio" name="selected" id="{{ gripper.name }}" class="radiobtn"
+                          (change)="onSelectGripper(gripper)" />
+                      </span>
                                         </span>
                                     </div>
+                                    <a (click)="gotogrippertcp()" class="grippertcp mb-2" id="grippertcp">Gripper TCP</a>
                                 </div>
+
                             </ng-container>
-                            <button class="card" (click)="openModal()">
-                                <div class="centertext">
-                                    <div class="circle">+</div>
-                                    <span class="cardname">Add New Gripper</span>
-                                    </div>
-                                </button>
-                        </div>
-                        <button class="card" (click)="openModal()">
-                            <div class="col-12 col-sm-12 col-xl-12 wid100 d-flex align-items-center justify-content-between floatleft">
-                                <!-- <div class="col-12 col-sm-12 col-xl-12 cardnamenew">Add New Gripper</div> -->
-                                <div class="col-12 col-sm-12 col-xl-12 bold f-14 pt-20 bordertop">
-                                  
-                                <span class="col-11 col-sm-11 col-xl-11 floatleft">New Gripper</span>
-                                <span class="col-1 col-sm-1 col-xl-1 floatright">
-                                <input type="radio" name="selected" id="" class="radiobtn" checked="selected" />
+                            <div class="card">
+                                <span class="col-12 col-sm-12 col-xl-12 floatright">
+                                <span class="mb-2 uploadeddoc">
+                                    <mat-icon class="floatright material-icons-outlined mr-10 maticondownload" alt="delete"  >
+                                        delete
+                                    </mat-icon>
+                                    </span>
                                 </span>
+                                <span class="col-12 col-sm-12 col-xl-12 floatleft innerbox">
+                              <span class="innertext"> New Gripper Image Placeholder</span> </span>
+                                <div class="namecontainer d-flex align-items-center justify-content-between">
+                                    <span class="col-12 col-sm-12 col-xl-12 bold f-14 pt-20 bordertop">
+                                      <span class="col-11 col-sm-11 col-xl-11 floatleft">
+                                        New Gripper</span>
+                                    <span class="col-1 col-sm-1 col-xl-1 floatright">
+                <input type="radio" name="selected" id="name" class="radiobtn" />
+              </span>
+                                    </span>
+                                </div>
                             </div>
-                            </div>
-                            </button>
+                            <button class="d-flex card" (click)="openAddGripperModal()">
+                <div class="circle">+</div>
+                <span class="cardname">Add New Gripper</span>
+              </button>
+                        </div>
                     </div>
+                    <app-grippercommonconter *ngIf="showGrippertcp">
+                        <app-mainfooter [showExit]="true" [showdeploy]="false" [showCancal]="false" (movetonext)="routeService.movetonextpage('robot')" (movetoback)="showGrippertcp = false" (buttonExitSelected)="showGrippertcp = true" submitname="Save">
+                        </app-mainfooter>
+                    </app-grippercommonconter>
                 </div>
-                <app-mainfooter [showdeploy]="false" (movetonext)="routeService.movetonextpage('grippertcp')" (movetoback)="routeService.movetonextpage('robot')" submitname="Select and Continue">
+                <app-mainfooter *ngIf="!showGrippertcp" [showdeploy]="false" [showCancal]="false" [showBack]="false" (movetonext)="showGrippertcp = true" (movetoback)="routeService.movetonextpage('robot')" submitname="Select and Set Gripper TCP">
                 </app-mainfooter>
+                <!-- <app-mainfooter [showdeploy]="false" (movetonext)="routeService.movetonextpage('grippertcp')" (movetoback)="routeService.movetonextpage('robot')" submitname="Select and Continue">
+                </app-mainfooter> -->
             </div>
         </div>
     </div>

@@ -59,6 +59,13 @@
         .radiobtn {
             width: 20px;
             height: 20px;
+
+            &:checked:after { 
+                position: relative;
+                width: 20px;
+                height: 20px;
+                background-image: url('../../../../assets/close.png');
+            }
         }
         input[type=radio] {
             // accent-color: green !important;

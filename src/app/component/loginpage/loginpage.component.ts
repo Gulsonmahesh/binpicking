@@ -39,6 +39,7 @@ export class LoginpageComponent implements OnInit {
 
   onSubmit(event:any) {
     event.preventDefault();
+    
     if(this.signInForm.status === 'VALID') {
       // this.route.navigate(['/gripper']);
       sessionStorage.setItem('isAdmin', this.signInForm.controls.isAdmin.value);
@@ -67,7 +68,6 @@ export class LoginpageComponent implements OnInit {
           this.route.navigate(['/projectsummary']);
         });
       }
-
     }
     return;
   }

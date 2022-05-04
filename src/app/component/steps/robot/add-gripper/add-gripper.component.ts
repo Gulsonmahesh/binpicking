@@ -8,17 +8,16 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class AddGripperComponent implements OnInit {
 
-
   @ViewChild('imgfileUpload') imgfileUpload?: ElementRef;
   imageFIle?: any;
   imageFileName = '';
   stlFileName? : any = '';
   stlFile = '';
   @Output() cancelEvent = new EventEmitter();
-  @Output() formSubmit = new EventEmitter();
+  @Output() formUpload = new EventEmitter();
 
   addGripper = new FormGroup({
-    selectrobot: new FormControl('', Validators.required),
+    // selectrobot: new FormControl('', Validators.required),
     grippername: new FormControl('', Validators.required),
     uploadgripperimage: new FormControl('', Validators.required),
     uploadgripperstl: new FormControl('', Validators.required)
@@ -36,7 +35,7 @@ export class AddGripperComponent implements OnInit {
   }
 
   onSubmit(event: any) {
-    this.formSubmit.emit(event)
+    this.addGripper?.status === 'VALID' && this.formUpload.emit(this.addGripper)
   }
   stlfileupload(event: any) {
     this.stlFile  = event.target.files[0];

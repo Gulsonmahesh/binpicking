@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-robotdetails',
@@ -11,10 +11,16 @@ export class RobotdetailsComponent implements OnInit {
 
   @Input() details: any = '';
   isAdmin=false;
+  @Output() onSelect =  new EventEmitter();
+
   constructor() { }
 
   ngOnInit(): void {
     this.isAdmin= sessionStorage.getItem('isAdmin') === 'true' ? true: false;
+  }
+
+  robotSelected() {
+    this.onSelect.emit(this.details)
   }
 
 }
