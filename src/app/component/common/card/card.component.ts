@@ -6,7 +6,7 @@ import { Component, OnInit,Output, EventEmitter, Input } from '@angular/core';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent implements OnInit {
-
+  showTip = false;
   @Output() buttonSelected =  new EventEmitter();
   @Input() addText = '';
   constructor() { }

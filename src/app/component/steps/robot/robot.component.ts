@@ -14,6 +14,8 @@ export class RobotComponent implements OnInit {
   showRobotModel = false;
   deleteModel = false;
   showGripperModel = false;
+  selectedRobot: any = null;
+  showDeleteGripperModel = false;
 
   @HostListener('document:keyup', ['$event']) closeModel(event: KeyboardEvent) {
     if(this.showRobotModel && event.key == 'Escape') {
@@ -29,33 +31,34 @@ export class RobotComponent implements OnInit {
   
   constructor(public routeService: RouterService,private robotservice: RobotService) { }
   
-  robotDetails? = [
-    // {
-    //   robotimg: 'assets/robot.webp', manufacturename: 'Universal Robot',model: 'UR56',
-    //   robotname: 'UR5', reach: '1.3M', payload: '10Kg', selected: false
-    // },
-    // {
-    //   robotimg: 'assets/robot.webp', manufacturename: 'Universal Robot', model: 'UR56',
-    //   robotname: 'UR5', reach: '1.3M', payload: '10Kg', selected: false
-    // },
-    // {
-    //   robotimg: 'assets/robot.webp', manufacturename: 'Universal Robot', model: 'UR56',
-    //   robotname: 'UR5', reach: '1.3M', payload: '10Kg', selected: false
-    // },
-    // {
-    //   robotimg: 'assets/robot.webp', manufacturename: 'Universal Robot', model: 'UR56',
-    //   robotname: 'UR5', reach: '1.3M', payload: '10Kg', selected: false
-    // },
-    // {
-    //   robotimg: 'assets/robot.webp', manufacturename: 'Universal Robot', model: 'UR56',
-    //   robotname: 'UR5', reach: '1.3M', payload: '10Kg', selected: false
-    // }
+
+  robotDetails = [
+    {
+      robotimg: 'assets/robot.webp', manufacturename: 'Universal Robot',model: 'UR56',
+      robotname: 'UR5', reach: '1.3M', payload: '10Kg', selected: false, id:1
+    },
+    {
+      robotimg: 'assets/robot.webp', manufacturename: 'Universal Robot', model: 'UR56',
+      robotname: 'UR5', reach: '1.3M', payload: '10Kg', selected: false, id:2
+    },
+    {
+      robotimg: 'assets/robot.webp', manufacturename: 'Universal Robot', model: 'UR56',
+      robotname: 'UR5', reach: '1.3M', payload: '10Kg', selected: false, id:3
+    },
+    {
+      robotimg: 'assets/robot.webp', manufacturename: 'Universal Robot', model: 'UR56',
+      robotname: 'UR5', reach: '1.3M', payload: '10Kg', selected: false, id:4
+    },
+    {
+      robotimg: 'assets/robot.webp', manufacturename: 'Universal Robot', model: 'UR56',
+      robotname: 'UR5', reach: '1.3M', payload: '10Kg', selected: false, id:5
+    }
   ];
 
   
   ngOnInit(): void {
     this.robotservice.getrobots().subscribe((data:any) => {
-      this.robotDetails=data;
+      // this.robotDetails=data;
       console.log(this.robotDetails)
     })
 
@@ -75,6 +78,19 @@ export class RobotComponent implements OnInit {
 
   openDeleteModel(status: boolean) {
     this.deleteModel = status;
+  }
+
+  onselectedRobot(event: any) {
+    console.log(event.id)
+    this.selectedRobot = event;    
+  }
+
+  openDeleteRobot() {
+    this.showDeleteGripperModel = true;
+  }
+  onDeleteConfirm() {
+    this.robotDetails = this.robotDetails.filter((robot: any) => robot.id !== this.selectedRobot.id);    
+    this.showDeleteGripperModel = false;
   }
 
 }

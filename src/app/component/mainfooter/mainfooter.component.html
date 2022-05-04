@@ -1,6 +1,8 @@
 <footer>
     <div class="buttoncontainer ">
-        <button class="cancel f-14  mr-15" *ngIf="showCancal" (click)="openModal()">Cancel</button>
+        
+        <button class="cancel f-14  mr-15" *ngIf="showExit" (click)="buttonExitSelected.emit(true)">Exit</button>
+        <button class="cancel f-14  mr-15" *ngIf="showCancal" (click)="buttonpopupSelected.emit(true)">Cancel</button>
         <button class="back f-14 bols mr-15" *ngIf="showBack" (click)="movetoback.emit('')">
             <!-- <img src="../../../assets/west_white_24dp.svg" alt=""> -->
             <mat-icon class="icon_size example-tab-icon uploadiconss"> arrow_back
