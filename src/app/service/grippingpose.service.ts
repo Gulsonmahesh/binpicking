@@ -11,4 +11,13 @@ export class GrippingposeService {
   PoseDetails(pose_details:any){
     return this.http.post<any>(`${BASEURL}/poses`,pose_details)
   }
+  editPoseDetails(editedposedata:any){
+    return this.http.put<any>(`${BASEURL}/poses/editpose/1`,editedposedata)
+  }
+  deletePoseDetails(poseId:any){
+    return this.http.delete<any>(`${BASEURL}/poses/deletepose/`+poseId)
+  }
+  enablePoseDetails(enableposedata:any){
+    return this.http.post<any>(`${BASEURL}/poses/enablepose`,enableposedata)
+  }
 }

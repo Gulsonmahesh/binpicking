@@ -50,7 +50,19 @@ export class AddrobotComponent implements OnInit {
     this.addrobotservice.addRobotData(this.addRobot).subscribe((data:any) => {
       console.log(data)
     })
+  }
 
+  editRobot(){// here we have to send edit robot data
+    this.addrobotservice.editRobotData(this.addRobot).subscribe((data:any) => {
+      console.log(data)
+    })
+  }
+
+  deleteRobot(){
+    const robot_id = 1;
+    this.addrobotservice.deleteRobot(robot_id).subscribe((data:any) => {
+      console.log(data)
+    })
   }
 
   cancelModel() {

@@ -1,5 +1,5 @@
 <div class='addrobot'>
-    <form [formGroup]='addRobot' (ngSubmit)="onSubmit($event)" >
+    <form [formGroup]='addRobot' (ngSubmit)="createRobot()" >
         <div class="form-group mb-4">
           <label for="robotname">Name<span>*</span></label>
           <input formControlName='robotName' type="text" name="robotname" id="robotname" class="form-control" placeholder="" aria-describedby="helpId">

@@ -14,4 +14,13 @@ export class ObjectService {
   objectDetails(objectdata:any){
     return this.http.post<any>(`${BASEURL}/objects`,objectdata)
   }
+  editObjectDetails(editedobjectdata:any){
+    return this.http.put<any>(`${BASEURL}/objects/editobject/1`,editedobjectdata)
+  }
+  deleteObjectDetails(objectId:any){
+    return this.http.delete<any>(`${BASEURL}/objects/deleteobject/`+objectId)
+  }
+  enableObjectDetails(enableobjectdata:any){
+    return this.http.post<any>(`${BASEURL}/objects/enableobject`,enableobjectdata)
+  }
 }

@@ -63,6 +63,64 @@ export class ObjectsComponent implements OnInit {
       console.log(error)
     });
   }
+
+  editObject(){
+    const proJectId = 1;
+    const objectId = 1;
+    const editedobjectdata = new FormData();
+    editedobjectdata.append("object_id", <any>objectId );
+    editedobjectdata.append('object_file', <File>this.selectedFile, this.selectedFile?.name );
+    editedobjectdata.append("project_id", <any>proJectId );
+    editedobjectdata.append("description", <string>this.description );
+    editedobjectdata.append("object_name", <string>this.objectName );
+
+    this.objectservice.editObjectDetails(editedobjectdata).subscribe((data:any) => {
+      if(data.status==="success") {
+        this.model=false;
+
+        // this.routeService.movetonextpage('environment')
+      }
+      else
+      console.log("Error",data)
+    },
+    (error:any)=> {
+      console.log(error)
+    });
+
+  }
+
+  deleteObject(){
+    const object_id = 1;
+    this.objectservice.deleteObjectDetails(object_id).subscribe((data:any) => {
+      if(data.status==="success") {
+        this.model=false;
+
+        // this.routeService.movetonextpage('environment')
+      }
+      else
+      console.log("Error",data)
+    },
+    (error:any)=> {
+      console.log(error)
+    });
+
+  }
+
+  enableObject(){
+    const enableobjectdata = {object_id:1,status:"True"}
+    this.objectservice.enableObjectDetails(enableobjectdata).subscribe((data:any) => {
+      if(data.status==="success") {
+        this.model=false;
+        // this.routeService.movetonextpage('environment')
+      }
+      else
+      console.log("Error",data)
+    },
+    (error:any)=> {
+      console.log(error)
+    });
+
+  }
   
   showModel(event: any) {
     this.model = event;
