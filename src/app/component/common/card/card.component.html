@@ -5,7 +5,7 @@
             <span class="col-7 col-sm-7 col-xl-7 floatleft bold"> Object 1</span>
         <span class="col-5 col-sm-5 col-xl-5 floatright">
                 <span class="mb-2 uploadeddoc">
-                    <mat-icon class="floatleft material-icons-outlined f-15 mr-6 maticondownload" alt="delete">
+                    <mat-icon (click)="openModal()" class="floatleft material-icons-outlined f-15 mr-6 maticondownload " alt="delete">
                         edit
                     </mat-icon>
         <mat-icon class="floatleft material-icons-outlined  f-15 maticondownload" alt="delete">
@@ -34,7 +34,7 @@
                       
                             manage_accounts
                     </mat-icon> 
-                  <span class="iconlabel">Configure Grasp Poses</span> </span>
+                  <span class="iconlabel" routerLink="/grippingpoints">Configure Grasp Poses</span> </span>
             <span class="col-2 col-sm-2 col-xl-2 floatleft"></span>
             <span class="col-6 col-sm-6 col-xl-6 floatright">
                 <mat-icon class="floatleft redcross material-icons-outlined  maticondownload" alt="delete">
@@ -42,7 +42,7 @@
                     close
             </mat-icon> 
             <span class="innertext">  Poses Added</span>
-            <span class="bordercircle"> 00</span>
+            <span class="bordercircle" routerLink="/grippingpoints"> 00</span>
             </span>
             </span>
         </div>

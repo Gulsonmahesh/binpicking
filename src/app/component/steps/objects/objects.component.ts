@@ -8,11 +8,15 @@ import { ObjectService } from 'src/app/service/object.service';
   styleUrls: ['./objects.component.scss']
 })
 export class ObjectsComponent implements OnInit {
+
+  imageFIle?: any;
+  imageFileName = '';
   model = false;
   selectedFile?: File ;
   objectName = '';
   description = '';
-
+  stlFileName? : any = '';
+  stlFile = '';
   objects_details = {};
 
   @HostListener('document:keyup', ['$event']) closeModel(event: KeyboardEvent) {
@@ -27,11 +31,20 @@ export class ObjectsComponent implements OnInit {
     this.getObjectDetails()
   }
 
+  imagefileupload(event: any) {
+    this.imageFIle  = event.target.files[0];
+    this.imageFileName = event.target.files[0].name;
+  }
   onFileSelecetd (event: any) {
     console.log(event);
     this.selectedFile = <File>event.target.files[0];
   }
-
+  clearUpload(whichFile: string) {
+    if(whichFile ==="image")
+      this.imageFIle = this.imageFileName = '';
+    else
+      this.stlFile = this.stlFileName = '';
+  }
   getObjectDetails(){
     this.objectservice.getobjects().subscribe((object_data:any) => {
       console.log("object_data",object_data)
