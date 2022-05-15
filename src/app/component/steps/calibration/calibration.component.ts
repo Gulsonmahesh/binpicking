@@ -8,12 +8,21 @@ import { CalibrationService } from 'src/app/service/calibration.service';
 })
 export class CalibrationComponent implements OnInit {
  
+
+  @ViewChild('f') form: any;
   constructor(public routeService: RouterService,private calibrationService:CalibrationService) { }
 
   ngOnInit(): void {
   }
   numSequence(n: number): Array<number> {
     return Array(n);
+  }
+
+  onSubmit() {
+    if (this.form.valid) {
+      console.log("Form Submitted!");
+      this.form.reset();
+    }
   }
 
   calibrationData(){

@@ -15,7 +15,7 @@
                         <div class="container-lg col-sm-12 col-xl-12">
                             <span class="col-sm-12 col-xl-12">
                 <span class="col-sm-12 col-xl-12 floatleft">
-                  <form
+                  <form #f="ngForm" 
                     class="col-sm-12 col-xl-12 example-form mb-10 floatleft"
                   >
                     <p class="col-sm-12 col-xl-12 f-14 mb-10">
@@ -24,77 +24,50 @@
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                     </app-tooltip>
                     </p>
-
-                    <span class="" *ngFor="let n of numSequence(4)">
-                      <span class="col-sm-12 col-xl-12 floatleft">
-                        <span class="col-sm-3 col-xl-3 floatleft mb-10">
-                          <span class="col-sm-12 col-xl-12 floatleft pr-15">
-                          <mat-form-field
-                            class="example-full-width floatleft"
-                            appearance="fill"
-                          >
-                            <input
-                              matInput
-                              placeholder="Ex. Pizza"
-                              value="-123.123.123.123" 
-                            /> </mat-form-field
-                        ></span></span>
+                    <div class="form-group">
+                      <span class="" *ngFor="let n of numSequence(4)">
+                        <span class="col-sm-12 col-xl-12 floatleft">
+                          <span class="col-sm-3 col-xl-3 floatleft mb-10">
+                            <span class="col-sm-12 col-xl-12 floatleft pr-15">
+                              <input type="name" class="form-control" name="name" ngModel></span></span>
                             <span class="col-sm-3 col-xl-3 floatleft mb-10">
-                              <span class="col-sm-12 col-xl-12 floatleft  pr-15">
-                          <mat-form-field
-                            class="example-full-width floatleft"
-                            appearance="fill"
-                          >
-                            <input
-                              matInput
-                              placeholder="Ex. Pizza"
-                              value="-123.123.123.123"  
-                            /> </mat-form-field
-                        ></span></span>
+                                <span class="col-sm-12 col-xl-12 floatleft  pr-15">
+                                  <input type="name" class="form-control" name="name" ngModel></span></span>
                             <span class="col-sm-3 col-xl-3 floatleft mb-10">  
-                              <span class="col-sm-12 col-xl-12 floatleft  pr-15">
-                          <mat-form-field
-                            class="example-full-width floatleft"
-                            appearance="fill"
-                          >
-                            <input
-                              matInput
-                              placeholder="Ex. Pizza"
-                              value="-123.123.123.123"  
-                            /> </mat-form-field
-                        ></span></span>
+                                <span class="col-sm-12 col-xl-12 floatleft  pr-15">
+                                  <input type="name" class="form-control" name="name" ngModel></span></span>
                             <span class="col-sm-3 col-xl-3 floatleft mb-10">
-                              <span class="col-sm-12 col-xl-12 floatleft  pr-15">
-                          <mat-form-field
-                            class="example-full-width floatleft"
-                            appearance="fill"
-                          >
-                            <input
-                              matInput
-                              placeholder="Ex. Pizza"
-                              value="-123.123.123.123"  
-                            /> </mat-form-field
-                        ></span></span>
+                                <span class="col-sm-12 col-xl-12 floatleft  pr-15">
+                                  <input type="name" class="form-control" name="name" ngModel></span></span>
                             </span>
                             </span>
-                            </form>
-                            <div class="buttoncontainer mt-10 floatright">
-                                <button class="calibrationbtns mr-10">Reset All</button>
-                                <button class="calibrationbtns mr-10">
-                    Download Transformation
-                  </button>
-                                <button class="calibrationbtns mr-10">
-                    Upload Transformation from file
-                  </button>
-                            </div>
-                            </span>
-                            </span>
-                        </div>
-                    </div>
 
+                        </div>
+                        <div class="buttoncontainer mt-10 floatright">
+
+                            <button class="calibrationbtns mr-10" (click)="onSubmit()">Reset All</button>
+                            <button class="calibrationbtns mr-10">
+          Download Transformation
+        </button>
+                            <button class="calibrationbtns mr-10">
+                              <!-- <input type="file"  accept="image/png, image/jpeg" > -->
+                              <div class="fileUploadWrap">
+                                <input type="file" name="file" class="form-control" id="hidden_upload_file_chatting">
+                              </div>
+                             
+          Upload Transformation from file
+        </button>
+                        </div>
+                        </form>
+
+                        </span>
+                        </span>
+                    </div>
                 </div>
-                <app-mainfooter (movetonext)="calibrationData()" (movetoback)="routeService.movetonextpage('environment')" submitname="Execute Bin Picking"></app-mainfooter>
+
             </div>
+            <app-mainfooter (movetonext)="calibrationData()" (movetoback)="routeService.movetonextpage('environment')" submitname="Execute Bin Picking"></app-mainfooter>
         </div>
     </div>
+</div>
 </div>

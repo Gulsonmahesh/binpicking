@@ -64,24 +64,24 @@
                                 </div>
 
                             </ng-container>
-                            <div class="card d-flex align-items-center justify-content-around" style="position: relative">
-                            <button class="d-flex flex-column align-items-center justify-content-between" 
-                            style = "background:transparent; border:0;" (click)="openAddGripperModal()">
+                            <!-- <div class="card d-flex align-items-center justify-content-around" style="position: relative">
+                                <button class="d-flex flex-column align-items-center justify-content-between" style="background:transparent; border:0;" (click)="openAddGripperModal()">
                                 <div class="circle">+</div>
                                 <span class="cardname">Add New Gripper</span>
                             </button>
-                        </div> 
+                            </div> -->
+                        </div>
+                        <app-grippercommonconter *ngIf="showGrippertcp">
+                            <app-mainfooter [showExit]="true" [showdeploy]="false" [showCancal]="false" (movetonext)="routeService.movetonextpage('robot')" (movetoback)="showGrippertcp = false" (buttonExitSelected)="showGrippertcp = true" submitname="Save">
+                            </app-mainfooter>
+                        </app-grippercommonconter>
                     </div>
-                    <app-grippercommonconter *ngIf="showGrippertcp">
-                        <app-mainfooter [showExit]="true" [showdeploy]="false" [showCancal]="false" (movetonext)="routeService.movetonextpage('robot')" (movetoback)="showGrippertcp = false" (buttonExitSelected)="showGrippertcp = true" submitname="Save">
-                        </app-mainfooter>
-                    </app-grippercommonconter>
-                </div>
-                <app-mainfooter *ngIf="!showGrippertcp" [showdeploy]="false" [showCancal]="false" [showBack]="false" (movetonext)="showGrippertcp = true" (movetoback)="routeService.movetonextpage('robot')" submitname="Select and Set Gripper TCP">
-                </app-mainfooter>
-                <!-- <app-mainfooter [showdeploy]="false" (movetonext)="routeService.movetonextpage('grippertcp')" (movetoback)="routeService.movetonextpage('robot')" submitname="Select and Continue">
+                    <app-mainfooter *ngIf="!showGrippertcp" [showdeploy]="false" [showCancal]="false" [showBack]="false" (movetonext)="routeService.movetonextpage('grippertcp')" (movetoback)="routeService.movetonextpage('robot')" submitname="Select and Set Gripper TCP">
+                        <!-- (movetonext)="showGrippertcp = true"  -->
+                    </app-mainfooter>
+                    <!-- <app-mainfooter [showdeploy]="false" (movetonext)="routeService.movetonextpage('grippertcp')" (movetoback)="routeService.movetonextpage('robot')" submitname="Select and Continue">
                 </app-mainfooter> -->
+                </div>
             </div>
         </div>
     </div>
-</div>

@@ -1,6 +1,6 @@
 <div class="d-flex align-items-center flex-wrap gap-1 grippercontainer widthbtm">
     <!-- object division  -->
-    <div class="cards mr-15 p-10">
+    <div class="cards mr-15 p-10" *ngIf="hasRoute('object')">
         <span class="col-12 col-sm-12 col-xl-12 floatright pb-10">
             <span class="col-7 col-sm-7 col-xl-7 floatleft bold"> Object 1</span>
         <span class="col-5 col-sm-5 col-xl-5 floatright">
@@ -48,7 +48,7 @@
         </div>
     </div>
     <!-- pose division  -->
-    <div class="cards mr-15 p-10">
+    <div class="cards mr-15 p-10" *ngIf="hasRoute('grippingpoints')">
         <span class="col-12 col-sm-12 col-xl-12 floatright pb-10">
             <span class="col-7 col-sm-7 col-xl-7 floatleft bold"> Pose 1</span>
         <span class="col-5 col-sm-5 col-xl-5 floatright">
