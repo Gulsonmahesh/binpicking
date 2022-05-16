@@ -26,17 +26,18 @@
     .innermaincontainer {
         display: grid;
         // grid-template-columns: 100%;
-        // height: calc(100% - 110px);
         overflow: auto;
-        height: 470px;
+        min-height: 500px;
+        // height: 100%;
+
     }
     .grippercontainer {
         // max-height: 480px;
         overflow: auto;
     }
     .card {
-        width: 230px;
-        min-height: 300px;
+        width: 170px;
+        // min-height: 300px;
         height: auto;
         background: #FFFFFF 0% 0% no-repeat padding-box;
         border: 1px solid #E3E3E3;
@@ -80,8 +81,8 @@ input[name="selected"] {
 }
 
 .radiobtn {
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
 }
 
 .bordertop {

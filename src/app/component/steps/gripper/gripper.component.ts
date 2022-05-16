@@ -30,15 +30,15 @@ export class GripperComponent implements OnInit {
   constructor(public routeService: RouterService,private gripperservice: GripperService) { }
 
   ngOnInit(): void {
+    
     this.gripperservice.getgrippers().subscribe((data:any) => {
       // this.gripperDetails = data;
       console.log(data)
     })
-
     this.isAdmin= sessionStorage.getItem('isAdmin') === 'true' ? true: false;
   }
   openAddGripperModal() {
-    // this.buttonSelected.emit(true);
+    this.buttonSelected.emit(true);
     this.showGripperModel = true;
   }
 
@@ -63,7 +63,6 @@ export class GripperComponent implements OnInit {
   }
 
   onDeleteConfirm() {
-    console.log(this.selectedGripper.id)
     this.gripperDetails = this.gripperDetails.filter((gripper: any) => gripper.id !== this.selectedGripper.id)
     this.selectedGripper = null;
     this.showDeleteGripperModel = false
@@ -71,6 +70,14 @@ export class GripperComponent implements OnInit {
 
   gotogrippertcp() {
     this.showGrippertcp = true;
+  }
+
+  movetogrippertcp() {
+    if(!this.showGrippertcp) {
+      alert("Please select a gripper");
+      return;
+    }
+    this.showGrippertcp && this.routeService.movetonextpage('grippertcp')
   }
 
 }
