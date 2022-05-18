@@ -46,7 +46,7 @@ import { ProgressPopupComponent } from './component/steps/progress-popup/progres
 import { DeletepopupComponent } from './component/steps/deletepopup/deletepopup.component';
 import { AddrobotComponent } from './component/steps/robot/addrobot/addrobot.component';
 import { AddGripperComponent } from './component/steps/robot/add-gripper/add-gripper.component';
-
+import { StlModelViewerModule } from "./../../node_modules/angular-stl-model-viewer";
 const material=[
   MatFormFieldModule, MatInputModule, MatSelectModule, MatIconModule,FormsModule,ReactiveFormsModule,MatSlideToggleModule,
   MatSliderModule,MatTabsModule
@@ -91,7 +91,8 @@ const material=[
     MatTableModule,
     EditorModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    StlModelViewerModule
   ],
   exports: [material],
   providers: [{ provide: TINYMCE_SCRIPT_SRC, useValue: 'tinymce/tinymce.min.js' }],
