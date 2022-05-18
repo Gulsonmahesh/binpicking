@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Output, EventEmitter, Input } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AddrobotService } from 'src/app/service/addrobot.service';
 
@@ -8,14 +8,15 @@ import { AddrobotService } from 'src/app/service/addrobot.service';
   styleUrls: ['./addrobot.component.scss']
 })
 export class AddrobotComponent implements OnInit {
-  imageFileName = '';
-  stlFileName = '';
-  imageFile?: File;
-  stlFile?: File;  
+  imageFileName: any = '';
+  stlFileName: any = '';
+  imageFile?: any;
+  stlFile?: any;  
   @ViewChild('imgfileUpload') imgfileUpload?:ElementRef;
   @ViewChild('stlfileUpload') stlfileUpload?:ElementRef;
   @Output() cancelEvent = new EventEmitter();
   @Output() formSubmit = new EventEmitter();
+  @Input() isEditForm:any;
 
   onSubmit(event: any) {
     event.preventDefault();
@@ -33,6 +34,7 @@ export class AddrobotComponent implements OnInit {
     this.stlFile = <File>event.target.files[0];
   }
   addRobot = new FormGroup({
+    robotId: new FormControl(null),
     robotName: new FormControl('', Validators.required),
     manufacturename: new FormControl('', Validators.required),
     reach: new FormControl('', Validators.required),
@@ -44,6 +46,17 @@ export class AddrobotComponent implements OnInit {
   constructor(private addrobotservice: AddrobotService ) { }
 
   ngOnInit(): void {
+    if(this.isEditForm !== null) {
+      this.addRobot.patchValue({
+        robotId: this.isEditForm.id,
+        robotName: this.isEditForm.robotname,
+        manufacturename: this.isEditForm.manufacturename,
+        reach: this.isEditForm.reach,
+        playload: this.isEditForm.payload
+      })
+      this.imageFileName = this.isEditForm.robotimg;
+      this.stlFileName = this.isEditForm.robotimg;
+    }
   }
 
   createRobot(){
@@ -67,6 +80,13 @@ export class AddrobotComponent implements OnInit {
 
   cancelModel() {
     this.cancelEvent.emit('false');
+  }
+
+  clearUpload(whichFile: string) {
+    if(whichFile ==="image")
+      this.imageFile = this.imageFileName = '';
+    else
+      this.stlFileName = this.stlFile = '';
   }
 
 }

@@ -60,7 +60,7 @@ export class GripperComponent implements OnInit {
   }
 
   deleteRobot() {
-    if(!this.showGrippertcp) {
+    if(this.selectedGripper === null) {
       alert("Please select a gripper");
       return;
     }
@@ -78,7 +78,7 @@ export class GripperComponent implements OnInit {
   }
 
   movetogrippertcp() {
-    if(this.selectedGripper !== null) {
+    if(this.selectedGripper === null) {
       alert("Please select a gripper");
       return;
     }
@@ -86,10 +86,11 @@ export class GripperComponent implements OnInit {
   }
 
   editGripper() {
-    if(this.selectedGripper !== null) {
+    if(this.selectedGripper === null) {
       alert("Please select a gripper");
       return;
     }
+    console.log(this.selectedGripper);
     this.isEdit = true;
     this.showGripperModel = true;
   }

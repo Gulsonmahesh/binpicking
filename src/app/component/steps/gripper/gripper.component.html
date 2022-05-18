@@ -1,5 +1,5 @@
 <app-model headertitle="{{isEdit ? 'Edit Gripper' : 'Add New Gripper'}}" *ngIf="showGripperModel" (closeModelEmit)="showGripper(false)">
-    <app-add-gripper (cancelEvent)="showGripperModel = false" (formUpload)="createRobot($event)"></app-add-gripper>
+    <app-add-gripper [isEditForm]="selectedGripper" (cancelEvent)="showGripperModel = false" (formUpload)="createRobot($event)"></app-add-gripper>
 </app-model>
 
 <app-model headertitle="Delete" *ngIf="isAdmin && showDeleteGripperModel && selectedGripper"

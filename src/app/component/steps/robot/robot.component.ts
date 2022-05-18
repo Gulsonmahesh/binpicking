@@ -71,6 +71,11 @@ export class RobotComponent implements OnInit {
     this.showGripperModel = modelStatus;
   }
 
+  editRobot() {
+    console.log(this.selectedRobot);
+    this.showRobotModel =true;
+  }
+
   createRobot(event: any) {
     console.log(event);
   }

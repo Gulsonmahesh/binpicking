@@ -1,4 +1,4 @@
-import { Component, OnInit,  ViewChild, ElementRef, EventEmitter, Output} from '@angular/core';
+import { Component, OnInit,  ViewChild, ElementRef, EventEmitter, Output, Input} from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AddgripperService } from 'src/app/service/addgripper.service';
 
@@ -16,9 +16,10 @@ export class AddGripperComponent implements OnInit {
   stlFile = '';
   @Output() cancelEvent = new EventEmitter();
   @Output() formUpload = new EventEmitter();
+  @Input() isEditForm:any;
 
   addGripper = new FormGroup({
-    // selectrobot: new FormControl('', Validators.required),
+    id:new FormControl(null),
     grippername: new FormControl('', Validators.required),
     uploadgripperimage: new FormControl('', Validators.required),
     uploadgripperstl: new FormControl('', Validators.required)
@@ -28,6 +29,14 @@ export class AddGripperComponent implements OnInit {
   constructor(private addgripperService: AddgripperService) { }
 
   ngOnInit(): void {
+    if(this.isEditForm !==null) {
+      this.addGripper.patchValue({
+        id: this.isEditForm.id,
+        grippername: this.isEditForm.name
+      });
+      this.imageFileName = this.isEditForm.image
+      this.stlFileName = this.isEditForm.stlimage || this.isEditForm.image
+    }
   }
 
   createGripper(){

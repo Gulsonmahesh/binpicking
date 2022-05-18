@@ -7,7 +7,7 @@
 </app-model>
 
 <app-model headertitle="Add New Robot" *ngIf="isAdmin && showRobotModel" (closeModelEmit)="showModel(false)">
-    <app-addrobot (cancelEvent)="showRobotModel = false" (formSubmit)="createRobot($event)"></app-addrobot>
+    <app-addrobot [isEditForm]="selectedRobot" (cancelEvent)="showRobotModel = false" (formSubmit)="createRobot($event)"></app-addrobot>
 </app-model>
 
 <!-- <app-model headertitle="Add New Gripper" *ngIf="isAdmin && showGripperModel" (closeModelEmit)="showGripper(false)">
@@ -39,7 +39,7 @@
                                 <mat-icon class="material-icons-outlined color" alt="faq">add</mat-icon>
                                 <span class="f-13" >Add Robot</span> 
                             </button>
-                            <button [disabled]="selectedRobot ===null">
+                            <button [disabled]="selectedRobot ===null" (click)="editRobot()">
                                 <mat-icon class="material-icons-outlined gray" alt="faq">edit</mat-icon>
                                 <span class="f-13 colorgray" [ngClass]="{'enabled': selectedRobot !== null}">Edit Robot</span>
                             </button>
