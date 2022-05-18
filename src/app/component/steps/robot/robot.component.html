@@ -39,10 +39,6 @@
                                 <mat-icon class="material-icons-outlined color" alt="faq">add</mat-icon>
                                 <span class="f-13" >Add Robot</span> 
                             </button>
-                            <!-- <button (click)="showGripper(true)">
-                                <mat-icon class="material-icons-outlined color" alt="faq">add</mat-icon>
-                                <span class="f-13" >Add Gripper</span>
-                            </button>-->
                             <button [disabled]="selectedRobot ===null">
                                 <mat-icon class="material-icons-outlined gray" alt="faq">edit</mat-icon>
                                 <span class="f-13 colorgray" [ngClass]="{'enabled': selectedRobot !== null}">Edit Robot</span>

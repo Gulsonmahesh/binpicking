@@ -1,4 +1,4 @@
-<app-model headertitle="Add New Gripper" *ngIf="showGripperModel" (closeModelEmit)="showGripper(false)">
+<app-model headertitle="{{isEdit ? 'Edit Gripper' : 'Add New Gripper'}}" *ngIf="showGripperModel" (closeModelEmit)="showGripper(false)">
     <app-add-gripper (cancelEvent)="showGripperModel = false" (formUpload)="createRobot($event)"></app-add-gripper>
 </app-model>
 
@@ -37,6 +37,12 @@
                         </h3>
                         <div *ngIf="isAdmin" style="padding: 0 10px">
                             <button class="linkbutton" style="margin-right: 10px"
+                                (click) = "isEdit = false;showGripperModel = true" >
+                                <mat-icon class="material-icons-outlined color" alt="faq">add</mat-icon>
+                                <span class="f-13 colorgray">Add Gripper</span>
+                            </button>
+                            <button class="linkbutton" style="margin-right: 10px"
+                                (click) = "editGripper()"
                                 [ngClass]="{ buttondisabled: selectedGripper === null }">
                                 <img src="./assets/edit.png" style="width: 10px; height: 12px" />
                                 <span class="f-13 colorgray">Edit Gripper</span>
