@@ -3,6 +3,16 @@
         #robotcontainer footer .buttoncontainer {
             padding-right: 30px;
         }
+        .selectgripper {
+            .model {
+                width: 300px !important;
+            }
+            select {
+                margin-left: 1rem;
+                padding: 0.7rem;
+                border:1px solid lightgray
+            }
+        }
     }
     * {
         font-size: 11px;
