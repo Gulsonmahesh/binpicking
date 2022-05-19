@@ -17,8 +17,8 @@ export class GripperpointsComponent implements OnInit {
     this.model = event;
   }
 
-  poseData(){
-    const pose_details = {pose_list:[1,2,3,4,5,6],display_image_data:"image has to upload",invariance_axis:"False",invariance_lower_limit:0,invariance_upper_limit:0,stages_number:0,invariance_flag:"False",invariance_x_position:0,invariance_y_position:0,invariance_z_position:0,object_id:3}
+  createposeData(){
+    const pose_details = {pose_list:[1,2,3,4,5,6],display_image_data:"image has to upload",invariance_axis:"False",invariance_lower_limit:0,invariance_upper_limit:0,stages_number:0,invariance_flag:"False",invariance_x_position:0,invariance_y_position:0,invariance_z_position:0,object_id:2}
     this.grippingposeService.PoseDetails(pose_details).subscribe((data:any) => {
       console.log(data)
       this.routeService.movetonextpage('object')
@@ -27,7 +27,7 @@ export class GripperpointsComponent implements OnInit {
 
 
 editPose(){
-  const pose_details = {pose_id:1,pose_list:[1,2,3,4,5,6],display_image_data:"image has to upload",invariance_axis:"False",invariance_lower_limit:0,invariance_upper_limit:0,stages_number:0,invariance_flag:"False",invariance_x_position:0,invariance_y_position:0,invariance_z_position:0,object_id:3}
+  const pose_details = {pose_id:1,pose_list:[1,2,3,4,5,6],display_image_data:"image has to upload",invariance_axis:"False",invariance_lower_limit:0,invariance_upper_limit:0,stages_number:0,invariance_flag:"False",invariance_x_position:0,invariance_y_position:0,invariance_z_position:0,object_id:2}
     this.grippingposeService.editPoseDetails(pose_details).subscribe((data:any) => {
       console.log(data)
       this.routeService.movetonextpage('object')

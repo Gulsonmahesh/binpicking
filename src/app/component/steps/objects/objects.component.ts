@@ -54,7 +54,7 @@ export class ObjectsComponent implements OnInit {
 
   createObject(){
     // const proJectId = sessionStorage.getItem('project_id') ? sessionStorage.getItem('project_id') : 1;
-    const proJectId = 1;
+    const proJectId = 2;
     const objectData = new FormData();
     objectData.append('object_file', <File>this.selectedFile, this.selectedFile?.name );
     objectData.append("project_id", <any>proJectId );
@@ -86,6 +86,7 @@ export class ObjectsComponent implements OnInit {
     editedobjectdata.append("project_id", <any>proJectId );
     editedobjectdata.append("description", <string>this.description );
     editedobjectdata.append("object_name", <string>this.objectName );
+    console.log("editedobjectdata",editedobjectdata)
 
     this.objectservice.editObjectDetails(editedobjectdata).subscribe((data:any) => {
       if(data.status==="success") {
@@ -120,7 +121,7 @@ export class ObjectsComponent implements OnInit {
   }
 
   enableObject(){
-    const enableobjectdata = {object_id:1,status:"True"}
+    const enableobjectdata = {object_id:2,enable_flag:"True"}
     this.objectservice.enableObjectDetails(enableobjectdata).subscribe((data:any) => {
       if(data.status==="success") {
         this.model=false;

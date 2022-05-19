@@ -21,6 +21,6 @@ export class ObjectService {
     return this.http.delete<any>(`${BASEURL}/objects/deleteobject/`+objectId)
   }
   enableObjectDetails(enableobjectdata:any){
-    return this.http.post<any>(`${BASEURL}/objects/enableobject`,enableobjectdata)
+    return this.http.put<any>(`${BASEURL}/objects/enableobject`,enableobjectdata)
   }
 }
