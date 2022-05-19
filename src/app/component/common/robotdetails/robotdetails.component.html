@@ -1,4 +1,4 @@
-<div class="robot ">
+<div class="robot">
     <img src="{{details.robotimg}}" alt="robot" class="mb-1 d-block cardmainimage" />
     <div class="cardcontent d-flex align-items-center justify-content-around">
         <div class="align-items-center d-inline-flex justify-content-between">
@@ -15,11 +15,11 @@
             <div class="d-flex">
                 <p class="m-0 d-flex flex-column pr-30">
                     <span class="d-block f-13">Reach</span>
-                    <span class="d-block bold f-14">{{details.reach}}</span>
+                    <span class="d-block bold f-14" *ngIf="details.reach">{{details.reach}}M</span>
                 </p>
                 <p class="m-0 d-flex flex-column mx-3 reachspan">
                     <span class="d-block f-13">Payload</span>
-                    <span class="d-block bold f-14">{{details.payload}}</span>
+                    <span class="d-block bold f-14" *ngIf="details.payload">{{details.payload}}Kg</span>
                 </p>
             </div>
         </div>

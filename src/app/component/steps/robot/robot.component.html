@@ -5,9 +5,24 @@
         <button class="btn btn-primary" style="margin-right: 10px;width: 70px" (click)="onDeleteConfirm()">YES</button>
     </div>
 </app-model>
+<!-- (closeModelEdit)="showSelectGripper = false;selectedRobot = null;"-->
+<app-model headertitle="Select Gripper" *ngIf="isAdmin && showSelectGripper" customclass="selectgripper">
+    <div class="d-flex align-content-between justify-content-center flex-column">
+        <div class="mb-3">
+            <label for="selectgripper">Select Gripper</label>
+            <select name="selectgripper" id="selectgripper" [(ngModel)]="selectedGripperId">
+                <option value="{{gripper.id}}" *ngFor="let gripper of GRIPPERS">{{gripper.name}}</option>
+            </select>
+        </div>
+        <div>
+            <!-- <button class="btn btn-light" style="margin-right: 10px;width: 50px" (click)="showSelectGripper = false;selectedRobot = null;">No</button> -->
+            <button class="btn btn-primary" style="margin-right: 10px;width: 70px" (click)="onGripperConfirm()">Update</button>
+        </div>
+    </div>
+</app-model>
 
 <app-model headertitle="Add New Robot" *ngIf="isAdmin && showRobotModel" (closeModelEmit)="showModel(false)">
-    <app-addrobot (cancelEvent)="showRobotModel = false" (formSubmit)="createRobot($event)"></app-addrobot>
+    <app-addrobot [isEdit] = "isEdit" [robotId]="robotId" [isEditForm]="selectedRobot" (cancelEvent)="showRobotModel = false;selectedRobot = null;" (formSubmit)="createRobot($event)"></app-addrobot>
 </app-model>
 
 <!-- <app-model headertitle="Add New Gripper" *ngIf="isAdmin && showGripperModel" (closeModelEmit)="showGripper(false)">
@@ -39,11 +54,7 @@
                                 <mat-icon class="material-icons-outlined color" alt="faq">add</mat-icon>
                                 <span class="f-13" >Add Robot</span> 
                             </button>
-                            <!-- <button (click)="showGripper(true)">
-                                <mat-icon class="material-icons-outlined color" alt="faq">add</mat-icon>
-                                <span class="f-13" >Add Gripper</span>
-                            </button>-->
-                            <button [disabled]="selectedRobot ===null">
+                            <button [disabled]="selectedRobot ===null" (click)="editRobot()">
                                 <mat-icon class="material-icons-outlined gray" alt="faq">edit</mat-icon>
                                 <span class="f-13 colorgray" [ngClass]="{'enabled': selectedRobot !== null}">Edit Robot</span>
                             </button>
