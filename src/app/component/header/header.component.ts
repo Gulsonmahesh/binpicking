@@ -19,7 +19,7 @@ export class HeaderComponent implements OnInit {
   }
   
   onloginpage(){
-    this.router.navigate(['/loginpage']);
+    this.router.navigate(['/projectsummary']);
   }
   onlogoutpage(){
     this.router.navigate(['/loginpage']);

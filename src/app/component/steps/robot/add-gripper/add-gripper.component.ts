@@ -38,7 +38,7 @@ export class AddGripperComponent implements OnInit {
       this.stlFileName = this.isEditForm.stlimage || this.isEditForm.image
     }
   }
-
+ 
   createGripper(){
     this.addgripperService.addGripperData(this.addGripper).subscribe((data:any) => {
       console.log(data)

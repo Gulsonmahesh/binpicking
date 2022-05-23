@@ -2,6 +2,7 @@ import { Component,Input, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource, MatRow } from '@angular/material/table';
+import { GripperService } from 'src/app/service/gripper.service';
 import { RouterService } from '../../../service/router.service';
 
 @Component({
@@ -11,14 +12,24 @@ import { RouterService } from '../../../service/router.service';
 })
 export class ProjectsummaryComponent implements OnInit {
   showTip = false;
+  selectedGripper: any = null;
+  showDeleteGripperModel = false;
   displayedColumns = ['id', 'name', 'progress', 'status', 'action'];
   dataSource: any = null;
   // pageSizes = [2,4,6];
   @ViewChild(MatPaginator) paginator ? : MatPaginator;
   @ViewChild(MatSort) sort ?: MatSort;
 
-  constructor(public routerService: RouterService) { 
+  constructor(public routerService: RouterService,private gripperservice: GripperService) { 
     
+  }
+
+  deleteRobot() {
+    if(this.selectedGripper === null) {
+      alert("Please select a gripper");
+      return;
+    }
+    this.showDeleteGripperModel = true;
   }
  
   ngAfterViewInit() {
@@ -32,6 +43,10 @@ export class ProjectsummaryComponent implements OnInit {
     this.dataSource.filter = filterValue;
   }
   ngOnInit(): void {
+    this.gripperservice.getgrippers().subscribe((data:any) => {
+      // this.gripperDetails = data;
+      console.log(data)
+    })
         // Create 100 users
         const users: UserData[] = [];
         for (let i = 1; i <= 100; i++) { users.push(createNewUser(i)); }
