@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { FormGroup, FormControl, Validators, FormBuilder }  from '@angular/forms';
+import {  FormBuilder, FormGroup, FormControl, Validators}  from '@angular/forms';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { LoginService } from 'src/app/service/login.service';
+import { ConfirmedValidator } from './confirmed.validator';
 @Component({
   selector: 'app-loginpage',
   templateUrl: './loginpage.component.html',
@@ -16,10 +17,27 @@ export class LoginpageComponent implements OnInit {
   resetShow: any;
   afterResetSuccess: any;
   signinShow: boolean = true;
+  
   // isAdmin = false;
+  form: FormGroup = new FormGroup({});
+  constructor(public fb: FormBuilder, public router: ActivatedRoute, public route: Router,private loginService: LoginService) {
+    this.form = fb.group({
+      password: ['', [Validators.required]],
+      confirm_password: ['', [Validators.required]]
+    }, { 
+      validator: ConfirmedValidator('password', 'confirm_password')
+    })
+   }
 
-  constructor(public fb: FormBuilder, public router: ActivatedRoute, public route: Router,private loginService: LoginService) { }
-
+   get f(){
+    return this.form.controls;
+  }
+   
+  submit(){
+    console.log(this.form.value);
+    this.signinShow=true;
+    this.resetShow=false;
+  }
   token_data =''
 
   ngOnInit(): void {

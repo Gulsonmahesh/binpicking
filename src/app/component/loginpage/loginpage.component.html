@@ -143,11 +143,30 @@
             <div class="col-12 p-5r" *ngIf="resetShow">
                 <span class="col-xl-12 col-sm-12 floatleft f-16 bold mb-30">Reset Password</span>
 
+                <!-- <form [formGroup]="form" (ngSubmit)="submit()">
 
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input formControlName="password" id="password" type="password" class="form-control">
+                        <div *ngIf="form.[password].touched && form.password.invalid" class="alert alert-danger">
+                            <div *ngIf="f.password.errors.required">Password is required.</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirm_password">Confirm Password</label>
+                        <input formControlName="confirmpassword" id="confirmpassword" type="password" class="form-control">
+                        <div *ngIf="f.confirm_password.touched && f.confirm_password.invalid" class="alert alert-danger">
+                            <div *ngIf="f.confirm_password.errors.required">Password is required.</div>
+                            <div *ngIf="f.confirm_password.errors.confirmedValidator">Password and Confirm Password must be match.</div>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button>
+                </form> -->
                 <div class="col-12 enternewpassword">
                     <span class="col-xl-12 col-sm-12 floatleft f-14 ">Enter New Password</span>
                     <mat-form-field appearance="outline" class="col-xl-12 col-sm-12 floatleft mb-20 ">
-                        <!-- <mat-label>New Password</mat-label> -->
                         <input matInput [type]="hide ? 'password' : 'text'">
                         <button class="nonebg" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                             <mat-icon class="material-icons-outlined eyeicon">
@@ -159,7 +178,6 @@
                 <div class="col-12 enternewpassword">
                     <span class="col-xl-12 col-sm-12 floatleft f-14 ">Retype Password</span>
                     <mat-form-field appearance="outline" class="col-xl-12 col-sm-12 floatleft mb-25">
-                        <!-- <mat-label>Re-enter New Password</mat-label> -->
                         <input matInput [type]="hide ? 'password' : 'text'">
                         <button class="nonebg" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                             <mat-icon class="material-icons-outlined eyeicon">

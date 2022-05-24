@@ -1,4 +1,4 @@
-import { Component,Input, OnInit, ViewChild } from '@angular/core';
+import { Component,EventEmitter,Input, OnInit, Output, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource, MatRow } from '@angular/material/table';
@@ -11,6 +11,10 @@ import { RouterService } from '../../../service/router.service';
   styleUrls: ['./projectsummary.component.scss']
 })
 export class ProjectsummaryComponent implements OnInit {
+
+  @Output() buttonpopupSelected =  new EventEmitter();
+  @Output() buttonExitSelected = new EventEmitter();
+  model = true;
   showTip = false;
   selectedGripper: any = null;
   showDeleteGripperModel = false;
@@ -53,6 +57,10 @@ export class ProjectsummaryComponent implements OnInit {
     
         // Assign the data to the data source for the table to render
         this.dataSource = new MatTableDataSource(users);
+  }
+  openModal() {
+    alert("hiii")
+    this.buttonpopupSelected.emit(true);
   }
 
 }
