@@ -2,13 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { RouterService } from 'src/app/service/router.service';
 import { GrippertcpService } from 'src/app/service/grippertcp.service';
 import { NullVisitor } from '@angular/compiler/src/render3/r3_ast';
-
+import { FormGroup , FormControl } from '@angular/forms';
 @Component({
   selector: 'app-grippertcp',
   templateUrl: './grippertcp.component.html',
   styleUrls: ['./grippertcp.component.scss']
 })
 export class GrippertcpComponent implements OnInit {
+
   xdegValue?: any;
   ydegValue?: any;
   zdegValue?: any;

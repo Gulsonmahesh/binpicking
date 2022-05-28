@@ -16,7 +16,7 @@
             <label for="uploadimg">Upload Gripper mesh<span>*</span></label>
             <p class="my-2">Only .jpg, .png file format accept</p>
             <div class="file-upload mb-2">
-                <input type="file" class="file-input-img" accept=".stl" formControlName='uploadgripperimage' #imgfileUpload (change)="imagefileupload($event)" />
+                <input type="file" class="file-input-img" accept=".jpg,.png" formControlName='uploadgripperimage' #imgfileUpload (change)="imagefileupload($event)" />
                 <div class="uploadbuttoncontainer d-flex flex-column align-items-center justify-content-between">
                     <span>Drag and Drop file here</span>
                     <button color="primary" class="d-block btn btn-primary uploadbutton m-0" (click)="imgfileUpload.click()">
@@ -35,7 +35,7 @@
             <label for="uploadimg">Upload Gripper mesh<span>*</span></label>
             <p class="my-2">Only .jpg, .png file format accept</p>
             <div class="file-upload mb-2">
-                <input type="file" class="file-input-img" accept=".stl" formControlName='uploadgripperstl' #stlfileUpload (change)="stlfileupload($event)" />
+                <input type="file" class="file-input-img" accept=".jpg,.png" formControlName='uploadgripperstl' #stlfileUpload (change)="stlfileupload($event)" />
                 <div class="uploadbuttoncontainer d-flex flex-column align-items-center justify-content-between">
                     <span>Drag and Drop file here</span>
                     <button color="primary" class="d-block btn btn-primary uploadbutton m-0" (click)="stlfileUpload.click()">
