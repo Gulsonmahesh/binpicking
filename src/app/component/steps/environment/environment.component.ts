@@ -19,8 +19,8 @@ export class EnvironmentComponent implements OnInit {
   uploadcad=true;
   selectedEnvFile?: File ;
   selecteBinFile?: File ;
-  step1 = false;
-  step2 = true;
+  step1 = true;
+  step2 = false;
   downloaddoc= true;
   downloaddoc1= true;
   constructor(public routeService: RouterService,private environmentservice: EnvironmentService) { }
