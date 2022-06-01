@@ -18,7 +18,7 @@
                                     <label for="uploadimg " class=" f-12 bold">Upload Enviroment</label>
                                     <p class="my-2 f-12 ">Only .stl file format accept</p>
                                     <div class="file-upload mb-2">
-                                        <input type="file" class="file-input-img" accept="image/png, image/jpeg" formControlName='uploadRobotImage' #imgfileUpload (change)="imagefileupload($event)">
+                                        <input type="file" class="file-input-img" accept=".stl" formControlName='uploadRobotImage' #imgfileUpload (change)="imagefileupload($event)">
                                         <div class="uploadbuttoncontainer d-flex flex-column align-items-center justify-content-between">
                                             <span class=" f-12 mb-7">Drag and Drop file here or</span>
                                             <button color="primary" class=" f-12 d-block btn btn-primary uploadbutton m-0" (click)="imgfileUpload.click()">
@@ -42,7 +42,7 @@
                                     <label for="uploadimg " class=" f-12 bold">Upload Bin</label>
                                     <p class="my-2 f-12 ">Only .jpg, .png file format accept</p>
                                     <div class="file-upload mb-2">
-                                        <input type="file" class="file-input-img" accept="image/png, image/jpeg" formControlName='uploadRobotImage1' #imgfileUpload1 (change)="imagefileupload1($event)">
+                                        <input type="file" class="file-input-img" accept=".stl" formControlName='uploadRobotImage1' #imgfileUpload1 (change)="imagefileupload1($event)">
                                         <div class="uploadbuttoncontainer d-flex flex-column align-items-center justify-content-between">
                                             <span class=" f-12 mb-7">Drag and Drop file here</span>
                                             <button color="primary" class=" f-12 d-block btn btn-primary uploadbutton m-0" (click)="imgfileUpload1.click()">
