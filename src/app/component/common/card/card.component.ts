@@ -7,6 +7,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent implements OnInit {
+
+  showClosePopup = false;
+  openpop() {
+    this.showClosePopup = true;
+  }
   objectvalue:any;
   object = true;
   grippingpoints= false;

@@ -51,7 +51,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="innermaincontainer">
+                <div class="innermaincontainer" *ngIf="showdetails">
                     <div *ngIf="showGrippertcp === false" class="border-1">
                         <div class="d-flex align-items-center flex-wrap gap-1 grippercontainer widthbtm">
                             <ng-container *ngFor="let gripper of gripperDetails; let i = index">
@@ -73,8 +73,9 @@
                 </div>
                 <app-mainfooter *ngIf="!showGrippertcp && gripperDetails && gripperDetails.length" [showdeploy]="false" [showCancal]="false" [showBack]="false" (movetonext)="movetogrippertcp()" (movetoback)="routeService.movetonextpage('robot')" submitname="select and continue">
                 </app-mainfooter>
-                <app-mainfooter *ngIf="showGrippertcp" [showExit]="true" [showdeploy]="false" [showCancal]="false" (movetonext)="routeService.movetonextpage('gripper')" (movetoback)="showGrippertcp = false" (buttonExitSelected)="showGrippertcp = true" submitname="Save">
+                <app-mainfooter (movetonext)="onclickgripper()" *ngIf="showGrippertcp" [showExit]="true" [showdeploy]="false" [showCancal]="false" (movetoback)="showGrippertcp = false" (buttonExitSelected)="showGrippertcp = true" submitname="Save">
                 </app-mainfooter>
+                <!-- (movetonext)="routeService.movetonextpage('gripper')" -->
             </div>
         </div>
     </div>

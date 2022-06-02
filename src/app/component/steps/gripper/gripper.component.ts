@@ -8,7 +8,7 @@ import { GripperService } from 'src/app/service/gripper.service';
   styleUrls: ['./gripper.component.scss']
 })
 export class GripperComponent implements OnInit {
-
+  showdetails = true;
   isAdmin = false;
   selectedGripper: any = null;
   @Output() buttonSelected =  new EventEmitter();
@@ -38,6 +38,7 @@ export class GripperComponent implements OnInit {
     })
     this.isAdmin= sessionStorage.getItem('isAdmin') === 'true' ? true: false;
   }
+ 
   openAddGripperModal() {
     this.buttonSelected.emit(true);
     this.showGripperModel = true;
@@ -83,6 +84,10 @@ export class GripperComponent implements OnInit {
       return;
     }
     this.showGrippertcp && this.routeService.movetonextpage('grippertcp')
+  }
+  onclickgripper(){
+    alert("hii")
+    this.showdetails=true;
   }
 
   editGripper() {

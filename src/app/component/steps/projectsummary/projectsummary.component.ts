@@ -11,7 +11,10 @@ import { RouterService } from '../../../service/router.service';
   styleUrls: ['./projectsummary.component.scss']
 })
 export class ProjectsummaryComponent implements OnInit {
-
+  showClosePopup = false;
+  openpop() {
+    this.showClosePopup = true;
+  }
   @Output() buttonpopupSelected =  new EventEmitter();
   @Output() buttonExitSelected = new EventEmitter();
   model = true;
