@@ -44,6 +44,9 @@ export class GripperComponent implements OnInit {
   }
 
   showGripper(modelStatus: boolean = false) {
+    if(!modelStatus) {
+      this.isEdit = false;
+    }
     this.showGripperModel = modelStatus;
   }
 
@@ -82,7 +85,13 @@ export class GripperComponent implements OnInit {
       alert("Please select a gripper");
       return;
     }
-    this.showGrippertcp && this.routeService.movetonextpage('grippertcp')
+    // this.showGrippertcp && this.routeService.movetonextpage('grippertcp')
+    this.gotogrippertcp();
+  }
+  addGripper() {
+    // this.selectedGripper=null;
+    this.isEdit = false;
+    this.showGripperModel = true;
   }
 
   editGripper() {
