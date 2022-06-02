@@ -83,6 +83,10 @@ export class RobotComponent implements OnInit {
 
   editRobot() {
     console.log(this.selectedRobot);
+    if(this.selectedRobot === null) {
+      alert('Select a Robot');
+      return
+    }
     this.isEdit = true;
     this.showRobotModel =true;
   }
@@ -105,11 +109,16 @@ export class RobotComponent implements OnInit {
   }
 
   openDeleteRobot() {
+    if(this.selectedRobot === null) {
+      alert('Select a Robot');
+      return
+    }
     this.showDeleteGripperModel = true;
   }
   onDeleteConfirm() {
     this.robotDetails = this.robotDetails.filter((robot: any) => robot.id !== this.selectedRobot.id);    
     this.showDeleteGripperModel = false;
+    this.selectedRobot = null;
   }
   onGripperConfirm() {
     this.showSelectGripper = false;

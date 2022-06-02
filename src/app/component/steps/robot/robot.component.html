@@ -21,8 +21,12 @@
     </div>
 </app-model>
 
-<app-model headertitle="Add New Robot" *ngIf="isAdmin && showRobotModel" (closeModelEmit)="showModel(false)">
-    <app-addrobot [isEdit] = "isEdit" [robotId]="robotId" [isEditForm]="selectedRobot" (cancelEvent)="showRobotModel = false;selectedRobot = null;" (formSubmit)="createRobot($event)"></app-addrobot>
+<app-model headertitle="Add New Robot" *ngIf="isAdmin && showRobotModel && !isEdit" (closeModelEmit)="showModel(false)">
+    <app-addrobot [isEdit] = "false" [robotId]="robotId" [isEditForm]="null" (cancelEvent)="showRobotModel = false;selectedRobot = null;" (formSubmit)="createRobot($event)"></app-addrobot>
+</app-model>
+
+<app-model headertitle="Edit Robot" *ngIf="isAdmin && showRobotModel && isEdit" (closeModelEmit)="showModel(false)">
+    <app-addrobot [isEdit] = "true" [robotId]="robotId" [isEditForm]="selectedRobot" (cancelEvent)="showRobotModel = false;selectedRobot = null;" (formSubmit)="createRobot($event)"></app-addrobot>
 </app-model>
 
 <!-- <app-model headertitle="Add New Gripper" *ngIf="isAdmin && showGripperModel" (closeModelEmit)="showGripper(false)">
@@ -54,11 +58,11 @@
                                 <mat-icon class="material-icons-outlined color" alt="faq">add</mat-icon>
                                 <span class="f-13" >Add Robot</span> 
                             </button>
-                            <button [disabled]="selectedRobot ===null" (click)="editRobot()">
+                            <button (click)="editRobot()">
                                 <mat-icon class="material-icons-outlined gray" alt="faq">edit</mat-icon>
                                 <span class="f-13 colorgray" [ngClass]="{'enabled': selectedRobot !== null}">Edit Robot</span>
                             </button>
-                            <button [disabled]="selectedRobot ===null" (click)="openDeleteRobot()">
+                            <button (click)="openDeleteRobot()">
                                 <mat-icon class="material-icons-outlined gray" alt="faq">delete</mat-icon>
                                 <span class="f-13 colorgray" [ngClass]="{'enabled': selectedRobot !== null}">Delete Robot</span>
                             </button>

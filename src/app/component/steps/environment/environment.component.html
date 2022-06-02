@@ -28,7 +28,7 @@
                                     </div>
                                     <span class="col-xl-6 col-sm-6 col-xs-12 floatleft" *ngIf="downloaddoc">
                                         <span class=" mb-2 uploadeddoc" *ngIf="imageFileName !==''">{{imageFileName}}
-                                            <mat-icon class="material-icons-outlined mr-10 maticondownload" alt="faq"  (click)="closebtn()">
+                                            <mat-icon class="material-icons-outlined mr-10 maticondownload" alt="faq"  (click)="imageFileName = '';closebtn()">
                                                 close
                                             </mat-icon>
                                             </span>
@@ -52,7 +52,7 @@
                                     </div>
                                     <span class="col-xl-6 col-sm-6 col-xs-12 floatleft" *ngIf="downloaddoc1">
                                         <span class="mb-2 uploadeddoc" *ngIf="imageFileName1 !==''">{{imageFileName1}}
-                                            <mat-icon class="material-icons-outlined mr-10 maticondownload" alt="faq"  (click)="closebtn1()">
+                                            <mat-icon class="material-icons-outlined mr-10 maticondownload" alt="faq"  (click)="imageFileName1 = '';closebtn1()">
                                                 close
                                             </mat-icon>
                                             </span>

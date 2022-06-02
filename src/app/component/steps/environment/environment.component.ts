@@ -45,21 +45,26 @@ export class EnvironmentComponent implements OnInit {
     this.imageFile1 = <File>event.target.files[0];
   }
 
-  stlfileupload(event: any) {
-    this.stlFileName = event.target.files[0].name;
-    this.stlFile = <File>event.target.files[0];
-  }
-  stlfileupload1(event: any) {
-    this.stlFileName1 = event.target.files[0].name;
-    this.stlFile1 = <File>event.target.files[0];
-  }
-  onchangeEnvFile(event:any) {
-    this.selectedEnvFile = <File>event.target.files[0];    
-  }
-  onchangeBinFile(event:any) {
-    this.selecteBinFile = <File>event.target.files[0];
-  }
+  // stlfileupload(event: any) {
+  //   this.stlFileName = event.target.files[0].name;
+  //   this.stlFile = <File>event.target.files[0];
+  // }
+  // stlfileupload1(event: any) {
+  //   this.stlFileName1 = event.target.files[0].name;
+  //   this.stlFile1 = <File>event.target.files[0];
+  // }
+
+  // onchangeEnvFile(event:any) {
+  //   this.selectedEnvFile = <File>event.target.files[0];    
+  // }
+  // onchangeBinFile(event:any) {
+  //   this.selecteBinFile = <File>event.target.files[0];
+  // }
   environmentPageData(){
+    if(!this.imageFileName || !this.imageFileName1) {
+      alert("Please upload both Bin and STL files");
+      return;
+    }
     const master_environment_data = {
       env_name:"environment",
       env_file:"file need to select",
