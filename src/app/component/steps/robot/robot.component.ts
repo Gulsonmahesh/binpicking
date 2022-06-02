@@ -92,7 +92,7 @@ export class RobotComponent implements OnInit {
     // event[0] will give u the form values and event[1] will give true if Edit form false for for add form
     this.selectedRobot = event[0];
     this.showRobotModel = false;
-    this.showSelectGripper = true;
+    // this.showSelectGripper = true;
   }
 
   openDeleteModel(status: boolean) {
