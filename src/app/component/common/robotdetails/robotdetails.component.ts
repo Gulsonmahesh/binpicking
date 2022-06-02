@@ -12,6 +12,7 @@ export class RobotdetailsComponent implements OnInit {
   @Input() details: any = '';
   isAdmin=false;
   @Output() onSelect =  new EventEmitter();
+  @Output() OpenGripper = new EventEmitter();
 
   constructor() { }
 
@@ -21,6 +22,9 @@ export class RobotdetailsComponent implements OnInit {
 
   robotSelected() {
     this.onSelect.emit(this.details)
+  }
+  emitOpenGripper = () => {
+    this.OpenGripper.emit(this.details);
   }
 
 }

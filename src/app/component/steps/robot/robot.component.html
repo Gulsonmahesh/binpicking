@@ -6,7 +6,7 @@
     </div>
 </app-model>
 <!-- (closeModelEdit)="showSelectGripper = false;selectedRobot = null;"-->
-<app-model headertitle="Select Gripper" *ngIf="isAdmin && showSelectGripper" customclass="selectgripper">
+<app-model headertitle="Select Gripper" *ngIf="isAdmin && showSelectGripper" customclass="selectgripper" (closeModelEmit)="showSelectGripper = false">
     <div class="d-flex align-content-between justify-content-center flex-column">
         <div class="mb-3">
             <label for="selectgripper">Select Gripper</label>
@@ -72,11 +72,11 @@
                 <div class="innermaincontainer pl-20">
                     <div class="robotcontainer border-1 pb-20 ">
                         <ng-container *ngFor="let robot of robotDetails; let i = index">
-                            <app-robotdetails (onSelect)="onselectedRobot($event)" [details]="robot" class="pr-10"></app-robotdetails>
+                            <app-robotdetails (OpenGripper) = "openGripper($event)" (onSelect)="onselectedRobot($event)" [details]="robot" class="pr-10"></app-robotdetails>
                         </ng-container>
                     </div>
                 </div>
-                <app-mainfooter *ngIf="!isAdmin" [showdeploy]="false" (movetonext)="routeService.movetonextpage('gripper')" (movetoback)="routeService.movetonextpage('project-details')">
+                <app-mainfooter *ngIf="!isAdmin" [showdeploy]="false" (movetonext)="gotoGripper()" (movetoback)="routeService.movetonextpage('project-details')">
                 </app-mainfooter>
             </div>
         </div>

@@ -96,7 +96,11 @@ export class RobotComponent implements OnInit {
     // event[0] will give u the form values and event[1] will give true if Edit form false for for add form
     this.selectedRobot = event[0];
     this.showRobotModel = false;
-    // this.showSelectGripper = true;
+    
+  }
+  openGripper(robotDetails: any = null){
+    console.log(robotDetails)
+    this.showSelectGripper = true;
   }
 
   openDeleteModel(status: boolean) {
@@ -126,8 +130,15 @@ export class RobotComponent implements OnInit {
       console.log(this.isEdit, this.selectedRobot.robotId, this.selectedGripperId)
     } else {
       console.log(this.isEdit, this.robotId, this.selectedGripperId)
+    }    
+  }
+
+  gotoGripper() {
+    if(this.selectedRobot === null || this.selectedRobot === undefined || this.selectedRobot === false) {
+      alert('Please Select a Robot');
+      return
     }
-    
+    this.routeService.movetonextpage('gripper')
   }
 
 }
