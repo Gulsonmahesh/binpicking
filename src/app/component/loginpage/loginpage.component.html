@@ -88,14 +88,13 @@
 
                 <span class="col-xl-12 col-sm-12 floatleft f-14 mb-10">Get a verification code for Reset Password</span>
 
-                <div class="col-xl-12 col-sm-12 floatleft f-14 mb-20 mail">
+                <div class="col-xl-12 col-sm-12 floatleft f-14 mb-20 mail" *ngIf="mailnormal">
                     <span class="col-xl-1 col-sm-1 floatleft ">
                     <mat-icon class="material-icons-outlined eyeicon">
                         email
                     </mat-icon></span>
                     <span class="col-xl-10 col-sm-10 floatleft ">
-                        <!-- Mail XXXXXX@wipro.com -->
-                        <input matInput class="" placeholder="Mail XXXXXX@wipro.com">
+                        <input matInput class="" placeholder="Mail XXXXXX@wipro.com" (click)="submitmail()" >
                 </span>
                     <span class="col-xl-1 col-sm-1 floatleft">
                     <mat-icon class="material-icons-outlined arrowicon cursorpointer">
@@ -103,13 +102,29 @@
                     </mat-icon>
                 </span>
                 </div>
-                <div class="col-xl-12 col-sm-12 floatleft f-14 mb-20 mail">
+                <div *ngIf="maildisabled">
+                    <div class="col-xl-12 col-sm-12 floatleft f-14 mb-20 mail" [ngClass]="[bntStyles]">
+                        <span class="col-xl-1 col-sm-1 floatleft ">
+                    <mat-icon class="material-icons-outlined eyeicon">
+                        email
+                    </mat-icon></span>
+                        <span class="col-xl-10 col-sm-10 floatleft ">
+                        <input matInput class="" placeholder="Mail XXXXXX@wipro.com" >
+                </span>
+                        <span class="col-xl-1 col-sm-1 floatleft">
+                    <mat-icon class="material-icons-outlined arrowicon cursorpointer">
+                        arrow_forward_ios
+                    </mat-icon>
+                </span>
+                    </div>
+                </div>
+                <div class="col-xl-12 col-sm-12 floatleft f-14 mb-20 mail" *ngIf="numbernormal">
                     <span class="col-xl-1 col-sm-1 floatleft ">
                     <mat-icon class="material-icons-outlined eyeicon">
                         chat_bubble
                     </mat-icon></span>
                     <span class="col-xl-10 col-sm-10 floatleft ">
-                        <input matInput class="" placeholder="Text +XX XXXXXXXX12">
+                        <input matInput class="" placeholder="Text +XX XXXXXXXX12" (click)="submitnumber()">
                 </span>
                     <span class="col-xl-1 col-sm-1 floatleft">
                     <mat-icon class="material-icons-outlined arrowicon cursorpointer">
@@ -117,6 +132,32 @@
                     </mat-icon>
                 </span>
                 </div>
+                <div *ngIf="numberdisabled">
+                    <div class="col-xl-12 col-sm-12 floatleft f-14 mb-20 mail" [ngClass]="[bntStyle]">
+                        <span class="col-xl-1 col-sm-1 floatleft ">
+                    <mat-icon class="material-icons-outlined eyeicon">
+                        chat_bubble
+                    </mat-icon></span>
+                        <span class="col-xl-10 col-sm-10 floatleft ">
+                        <input matInput class="" placeholder="Text +XX XXXXXXXX12" disabled>
+                </span>
+                        <span class="col-xl-1 col-sm-1 floatleft">
+                    <mat-icon class="material-icons-outlined arrowicon">
+                        arrow_forward_ios
+                    </mat-icon>
+                </span>
+                    </div>
+                </div>
+
+
+
+                <div>
+
+                </div>
+
+
+
+
                 <div class="col-xl-12 col-sm-12 floatleft usename f-14 mb-15">
                     <span class="col-xl-12 col-sm-12 floatleft f-14 ">Enter verification code</span>
                     <mat-form-field appearance="outline" class="col-12  ">
@@ -142,27 +183,14 @@
 
             <div class="col-12 p-5r" *ngIf="resetShow">
                 <span class="col-xl-12 col-sm-12 floatleft f-16 bold mb-30">Reset Password</span>
+                <!-- <form #myform="ngForm" (ngSubmit)="submitform(myform)" novalidate mustMatch="password,password2">
+                    <input type="password" name="password" placeholder="enter password:" required #password="ngModel" [(ngModel)]="model.password" minlength="5" maxlength="15">
+                    <span *ngIf="password.invalid  && password.touched" style="color: red;font-size: 12px;">Please enter valid name</span><br>
+                    <input type="password" name="password2" placeholder="enter retype password:" required #password2="ngModel" [(ngModel)]="model.password2" minlength="5" maxlength="15">
+                    <span *ngIf="password2.invalid  && password2.touched" style="color: red;font-size: 12px;">Please enter valid name</span><br>
+                    <span *ngIf="">Passwords must match</span>
+                    <button class="signin_btn" [disabled]="myform.invalid">Submit </button>
 
-                <!-- <form [formGroup]="form" (ngSubmit)="submit()">
-
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input formControlName="password" id="password" type="password" class="form-control">
-                        <div *ngIf="form.[password].touched && form.password.invalid" class="alert alert-danger">
-                            <div *ngIf="f.password.errors.required">Password is required.</div>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="confirm_password">Confirm Password</label>
-                        <input formControlName="confirmpassword" id="confirmpassword" type="password" class="form-control">
-                        <div *ngIf="f.confirm_password.touched && f.confirm_password.invalid" class="alert alert-danger">
-                            <div *ngIf="f.confirm_password.errors.required">Password is required.</div>
-                            <div *ngIf="f.confirm_password.errors.confirmedValidator">Password and Confirm Password must be match.</div>
-                        </div>
-                    </div>
-
-                    <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button>
                 </form> -->
                 <div class="col-12 enternewpassword">
                     <span class="col-xl-12 col-sm-12 floatleft f-14 ">Enter New Password</span>
@@ -187,7 +215,7 @@
                     </mat-form-field>
                 </div>
                 <div>
-                    <button class="signin_btn" (click)="resetPassword()">Submit </button>
+                    <button class="signin_btn" [disabled]="myform.invalid" (click)="resetPassword()">Submit </button>
                 </div>
             </div>
         </div>

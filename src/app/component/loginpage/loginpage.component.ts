@@ -4,12 +4,28 @@ import {  FormBuilder, FormGroup, FormControl, Validators}  from '@angular/forms
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { LoginService } from 'src/app/service/login.service';
 import { ConfirmedValidator } from './confirmed.validator';
+
+export class subject{
+  public password:any;
+  public password2:any;
+}
 @Component({
   selector: 'app-loginpage',
   templateUrl: './loginpage.component.html',
   styleUrls: ['./loginpage.component.scss']
 })
 export class LoginpageComponent implements OnInit {
+  myform: any;
+  userlist: any;
+  model  = new subject();
+  bntStyle: any;
+  bntStyles: any;
+  numberdisabled=false;
+  maildisabled=false;
+  mailnormal=true;
+  numbernormal=true;
+  emails= false;
+  numbers=false;
   hide = true;
   forgotShow: any;
   otpShow: any;
@@ -28,7 +44,34 @@ export class LoginpageComponent implements OnInit {
       validator: ConfirmedValidator('password', 'confirm_password')
     })
    }
-
+  //  submitform(data:any){
+  //   // alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.model, null, 4));
+  //   // console.log(data);
+  //   //  this.userlist= data;
+  //    this.otpShow = false;
+  //    this.forgotShow = false;
+  //    this.resetShow = false;
+  //    this.signinShow = true;
+  //    this.afterResetSuccess = true;
+  //     }
+   submitmail() {
+     this.numberdisabled=true;
+     this.numbernormal=false;
+    this.bntStyle = 'btn-change';
+  }
+  submitnumber() {
+    this.maildisabled=true;
+    this.mailnormal=false;
+    this.bntStyles = 'btn-changes';
+  }
+   disableemailclick(){
+    // this.emails= true;
+    // this.numbers=false;
+  }
+  disablenumberclick(){
+    // this.emails= false;
+    // this.numbers=true;
+  }
    get f(){
     return this.form.controls;
   }
@@ -41,6 +84,7 @@ export class LoginpageComponent implements OnInit {
   token_data =''
 
   ngOnInit(): void {
+    this. bntStyle = 'btn-default';
     this.signInForm = this.fb.group({
       username: new FormControl('',[Validators.required, Validators.nullValidator]),
       password: new FormControl('',[Validators.required, Validators.nullValidator]),
@@ -139,4 +183,5 @@ export class LoginpageComponent implements OnInit {
   setAdmin() {
     // console.log(this.isAdmin)
   }
+
 }

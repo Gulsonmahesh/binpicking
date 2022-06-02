@@ -80,8 +80,8 @@ const material=[
     ProgressPopupComponent,
     DeletepopupComponent,
     AddrobotComponent,
-    AddGripperComponent    
-  ],
+    AddGripperComponent
+    ],
   imports: [
     material,
     BrowserModule,
