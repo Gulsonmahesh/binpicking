@@ -1,5 +1,9 @@
-<app-model headertitle="{{isEdit ? 'Edit Gripper' : 'Add New Gripper'}}" *ngIf="showGripperModel" (closeModelEmit)="showGripper(false)">
-    <app-add-gripper [isEditForm]="selectedGripper" (cancelEvent)="showGripperModel = false" (formUpload)="createRobot($event)"></app-add-gripper>
+<app-model headertitle="{{isEdit ? 'Edit Gripper' : 'Add New Gripper'}}" *ngIf="isEdit && showGripperModel" (closeModelEmit)="showGripper(false)">
+    <app-add-gripper [isEditForm]="selectedGripper" (cancelEvent)="showGripper(false)" (formUpload)="createRobot($event)"></app-add-gripper>
+</app-model>
+
+<app-model headertitle="Add New Gripper" *ngIf="!isEdit && showGripperModel" (closeModelEmit)="showGripper(false)">
+    <app-add-gripper [isEditForm]="null" (cancelEvent)="showGripper(false)" (formUpload)="createRobot($event)"></app-add-gripper>
 </app-model>
 
 <app-model headertitle="Delete" *ngIf="isAdmin && showDeleteGripperModel && selectedGripper" (closeModelEmit)="showGripper(false)">
@@ -35,7 +39,7 @@
                             </app-tooltip>
                         </h3>
                         <div *ngIf="isAdmin" style="padding: 0 10px">
-                            <button class="linkbutton" style="margin-right: 10px" (click)="isEdit = false;showGripperModel = true">
+                            <button class="linkbutton" style="margin-right: 10px" (click)="addGripper()">
                                 <!-- <mat-icon class="material-icons-outlined color" alt="faq">add</mat-icon> -->
                                 <img src="../../../../assets/Images/add.png" style="width: 10px; height: 12px" />
                                 <span class="f-13 colorgray">Add Gripper</span>
@@ -73,7 +77,7 @@
                 </div>
                 <app-mainfooter *ngIf="!showGrippertcp && gripperDetails && gripperDetails.length" [showdeploy]="false" [showCancal]="false" [showBack]="false" (movetonext)="movetogrippertcp()" (movetoback)="routeService.movetonextpage('robot')" submitname="select and continue">
                 </app-mainfooter>
-                <app-mainfooter (movetonext)="onclickgripper()" *ngIf="showGrippertcp" [showExit]="true" [showdeploy]="false" [showCancal]="false" (movetoback)="showGrippertcp = false" (buttonExitSelected)="showGrippertcp = true" submitname="Save">
+                <app-mainfooter *ngIf="showGrippertcp" [showExit]="true" [showdeploy]="false" [showCancal]="false" (movetonext)="routeService.movetonextpage('robot')" (movetoback)="showGrippertcp = false" (buttonExitSelected)="showGrippertcp = true" submitname="Save">
                 </app-mainfooter>
                 <!-- (movetonext)="routeService.movetonextpage('gripper')" -->
             </div>

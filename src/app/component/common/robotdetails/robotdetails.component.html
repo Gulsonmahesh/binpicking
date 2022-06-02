@@ -29,11 +29,11 @@
     </div>
 
     <div class="viewgripper" *ngIf="isAdmin">
-        <span class="col-xl-12 col-sm-12 col-xs-12 f-12  cursorpointer aligntext">
-                <label class="f-13 cursorpointer">View Gripper</label> 
-                <mat-icon class="material-icons-outlined viewgrprhead cursorpointer" alt="forward">
-                    arrow_forward
-                </mat-icon>
-        </span>
+        <button class="f-13 cursorpointer d-flex align-items-center" (click)="emitOpenGripper()">
+            <span class="mr-2">View Gripper</span>
+            <mat-icon class="material-icons-outlined viewgrprhead cursorpointer" alt="forward">
+                arrow_forward
+            </mat-icon>
+        </button>
     </div>
 </div>

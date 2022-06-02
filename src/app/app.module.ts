@@ -32,24 +32,25 @@ import { GrippertcpComponent } from './component/steps/grippertcp/grippertcp.com
 import { ProjectsummaryComponent } from './component/steps/projectsummary/projectsummary.component';
 import { LoginpageComponent } from './component/loginpage/loginpage.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {MatSliderModule} from '@angular/material/slider';
-import {MatSlideToggleModule} from '@angular/material/slide-toggle';
-import {MatTabsModule} from '@angular/material/tabs';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatTabsModule } from '@angular/material/tabs';
 
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
-import {  TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
+import { TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
 import { EditorModule } from '@tinymce/tinymce-angular';
 import { EnvironmentComponent } from './component/steps/environment/environment.component';
 import { ExecutebinComponent } from './component/steps/executebin/executebin.component';
 import { ProgressPopupComponent } from './component/steps/progress-popup/progress-popup.component';
 import { DeletepopupComponent } from './component/steps/deletepopup/deletepopup.component';
 import { AddrobotComponent } from './component/steps/robot/addrobot/addrobot.component';
-import { AddGripperComponent } from './component/steps/robot/add-gripper/add-gripper.component';
+import { AddGripperComponent } from './component/steps/gripper/add-gripper/add-gripper.component';
 import { StlModelViewerModule } from "./../../node_modules/angular-stl-model-viewer";
+
 const material=[
-  MatFormFieldModule, MatInputModule, MatSelectModule, MatIconModule,FormsModule,ReactiveFormsModule,MatSlideToggleModule,
-  MatSliderModule,MatTabsModule
+  MatFormFieldModule, MatInputModule, MatSelectModule, MatIconModule,FormsModule,
+  ReactiveFormsModule,MatSlideToggleModule,MatSliderModule,MatTabsModule
 ];
 
 @NgModule({

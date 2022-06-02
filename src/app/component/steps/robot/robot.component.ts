@@ -83,6 +83,10 @@ export class RobotComponent implements OnInit {
 
   editRobot() {
     console.log(this.selectedRobot);
+    if(this.selectedRobot === null) {
+      alert('Select a Robot');
+      return
+    }
     this.isEdit = true;
     this.showRobotModel =true;
   }
@@ -92,6 +96,10 @@ export class RobotComponent implements OnInit {
     // event[0] will give u the form values and event[1] will give true if Edit form false for for add form
     this.selectedRobot = event[0];
     this.showRobotModel = false;
+    
+  }
+  openGripper(robotDetails: any = null){
+    console.log(robotDetails)
     this.showSelectGripper = true;
   }
 
@@ -105,11 +113,16 @@ export class RobotComponent implements OnInit {
   }
 
   openDeleteRobot() {
+    if(this.selectedRobot === null) {
+      alert('Select a Robot');
+      return
+    }
     this.showDeleteGripperModel = true;
   }
   onDeleteConfirm() {
     this.robotDetails = this.robotDetails.filter((robot: any) => robot.id !== this.selectedRobot.id);    
     this.showDeleteGripperModel = false;
+    this.selectedRobot = null;
   }
   onGripperConfirm() {
     this.showSelectGripper = false;
@@ -117,8 +130,15 @@ export class RobotComponent implements OnInit {
       console.log(this.isEdit, this.selectedRobot.robotId, this.selectedGripperId)
     } else {
       console.log(this.isEdit, this.robotId, this.selectedGripperId)
+    }    
+  }
+
+  gotoGripper() {
+    if(this.selectedRobot === null || this.selectedRobot === undefined || this.selectedRobot === false) {
+      alert('Please Select a Robot');
+      return
     }
-    
+    this.routeService.movetonextpage('gripper')
   }
 
 }
