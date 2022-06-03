@@ -16,6 +16,7 @@ export class GripperComponent implements OnInit {
   showGrippertcp = false;
   showDeleteGripperModel = false;
   isEdit = false;
+  buttonDisabled = false;
 
   gripperDetails: any = [
     {image: 'assets/robot.webp', name:'Parallel Finger Gripper' , selected: false, id:1}, 
@@ -78,10 +79,18 @@ export class GripperComponent implements OnInit {
   }
 
   gotogrippertcp() {
+    if(this.buttonDisabled) {
+      this.routeService.movetonextpage('robot')
+      return;
+    }
     this.showGrippertcp = true;
   }
-
+  movetoGripper() {
+    this.buttonDisabled = true;
+    this.showGrippertcp = false;
+  }
   movetogrippertcp() {
+    console.log(this.selectedGripper)
     if(this.selectedGripper === null) {
       alert("Please select a gripper");
       return;

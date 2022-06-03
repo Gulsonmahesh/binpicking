@@ -39,16 +39,16 @@
                             </app-tooltip>
                         </h3>
                         <div *ngIf="isAdmin" style="padding: 0 10px">
-                            <button class="linkbutton" style="margin-right: 10px" (click)="addGripper()">
+                            <button [disabled]="buttonDisabled" class="linkbutton" style="margin-right: 10px" (click)="addGripper()">
                                 <!-- <mat-icon class="material-icons-outlined color" alt="faq">add</mat-icon> -->
                                 <img src="../../../../assets/Images/add.png" style="width: 10px; height: 12px" />
                                 <span class="f-13 colorgray">Add Gripper</span>
                             </button>
-                            <button class="linkbutton" style="margin-right: 10px" (click)="editGripper()" [ngClass]="{ buttondisabled: selectedGripper === null }">
+                            <button [disabled]="buttonDisabled" class="linkbutton" style="margin-right: 10px" (click)="editGripper()" [ngClass]="{ buttondisabled: selectedGripper === null }">
                                 <img src="./assets/edit.png" style="width: 10px; height: 12px" />
                                 <span class="f-13 colorgray">Edit Gripper</span>
                             </button>
-                            <button class="linkbutton" [ngClass]="{ buttondisabled: selectedGripper === null }" (click)="deleteRobot()">
+                            <button [disabled]="buttonDisabled" class="linkbutton" [ngClass]="{ buttondisabled: selectedGripper === null }" (click)="deleteRobot()">
                                 <img src="./assets/trash.png" style="width: 10px; height: 12px; vertical-align: -1px" />
                                 <span class="f-13 colorgray">Delete Gripper</span>
                             </button>
@@ -56,7 +56,7 @@
                     </div>
                 </div>
                 <div class="innermaincontainer" *ngIf="showdetails">
-                    <div *ngIf="showGrippertcp === false" class="border-1">
+                    <div [hidden]="showGrippertcp" class="border-1">
                         <div class="d-flex align-items-center flex-wrap gap-1 grippercontainer widthbtm">
                             <ng-container *ngFor="let gripper of gripperDetails; let i = index">
                                 <div class="card">
@@ -73,11 +73,11 @@
                             </ng-container>
                         </div>
                     </div>
-                    <app-grippercommonconter *ngIf="showGrippertcp"></app-grippercommonconter>
+                    <app-grippercommonconter [hidden]="!showGrippertcp"></app-grippercommonconter>
                 </div>
                 <app-mainfooter *ngIf="!showGrippertcp && gripperDetails && gripperDetails.length" [showdeploy]="false" [showCancal]="false" [showBack]="false" (movetonext)="movetogrippertcp()" (movetoback)="routeService.movetonextpage('robot')" submitname="select and continue">
                 </app-mainfooter>
-                <app-mainfooter *ngIf="showGrippertcp" [showExit]="true" [showdeploy]="false" [showCancal]="false" (movetonext)="routeService.movetonextpage('robot')" (movetoback)="showGrippertcp = false" (buttonExitSelected)="showGrippertcp = true" submitname="Save">
+                <app-mainfooter *ngIf="showGrippertcp" [showExit]="true" [showdeploy]="false" [showCancal]="false" (movetonext)="movetoGripper()" (movetoback)="showGrippertcp = false" (buttonExitSelected)="showGrippertcp = true" submitname="Save">
                 </app-mainfooter>
                 <!-- (movetonext)="routeService.movetonextpage('gripper')" -->
             </div>
