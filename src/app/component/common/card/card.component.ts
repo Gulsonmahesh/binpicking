@@ -9,8 +9,12 @@ import { Router } from '@angular/router';
 export class CardComponent implements OnInit {
 
   showClosePopup = false;
+  showdeleteClosePopup=false;
   openpop() {
     this.showClosePopup = true;
+  }
+  opendeletepop(){
+    this.showdeleteClosePopup = true;
   }
   objectvalue:any;
   object = true;

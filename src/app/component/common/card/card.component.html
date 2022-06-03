@@ -53,7 +53,7 @@
             <span class="col-7 col-sm-7 col-xl-7 floatleft bold"> Pose 1</span>
         <span class="col-5 col-sm-5 col-xl-5 floatright">
                 <span class="mb-2 uploadeddoc">
-                    <mat-icon class="floatleft material-icons-outlined f-15 mr-6 maticondownload" alt="delete">
+                    <mat-icon class="floatleft material-icons-outlined f-15 mr-6 maticondownload" alt="delete" (click)="opendeletepop()">
                         edit
                     </mat-icon>
         <mat-icon class="floatleft material-icons-outlined  f-15 maticondownload" alt="delete" (click)="openpop()" >
@@ -90,5 +90,13 @@
     <div class="modelfooter">
         <button (click)="showClosePopup=false">NO</button>
         <button (click)="showClosePopup=false" class="ml-10">YES</button>
+    </div>
+</app-deletepopup>
+<app-deletepopup headertitle="Edit Pose" *ngIf="showdeleteClosePopup" customclass="closemodal" (closeModelEmit)="showdeleteClosePopup=false">
+
+    <label for="uploadobject" class="mb-3 f-12">Do you want to edit this pose?</label>
+    <div class="modelfooter">
+        <button (click)="showdeleteClosePopup=false">NO</button>
+        <button (click)="showdeleteClosePopup=false" class="ml-10">YES</button>
     </div>
 </app-deletepopup>
