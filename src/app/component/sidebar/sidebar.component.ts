@@ -13,13 +13,13 @@ export class SidebarComponent implements OnInit {
     {value: 'project-details', title:'Project Details', number: '1',checked: false, status: 'completed'},
     {value: 'robot', title: 'Robot', number: '2',checked: false, status: 'notyet'},
     {value: 'gripper', title: 'Gripper', number: '3',checked: false, status: 'notyet'},
-    {value: 'grippertcp', title: 'Gripper TCP', number: '4',checked: false, status: 'notyet'},
-    {value: 'object', title: 'Object', number: '5',checked: false, status: 'notyet'},
-    {value: 'grippingpoints', title: 'Gripping Points', number: '6',checked: false, status: 'notyet'},
-    {value: 'environment', title: 'Environment', number: '7',checked: false, status: 'notyet'},
-    {value: 'calibration', title: 'Calibration', number: '8',checked: false, status: 'notyet'},
-    {value: 'deploy', title: 'Deploy', number: '9',checked: false, status: 'notyet'},
-    {value: 'executebin', title: 'Execute Bin Picking', number: '10',checked: false, status: 'notyet'}
+    // {value: 'grippertcp', title: 'Gripper TCP', number: '4',checked: false, status: 'notyet'},
+    {value: 'object', title: 'Object', number: '4',checked: false, status: 'notyet'},
+    {value: 'grippingpoints', title: 'Gripping Points', number: '5',checked: false, status: 'notyet'},
+    {value: 'environment', title: 'Environment', number: '6',checked: false, status: 'notyet'},
+    {value: 'calibration', title: 'Calibration', number: '7',checked: false, status: 'notyet'},
+    {value: 'deploy', title: 'Deploy', number: '8',checked: false, status: 'notyet'},
+    {value: 'executebin', title: 'Execute Bin Picking', number: '9',checked: false, status: 'notyet'}
   ];
 
   adminsteps = [

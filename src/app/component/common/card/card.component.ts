@@ -10,11 +10,15 @@ export class CardComponent implements OnInit {
 
   showClosePopup = false;
   showdeleteClosePopup=false;
+  showdeleteCloseObjectPopup=false;
   openpop() {
     this.showClosePopup = true;
   }
   opendeletepop(){
     this.showdeleteClosePopup = true;
+  }
+  opendeleteobjectpop(){
+    this.showdeleteCloseObjectPopup = true;
   }
   objectvalue:any;
   object = true;

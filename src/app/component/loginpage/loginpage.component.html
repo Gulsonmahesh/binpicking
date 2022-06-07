@@ -183,16 +183,16 @@
 
             <div class="col-12 p-5r" *ngIf="resetShow">
                 <span class="col-xl-12 col-sm-12 floatleft f-16 bold mb-30">Reset Password</span>
-                <!-- <form #myform="ngForm" (ngSubmit)="submitform(myform)" novalidate mustMatch="password,password2">
-                    <input type="password" name="password" placeholder="enter password:" required #password="ngModel" [(ngModel)]="model.password" minlength="5" maxlength="15">
+                <form #myform="ngForm" (ngSubmit)="submitform(myform)" novalidate mustMatch="password,password2">
+                    <input type="password" name="password" placeholder="enter password:" required #password="ngModel" [(ngModel)]="model.password" minlength="5" maxlength="15" class="mb-20 wid100">
                     <span *ngIf="password.invalid  && password.touched" style="color: red;font-size: 12px;">Please enter valid name</span><br>
-                    <input type="password" name="password2" placeholder="enter retype password:" required #password2="ngModel" [(ngModel)]="model.password2" minlength="5" maxlength="15">
+                    <input type="password" name="password2" placeholder="enter retype password:" required #password2="ngModel" [(ngModel)]="model.password2" minlength="5" maxlength="15" class="mb-20 wid100">
                     <span *ngIf="password2.invalid  && password2.touched" style="color: red;font-size: 12px;">Please enter valid name</span><br>
                     <span *ngIf="">Passwords must match</span>
                     <button class="signin_btn" [disabled]="myform.invalid">Submit </button>
 
-                </form> -->
-                <div class="col-12 enternewpassword">
+                </form>
+                <!-- <div class="col-12 enternewpassword">
                     <span class="col-xl-12 col-sm-12 floatleft f-14 ">Enter New Password</span>
                     <mat-form-field appearance="outline" class="col-xl-12 col-sm-12 floatleft mb-20 ">
                         <input matInput [type]="hide ? 'password' : 'text'">
@@ -213,10 +213,10 @@
                                 </mat-icon>
                         </button>
                     </mat-form-field>
-                </div>
-                <div>
+                </div> -->
+                <!-- <div>
                     <button class="signin_btn" [disabled]="myform.invalid" (click)="resetPassword()">Submit </button>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

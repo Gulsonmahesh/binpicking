@@ -8,7 +8,7 @@
                     <mat-icon (click)="openModal()" class="floatleft material-icons-outlined f-15 mr-6 maticondownload " alt="delete">
                         edit
                     </mat-icon>
-        <mat-icon class="floatleft material-icons-outlined  f-15 maticondownload" alt="delete">
+        <mat-icon class="floatleft material-icons-outlined  f-15 maticondownload" alt="delete" (click)="opendeleteobjectpop()">
             delete
         </mat-icon>
       
@@ -85,7 +85,6 @@
 </div>
 
 <app-deletepopup headertitle="Delete Pose" *ngIf="showClosePopup" customclass="closemodal" (closeModelEmit)="showClosePopup=false">
-
     <label for="uploadobject" class="mb-3 f-12">Do you want to delete this pose?</label>
     <div class="modelfooter">
         <button (click)="showClosePopup=false">NO</button>
@@ -93,10 +92,16 @@
     </div>
 </app-deletepopup>
 <app-deletepopup headertitle="Edit Pose" *ngIf="showdeleteClosePopup" customclass="closemodal" (closeModelEmit)="showdeleteClosePopup=false">
-
     <label for="uploadobject" class="mb-3 f-12">Do you want to edit this pose?</label>
     <div class="modelfooter">
         <button (click)="showdeleteClosePopup=false">NO</button>
         <button (click)="showdeleteClosePopup=false" class="ml-10">YES</button>
+    </div>
+</app-deletepopup>
+<app-deletepopup headertitle="Delete Object" *ngIf="showdeleteCloseObjectPopup" customclass="closemodal" (closeModelEmit)="showdeleteCloseObjectPopup=false">
+    <label for="uploadobject" class="mb-3 f-12">Do you want to delete this Object?</label>
+    <div class="modelfooter">
+        <button (click)="showdeleteCloseObjectPopup=false">NO</button>
+        <button (click)="showdeleteCloseObjectPopup=false" class="ml-10">YES</button>
     </div>
 </app-deletepopup>

@@ -41,7 +41,7 @@
                         <div *ngIf="isAdmin" style="padding: 0 10px">
                             <button [disabled]="buttonDisabled" class="linkbutton" style="margin-right: 10px" (click)="addGripper()">
                                 <!-- <mat-icon class="material-icons-outlined color" alt="faq">add</mat-icon> -->
-                                <img src="../../../../assets/Images/add.png" style="width: 10px; height: 12px" />
+                                <img src="../../../../assets/Images/addcircle.svg" style="width: 18px;height: 18px;padding-right: 1px;" />
                                 <span class="f-13 colorgray">Add Gripper</span>
                             </button>
                             <button [disabled]="buttonDisabled" class="linkbutton" style="margin-right: 10px" (click)="editGripper()" [ngClass]="{ buttondisabled: selectedGripper === null }">
@@ -77,8 +77,9 @@
                 </div>
                 <app-mainfooter *ngIf="!showGrippertcp && gripperDetails && gripperDetails.length" [showdeploy]="false" [showCancal]="false" [showBack]="false" (movetonext)="movetogrippertcp()" (movetoback)="routeService.movetonextpage('robot')" submitname="select and continue">
                 </app-mainfooter>
-                <app-mainfooter *ngIf="showGrippertcp" [showExit]="true" [showdeploy]="false" [showCancal]="false" (movetonext)="movetoGripper()" (movetoback)="showGrippertcp = false" (buttonExitSelected)="showGrippertcp = true" submitname="Save">
+                <app-mainfooter *ngIf="showGrippertcp" [showExit]="true" [showdeploy]="false" [showCancal]="false" (movetonext)="routeService.movetonextpage('object')" (movetoback)="showGrippertcp = false" (buttonExitSelected)="showGrippertcp = true" submitname="Save">
                 </app-mainfooter>
+                <!-- (movetonext)="movetoGripper()"  -->
                 <!-- (movetonext)="routeService.movetonextpage('gripper')" -->
             </div>
         </div>

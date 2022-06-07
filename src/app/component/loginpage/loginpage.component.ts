@@ -44,16 +44,16 @@ export class LoginpageComponent implements OnInit {
       validator: ConfirmedValidator('password', 'confirm_password')
     })
    }
-  //  submitform(data:any){
-  //   // alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.model, null, 4));
-  //   // console.log(data);
-  //   //  this.userlist= data;
-  //    this.otpShow = false;
-  //    this.forgotShow = false;
-  //    this.resetShow = false;
-  //    this.signinShow = true;
-  //    this.afterResetSuccess = true;
-  //     }
+   submitform(data:any){
+    // alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.model, null, 4));
+    // console.log(data);
+    //  this.userlist= data;
+     this.otpShow = false;
+     this.forgotShow = false;
+     this.resetShow = false;
+     this.signinShow = true;
+     this.afterResetSuccess = true;
+      }
    submitmail() {
      this.numberdisabled=true;
      this.numbernormal=false;
