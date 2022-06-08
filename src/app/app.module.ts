@@ -47,6 +47,7 @@ import { DeletepopupComponent } from './component/steps/deletepopup/deletepopup.
 import { AddrobotComponent } from './component/steps/robot/addrobot/addrobot.component';
 import { AddGripperComponent } from './component/steps/gripper/add-gripper/add-gripper.component';
 import { StlModelViewerModule } from "./../../node_modules/angular-stl-model-viewer";
+import { NumberonlyDirective } from './directive/numberonly.directive';
 
 const material=[
   MatFormFieldModule, MatInputModule, MatSelectModule, MatIconModule,FormsModule,
@@ -81,7 +82,8 @@ const material=[
     ProgressPopupComponent,
     DeletepopupComponent,
     AddrobotComponent,
-    AddGripperComponent
+    AddGripperComponent,
+    NumberonlyDirective
     ],
   imports: [
     material,
