@@ -1,77 +1,71 @@
 <div class='addrobot'>
-    <form [formGroup]='addRobot' (ngSubmit)="createRobot()">
-        <input type="hidden" name="id" value="" formControlName="robotId" />
-        <div class="form-group mb-4">
-            <label for="robotname">Name<span>*</span></label>
-            <input formControlName='robotName' type="text" name="robotname" id="robotname" class="form-control"
-                placeholder="" aria-describedby="helpId" />
+  <form [formGroup]='addRobot' (ngSubmit)="createRobot()">
+    <input type="hidden" name="id" value="" formControlName="robotId" />
+    <div class="form-group mb-4">
+      <label for="robotname">Name<span>*</span></label>
+      <input formControlName='robotName' type="text" name="robotname" id="robotname"
+      class="form-control" placeholder="" aria-describedby="helpId" />
+    </div>
+    <div class="mb-4 form-group mb-2 d-inline-flex align-items-center justify-content-between">
+        <div style="margin-right: 20px">
+            <label for="manufacturename">Manufacturer Name<span>*</span></label>
+            <input formControlName='manufacturename' type="text" name="manufacturename" id="manufacturename"
+                class="form-control" placeholder="" aria-describedby="menufacture" />
         </div>
-        <div class="mb-4 form-group mb-2 d-inline-flex align-items-center justify-content-between">
-            <div style="margin-right: 20px">
-                <label for="manufacturename">Manufacturer Name<span>*</span></label>
-                <input formControlName='manufacturename' type="text" name="manufacturename" id="manufacturename"
-                    class="form-control" placeholder="" aria-describedby="menufacture" />
-            </div>
-            <div style="margin-right: 10px">
-                <label for="reach">Reach<span>*</span></label>
-                <input formControlName='reach' type="text" name="reach" id="reach" class="form-control" placeholder=""
-                    aria-describedby="reach" />
-            </div>
-            <div>
-                <label for="playload">Playload<span>*</span></label>
-                <input formControlName='playload' type="text" name="playload" id="playload" class="form-control"
-                    placeholder="" aria-describedby="reach" />
-            </div>
+        <div style="margin-right: 10px">
+            <label for="reach">Reach<span>*</span></label>
+            <input formControlName='reach' type="text" name="reach" id="reach" class="form-control" placeholder=""
+                aria-describedby="reach" appNumberonly maxlength="4" />
         </div>
-        <div class="form-group mb-2" *ngIf="imageFileName === ''">
-            <label for="uploadimg">Upload Robot Image<span>*</span></label>
-            <p class="my-2">Only .jpg, .png file format accept</p>
-            <div class="file-upload mb-2">
-                <input type="file" class="file-input-img" accept="image/png, image/jpeg"
-                    formControlName='uploadRobotImage' #imgfileUpload (change)="imagefileupload($event)" />
-                <div class="uploadbuttoncontainer d-flex flex-column align-items-center justify-content-between">
-                    <span>Drag and Drop file here</span>
-                    <button color="primary" class="d-block btn btn-primary uploadbutton m-0"
-                        (click)="imgfileUpload.click()">
-                        Click Here to Upload
-                    </button>
-                </div>
+        <div>
+            <label for="playload">Playload<span>*</span></label>
+            <input formControlName='playload' type="text" name="playload" id="playload" class="form-control"
+                placeholder="" aria-describedby="reach" appNumberonly maxlength="4" />
+        </div>
+    </div>
+    <div class="form-group mb-2" *ngIf="imageFileName === ''">
+        <label for="uploadimg">Upload Robot Image<span>*</span></label>
+        <p class="my-2">Only .jpg, .png file format accept</p>
+        <div class="file-upload mb-2">
+          <input type="file" name="imgfileUpload" accept="image/png, image/jpeg" class="file-input-img" #imgfileUpload formControlName='uploadRobotImage' (change)="imagefileupload($event)">
+            <div class="uploadbuttoncontainer d-flex flex-column align-items-center justify-content-between">
+                <span>Drag and Drop file here</span>
+                <button color="primary" class="d-block btn btn-primary uploadbutton m-0"
+                type="button" (click)="imgfileUpload.click()">Click Here to Upload
+                </button>
             </div>
         </div>
-        <p class="uploadfilename d-flex align-content-center m-0 mb-2 justify-content-between"
-            *ngIf="imageFileName !==''">
-            <span class="fw-semibold mx-3">{{stlFileName}}</span>
-            <button class="fileuploadclear" (click)="clearUpload('image')">
-                <img class="imgclose" src="./assets/modalclose.svg" />
-            </button>
-        </p>
-        <div class="form-group mb-2" *ngIf="stlFileName === ''">
-            <label for="uploadimg" class="text-bold">Upload Robot<span>*</span></label>
-            <p class="my-2">Only .stl file format accept</p>
-            <div class="file-upload mb-2">
-                <input type="file" class="file-input-img" accept="*/stl" #stlfileUpload formControlName='uploadRobotstl'
-                    (change)="stlfileupload($event)" />
-                <div class="uploadbuttoncontainer d-flex flex-column align-items-center justify-content-between">
-                    <span>Drag and Drop file here</span>
-                    <button color="primary" class="d-block btn btn-primary uploadbutton m-0"
-                        (click)="stlfileUpload.click()">
-                        Click Here to Upload
-                    </button>
-                </div>                
+    </div>
+    <p class="uploadfilename d-flex align-content-center m-0 mb-2 justify-content-between" *ngIf="imageFileName !==''">
+        <span class="fw-semibold mx-3">{{imageFileName}}</span>
+        <button type="button" class="fileuploadclear" (click)="clearUpload('image')">
+            <img class="imgclose" src="./assets/modalclose.svg" />
+        </button>
+    </p>
+    <div class="form-group mb-2" *ngIf="stlFileName === ''">
+        <label for="uploadimg" class="text-bold">Upload Robot<span>*</span></label>
+        <p class="my-2">Only .stl file format accept</p>
+        <div class="file-upload mb-2">
+            <input type="file" class="file-input-img" accept="model/stl" #stlfileUpload formControlName='uploadRobotstl' (change)="stlfileupload($event)" />
+            <div class="uploadbuttoncontainer d-flex flex-column align-items-center justify-content-between">
+                <span>Drag and Drop file here</span>
+                <button color="primary" class="d-block btn btn-primary uploadbutton m-0" type="button" (click)="stlfileUpload.click()">
+                    Click Here to Upload
+                </button>
             </div>
         </div>
-        <p class="uploadfilename d-flex align-content-center m-0 mb-2 justify-content-between"
-            *ngIf="stlFileName !==''">
-            <span class="fw-semibold mx-3">{{stlFileName}}</span>
-            <button class="fileuploadclear" (click)="clearUpload('stl')">
-                <img class="imgclose" src="./assets/modalclose.svg" />
-            </button>
-        </p>
-        <div class="d-flex align-items-center justify-content-end">
-            <button class="btn btn-light cancel noborder " (click)="cancelModel()">Cancel</button>
-            <button class="btn btn-light submit ml-4 noborder" disabled
-                *ngIf="addRobot.status === 'INVALID'">Submit</button>
-            <button class="btn btn-primary submit ml-4 noborder" *ngIf="addRobot.status === 'VALID'">Submit</button>
-        </div>
-    </form>
+    </div>
+    <p class="uploadfilename d-flex align-content-center m-0 mb-2 justify-content-between" *ngIf="stlFileName !==''">
+        <span class="fw-semibold mx-3">{{stlFileName}}</span>
+        <button class="fileuploadclear" (click)="clearUpload('stl')">
+            <img class="imgclose" src="./assets/modalclose.svg" />
+        </button>
+    </p>
+    <div class="d-flex align-items-center justify-content-end">
+        <button type="button" class="btn btn-light cancel noborder " (click)="cancelModel()">Cancel</button>
+        <button class="btn btn-light submit ml-4 noborder" disabled
+            *ngIf="addRobot.status === 'INVALID'">Submit</button>
+        <button class="btn btn-primary submit ml-4 noborder" *ngIf="addRobot.status === 'VALID'">Submit</button>
+    </div>
+  </form>
 </div>

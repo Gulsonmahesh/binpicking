@@ -11,7 +11,7 @@ export class AddrobotComponent implements OnInit {
   imageFileName: any = '';
   stlFileName: any = '';
   imageFile?: any;
-  stlFile?: any;  
+  stlFile?: any;
   @ViewChild('imgfileUpload') imgfileUpload?:ElementRef;
   @ViewChild('stlfileUpload') stlfileUpload?:ElementRef;
   @Output() cancelEvent = new EventEmitter();
@@ -31,7 +31,7 @@ export class AddrobotComponent implements OnInit {
   });
 
   onSubmit(event: any) {
-    event.preventDefault();    
+    event.preventDefault();
     this.formSubmit.emit(this.addRobot.value)
   }
 
@@ -43,7 +43,7 @@ export class AddrobotComponent implements OnInit {
   stlfileupload(event: any) {
     this.stlFileName = event.target.files[0].name;
     this.stlFile = <File>event.target.files[0];
-  }  
+  }
 
   constructor(private addrobotservice: AddrobotService ) { }
 
