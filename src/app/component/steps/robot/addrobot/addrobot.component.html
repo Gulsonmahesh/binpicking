@@ -4,23 +4,23 @@
     <div class="form-group mb-4">
       <label for="robotname">Name<span>*</span></label>
       <input formControlName='robotName' type="text" name="robotname" id="robotname"
-      class="form-control" placeholder="" aria-describedby="helpId" />
+      class="form-control" placeholder="Please enter robot name" aria-describedby="helpId" />
     </div>
     <div class="mb-4 form-group mb-2 d-inline-flex align-items-center justify-content-between">
         <div style="margin-right: 20px">
             <label for="manufacturename">Manufacturer Name<span>*</span></label>
             <input formControlName='manufacturename' type="text" name="manufacturename" id="manufacturename"
-                class="form-control" placeholder="" aria-describedby="menufacture" />
+                class="form-control" placeholder="Please enter manufacturer name" aria-describedby="menufacture" />
         </div>
         <div style="margin-right: 10px">
             <label for="reach">Reach<span>*</span></label>
-            <input formControlName='reach' type="text" name="reach" id="reach" class="form-control" placeholder=""
-                aria-describedby="reach" appNumberonly maxlength="4" />
+            <input formControlName='reach' type="text" name="reach" id="reach" class="form-control"
+            placeholder="Please enter reach value" aria-describedby="reach" appNumberonly maxlength="4" />
         </div>
         <div>
-            <label for="playload">Playload<span>*</span></label>
+            <label for="playload">Payload<span>*</span></label>
             <input formControlName='playload' type="text" name="playload" id="playload" class="form-control"
-                placeholder="" aria-describedby="reach" appNumberonly maxlength="4" />
+                placeholder="Please enter payload value" aria-describedby="reach" appNumberonly maxlength="4" />
         </div>
     </div>
     <div class="form-group mb-2" *ngIf="imageFileName === ''">
@@ -46,7 +46,7 @@
         <label for="uploadimg" class="text-bold">Upload Robot<span>*</span></label>
         <p class="my-2">Only .stl file format accept</p>
         <div class="file-upload mb-2">
-            <input type="file" class="file-input-img" accept="model/stl" #stlfileUpload formControlName='uploadRobotstl' (change)="stlfileupload($event)" />
+            <input type="file" class="file-input-img" accept=".stl" #stlfileUpload formControlName='uploadRobotstl' (change)="stlfileupload($event)" />
             <div class="uploadbuttoncontainer d-flex flex-column align-items-center justify-content-between">
                 <span>Drag and Drop file here</span>
                 <button color="primary" class="d-block btn btn-primary uploadbutton m-0" type="button" (click)="stlfileUpload.click()">

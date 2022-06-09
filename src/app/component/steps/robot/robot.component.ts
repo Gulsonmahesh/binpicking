@@ -3,6 +3,7 @@ import { RouterService } from 'src/app/service/router.service';
 import { RobotService } from 'src/app/service/robot.service';
 import { RobotDetailsComponent } from '../../common/robot-details/robot-details.component';
 import { GRIPPERS } from "../../../constant";
+import { GripperType }   from "../../../types/apptypes"
 
 @Component({
   selector: 'app-robot',
@@ -10,7 +11,7 @@ import { GRIPPERS } from "../../../constant";
   styleUrls: ['./robot.component.scss']
 })
 export class RobotComponent implements OnInit {
-  
+
   isAdmin = false;
   showRobotModel = false;
   deleteModel = false;
@@ -18,11 +19,12 @@ export class RobotComponent implements OnInit {
   selectedRobot: any = null;
   showDeleteGripperModel = false;
   showSelectGripper = false;
-  GRIPPERS = GRIPPERS;
+  grippers = GRIPPERS;
   robotId: any;
   isEdit = false;
   selectedGripperId: any;
-  
+  selectedGripper: any = null;
+
   @HostListener('document:keyup', ['$event']) closeModel(event: KeyboardEvent) {
     if(this.showRobotModel && event.key == 'Escape') {
       this.showRobotModel = false;
@@ -34,9 +36,9 @@ export class RobotComponent implements OnInit {
       this.showGripperModel = false;
     }
   }
-  
+
   constructor(public routeService: RouterService,private robotservice: RobotService) { }
-  
+
   robotDetails = [
     {
       robotimg: 'assets/robot.webp', manufacturename: 'Universal Robot',model: 'UR56',
@@ -60,13 +62,13 @@ export class RobotComponent implements OnInit {
     }
   ];
 
-  
+
   ngOnInit(): void {
-    this.selectedGripperId = this.GRIPPERS[0].id
+    this.selectedGripperId = this.grippers[0].id
     this.robotId = this.robotDetails && this.robotDetails.length+1 || 1;
     this.robotservice.getrobots().subscribe((data:any) => {
       // this.robotDetails=data;
-      // this.robotId = this.robotDetails && this.robotDetails.length || 1;      
+      // this.robotId = this.robotDetails && this.robotDetails.length || 1;
       console.log(this.robotDetails)
     })
 
@@ -94,13 +96,13 @@ export class RobotComponent implements OnInit {
   createRobot(event: any) {
     console.log(event);
     // event[0] will give u the form values and event[1] will give true if Edit form false for for add form
-    this.selectedRobot = event[0];
-    this.showRobotModel = false;
-    
+    // this.selectedRobot = event[0];
+    // this.showRobotModel = false;
   }
   openGripper(robotDetails: any = null){
     console.log(robotDetails)
-    this.showSelectGripper = true;
+    this.selectedRobot = robotDetails;
+    this.showGripperModel = true;
   }
 
   openDeleteModel(status: boolean) {
@@ -109,7 +111,7 @@ export class RobotComponent implements OnInit {
 
   onselectedRobot(event: any) {
     console.log(event.id)
-    this.selectedRobot = event;    
+    this.selectedRobot = event;
   }
 
   openDeleteRobot() {
@@ -120,7 +122,7 @@ export class RobotComponent implements OnInit {
     this.showDeleteGripperModel = true;
   }
   onDeleteConfirm() {
-    this.robotDetails = this.robotDetails.filter((robot: any) => robot.id !== this.selectedRobot.id);    
+    this.robotDetails = this.robotDetails.filter((robot: any) => robot.id !== this.selectedRobot.id);
     this.showDeleteGripperModel = false;
     this.selectedRobot = null;
   }
@@ -130,7 +132,7 @@ export class RobotComponent implements OnInit {
       console.log(this.isEdit, this.selectedRobot.robotId, this.selectedGripperId)
     } else {
       console.log(this.isEdit, this.robotId, this.selectedGripperId)
-    }    
+    }
   }
 
   gotoGripper() {
@@ -140,6 +142,14 @@ export class RobotComponent implements OnInit {
     }
     this.routeService.movetonextpage('gripper')
   }
-
+  updateSelectedGripper(gripper: GripperType) {
+    this.selectedGripper = gripper;
+  }
+  gotorobot() {
+    if(!this.selectedGripper) {
+      alert('please select a gripper');
+      return;
+    }
+    this.showGripperModel=false;
+  }
 }
-

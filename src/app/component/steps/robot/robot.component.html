@@ -6,7 +6,7 @@
     </div>
 </app-model>
 <!-- (closeModelEdit)="showSelectGripper = false;selectedRobot = null;"-->
-<app-model headertitle="Select Gripper" *ngIf="isAdmin && showSelectGripper" customclass="selectgripper" (closeModelEmit)="showSelectGripper = false">
+<!-- <app-model headertitle="Select Gripper" *ngIf="isAdmin && showSelectGripper" customclass="selectgripper" (closeModelEmit)="showSelectGripper = false">
     <div class="d-flex align-content-between justify-content-center flex-column">
         <div class="mb-3">
             <label for="selectgripper">Select Gripper</label>
@@ -15,11 +15,10 @@
             </select>
         </div>
         <div>
-            <!-- <button class="btn btn-light" style="margin-right: 10px;width: 50px" (click)="showSelectGripper = false;selectedRobot = null;">No</button> -->
             <button class="btn btn-primary" style="margin-right: 10px;width: 70px" (click)="onGripperConfirm()">Update</button>
         </div>
     </div>
-</app-model>
+</app-model> -->
 
 <app-model headertitle="Add New Robot" *ngIf="isAdmin && showRobotModel && !isEdit" (closeModelEmit)="showModel(false)">
     <app-addrobot [isEdit] = "false" [robotId]="robotId" [isEditForm]="null" (cancelEvent)="showRobotModel = false;selectedRobot = null;" (formSubmit)="createRobot($event)"></app-addrobot>
@@ -42,7 +41,7 @@
             <div class="sidebar">
                 <app-sidebar></app-sidebar>
             </div>
-            <div class="maincontent">
+            <div class="maincontent" *ngIf="!showGripperModel">
                 <div class="pb-20 pl-25 pt-20" [ngClass]="{'d-flex align-items-center justify-content-between' : isAdmin }">
                     <h3 class="d-inline-flex align-items-center">
                         <span class="f-16 bold">{{isAdmin? 'List of Robots' : 'Select Robot'}}
@@ -56,7 +55,7 @@
                         <div class="pr-20 admincontrols">
                             <button (click)="showModel(true)">
                                 <mat-icon class="material-icons-outlined color" alt="faq">add</mat-icon>
-                                <span class="f-13" >Add Robot</span> 
+                                <span class="f-13" >Add Robot</span>
                             </button>
                             <button (click)="editRobot()">
                                 <mat-icon class="material-icons-outlined gray" alt="faq">edit</mat-icon>
@@ -78,6 +77,25 @@
                 </div>
                 <app-mainfooter *ngIf="!isAdmin" [showdeploy]="false" (movetonext)="gotoGripper()" (movetoback)="routeService.movetonextpage('project-details')">
                 </app-mainfooter>
+            </div>
+            <div class="maincontent px-2" *ngIf="showGripperModel">
+              <h1 class="my-4" style="font-size:16x">
+                <span class="f-14">Selected Robot</span><br />
+                {{selectedRobot.model}}
+              </h1>
+              <div class="d-flex align-items-center flex-wrap gap-1 grippercontainer widthbtm" *ngIf="grippers.length">
+                  <ng-container *ngFor="let gripper of grippers; let i = index">
+                      <div class="card">
+                          <img src="{{ gripper.image }}" class="brdr" alt="gripper" />
+                          <div class="namecontainer d-inline-flex align-items-center justify-content-between">
+                              <span>{{ gripper.name }}</span>
+                              <input type="radio" class="radiobtn" name="gripper" (change)="updateSelectedGripper(gripper)">
+                          </div>
+                      </div>
+                  </ng-container>
+              </div>
+              <app-mainfooter [showdeploy]="false" (movetonext)="gotorobot()" (movetoback)="showGripperModel=false">
+              </app-mainfooter>
             </div>
         </div>
     </div>
