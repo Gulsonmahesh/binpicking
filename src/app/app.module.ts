@@ -48,6 +48,7 @@ import { AddrobotComponent } from './component/steps/robot/addrobot/addrobot.com
 import { AddGripperComponent } from './component/steps/gripper/add-gripper/add-gripper.component';
 import { StlModelViewerModule } from "./../../node_modules/angular-stl-model-viewer";
 import { NumberonlyDirective } from './directive/numberonly.directive';
+import { MustmatchDirective } from './component/loginpage/mustmatch.directive';
 
 const material=[
   MatFormFieldModule, MatInputModule, MatSelectModule, MatIconModule,FormsModule,
@@ -83,7 +84,8 @@ const material=[
     DeletepopupComponent,
     AddrobotComponent,
     AddGripperComponent,
-    NumberonlyDirective
+    NumberonlyDirective,
+    MustmatchDirective
     ],
   imports: [
     material,

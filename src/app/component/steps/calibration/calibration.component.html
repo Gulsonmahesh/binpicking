@@ -15,7 +15,7 @@
                         <div class="container-lg col-sm-12 col-xl-12">
                             <span class="col-sm-12 col-xl-12">
                 <span class="col-sm-12 col-xl-12 floatleft">
-                  <form #f="ngForm" 
+                  <form  #myform="ngForm" (ngSubmit)="submit(myform)" 
                     class="col-sm-12 col-xl-12 example-form mb-10 floatleft"
                   >
                     <p class="col-sm-12 col-xl-12 f-14 mb-10">
@@ -25,20 +25,36 @@
                     </app-tooltip>
                     </p>
                     <div class="form-group">
-                      <span class="" *ngFor="let n of numSequence(4)">
+                      <span class="">
+                        <!-- *ngFor="let n of numSequence(4)" -->
                         <span class="col-sm-12 col-xl-12 floatleft">
                           <span class="col-sm-3 col-xl-3 floatleft mb-10">
                             <span class="col-sm-12 col-xl-12 floatleft pr-15">
-                              <input type="number" class="form-control" name="number" ngModel  ></span></span>
+                              <input type="number"  [(ngModel)]="model.name"  #name="ngModel" required class="form-control" name="number" ngModel  >
+                            </span>
+                            <span *ngIf="name.invalid  && name.touched" style="color: red;font-size: 12px;">Please enter valid number</span>
+                            </span>
+
                             <span class="col-sm-3 col-xl-3 floatleft mb-10">
-                                <span class="col-sm-12 col-xl-12 floatleft  pr-15">
-                                  <input type="number" class="form-control" name="number" ngModel></span></span>
-                            <span class="col-sm-3 col-xl-3 floatleft mb-10">  
-                                <span class="col-sm-12 col-xl-12 floatleft  pr-15">
-                                  <input type="number" class="form-control" name="number" ngModel></span></span>
+                              <span class="col-sm-12 col-xl-12 floatleft pr-15">
+                                <input type="number"  [(ngModel)]="model.name1"  #name1="ngModel" required class="form-control" name1="number" ngModel  >
+                              </span>
+                            <span *ngIf="name1.invalid  && name1.touched" style="color: red;font-size: 12px;">Please enter valid age</span>
+                            </span>
                             <span class="col-sm-3 col-xl-3 floatleft mb-10">
-                                <span class="col-sm-12 col-xl-12 floatleft  pr-15">
-                                  <input type="number" class="form-control" name="number" ngModel></span></span>
+                              <span class="col-sm-12 col-xl-12 floatleft pr-15">
+                                <input type="number"  [(ngModel)]="model.name2"  #name2="ngModel" required class="form-control" name2="number" ngModel  >
+                              </span>
+                            <span *ngIf="name2.invalid  && name2.touched" style="color: red;font-size: 12px;">Please enter valid age</span>
+                            </span>
+                            <span class="col-sm-3 col-xl-3 floatleft mb-10">
+                              <span class="col-sm-12 col-xl-12 floatleft pr-15">
+                                <input type="number"  [(ngModel)]="model.name3"  #name3="ngModel" required class="form-control" name3="number" ngModel  >
+                              </span>
+                            <span *ngIf="name3.invalid  && name3.touched" style="color: red;font-size: 12px;">Please enter valid age</span>
+                            </span>
+
+
                             </span>
                             </span>
 
@@ -46,11 +62,13 @@
                         <div class="buttoncontainer mt-10 floatright">
 
                             <button class="calibrationbtns mr-10" (click)="onSubmit()">Reset All</button>
+                            <!-- <div class="form-group">
+                                <button class="btn btn-primary btn-block" [disabled]="myform.invalid">Submit</button>
+                            </div> -->
                             <button class="calibrationbtns mr-10">
           Download Transformation
         </button>
                             <button class="calibrationbtns mr-10">
-                              <!-- <input type="file"  accept="image/png, image/jpeg" > -->
                               <div class="fileUploadWrap">
                                 <input type="file" name="file" class="form-control" id="hidden_upload_file_chatting">
                               </div>
