@@ -1,134 +1,64 @@
 :host {
     $activeColor: #35AFF8;
-
     .sidebar {
-        padding: 10px;
-        .sidebarheadding {
-            font: normal normal normal 12px/18px Wipro Akkurat TT;
-            letter-spacing: 0px;
-            color: #9EA0A5;
-            opacity: 1;
-        }
-        nav {
-            margin-top: 10px;
-            ul {
-                padding: 10px;
-                margin: 0;
-                display: flex;
-                flex-direction: column;
-                flex-grow: 1;
-                max-width: 100%;
-                text-align: center;
-                flex-basis: 0;
-                position: relative;
-            }
-            li {
-                display: flex;
-                align-items: center;
-                justify-content: flex-start;
-                // margin: 10px 0;
-
-                &:hover,
-                &:focus,
-                &:hover:focus {
-                    .numbercss, a  {
-                        background-color: $activeColor;
-                        color: #FFFFFF;
-                    }
-                }
-
-                span  {
-                    background-color: #FFFFFF;
-                    width: 20px;
-                    height:20px;
-                    display: flex;
-                    border: 0;
-                    border-radius: 100%;
-                    align-items: center;
-                    justify-content: center;
-                    z-index: 5;
-                    margin: 0;
-
-                    &.active {
-                        background-color: $activeColor;
-                        color: #FFFFFF;
-                    }
-                    &::before {
-                        position: absolute;
-                        content: "";
-                        left: 19px;
-                        bottom: 0;
-                        height: 30px;
-                        color: red;
-                        background-color: white;
-                        width: 0.1%;
-                        z-index: 0;
-                        opacity: 0.1;
-                        // top: 0;
-                        transform: translate(-50%,0);
-                    }
-                    &::after {
-                        position: absolute;
-                        content: "";
-                        left: 19px;
-                        top: 21px;
-                        transform: translate(-50%,0);
-                        width: 0.1%;
-                        height: 30px;
-                        color: white;
-                        background-color: white;
-                        z-index: 0;
-                        opacity: 0.1;
-                    }
-                }
-
-                height: 30px;
-                border-radius: 2px;
-                margin: 3px 0;
-                text-align: left;
-
-                .success {
-                    background: $activeColor 0% 0% no-repeat padding-box;
-                }
-
-                .error {
-                    background: #D91E27 0% 0% no-repeat padding-box;
-                }
-
-                a {
-                    font: normal normal normal 12px Roboto;
-                    letter-spacing: 0px;
-                    color: #FFFFFF;
-                    text-decoration: none;
-                    height: 100%;
-                    display: flex;
-                    align-items: center;
-                    border-radius: 5px;
-                    padding: 0 20px 0 5px;
-
-                    &.active {
-                        background-color: $activeColor;
-                    }
-                }
-                .numbercss {
-                    font: normal normal normal 10px Roboto;
-                    letter-spacing: 1px;
-                    margin-right: 10px;
-
-                    &:active {
-                        color: #FFFFFF;
-                    }
-                }
-                &:first-child {
-                    margin-top: 0;
-                }
-                &:last-child {
-                    margin-bottom: -21px;
-                }
-            }
-            .li.active {
-                color: red;
-            }
-        }
+      padding: 10px;
+      .sidebarheadding {
+          font: normal normal normal 12px/18px Wipro Akkurat TT;
+          letter-spacing: 0px;
+          color: #9EA0A5;
+          opacity: 1;
+      }
     }
-}
+    nav {
+      margin-top: 10px;
+      list-style: none;
+      ul {
+        counter-reset: my-sec-counter;
+        padding: 10px;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        max-width: 100%;
+        text-align: left;
+        flex-basis: 0;
+        position: absolute;
+      }
+      li {
+        // position: relative;
+        padding: 5px 0;
+        display: block;
+        z-index: 0;
+
+        a  {
+          // margin-left: 35px;
+          // background-color: #FFFFFF;
+          // width: 20px;
+          // height:20px;
+          // display: flex;
+          // border: 0;
+          // border-radius: 100%;
+          // align-items: center;
+          // justify-content: center;
+          // margin: 0;
+          // &.active {
+          //     background-color: $activeColor;
+          //     color: #FFFFFF;
+          // }
+        }
+        &::before {
+          counter-increment: my-sec-counter;
+          content:counter(my-sec-counter);
+          width: 30px;
+          height: 30px;
+          border: 1px solid red;
+          border-radius: 50%;
+          background-color: white;
+          position: absolute;
+          margin-right: 20px;
+          text-align: center;
+          z-index: -1;
+        }
+      }
+    }
+  }
