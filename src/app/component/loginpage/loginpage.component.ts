@@ -104,7 +104,9 @@ export class LoginpageComponent implements OnInit {
     
     if(this.signInForm.status === 'VALID') {
       // this.route.navigate(['/gripper']);
+      const statusArray:any = ['',''];
       sessionStorage.setItem('isAdmin', this.signInForm.controls.isAdmin.value);
+      sessionStorage.setItem('sidebarstatus', JSON.stringify(statusArray));
       if(this.signInForm.controls.isAdmin.value === true) {
         // this.operator = "admin"
         const logindetails = new FormData();
@@ -118,6 +120,8 @@ export class LoginpageComponent implements OnInit {
       // this.route.navigate(['/gripper']);
       } else {
         // this.operator = "user"
+        const statusArray:any = ['','','','','','','','','',''];
+        sessionStorage.setItem('sidebarstatus', JSON.stringify(statusArray));
         console.log(this.signInForm.value)
         const logindetails = new FormData();
         logindetails.append("username", <string>this.signInForm.controls.username.value );

@@ -4,6 +4,7 @@ import { RobotService } from 'src/app/service/robot.service';
 import { RobotDetailsComponent } from '../../common/robot-details/robot-details.component';
 import { GRIPPERS } from "../../../constant";
 import { GripperType }   from "../../../types/apptypes"
+import { UpdatesidebarService } from '../../../service/updatesidebar.service';
 
 @Component({
   selector: 'app-robot',
@@ -37,7 +38,8 @@ export class RobotComponent implements OnInit {
     }
   }
 
-  constructor(public routeService: RouterService,private robotservice: RobotService) { }
+  constructor(public routeService: RouterService,private robotservice: RobotService,
+  private sidebarService: UpdatesidebarService) { }
 
   robotDetails = [
     {
@@ -140,6 +142,7 @@ export class RobotComponent implements OnInit {
       alert('Please Select a Robot');
       return
     }
+    this.sidebarService.updateSidebarStatus(1, 'completed');
     this.routeService.movetonextpage('gripper')
   }
   updateSelectedGripper(gripper: GripperType) {
