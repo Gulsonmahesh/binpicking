@@ -77,7 +77,7 @@
                 </div>
                 <app-mainfooter *ngIf="!showGrippertcp && gripperDetails && gripperDetails.length" [showdeploy]="false" [showCancal]="false" [showBack]="false" (movetonext)="movetogrippertcp()" (movetoback)="routeService.movetonextpage('robot')" submitname="select and continue">
                 </app-mainfooter>
-                <app-mainfooter *ngIf="showGrippertcp" [showExit]="true" [showdeploy]="false" [showCancal]="false" (movetonext)="routeService.movetonextpage('object')" (movetoback)="showGrippertcp = false" (buttonExitSelected)="showGrippertcp = true" submitname="Save">
+                <app-mainfooter *ngIf="showGrippertcp" [showExit]="true" [showdeploy]="false" [showCancal]="false" (movetonext)="updateGripperTCP()" (movetoback)="showGrippertcp = false" (buttonExitSelected)="showGrippertcp = true" submitname="Save">
                 </app-mainfooter>
                 <!-- (movetonext)="movetoGripper()"  -->
                 <!-- (movetonext)="routeService.movetonextpage('gripper')" -->
