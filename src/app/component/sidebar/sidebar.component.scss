@@ -12,53 +12,94 @@
     nav {
       margin-top: 10px;
       list-style: none;
+
       ul {
         counter-reset: my-sec-counter;
-        padding: 10px;
-        margin: 0;
+        position: absolute;
+        padding: 0 0 0 20px;
         display: flex;
         flex-direction: column;
-        flex-grow: 1;
-        max-width: 100%;
-        text-align: left;
-        flex-basis: 0;
-        position: absolute;
+        align-items: flex-start;
+        list-style: none;
       }
-      li {
-        // position: relative;
-        padding: 5px 0;
-        display: block;
-        z-index: 0;
 
-        a  {
-          // margin-left: 35px;
-          // background-color: #FFFFFF;
-          // width: 20px;
-          // height:20px;
-          // display: flex;
-          // border: 0;
-          // border-radius: 100%;
-          // align-items: center;
-          // justify-content: center;
-          // margin: 0;
-          // &.active {
-          //     background-color: $activeColor;
-          //     color: #FFFFFF;
-          // }
+      li {
+        z-index: 0;
+        font-size: 14px;
+        margin: 10px 0 10px 0;
+        
+        &:hover::before {
+          background-color: $activeColor;
+          color: white;          
         }
-        &::before {
-          counter-increment: my-sec-counter;
-          content:counter(my-sec-counter);
-          width: 30px;
-          height: 30px;
-          border: 1px solid red;
-          border-radius: 50%;
-          background-color: white;
+        .active {
+          background-color: $activeColor;
+          padding: 10px;
+          border-radius: 3px;
+        }
+
+        a {
+          text-decoration: none;
+          color: white;
+          &:hover {
+            padding: 10px;
+            background-color: $activeColor;
+            border-radius: 3px;
+          }
+        }
+
+        &::after {
+          content: "";
+          height: 20px;
+          width: 1px;
           position: absolute;
-          margin-right: 20px;
-          text-align: center;
-          z-index: -1;
+          display: block;
+          background-color: aliceblue;
+          left: 29px;
         }
+
+        &::before {
+          background-color: white;
+          counter-increment: my-sec-counter;
+          content: counter(my-sec-counter);
+          width: 20px;
+          height: 20px;
+          border: 0px;
+          border-radius: 50%;
+          margin-right: 10px;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 12px;
+        }
+        
+        &:last-child::after {
+          height: 0;
+        }
+      }
+      .error::after,
+      .error::before {
+        background-color: red;
+      }
+
+      .error::before {
+        color: white;
+        content: '!';
+        font-weight: 600;
+      }
+      .completed::before {
+        background-color:limegreen;
+        content: "\2713";
+        color: white;
+        font-weight: 600;
+      }
+
+      .active::after {
+        background-color: $activeColor;
+      }
+      .active::before {
+        background-color: $activeColor;
+        color: white;
       }
     }
   }
