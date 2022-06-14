@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import  { UpdatesidebarService } from '../../service/updatesidebar.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -28,8 +30,9 @@ export class SidebarComponent implements OnInit {
     // {value: 'grippertcp', title: 'Gripper TCP', number: '4',checked: false},
   ];
   currentRoute = '';
+  sidebar$?: any;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private sidebarService: UpdatesidebarService) {
     console.log(this.router);
   }
   // checked: boolean = false;
@@ -40,6 +43,11 @@ export class SidebarComponent implements OnInit {
   }
   @Input() showsidebar = true;
   ngOnInit(): void {
+    this.sidebarService.getSidebarStatus().subscribe((data:any) => 
+    {
+      this.sidebar$ = data;
+      console.log(this.sidebar$);
+    });    
     const isAdmin = sessionStorage.getItem('isAdmin');
     this.currentRoute = this.router.url.replace('/', '');
     console.log(this.currentRoute);

@@ -3,8 +3,8 @@
     <nav>
         <ul>
             <li class="listitem w-full" *ngFor="let item of steps;let i = index" 
-            [ngClass]="{'active' : item.value === currentRoute, 'error': i === 2,
-            'completed': i === 4}">
+            [ngClass]="{'active' : item.value === currentRoute, 'error': sidebar$[i] === 'error',
+            'completed': sidebar$[i] === 'completed'}">
                 <a class="listitem" [ngClass]="{'active' : item.value === currentRoute}" href="/{{ item.value }}">{{ item.title }}</a>
             </li>
         </ul>
