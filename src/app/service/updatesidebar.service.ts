@@ -7,7 +7,7 @@ import { Observable, BehaviorSubject  } from 'rxjs';
 })
 export class UpdatesidebarService {
 
-  statusArray = ['','','','','','','','','',''];
+  statusArray?:any = ['','','','','','','','','',''];
   
   private _sidebar = new BehaviorSubject<any>(this.statusArray);
   private _sidebar$ = this._sidebar.asObservable();
@@ -16,9 +16,8 @@ export class UpdatesidebarService {
     return this._sidebar$;
   }
 
-  updateSidebarStatus(index: number, data: string) {
-    console.log(index, data);
-    this.statusArray[index] = data
+  updateSidebarStatus(index: number, data: string) {    
+    this.statusArray[index] = data;
     return this._sidebar.next(this.statusArray);
   }
 }
