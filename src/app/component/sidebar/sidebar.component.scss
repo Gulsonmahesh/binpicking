@@ -88,6 +88,9 @@
         content: '!';
         font-weight: 600;
       }
+      .completed::after {
+        background-color:limegreen;
+      }
       .completed::before {
         background-color:limegreen;
         content: "\2713";
