@@ -55,7 +55,7 @@ export class GripperComponent implements OnInit {
   createRobot(event: any) {
     console.log(event);
     this.showGripperModel = false;
-    this.showGrippertcp = true;    
+    this.showGrippertcp = false;    
   }
 
   onSelectGripper(gripper: any) {

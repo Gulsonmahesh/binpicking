@@ -21,11 +21,11 @@
 </app-model> -->
 
 <app-model headertitle="Add New Robot" *ngIf="isAdmin && showRobotModel && !isEdit" (closeModelEmit)="showModel(false)">
-    <app-addrobot [isEdit] = "false" [robotId]="robotId" [isEditForm]="null" (cancelEvent)="showRobotModel = false;selectedRobot = null;" (formSubmit)="createRobot($event)"></app-addrobot>
+    <app-addrobot [isEdit]="false" [robotId]="robotId" [isEditForm]="null" (cancelEvent)="showRobotModel = false;" (formSubmit)="createRobot($event)"></app-addrobot>
 </app-model>
 
 <app-model headertitle="Edit Robot" *ngIf="isAdmin && showRobotModel && isEdit" (closeModelEmit)="showModel(false)">
-    <app-addrobot [isEdit] = "true" [robotId]="robotId" [isEditForm]="selectedRobot" (cancelEvent)="showRobotModel = false;selectedRobot = null;" (formSubmit)="createRobot($event)"></app-addrobot>
+    <app-addrobot [isEdit]="true" [robotId]="robotId" [isEditForm]="selectedRobot" (cancelEvent)="showRobotModel = false;" (formSubmit)="createRobot($event)"></app-addrobot>
 </app-model>
 
 <!-- <app-model headertitle="Add New Gripper" *ngIf="isAdmin && showGripperModel" (closeModelEmit)="showGripper(false)">
@@ -71,7 +71,7 @@
                 <div class="innermaincontainer pl-20">
                     <div class="robotcontainer border-1 pb-20 ">
                         <ng-container *ngFor="let robot of robotDetails; let i = index">
-                            <app-robotdetails (OpenGripper) = "openGripper($event)" (onSelect)="onselectedRobot($event)" [details]="robot" class="pr-10"></app-robotdetails>
+                            <app-robotdetails (OpenGripper)="openGripper($event)" (onSelect)="onselectedRobot($event)" [details]="robot" class="pr-10"></app-robotdetails>
                         </ng-container>
                     </div>
                 </div>
@@ -79,23 +79,22 @@
                 </app-mainfooter>
             </div>
             <div class="maincontent px-2" *ngIf="showGripperModel">
-              <h1 class="my-4" style="font-size:16x">
-                <span class="f-14">Selected Robot</span><br />
-                {{selectedRobot.model}}
-              </h1>
-              <div class="d-flex align-items-center flex-wrap gap-1 grippercontainer widthbtm" *ngIf="grippers.length">
-                  <ng-container *ngFor="let gripper of grippers; let i = index">
-                      <div class="card">
-                          <img src="{{ gripper.image }}" class="brdr" alt="gripper" />
-                          <div class="namecontainer d-inline-flex align-items-center justify-content-between">
-                              <span>{{ gripper.name }}</span>
-                              <input type="radio" class="radiobtn" name="gripper" (change)="updateSelectedGripper(gripper)">
-                          </div>
-                      </div>
-                  </ng-container>
-              </div>
-              <app-mainfooter [showdeploy]="false" (movetonext)="gotorobot()" (movetoback)="showGripperModel=false">
-              </app-mainfooter>
+                <h1 class="my-4" style="font-size:16x">
+                    <span class="f-14">Selected Robot</span><br /> {{selectedRobot.model}}
+                </h1>
+                <div class="d-flex align-items-center flex-wrap gap-1 grippercontainer widthbtm" *ngIf="grippers.length">
+                    <ng-container *ngFor="let gripper of grippers; let i = index">
+                        <div class="card">
+                            <img src="{{ gripper.image }}" class="brdr" alt="gripper" />
+                            <div class="namecontainer d-inline-flex align-items-center justify-content-between">
+                                <span>{{ gripper.name }}</span>
+                                <input type="radio" class="radiobtn" name="gripper" (change)="updateSelectedGripper(gripper)">
+                            </div>
+                        </div>
+                    </ng-container>
+                </div>
+                <app-mainfooter [showdeploy]="false" (movetonext)="gotorobot()" (movetoback)="showGripperModel=false">
+                </app-mainfooter>
             </div>
         </div>
     </div>
