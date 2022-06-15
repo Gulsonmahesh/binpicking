@@ -21,7 +21,7 @@ export class AddGripperComponent implements OnInit {
   addGripper = new FormGroup({
     id:new FormControl(null),
     grippername: new FormControl('', Validators.required),
-    uploadgripperimage: new FormControl('', Validators.required),
+    uploadgripperimage: new FormControl('',  Validators.required),
     uploadgripperstl: new FormControl('', Validators.required)
   });
 

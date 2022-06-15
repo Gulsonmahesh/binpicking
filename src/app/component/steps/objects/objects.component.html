@@ -3,20 +3,17 @@
         <input type="hidden" name="objectid" id="objectid" value="" formControlName="project_id" />
         <div class="form-group mb-4">
             <label for="objectname">Object Name <sup>*</sup></label>
-            <input formControlName='objectName' type="text" id="objectname" class="form-control"
-            placeholder="Please enter Object name" />
+            <input formControlName='objectName' type="text" id="objectname" class="form-control" placeholder="Please enter Object name" />
         </div>
         <div class="form-group mb-4">
             <label for="description">Description</label>
-            <input formControlName='description' type="text" id="description" class="form-control"
-            placeholder="Please enter Object description" />
+            <input formControlName='description' type="text" id="description" class="form-control" placeholder="Please enter Object description" />
         </div>
         <div class="form-group mb-2" *ngIf="imageFileName ===''">
             <label for="uploadobject" class="fw-bold mb-2">Upload Object Mess</label>
             <label for="description" class="col-12 col-sm-12 mb-2"> Only .stl file format accept</label>
             <div class="file-upload mb-2">
-                <input type="file" class="file-input-img" formControlName='object_file' accept=".stl" 
-                #imgfileUpload (change)="imagefileupload($event)" />
+                <input type="file" class="file-input-img" formControlName='object_file' accept=".stl" #imgfileUpload (change)="imagefileupload($event)" />
                 <div class="uploadbuttoncontainer d-flex flex-column align-items-center justify-content-between">
                     <span>Drag and Drop file here</span>
                     <button type="button" color="primary" class="d-block btn btn-primary uploadbutton m-0" (click)="imgfileUpload.click()">
@@ -41,7 +38,7 @@
         </div>
     </form>
 </app-model>
-<div class="grid-container">    
+<div class="grid-container">
     <div class="grid-header">
         <app-header></app-header>
     </div>
@@ -56,7 +53,7 @@
                     <div class="cards">
                         <app-card (editButtonSelected)="showModel('edit')" addText="Add new object" (buttonSelected)="showModel('add')"></app-card>
                     </div>
-                    <app-mainfooter [showdeploy]="false" (movetonext)="routeService.movetonextpage('environment')" (movetoback)="routeService.movetonextpage('grippertcp')" submitname="Submit and Continue">
+                    <app-mainfooter [showdeploy]="false" (movetonext)="routeService.movetonextpage('environment')" (movetoback)="routeService.movetonextpage('gripper')" submitname="Submit and Continue">
                     </app-mainfooter>
                 </div>
             </div>

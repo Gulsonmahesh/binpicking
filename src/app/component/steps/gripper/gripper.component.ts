@@ -95,8 +95,8 @@ export class GripperComponent implements OnInit {
       alert("Please select a gripper");
       return;
     }
-    // this.showGrippertcp && this.routeService.movetonextpage('grippertcp')
-    this.gotogrippertcp();
+     this.routeService.movetonextpage('object')
+    // this.gotogrippertcp();
   }
   addGripper() {
     // this.selectedGripper=null;
