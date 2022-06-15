@@ -46,7 +46,6 @@ import { ProgressPopupComponent } from './component/steps/progress-popup/progres
 import { DeletepopupComponent } from './component/steps/deletepopup/deletepopup.component';
 import { AddrobotComponent } from './component/steps/robot/addrobot/addrobot.component';
 import { AddGripperComponent } from './component/steps/gripper/add-gripper/add-gripper.component';
-import { StlModelViewerModule } from "./../../node_modules/angular-stl-model-viewer";
 import { NumberonlyDirective } from './directive/numberonly.directive';
 import { MustmatchDirective } from './component/loginpage/mustmatch.directive';
 
@@ -97,7 +96,6 @@ const material=[
     EditorModule,
     HttpClientModule,
     FormsModule,
-    StlModelViewerModule
   ],
   exports: [material],
   providers: [{ provide: TINYMCE_SCRIPT_SRC, useValue: 'tinymce/tinymce.min.js' }],
