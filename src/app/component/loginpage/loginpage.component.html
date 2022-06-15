@@ -184,9 +184,19 @@
             <div class="col-12 p-5r" *ngIf="resetShow">
                 <span class="col-xl-12 col-sm-12 floatleft f-16 bold mb-30">Reset Password</span>
                 <form #myform="ngForm" (ngSubmit)="submitform(myform)" novalidate mustMatch="password,password2">
-                    <input type="password" name="password" placeholder="enter password:" required #password="ngModel" [(ngModel)]="model.password" minlength="5" maxlength="15" class="mb-20 wid100">
+                    <input type="password" [type]="hide ? 'password' : 'text'" name="password" placeholder="enter password:" required #password="ngModel" [(ngModel)]="model.password" minlength="5" maxlength="15" class="mb-20 wid100">
+                    <button class="noegf" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                        <mat-icon class="material-icons-outlined eyeicon" style="position:relative;top:-1px">
+                            visibility
+                        </mat-icon>
+                    </button>
                     <span *ngIf="password.invalid  && password.touched" style="color: red;font-size: 12px;">Please enter valid name</span><br>
-                    <input type="password" name="password2" placeholder="enter retype password:" required #password2="ngModel" [(ngModel)]="model.password2" minlength="5" maxlength="15" class="mb-20 wid100">
+                    <input type="password" [type]="hide1 ? 'password2' : 'text'" name="password2" placeholder="enter retype password:" required #password2="ngModel" [(ngModel)]="model.password2" minlength="5" maxlength="15" class="mb-20 wid100">
+                    <button class="noegf" mat-icon-button matSuffix (click)="hide1 = !hide1" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide1">
+                        <mat-icon class="material-icons-outlined eyeicon" style="position:relative;top:-1px">
+                            visibility
+                        </mat-icon>
+                    </button>
                     <span *ngIf="password2.invalid  && password2.touched" style="color: red;font-size: 12px;">Please enter valid name</span><br>
                     <span *ngIf="">Passwords must match</span>
                     <span *ngIf="errvalidation" style="color: red;font-size: 12px;">Both password should be valid</span>

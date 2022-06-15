@@ -223,9 +223,17 @@
 
                         </div>
                         <div class="buttoncontainer mt-10 floatright">
-                            <button type="button" class="btn btn-default mr-10" (click)="heroForm.resetForm({})">Reset All</button>
+                            <button type="button" class="  mr-10 borderbg" (click)="heroForm.resetForm({})">Reset All</button>
                             <button type="submit" class="btn calibrationbtns mr-10" [disabled]="heroForm.invalid">Download Transformation</button>
-                            <button type="submit" class="btn calibrationbtns" [disabled]="heroForm.invalid">Upload Transformation from file</button>
+                            <!-- <button type="submit" class="btn calibrationbtns" [disabled]="heroForm.invalid">
+                              Upload Transformation from file</button> -->
+                            <button class="calibrationbtns mr-10">
+                                <div class="fileUploadWrap">
+                                  <input type="file" name="file" class="form-control" id="hidden_upload_file_chatting">
+                                </div>
+                               
+            Upload Transformation from file
+          </button>
                             <!-- <button class="calibrationbtns mr-10" (click)="onSubmit()">Reset All</button>
                             <button class="calibrationbtns mr-10">
           Download Transformation

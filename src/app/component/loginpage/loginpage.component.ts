@@ -27,6 +27,7 @@ export class LoginpageComponent implements OnInit {
   emails= false;
   numbers=false;
   hide = true;
+  hide1 = true;
   forgotShow: any;
   otpShow: any;
   signInForm: any;

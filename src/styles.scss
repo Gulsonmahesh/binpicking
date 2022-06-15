@@ -331,6 +331,7 @@ stl-model-viewer {
     height: 300px;
     width: 100%;
 }
+
 .card {
     width: 170px;
     // min-height: 300px;
@@ -351,9 +352,33 @@ stl-model-viewer {
         margin: 0;
     }
 }
+
 .card:hover,
 .card:focus {
     box-shadow: 0px 0px 12px #00000042;
     border: 2px dashed #35AFF8;
     border-radius: 10px;
+}
+
+.borderbg {
+    background: #ffffff 0% 0% no-repeat padding-box;
+    padding: 7px 24px;
+    font-size: 14px;
+    border: none;
+    color: #35AFF8;
+    border-radius: 4px;
+    border: 1px solid #35AFF8;
+    border-radius: 6px
+}
+
+.mat-tab-body.mat-tab-body-active {
+    animation: fade 0.5s;
+}
+
+::ng-deep .mat-tab-header {
+    display: none !important;
+}
+
+ ::ng-deep .mat-tab-label-container {
+    display: none !important;
 }

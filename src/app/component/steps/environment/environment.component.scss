@@ -98,3 +98,13 @@
 .uploadbutton:focus {
     box-shadow: none !important
 }
+
+.mat-tab-body {
+    animation: fade-out 0.5s;
+    opacity: 0;
+}
+
+// .mat-tab-body.mat-tab-body-active {
+//     animation: fade-in 0.5s;
+//     opacity: 1;
+// }
