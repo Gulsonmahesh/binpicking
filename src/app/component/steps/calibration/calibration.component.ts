@@ -4,20 +4,15 @@ import { CalibrationService } from 'src/app/service/calibration.service';
 // import { AnyPtrRecord } from 'dns';
 
 
-export class Student {
-  public name: any;
-  public name1: any;
-  public name2: any;
-  public name3: any;
-}
+
 @Component({
   selector: 'app-calibration',
   templateUrl: './calibration.component.html',
   styleUrls: ['./calibration.component.scss']
 })
 export class CalibrationComponent implements OnInit {
+  hero = {name: 'Dr.', name2: 'sir', name3: 'sir',name4:'sir',  name5: 'sir', name6: 'sir', name7: 'sir',name8:'sir',name9: 'sir', name10: 'sir', name11: 'sir',name12:'sir'};
   myform:any;
-  model = new Student();
   @ViewChild('f') form: any;
 
   Subjects: string[] = [

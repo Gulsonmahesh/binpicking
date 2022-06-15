@@ -15,9 +15,11 @@
                         <div class="container-lg col-sm-12 col-xl-12">
                             <span class="col-sm-12 col-xl-12">
                 <span class="col-sm-12 col-xl-12 floatleft">
-                  <form  #myform="ngForm" (ngSubmit)="submit(myform)" 
+                  <form  #heroForm="ngForm"  
                     class="col-sm-12 col-xl-12 example-form mb-10 floatleft"
                   >
+                  <div [hidden]="heroForm.submitted">
+                  <!-- #myform="ngForm" (ngSubmit)="submit(myform)"  -->
                     <p class="col-sm-12 col-xl-12 f-14 mb-10">
                       Please enter the scanner robot transformation matrix
                       <app-tooltip>
@@ -26,33 +28,146 @@
                     </p>
                     <div class="form-group">
                       <span class="">
-                        <!-- *ngFor="let n of numSequence(4)" -->
+                        <!-- *ngFor="let n of numSequence(4)"  -->
                         <span class="col-sm-12 col-xl-12 floatleft">
-                          <span class="col-sm-3 col-xl-3 floatleft mb-10">
-                            <span class="col-sm-12 col-xl-12 floatleft pr-15">
-                              <input type="number"  [(ngModel)]="model.name"  #name="ngModel" required class="form-control" name="number" ngModel  >
+                          <span class="col-sm-3 col-xl-3 floatleft mb-10 pr-10">
+                          <input id="name" name="name" class="form-control" type="number"
+                                 required minlength="4" appForbiddenName="bob"
+                                 [(ngModel)]="hero.name" #name="ngModel" >
+                          <div *ngIf="name.invalid && (name.dirty || name.touched)"
+                          style="color: red;font-size: 12px;">
+                            <div *ngIf="name.errors">
+                              Number is required.
+                            </div>
+                          </div>
+                        </span>
+                            <span class="col-sm-3 col-xl-3 floatleft mb-10 pr-10">
+                          <input id="name2" name="name2" class="form-control" type="number"
+                                 required minlength="4" appForbiddenName="bob"
+                                 [(ngModel)]="hero.name2" #name2="ngModel" >
+                          <div *ngIf="name2.invalid && (name2.dirty || name2.touched)"
+                          style="color: red;font-size: 12px;">
+                            <div *ngIf="name2.errors">
+                              Number is required.
+                            </div>
+                          </div>
+                        </span>
+                            <span class="col-sm-3 col-xl-3 floatleft mb-10 pr-10">
+                          <input id="name3" name="name3" class="form-control" type="number"
+                                 required minlength="4" appForbiddenName="bob"
+                                 [(ngModel)]="hero.name3" #name3="ngModel" >
+                          <div *ngIf="name3.invalid && (name3.dirty || name3.touched)"
+                          style="color: red;font-size: 12px;">
+                            <div *ngIf="name3.errors">
+                              Number is required.
+                            </div>
+                          </div>
+                        </span>
+                            <span class="col-sm-3 col-xl-3 floatleft mb-10 pr-10">
+                      <input id="name4" name="name4" class="form-control" type="number"
+                             required minlength="4" appForbiddenName="bob"
+                             [(ngModel)]="hero.name4" #name4="ngModel" >
+                      <div *ngIf="name4.invalid && (name4.dirty || name4.touched)"
+                      style="color: red;font-size: 12px;">
+                        <div *ngIf="name4.errors">
+                          Number is required.
+                        </div>
+                      </div>
+                    </span>
                             </span>
-                            <span *ngIf="name.invalid  && name.touched" style="color: red;font-size: 12px;">Please enter valid number</span>
+                            <span class="col-sm-12 col-xl-12 floatleft">
+                              <span class="col-sm-3 col-xl-3 floatleft mb-10 pr-10">
+                              <input id="name5" name="name5" class="form-control" type="number"
+                                     required minlength="4" appForbiddenName="bob"
+                                     [(ngModel)]="hero.name5" #name5="ngModel" >
+                              <div *ngIf="name5.invalid && (name5.dirty || name5.touched)"
+                              style="color: red;font-size: 12px;">
+                                <div *ngIf="name5.errors">
+                                  Number is required.
+                                </div>
+                              </div>
                             </span>
+                            <span class="col-sm-3 col-xl-3 floatleft mb-10 pr-10">
+                              <input id="name6" name="name6" class="form-control" type="number"
+                                     required minlength="4" appForbiddenName="bob"
+                                     [(ngModel)]="hero.name6" #name6="ngModel" >
+                              <div *ngIf="name6.invalid && (name6.dirty || name6.touched)"
+                              style="color: red;font-size: 12px;">
+                                <div *ngIf="name6.errors">
+                                  Number is required.
+                                </div>
+                              </div>
+                            </span>
+                            <span class="col-sm-3 col-xl-3 floatleft mb-10 pr-10">
+                              <input id="name7" name="name7" class="form-control" type="number"
+                                     required minlength="4" appForbiddenName="bob"
+                                     [(ngModel)]="hero.name7" #name7="ngModel" >
+                              <div *ngIf="name7.invalid && (name7.dirty || name7.touched)"
+                              style="color: red;font-size: 12px;">
+                                <div *ngIf="name7.errors">
+                                  Number is required.
+                                </div>
+                              </div>
+                            </span>
+                            <span class="col-sm-3 col-xl-3 floatleft mb-10 pr-10">
+                          <input id="name8" name="name8" class="form-control" type="number"
+                                 required minlength="4" appForbiddenName="bob"
+                                 [(ngModel)]="hero.name8" #name8="ngModel" >
+                          <div *ngIf="name8.invalid && (name8.dirty || name8.touched)"
+                          style="color: red;font-size: 12px;">
+                            <div *ngIf="name8.errors">
+                              Number is required.
+                            </div>
+                          </div>
+                        </span>
 
-                            <span class="col-sm-3 col-xl-3 floatleft mb-10">
-                              <span class="col-sm-12 col-xl-12 floatleft pr-15">
-                                <input type="number"  [(ngModel)]="model.name1"  #name1="ngModel" required class="form-control" name1="number" ngModel  >
-                              </span>
-                            <span *ngIf="name1.invalid  && name1.touched" style="color: red;font-size: 12px;">Please enter valid age</span>
+
                             </span>
-                            <span class="col-sm-3 col-xl-3 floatleft mb-10">
-                              <span class="col-sm-12 col-xl-12 floatleft pr-15">
-                                <input type="number"  [(ngModel)]="model.name2"  #name2="ngModel" required class="form-control" name2="number" ngModel  >
-                              </span>
-                            <span *ngIf="name2.invalid  && name2.touched" style="color: red;font-size: 12px;">Please enter valid age</span>
+                            <span class="col-sm-12 col-xl-12 floatleft">
+                              <span class="col-sm-3 col-xl-3 floatleft mb-10 pr-10">
+                              <input id="name9" name="name9" class="form-control" type="number"
+                                     required minlength="4" appForbiddenName="bob"
+                                     [(ngModel)]="hero.name9" #name9="ngModel" >
+                              <div *ngIf="name9.invalid && (name9.dirty || name9.touched)"
+                              style="color: red;font-size: 12px;">
+                                <div *ngIf="name9.errors">
+                                  Number is required.
+                                </div>
+                              </div>
                             </span>
-                            <span class="col-sm-3 col-xl-3 floatleft mb-10">
-                              <span class="col-sm-12 col-xl-12 floatleft pr-15">
-                                <input type="number"  [(ngModel)]="model.name3"  #name3="ngModel" required class="form-control" name3="number" ngModel  >
-                              </span>
-                            <span *ngIf="name3.invalid  && name3.touched" style="color: red;font-size: 12px;">Please enter valid age</span>
+                            <span class="col-sm-3 col-xl-3 floatleft mb-10 pr-10">
+                              <input id="name10" name="name10" class="form-control" type="number"
+                                     required minlength="4" appForbiddenName="bob"
+                                     [(ngModel)]="hero.name10" #name10="ngModel" >
+                              <div *ngIf="name10.invalid && (name10.dirty || name10.touched)"
+                              style="color: red;font-size: 12px;">
+                                <div *ngIf="name10.errors">
+                                  Number is required.
+                                </div>
+                              </div>
                             </span>
+                            <span class="col-sm-3 col-xl-3 floatleft mb-10 pr-10">
+                              <input id="name11" name="name11" class="form-control" type="number"
+                                     required minlength="4" appForbiddenName="bob"
+                                     [(ngModel)]="hero.name11" #name11="ngModel" >
+                              <div *ngIf="name11.invalid && (name11.dirty || name11.touched)"
+                              style="color: red;font-size: 12px;">
+                                <div *ngIf="name11.errors">
+                                  Number is required.
+                                </div>
+                              </div>
+                            </span>
+                            <span class="col-sm-3 col-xl-3 floatleft mb-10 pr-10">
+                          <input id="name12" name="name12" class="form-control" type="number"
+                                 required minlength="4" appForbiddenName="bob"
+                                 [(ngModel)]="hero.name12" #name12="ngModel" >
+                          <div *ngIf="name12.invalid && (name12.dirty || name12.touched)"
+                          style="color: red;font-size: 12px;">
+                            <div *ngIf="name12.errors">
+                              Number is required.
+                            </div>
+                          </div>
+                        </span>
 
 
                             </span>
@@ -60,11 +175,10 @@
 
                         </div>
                         <div class="buttoncontainer mt-10 floatright">
-
-                            <button class="calibrationbtns mr-10" (click)="onSubmit()">Reset All</button>
-                            <!-- <div class="form-group">
-                                <button class="btn btn-primary btn-block" [disabled]="myform.invalid">Submit</button>
-                            </div> -->
+                            <button type="button" class="btn btn-default mr-10" (click)="heroForm.resetForm({})">Reset All</button>
+                            <button type="submit" class="btn calibrationbtns mr-10" [disabled]="heroForm.invalid">Download Transformation</button>
+                            <button type="submit" class="btn calibrationbtns" [disabled]="heroForm.invalid">Upload Transformation from file</button>
+                            <!-- <button class="calibrationbtns mr-10" (click)="onSubmit()">Reset All</button>
                             <button class="calibrationbtns mr-10">
           Download Transformation
         </button>
@@ -74,18 +188,19 @@
                               </div>
                              
           Upload Transformation from file
-        </button>
+        </button> -->
                         </div>
-                        </form>
-
-                        </span>
-                        </span>
                     </div>
-                </div>
+                    </form>
 
+                    </span>
+                    </span>
+                </div>
             </div>
-            <app-mainfooter (movetonext)="calibrationData()" (movetoback)="routeService.movetonextpage('environment')" submitname="Execute Bin Picking"></app-mainfooter>
+
         </div>
+        <app-mainfooter (movetonext)="calibrationData()" (movetoback)="routeService.movetonextpage('environment')" submitname="Execute Bin Picking"></app-mainfooter>
     </div>
+</div>
 </div>
 </div>
