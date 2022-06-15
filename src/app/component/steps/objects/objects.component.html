@@ -1,17 +1,25 @@
-<app-model headertitle="Add New Object" *ngIf="model" (closeModelEmit)="showModel($event)">
-    <div id="newobjectform">
-        <label for="objectname">Object Name <sup>*</sup></label>
-        <input type="text" id="objectname" [(ngModel)]="objectName" />
-        <label for="description">Description</label>
-        <input type="text" id="description" [(ngModel)]="description" />
+<app-model [headertitle]="modelTitle" *ngIf="model" (closeModelEmit)="showModel()">
+    <form [formGroup]='addObject' (ngSubmit)="onSubmit($event)">
+        <input type="hidden" name="objectid" id="objectid" value="" formControlName="project_id" />
+        <div class="form-group mb-4">
+            <label for="objectname">Object Name <sup>*</sup></label>
+            <input formControlName='objectName' type="text" id="objectname" class="form-control"
+            placeholder="Please enter Object name" />
+        </div>
+        <div class="form-group mb-4">
+            <label for="description">Description</label>
+            <input formControlName='description' type="text" id="description" class="form-control"
+            placeholder="Please enter Object description" />
+        </div>
         <div class="form-group mb-2" *ngIf="imageFileName ===''">
             <label for="uploadobject" class="fw-bold mb-2">Upload Object Mess</label>
             <label for="description" class="col-12 col-sm-12 mb-2"> Only .stl file format accept</label>
             <div class="file-upload mb-2">
-                <input type="file" class="file-input-img" accept=".stl" formControlName='uploadgripperimage' #imgfileUpload (change)="imagefileupload($event)" />
+                <input type="file" class="file-input-img" formControlName='object_file' accept=".stl" 
+                #imgfileUpload (change)="imagefileupload($event)" />
                 <div class="uploadbuttoncontainer d-flex flex-column align-items-center justify-content-between">
                     <span>Drag and Drop file here</span>
-                    <button color="primary" class="d-block btn btn-primary uploadbutton m-0" (click)="imgfileUpload.click()">
+                    <button type="button" color="primary" class="d-block btn btn-primary uploadbutton m-0" (click)="imgfileUpload.click()">
                         Click Here to Upload
                     </button>
                 </div>
@@ -26,24 +34,14 @@
         <div *ngIf="imageFileName !==''" class="innerboxview">
             <span class="labelinner"> STL Viewer Placeholder</span>
         </div>
-
-        <!-- <div id="drop_zone" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);">
-            <p class="m-0 mb-1">Drag one or more files to this Drop Zone ...</p>
-            <label class="image-upload-container btn btn-bwm">
-            <span class="uploadbtn">
-                <label class="labelupload">Click here to upload</label>
-            <input id="objectFile" Input type="file" accept="image/*" style="visibility: hidden;" (change)="onFileSelecetd($event)" />
-            </span>
-            </label>
-        </div> -->
         <div class="modelfooter">
-            <button (click)="model=false">Cancel</button>
-            <button (click)="createObject()" class="mx-4 btn btn-primary">Save</button>
+            <button type="button" class="btn btn-light border-0" (click)="model=false">Cancel</button>
+            <button class="mx-4 btn btn-primary" disabled *ngIf="addObject.status === 'INVALID'">Save</button>
+            <button class="mx-4 btn btn-primary" *ngIf="addObject.status === 'VALID'">Save</button>
         </div>
-    </div>
+    </form>
 </app-model>
-
-<div class="grid-container">
+<div class="grid-container">    
     <div class="grid-header">
         <app-header></app-header>
     </div>
@@ -56,7 +54,7 @@
                 <div id="objectcontainer" class="wrappercontainer p-20">
                     <h3 class="bold mb-20 f-16">Picked Object</h3>
                     <div class="cards">
-                        <app-card addText="Add new object" (buttonSelected)="showModel($event)"></app-card>
+                        <app-card (editButtonSelected)="showModel('edit')" addText="Add new object" (buttonSelected)="showModel('add')"></app-card>
                     </div>
                     <app-mainfooter [showdeploy]="false" (movetonext)="routeService.movetonextpage('environment')" (movetoback)="routeService.movetonextpage('grippertcp')" submitname="Submit and Continue">
                     </app-mainfooter>

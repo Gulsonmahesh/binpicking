@@ -79,10 +79,10 @@ export class GripperComponent implements OnInit {
   }
 
   gotogrippertcp() {
-    if(this.buttonDisabled) {
-      this.routeService.movetonextpage('robot')
-      return;
-    }
+    // if(this.buttonDisabled) {
+    //   this.routeService.movetonextpage('robot')
+    //   return;
+    // }
     this.showGrippertcp = true;
   }
   movetoGripper() {
@@ -125,10 +125,6 @@ export class GripperComponent implements OnInit {
     } else {
       this.routeService.movetonextpage('object')
     }
-    
   }
-
-  
-
 }
 

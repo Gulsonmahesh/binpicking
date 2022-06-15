@@ -5,3 +5,7 @@ export const GRIPPERS = [
     {image: 'assets/robot.webp', name:'Vaccum Gripper', id:3}, {image: 'assets/robot.webp', name:'Vaccum Gripper', id:4},
     {image: 'assets/robot.webp', name:'Vaccum Gripper', id:5}, {image: 'assets/robot.webp', name:'Vaccum Gripper', id:6}
 ]
+
+export const Validation = (data: any) => {
+    return data !==null && data!=='' && data !== undefined;
+}
