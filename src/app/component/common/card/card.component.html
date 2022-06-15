@@ -2,48 +2,45 @@
     <!-- object division  -->
     <div class="cards mr-15 p-10" *ngIf="hasRoute('object')">
         <span class="col-12 col-sm-12 col-xl-12 floatright pb-10">
-            <span class="col-7 col-sm-7 col-xl-7 floatleft bold"> Object 1</span>
-        <span class="col-5 col-sm-5 col-xl-5 floatright">
+            <span class="col-7 col-sm-7 col-xl-7 floatleft bold">Object 1</span>
+            <span class="col-5 col-sm-5 col-xl-5 floatright">
                 <span class="mb-2 uploadeddoc">
-                    <mat-icon (click)="openModal()" class="floatleft material-icons-outlined f-15 mr-6 maticondownload " alt="delete">
+                    <mat-icon (click)="openEditModal()" alt="delete"
+                    class="floatleft material-icons-outlined f-15 mr-6 maticondownload">
                         edit
                     </mat-icon>
-        <mat-icon class="floatleft material-icons-outlined  f-15 maticondownload" alt="delete" (click)="opendeleteobjectpop()">
-            delete
-        </mat-icon>
-      
-        <label class="switch floatright">
-            <input type="checkbox" name="usertype" />
-            <span class="slider round"></span>
-        </label>
-        </span>
-        </span>
+                    <mat-icon class="floatleft material-icons-outlined  f-15 maticondownload" alt="delete"
+                        (click)="opendeleteobjectpop()">
+                        delete
+                    </mat-icon>
+                    <label class="switch floatright">
+                        <input type="checkbox" name="usertype" />
+                        <span class="slider round"></span>
+                    </label>
+                </span>
+            </span>
         </span>
         <span class="col-12 col-sm-12 col-xl-12 floatleft innerbox">
-            <span class="innertext"> 
-
-                <img class="imgs" src="../../../../assets/Images/images.jpg" alt="logo" /> 
-          
+            <span class="innertext">
+                <img class="imgs" src="../../../../assets/Images/images.jpg" alt="logo" />
             </span>
         </span>
         <div class="col-12 col-sm-12 col-xl-12 namecontainer d-flex align-items-center justify-content-between">
             <span class="col-12 col-sm-12 col-xl-12 bold f-14 pt-20 bordertop">
                 <span class="col-4 col-sm-4 col-xl-4 floatleft">
-                    <mat-icon class="floatleft 
-                   iconsetting material-icons-outlined  maticondownload" alt="delete">
-                      
-                            manage_accounts
-                    </mat-icon> 
-                  <span class="iconlabel" routerLink="/grippingpoints">Configure Grasp Poses</span> </span>
-            <span class="col-2 col-sm-2 col-xl-2 floatleft"></span>
-            <span class="col-6 col-sm-6 col-xl-6 floatright">
-                <mat-icon class="floatleft redcross material-icons-outlined  maticondownload" alt="delete">
-                      
-                    close
-            </mat-icon> 
-            <span class="innertext">  Poses Added</span>
-            <span class="bordercircle" routerLink="/grippingpoints"> 00</span>
-            </span>
+                    <mat-icon class="floatleft iconsetting material-icons-outlined  maticondownload" alt="delete">
+                        manage_accounts
+                    </mat-icon>
+                    <span class="iconlabel" routerLink="/grippingpoints">Configure Grasp Poses</span>
+                </span>
+                <span class="col-2 col-sm-2 col-xl-2 floatleft"></span>
+                <span class="col-6 col-sm-6 col-xl-6 floatright">
+                    <mat-icon class="floatleft redcross material-icons-outlined  maticondownload" alt="delete">
+                        close
+                    </mat-icon>
+                    <span class="innertext">Poses Added</span>
+                    <span class="bordercircle" routerLink="/grippingpoints"> 00</span>
+                </span>
             </span>
         </div>
     </div>
@@ -51,30 +48,32 @@
     <div class="cards mr-15 p-10" *ngIf="hasRoute('grippingpoints')">
         <span class="col-12 col-sm-12 col-xl-12 floatright pb-10">
             <span class="col-7 col-sm-7 col-xl-7 floatleft bold"> Pose 1</span>
-        <span class="col-5 col-sm-5 col-xl-5 floatright">
+            <span class="col-5 col-sm-5 col-xl-5 floatright">
                 <span class="mb-2 uploadeddoc">
-                    <mat-icon class="floatleft material-icons-outlined f-15 mr-6 maticondownload" alt="delete" (click)="openModal()">
+                    <mat-icon class="floatleft material-icons-outlined f-15 mr-6 maticondownload" alt="delete"
+                        (click)="openModal()">
                         edit
                     </mat-icon>
-        <mat-icon class="floatleft material-icons-outlined  f-15 maticondownload" alt="delete" (click)="openpop()" >
-            delete
-        </mat-icon>
-      
-        <label class="switch floatright">
-            <input type="checkbox" name="usertype" />
-            <span class="slider round"></span>
-        </label>
-        <div class="tip" *ngIf="showTip">
-            <span class="tooltipvalue">Enabled object for deployment</span>
-        </div>
-        </span>
-        </span>
+                    <mat-icon class="floatleft material-icons-outlined  f-15 maticondownload" alt="delete"
+                        (click)="openpop()">
+                        delete
+                    </mat-icon>
+
+                    <label class="switch floatright">
+                        <input type="checkbox" name="usertype" />
+                        <span class="slider round"></span>
+                    </label>
+                    <div class="tip" *ngIf="showTip">
+                        <span class="tooltipvalue">Enabled object for deployment</span>
+                    </div>
+                </span>
+            </span>
         </span>
         <span class="col-12 col-sm-12 col-xl-12 floatleft innerbox2">
-            <span class="innertext"> 
+            <span class="innertext">
 
-                <img class="imgs" src="../../../../assets/Images/images.jpg" alt="logo" /> 
-          
+                <img class="imgs" src="../../../../assets/Images/images.jpg" alt="logo" />
+
             </span>
         </span>
     </div>
@@ -84,21 +83,24 @@
     </button>
 </div>
 
-<app-deletepopup headertitle="Delete Pose" *ngIf="showClosePopup" customclass="closemodal" (closeModelEmit)="showClosePopup=false">
+<app-deletepopup headertitle="Delete Pose" *ngIf="showClosePopup" customclass="closemodal"
+    (closeModelEmit)="showClosePopup=false">
     <label for="uploadobject" class="mb-3 f-12">Do you want to delete this pose?</label>
     <div class="modelfooter">
         <button (click)="showClosePopup=false">NO</button>
         <button (click)="showClosePopup=false" class="ml-10">YES</button>
     </div>
 </app-deletepopup>
-<app-deletepopup headertitle="Edit Pose" *ngIf="showdeleteClosePopup" customclass="closemodal" (closeModelEmit)="showdeleteClosePopup=false">
+<app-deletepopup headertitle="Edit Pose" *ngIf="showdeleteClosePopup" customclass="closemodal"
+    (closeModelEmit)="showdeleteClosePopup=false">
     <label for="uploadobject" class="mb-3 f-12">Do you want to edit this pose?</label>
     <div class="modelfooter">
         <button (click)="showdeleteClosePopup=false">NO</button>
         <button (click)="showdeleteClosePopup=false" class="ml-10">YES</button>
     </div>
 </app-deletepopup>
-<app-deletepopup headertitle="Delete Object" *ngIf="showdeleteCloseObjectPopup" customclass="closemodal" (closeModelEmit)="showdeleteCloseObjectPopup=false">
+<app-deletepopup headertitle="Delete Object" *ngIf="showdeleteCloseObjectPopup" customclass="closemodal"
+    (closeModelEmit)="showdeleteCloseObjectPopup=false">
     <label for="uploadobject" class="mb-3 f-12">Do you want to delete this Object?</label>
     <div class="modelfooter">
         <button (click)="showdeleteCloseObjectPopup=false">NO</button>

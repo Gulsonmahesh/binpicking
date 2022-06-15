@@ -4,6 +4,7 @@
     }
     sup {
         color: red;
+        top: 0;
     }
     input {
         margin-top: 5px;
@@ -17,18 +18,6 @@
     }
     #description {
         height: 40px;
-    }
-    #drop_zone {
-        border: 2px dotted #e3e3e3;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        height: 100px;
-        a {
-            text-decoration: none;
-            color: lightskyblue;
-        }
     }
     .modelfooter {
         margin-top: 10px;
@@ -49,80 +38,80 @@
             }
         }
     }
+    .uploadbtn {
+        position: relative !important;
+        left: 20px !important;
+        bottom: 5px !important;
+    }
+    
+    .labelupload {
+        position: relative !important;
+        left: 80px !important;
+        color: #35AFF8;
+        font-size: 14px;
+        cursor: pointer;
+    }
+    
+    .file-upload {
+        height: 70px;
+        border: 1px dashed gray;
+        border-radius: 5px;
+        position: relative;
+    }
+    
+    .uploadbutton {
+        background: transparent;
+        border: 0;
+        text-decoration: none;
+        color: lightskyblue;
+        padding: 0;
+        margin: 0 10px;
+    }
+    
+    .cancel {
+        margin-right: 15px;
+    }
+    
+    .submit {
+        width: 90px;
+    }
+    
+    .file-input-img {
+        opacity: 0;
+        width: 100%;
+        height: 70px;
+    }
+    
+    .uploadbuttoncontainer {
+        position: absolute;
+        transform: translate(-50%, 50%);
+        top: 0;
+        left: 50%;
+        width: auto;
+    }
+    
+    .fileuploadclear {
+        border: 0 !important;
+        background: transparent;
+        margin-right: 10px;
+    }
+    
+    .imgclose {
+        width: 10px;
+        height: 10px;
+    }
+    
+    .innerboxview {
+        background: #ECECED;
+        width: 100%;
+        height: 160px;
+        position: relative;
+    }
+    
+    .labelinner {
+        position: absolute;
+        right: 40%;
+        top: 40%;
+    }
 }
 
-.uploadbtn {
-    position: relative !important;
-    left: 20px !important;
-    bottom: 5px !important;
-}
-
-.labelupload {
-    position: relative !important;
-    left: 80px !important;
-    color: #35AFF8;
-    font-size: 14px;
-    cursor: pointer;
-}
-
-.file-upload {
-    height: 70px;
-    border: 1px dashed gray;
-    border-radius: 5px;
-    position: relative;
-}
-
-.uploadbutton {
-    background: transparent;
-    border: 0;
-    text-decoration: none;
-    color: lightskyblue;
-    padding: 0;
-    margin: 0 10px;
-}
-
-.cancel {
-    margin-right: 15px;
-}
-
-.submit {
-    width: 90px;
-}
-
-.file-input-img {
-    opacity: 0;
-    width: 100%;
-    height: 70px;
-}
-
-.uploadbuttoncontainer {
-    position: absolute;
-    transform: translate(-50%, 50%);
-    top: 0;
-    left: 50%;
-    width: auto;
-}
-
-.fileuploadclear {
-    border: 0 !important;
-    background: transparent;
-    margin-right: 10px;
-}
-
-.imgclose {
-    width: 10px;
-    height: 10px;
-}
-
-.innerboxview {
-    background: #ECECED;
-    width: 100%;
-    height: 160px;
-    position: relative;
-}
-
-.labelinner {
-    position: absolute;
-    right: 40%;
-    top: 40%;
-}

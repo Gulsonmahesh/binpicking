@@ -25,18 +25,21 @@ export class CardComponent implements OnInit {
   grippingpoints= false;
   showTip = false;
   @Output() buttonSelected =  new EventEmitter();
+  @Output() editButtonSelected = new EventEmitter();
   @Input() addText = '';
  
   constructor( private router: Router) { }
 
-  ngOnInit(): void {
-    
-   
+  ngOnInit(): void {   
   }
+  
   hasRoute(route: string) {
     return this.router.url.includes(route);
   }
   openModal() {
     this.buttonSelected.emit(true);
+  }
+  openEditModal() {
+    this.editButtonSelected.emit(true);
   }
 }

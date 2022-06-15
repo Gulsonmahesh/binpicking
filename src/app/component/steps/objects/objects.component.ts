@@ -1,6 +1,8 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { RouterService } from 'src/app/service/router.service';
 import { ObjectService } from 'src/app/service/object.service';
+import { Validation } from '../../../constant';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-objects',
@@ -9,22 +11,25 @@ import { ObjectService } from 'src/app/service/object.service';
 })
 export class ObjectsComponent implements OnInit {
 
-  imageFIle?: any;
-  imageFileName = '';
-  model = false;
-  selectedFile?: File ;
-  objectName = '';
-  description = '';
-  stlFileName? : any = '';
-  stlFile = '';
-  objects_details = {};
+  model = false; 
+  imageFile = ''
+  imageFileName = ''; 
+  modelTitle = '';
+  mode = '';
 
+  addObject = new FormGroup({
+    project_id:new FormControl(null),
+    objectName: new FormControl('', Validators.required),
+    description: new FormControl(''),
+    object_name: new FormControl(''),
+    object_file: new FormControl('', Validators.required),
+  });
+  
   @HostListener('document:keyup', ['$event']) closeModel(event: KeyboardEvent) {
     if(this.model && event.key == 'Escape') {
       this.model = false;
     }
   }
-  
   constructor(public routeService: RouterService,private objectservice: ObjectService) { }
 
   ngOnInit(): void {
@@ -32,83 +37,24 @@ export class ObjectsComponent implements OnInit {
   }
 
   imagefileupload(event: any) {
-    this.imageFIle  = event.target.files[0];
+    this.imageFile  = event.target.files[0];
     this.imageFileName = event.target.files[0].name;
-  }
-  onFileSelecetd (event: any) {
-    console.log(event);
-    this.selectedFile = <File>event.target.files[0];
+    this.addObject.patchValue({object_name: this.imageFileName});
   }
   clearUpload(whichFile: string) {
-    if(whichFile ==="image")
-      this.imageFIle = this.imageFileName = '';
-    else
-      this.stlFile = this.stlFileName = '';
+    this.imageFile = this.imageFileName = '';    
   }
   getObjectDetails(){
     this.objectservice.getobjects().subscribe((object_data:any) => {
       console.log("object_data",object_data)
-
     })
   }
-
-  createObject(){
-    // const proJectId = sessionStorage.getItem('project_id') ? sessionStorage.getItem('project_id') : 1;
-    const proJectId = 2;
-    const objectData = new FormData();
-    objectData.append('object_file', <File>this.selectedFile, this.selectedFile?.name );
-    objectData.append("project_id", <any>proJectId );
-    objectData.append("description", <string>this.description );
-    objectData.append("object_name", <string>this.objectName );
-
-    console.log("objectData",objectData)
-
-    this.objectservice.objectDetails(objectData).subscribe((data:any) => {
-      if(data.status==="success") {
-        this.model=false;
-
-        // this.routeService.movetonextpage('environment')
-      }
-      else
-      console.log("Error",data)
-    },
-    (error:any)=> {
-      console.log(error)
-    });
-  }
-
-  editObject(){
-    const proJectId = 1;
-    const objectId = 1;
-    const editedobjectdata = new FormData();
-    editedobjectdata.append("object_id", <any>objectId );
-    editedobjectdata.append('object_file', <File>this.selectedFile, this.selectedFile?.name );
-    editedobjectdata.append("project_id", <any>proJectId );
-    editedobjectdata.append("description", <string>this.description );
-    editedobjectdata.append("object_name", <string>this.objectName );
-    console.log("editedobjectdata",editedobjectdata)
-
-    this.objectservice.editObjectDetails(editedobjectdata).subscribe((data:any) => {
-      if(data.status==="success") {
-        this.model=false;
-
-        // this.routeService.movetonextpage('environment')
-      }
-      else
-      console.log("Error",data)
-    },
-    (error:any)=> {
-      console.log(error)
-    });
-
-  }
-
+  
   deleteObject(){
     const object_id = 1;
     this.objectservice.deleteObjectDetails(object_id).subscribe((data:any) => {
       if(data.status==="success") {
         this.model=false;
-
         // this.routeService.movetonextpage('environment')
       }
       else
@@ -136,9 +82,49 @@ export class ObjectsComponent implements OnInit {
 
   }
   
-  showModel(event: any) {
-    this.model = event;
+  showModel(type: string = 'add') {
+    this.mode = type;
+    if(type === 'edit') {
+      this.addObject.patchValue({object_id: 1, objectName: 'Object 1'});      
+      this.modelTitle = "Edit Object";
+    } else {
+      this.addObject.patchValue({object_id: 2, objectName: ''});      
+      this.modelTitle = "Add New Object";
+    }
+    this.model = !this.model;    
   }
 
+  onSubmit(events: any) {
+    event?.preventDefault();
+    console.log(this.addObject.value)
+    if(this.mode !== 'edit') {
+      this.addObject.patchValue({object_id: 2});
+      this.objectservice.objectDetails(this.addObject.value).subscribe((data:any) => {
+        if(data.status==="success") {
+          this.model=false;
+          this.mode = '';
+        }
+        else
+        console.log("Error",data)
+      },
+      (error:any)=> {
+        console.log(error)
+      });
+    } else {
+      this.addObject.patchValue({object_id: 1, objectName: 'Object 1'});      
+      this.objectservice.editObjectDetails(this.addObject.value).subscribe((data:any) => {
+        if(data.status==="success") {
+          this.model=false;
+          this.mode = '';
+          // this.routeService.movetonextpage('environment')
+        }
+        else
+        console.log("Error",data)
+      },
+      (error:any)=> {
+        console.log(error)
+      });
+    }
+  }
 }
 
