@@ -33,7 +33,7 @@ export class LoginpageComponent implements OnInit {
   resetShow: any;
   afterResetSuccess: any;
   signinShow: boolean = true;
-  
+  errvalidation=false;
   // isAdmin = false;
   form: FormGroup = new FormGroup({});
   constructor(public fb: FormBuilder, public router: ActivatedRoute, public route: Router,private loginService: LoginService) {
@@ -45,14 +45,21 @@ export class LoginpageComponent implements OnInit {
     })
    }
    submitform(data:any){
+    if(this.model.password === this.model.password2){
+      this.otpShow = false;
+      this.forgotShow = false;
+      this.resetShow = false;
+      this.signinShow = true;
+      this.afterResetSuccess = true;
+      this.errvalidation=false;
+    }
+    else{
+      this.errvalidation=true;
+    }
     // alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.model, null, 4));
     // console.log(data);
     //  this.userlist= data;
-     this.otpShow = false;
-     this.forgotShow = false;
-     this.resetShow = false;
-     this.signinShow = true;
-     this.afterResetSuccess = true;
+    
       }
    submitmail() {
      this.numberdisabled=true;
