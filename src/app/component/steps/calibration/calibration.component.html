@@ -29,7 +29,7 @@
                     <div class="form-group">
                       <span class="">
                         <!-- *ngFor="let n of numSequence(4)"  -->
-                        <span class="col-sm-12 col-xl-12 floatleft">
+                            <span class="col-sm-12 col-xl-12 floatleft">
                           <span class="col-sm-3 col-xl-3 floatleft mb-10 pr-10">
                           <input id="name" name="name" class="form-control" type="number"
                                  required minlength="4" appForbiddenName="bob"
@@ -164,6 +164,54 @@
                           <div *ngIf="name12.invalid && (name12.dirty || name12.touched)"
                           style="color: red;font-size: 12px;">
                             <div *ngIf="name12.errors">
+                              Number is required.
+                            </div>
+                          </div>
+                        </span>
+
+
+                            </span>
+                            <span class="col-sm-12 col-xl-12 floatleft">
+                              <span class="col-sm-3 col-xl-3 floatleft mb-10 pr-10">
+                              <input id="name13" name="name13" class="form-control" type="number"
+                                     required minlength="4" appForbiddenName="bob"
+                                     [(ngModel)]="hero.name13" #name13="ngModel" >
+                              <div *ngIf="name13.invalid && (name13.dirty || name13.touched)"
+                              style="color: red;font-size: 12px;">
+                                <div *ngIf="name13.errors">
+                                  Number is required.
+                                </div>
+                              </div>
+                            </span>
+                            <span class="col-sm-3 col-xl-3 floatleft mb-10 pr-10">
+                              <input id="name14" name="name14" class="form-control" type="number"
+                                     required minlength="4" appForbiddenName="bob"
+                                     [(ngModel)]="hero.name14" #name14="ngModel" >
+                              <div *ngIf="name14.invalid && (name14.dirty || name14.touched)"
+                              style="color: red;font-size: 12px;">
+                                <div *ngIf="name14.errors">
+                                  Number is required.
+                                </div>
+                              </div>
+                            </span>
+                            <span class="col-sm-3 col-xl-3 floatleft mb-10 pr-10">
+                              <input id="name15" name="name15" class="form-control" type="number"
+                                     required minlength="4" appForbiddenName="bob"
+                                     [(ngModel)]="hero.name15" #name15="ngModel" >
+                              <div *ngIf="name15.invalid && (name15.dirty || name15.touched)"
+                              style="color: red;font-size: 12px;">
+                                <div *ngIf="name15.errors">
+                                  Number is required.
+                                </div>
+                              </div>
+                            </span>
+                            <span class="col-sm-3 col-xl-3 floatleft mb-10 pr-10">
+                          <input id="name16" name="name16" class="form-control" type="number"
+                                 required minlength="4" appForbiddenName="bob"
+                                 [(ngModel)]="hero.name16" #name16="ngModel" >
+                          <div *ngIf="name16.invalid && (name16.dirty || name16.touched)"
+                          style="color: red;font-size: 12px;">
+                            <div *ngIf="name16.errors">
                               Number is required.
                             </div>
                           </div>

@@ -11,7 +11,7 @@ import { CalibrationService } from 'src/app/service/calibration.service';
   styleUrls: ['./calibration.component.scss']
 })
 export class CalibrationComponent implements OnInit {
-  hero = {name: 'Dr.', name2: 'sir', name3: 'sir',name4:'sir',  name5: 'sir', name6: 'sir', name7: 'sir',name8:'sir',name9: 'sir', name10: 'sir', name11: 'sir',name12:'sir'};
+  hero = {name: 'Dr.', name2: 'sir', name3: 'sir',name4:'sir',  name5: 'sir', name6: 'sir', name7: 'sir',name8:'sir',name9: 'sir', name10: 'sir', name11: 'sir',name12:'sir',name13: 'sir', name14: 'sir', name15: 'sir',name16:'sir'};
   myform:any;
   @ViewChild('f') form: any;
 
