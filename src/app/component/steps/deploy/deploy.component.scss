@@ -50,12 +50,34 @@
 .iconsize_verify {
     font-size: 9px;
     position: relative;
-    border: 1px solid gray;
     border-radius: 16px;
-    padding: 3px 3px;
+    padding: 4px 5px;
     background: #6DC14B;
     color: white;
     margin: 1px 8px 0px 0px;
+    width: 18px;
+    height: 18px;
+}
+
+.icon_reload {
+    font-size: 17px;
+    position: relative;
+    border-radius: 16px;
+    padding: 3px 3px;
+    margin: -4px 5px -6px 1px;
+    width: 18px;
+    height: 18px;
+    color: #35aff8;
+}
+
+.icon_warning {
+    font-size: 9px;
+    position: relative;
+    border-radius: 16px;
+    padding: 4px 5px;
+    background: red;
+    color: white;
+    margin: 1px 7px 0px 0px;
     width: 18px;
     height: 18px;
 }
