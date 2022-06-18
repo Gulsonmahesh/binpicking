@@ -14,7 +14,7 @@
                         delete
                     </mat-icon>
                     <label class="switch floatright">
-                        <input type="checkbox" name="usertype" />
+                        <input type="checkbox" (click)="enableObject()" name="usertype" />
                         <span class="slider round"></span>
         </label>
         </span>
@@ -60,7 +60,7 @@
                     </mat-icon>
 
                     <label class="switch floatright">
-                        <input type="checkbox" name="usertype" />
+                        <input type="checkbox" (click)="enablePose()" name="usertype" />
                         <span class="slider round"></span>
         </label>
         <div class="tip" *ngIf="showTip">
@@ -87,7 +87,7 @@
     <label for="uploadobject" class="mb-3 f-12">Do you want to delete this pose?</label>
     <div class="modelfooter">
         <button (click)="showClosePopup=false">NO</button>
-        <button (click)="showClosePopup=false" class="ml-10">YES</button>
+        <button (click)="deletePose()" class="ml-10">YES</button>
     </div>
 </app-deletepopup>
 <app-deletepopup headertitle="Edit Pose" *ngIf="showdeleteClosePopup" customclass="closemodal" (closeModelEmit)="showdeleteClosePopup=false">
@@ -101,6 +101,6 @@
     <label for="uploadobject" class="mb-3 f-12">Do you want to delete this Object?</label>
     <div class="modelfooter">
         <button (click)="showdeleteCloseObjectPopup=false">NO</button>
-        <button (click)="showdeleteCloseObjectPopup=false" class="ml-10">YES</button>
+        <button (click)="deleteObject()" class="ml-10">YES</button>
     </div>
 </app-deletepopup>

@@ -8,16 +8,20 @@ import { BASEURL } from '../constant';
 export class GrippingposeService {
 
   constructor(private http: HttpClient) { }
+
+  getposes(pose_id:any,scope:any){
+    return this.http.get<any>(`${BASEURL}/user/projects/objects/poses/`+pose_id+'/'+scope)
+  }
   PoseDetails(pose_details:any){
-    return this.http.post<any>(`${BASEURL}/poses`,pose_details)
+    return this.http.post<any>(`${BASEURL}/user/projects/objects/poses`,pose_details)
   }
   editPoseDetails(editedposedata:any){
-    return this.http.put<any>(`${BASEURL}/poses/editpose/1`,editedposedata)
+    return this.http.put<any>(`${BASEURL}/user/projects/objects/poses/edit_pose/1`,editedposedata)
   }
   deletePoseDetails(poseId:any){
-    return this.http.delete<any>(`${BASEURL}/poses/deletepose/`+poseId)
+    return this.http.delete<any>(`${BASEURL}/user/projects/objects/poses/delete_pose/`+poseId)
   }
   enablePoseDetails(enableposedata:any){
-    return this.http.put<any>(`${BASEURL}/poses/enablepose`,enableposedata)
+    return this.http.put<any>(`${BASEURL}/user/projects/objects/poses/enable_pose`,enableposedata)
   }
 }

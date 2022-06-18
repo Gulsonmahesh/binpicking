@@ -26,10 +26,16 @@ export class EnvironmentComponent implements OnInit {
   constructor(public routeService: RouterService,private environmentservice: EnvironmentService) { }
 
   ngOnInit(): void {
-    this.environmentservice.getenvironmentdetails().subscribe((data:any) => {
+    this.getEnvDetails(0,3)
+
+  }
+
+  getEnvDetails(env_id:any,project_id:any){
+    this.environmentservice.getenvironmentdetails(env_id,project_id).subscribe((data:any) => {
       console.log(data)
     })
   }
+
   closebtn(){
     this.downloaddoc= false;
   }
@@ -60,7 +66,7 @@ export class EnvironmentComponent implements OnInit {
   // onchangeBinFile(event:any) {
   //   this.selecteBinFile = <File>event.target.files[0];
   // }
-  environmentPageData(){
+  createEnvironmentData(){
     if(!this.imageFileName || !this.imageFileName1) {
       alert("Please upload both Bin and STL files");
       return;

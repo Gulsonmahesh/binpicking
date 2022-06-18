@@ -8,19 +8,19 @@ import { BASEURL } from '../constant';
 export class ObjectService {
 
   constructor(private http: HttpClient) { }
-  getobjects(){
-    return this.http.get<any>(`${BASEURL}/objects/0/2`)
+  getobjects(object_id:any,project_id:any){
+    return this.http.get<any>(`${BASEURL}/user/projects/objects/`+object_id+'/'+project_id)
   }
   objectDetails(objectdata:any){
-    return this.http.post<any>(`${BASEURL}/objects`,objectdata)
+    return this.http.post<any>(`${BASEURL}/user/projects/objects/create_object`,objectdata)
   }
   editObjectDetails(editedobjectdata:any){
-    return this.http.put<any>(`${BASEURL}/objects/editobject/1`,editedobjectdata)
+    return this.http.put<any>(`${BASEURL}/user/projects/objects/edit_object/1`,editedobjectdata)
   }
   deleteObjectDetails(objectId:any){
-    return this.http.delete<any>(`${BASEURL}/objects/deleteobject/`+objectId)
+    return this.http.delete<any>(`${BASEURL}/user/projects/objects/delete_object/`+objectId)
   }
   enableObjectDetails(enableobjectdata:any){
-    return this.http.put<any>(`${BASEURL}/objects/enableobject`,enableobjectdata)
+    return this.http.put<any>(`${BASEURL}/user/projects/objects/enable_object`,enableobjectdata)
   }
 }

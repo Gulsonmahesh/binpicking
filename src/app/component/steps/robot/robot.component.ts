@@ -137,12 +137,14 @@ export class RobotComponent implements OnInit {
     }
   }
 
-  gotoGripper() {
+  gotoGripper(selected_robot_id:any) {
     if(this.selectedRobot === null || this.selectedRobot === undefined || this.selectedRobot === false) {
       alert('Please Select a Robot');
       return
     }
     this.sidebarService.updateSidebarStatus(1, 'completed');
+    sessionStorage.setItem('selected_robot_id',selected_robot_id);
+    alert(selected_robot_id)
     this.routeService.movetonextpage('gripper')
   }
   updateSelectedGripper(gripper: GripperType) {
