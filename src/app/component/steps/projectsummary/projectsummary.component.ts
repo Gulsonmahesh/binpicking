@@ -4,6 +4,9 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource, MatRow } from '@angular/material/table';
 import { GripperService } from 'src/app/service/gripper.service';
 import { RouterService } from '../../../service/router.service';
+import { ProjectdetailsService } from 'src/app/service/projectdetails.service';
+import { ValidationService } from "../../../service/validation.service";
+import { ProjectsummaryService } from '../../../service/projectsummary.service'; 
 
 @Component({
   selector: 'app-projectsummary',
@@ -12,6 +15,7 @@ import { RouterService } from '../../../service/router.service';
 })
 export class ProjectsummaryComponent implements OnInit {
   showClosePopup = false;
+  projectName = '';
   openpop() {
     this.showClosePopup = true;
   }
@@ -27,8 +31,24 @@ export class ProjectsummaryComponent implements OnInit {
   @ViewChild(MatPaginator) paginator ? : MatPaginator;
   @ViewChild(MatSort) sort ?: MatSort;
 
-  constructor(public routerService: RouterService,private gripperservice: GripperService) { 
+  constructor(public routerService: RouterService,private gripperservice: GripperService,private projectdetailsservice:ProjectdetailsService,
+    private validationService: ValidationService, private projectsummaryService: ProjectsummaryService) { 
     
+  }
+
+  DeleteProject(project_id:any){
+    const id = project_id;
+    this.projectdetailsservice.deleteProjectDetails(id).subscribe((data:any) => {
+      if(data.status==="success") {
+        this.showClosePopup=false;
+        // this.routeService.movetonextpage('environment')
+      }
+      else
+      console.log("Error",data)
+    },
+    (error:any)=> {
+      console.log(error)
+    });
   }
 
   deleteRobot() {
@@ -50,9 +70,13 @@ export class ProjectsummaryComponent implements OnInit {
     this.dataSource.filter = filterValue;
   }
   ngOnInit(): void {
-    this.gripperservice.getgrippers().subscribe((data:any) => {
-      // this.gripperDetails = data;
-      console.log(data)
+    // this.gripperservice.getgrippers().subscribe((data:any) => {
+    //   // this.gripperDetails = data;
+    //   console.log(data)
+    // })
+
+    this.projectdetailsservice.getprojects().subscribe((project_data:any) => {
+      console.log("project_data",project_data)
     })
         // Create 100 users
         const users: UserData[] = [];
@@ -62,8 +86,17 @@ export class ProjectsummaryComponent implements OnInit {
         this.dataSource = new MatTableDataSource(users);
   }
   openModal() {
-    alert("hiii")
     this.buttonpopupSelected.emit(true);
+  }
+
+  searchProject() {
+    if(this.validationService.checkEmpty(this.projectName)) {
+      alert('Please Enter Project name to search')
+      return;      
+    }
+    // this.projectsummaryService.searchProject(this.projectName.trim()).subscribe((data: any) => {
+      // this.dataSource = new MatTableDataSource(data);
+    // })
   }
 
 }
@@ -74,8 +107,6 @@ function createNewUser(id: number): UserData {
   const name =
       NAMES[Math.round(Math.random() * (NAMES.length - 1))] + ' ' +
       NAMES[Math.round(Math.random() * (NAMES.length - 1))].charAt(0) + '.';
- 
-    
 
   return {
     id: id.toString(),

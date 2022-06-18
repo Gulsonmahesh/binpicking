@@ -11,6 +11,13 @@ export class GripperpointsComponent implements OnInit {
   constructor(public routeService: RouterService,private grippingposeService: GrippingposeService) { }
 
   ngOnInit(): void {
+    this.getPoseDetails(3,"objects")
+  }
+
+  getPoseDetails(pose_id:any,scope:any){
+    this.grippingposeService.getposes(pose_id,scope).subscribe((pose_data:any) => {
+      console.log("pose_data",pose_data)
+    })
   }
 
   showModel(event: any) {

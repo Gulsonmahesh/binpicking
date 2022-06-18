@@ -41,17 +41,26 @@ export class CalibrationComponent implements OnInit {
   }
   
 
-  calibrationData(){
-    const calibration_details = {calibration_data:[[0,0,0,0],[1,2,3,4],[2,3,4,5],[6,7,8,9]],project_id:1}
+  createCalibrationData(){
+    const calibration_details = {calibration_data:[[0,0,0,0],[1,2,3,4],[2,3,4,5],[6,7,8,9]],project_id:3}
     this.calibrationService.saveCalibrationData(calibration_details).subscribe((data:any) => {
       if(data.status==="success")
       this.routeService.movetonextpage('deploy')
-    else
-    console.log("error occured",data)
-  },
-  (error:any)=> {
-    console.log(error)
-  });
+      else
+      console.log("error occured",data)
+    },
+    (error:any)=> {
+      console.log(error)
+    });
   }
 
+  uploadTransformation(){
+    const calibrated_data = {
+      calibration_file:"file need to select",
+    }
+
+    this.calibrationService.uploadCalibration(calibrated_data).subscribe((data:any) => {
+      console.log(data)
+    });
+  }
 }

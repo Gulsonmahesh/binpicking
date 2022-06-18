@@ -9,6 +9,10 @@ export class CalibrationService {
 
   constructor(private http: HttpClient) { }
   saveCalibrationData(calibration_details:any){
-    return this.http.post<any>(`${BASEURL}/save_robot_calibration`,calibration_details)
+    return this.http.post<any>(`${BASEURL}/user/projects/calibration/save_robot_calibration`,calibration_details)
+  }
+
+  uploadCalibration(calibration_data:any){
+    return this.http.post<any>(`${BASEURL}/user/projects/calibration/load_robot_calibration`,calibration_data)
   }
 }

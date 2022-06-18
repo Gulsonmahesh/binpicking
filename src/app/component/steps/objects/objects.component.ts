@@ -17,6 +17,7 @@ export class ObjectsComponent implements OnInit {
   modelTitle = '';
   mode = '';
 
+
   addObject = new FormGroup({
     project_id:new FormControl(null),
     objectName: new FormControl('', Validators.required),
@@ -33,7 +34,7 @@ export class ObjectsComponent implements OnInit {
   constructor(public routeService: RouterService,private objectservice: ObjectService) { }
 
   ngOnInit(): void {
-    this.getObjectDetails()
+    this.getObjectDetails(0,3)
   }
 
   imagefileupload(event: any) {
@@ -42,14 +43,28 @@ export class ObjectsComponent implements OnInit {
     this.addObject.patchValue({object_name: this.imageFileName});
   }
   clearUpload(whichFile: string) {
-    this.imageFile = this.imageFileName = '';    
+    this.imageFile = this.imageFileName = '';
   }
-  getObjectDetails(){
-    this.objectservice.getobjects().subscribe((object_data:any) => {
+  getObjectDetails(object_id:any,project_id:any){
+    this.objectservice.getobjects(object_id,project_id).subscribe((object_data:any) => {
       console.log("object_data",object_data)
     })
   }
-  
+
+  // createObject(){
+  //   // const grippertcpdata = {admin_robot_id:1,
+  //   //   admin_gripper_id:1,project_id:0,tcp_list:[1,2,3,4,5,6],invariance_axis:"False",invariance_lower_limit:0,invariance_upper_limit:0,stages_number:0,invariance_flag:"False"}
+  //   const objectdata = this.addObject
+  //   this.objectservice.createObjectDetails(objectdata).subscribe((data:any) => {
+  //     if(data.status==="success")
+  //     this.routeService.movetonextpage('object')
+  //     else
+  //     console.log("error occured",data)
+  //   },
+  //   (error:any)=> {
+  //     console.log(error)
+  //   });
+  // }
   deleteObject(){
     const object_id = 1;
     this.objectservice.deleteObjectDetails(object_id).subscribe((data:any) => {

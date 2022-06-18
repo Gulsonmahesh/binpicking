@@ -8,8 +8,8 @@ import { BASEURL } from '../constant';
 export class EnvironmentService {
 
   constructor(private http: HttpClient) { }
-  getenvironmentdetails(){
-    return this.http.get<any>(`${BASEURL}/master_environment/0/2`)
+  getenvironmentdetails(env_id:any,project_id:any){
+    return this.http.get<any>(`${BASEURL}user/projects/master_environment/`+env_id+'/'+project_id)
   }
   environmentDetails(master_environment_data:any){
     return this.http.post<any>(`${BASEURL}/master_environment`,master_environment_data)

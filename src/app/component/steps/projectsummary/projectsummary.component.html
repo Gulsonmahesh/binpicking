@@ -17,15 +17,16 @@
                             </app-tooltip>
 
                             <div class="d-flex justify-content-between align-items-center">
-                                <form class="example-form">
+                                <div>
                                     <div class="inputwrap">
-                                        <input value="" />
-                                        <img class="searchicon" src="../../../../assets/search_black_18dp.svg" alt="search">
+                                        <input value="" [(ngModel)]="projectName"/>
+                                        <img class="searchicon" src="../../../../assets/search_black_18dp.svg" alt="search" (click)="searchProject()" >
                                     </div>
-                                </form>
+                                </div>
                                 <button class="calibrationbtns d-flex align-items-center justify-content-between" (click)="routerService.movetonextpage('project-details')">
                                     <img class="addcircle" src="../../../../assets/add_circle_outline_white_48dp.svg" alt="add project">
-                                    <span class="m-0">Create New Project</span></button>
+                                    <span class="m-0">Create New Project</span>
+                                </button>
                             </div>
                     </div>
                     <div class="cards background_template">
@@ -100,6 +101,6 @@
     <label for="uploadobject" class="mb-3 f-12">Do you want to delete this project?</label>
     <div class="modelfooter">
         <button (click)="showClosePopup=false">NO</button>
-        <button (click)="showClosePopup=false" class="ml-10">YES</button>
+        <button (click)="DeleteProject(2)" class="ml-10">YES</button>
     </div>
 </app-deletepopup>

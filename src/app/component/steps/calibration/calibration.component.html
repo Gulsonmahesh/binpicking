@@ -224,7 +224,7 @@
                         </div>
                         <div class="buttoncontainer mt-10 floatright">
                             <button type="button" class="  mr-10 borderbg" (click)="heroForm.resetForm({})">Reset All</button>
-                            <button type="submit" class="btn calibrationbtns mr-10" [disabled]="heroForm.invalid">Download Transformation</button>
+                            <button type="submit" class="btn calibrationbtns mr-10" [disabled]="heroForm.invalid" (click)="createCalibrationData()">Download Transformation</button>
                             <!-- <button type="submit" class="btn calibrationbtns" [disabled]="heroForm.invalid">
                               Upload Transformation from file</button> -->
                             <button class="calibrationbtns mr-10">
@@ -255,7 +255,7 @@
             </div>
 
         </div>
-        <app-mainfooter (movetonext)="calibrationData()" (movetoback)="routeService.movetonextpage('environment')" submitname="Execute Bin Picking"></app-mainfooter>
+        <app-mainfooter (movetonext)="createCalibrationData()" (movetoback)="routeService.movetonextpage('environment')" submitname="Execute Bin Picking"></app-mainfooter>
     </div>
 </div>
 </div>
