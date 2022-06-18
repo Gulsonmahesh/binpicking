@@ -76,10 +76,9 @@
                                 </mat-tab>
                             </mat-tab-group>
                         </div>
-
                     </div>
-
-                    <app-mainfooter [showdeploy]="false" (movetonext)="createEnvironmentData()" (movetoback)="routeService.movetonextpage('object')" submitname="Submit and Continue"></app-mainfooter>
+                    <app-mainfooter *ngIf="step1" [showdeploy]="false" (movetonext)="createEnvironmentData()" (movetoback)="step1=true;step2=false" submitname="Submit and Continue"></app-mainfooter>
+                    <app-mainfooter customClass="mt-30" *ngIf="step2" [showdeploy]="false" (movetonext)="this.routeService.movetonextpage('calibration')" (movetoback)="step1=true;step2=false" submitname="Save"></app-mainfooter>
                 </div>
             </div>
         </div>

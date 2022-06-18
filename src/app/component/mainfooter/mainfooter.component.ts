@@ -6,10 +6,6 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./mainfooter.component.scss']
 })
 export class MainfooterComponent implements OnInit {
-
-  @Output() buttonpopupSelected =  new EventEmitter();
-  model = true;
-  constructor() { }
   
   @Input() showCancal = true;
   @Input() showdeploy = true;
@@ -20,7 +16,13 @@ export class MainfooterComponent implements OnInit {
   @Output() movetonext = new EventEmitter();
   @Output() movetoback = new EventEmitter();
   @Output() buttonExitSelected = new EventEmitter();
-
+  @Input() customClass = '';
+  @Output() buttonpopupSelected =  new EventEmitter();
+  model = true;
+  
+  constructor() { }
+  
+  
 
   ngOnInit(): void {
   }

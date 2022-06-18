@@ -29,12 +29,10 @@ export class GrippercommonconterComponent implements OnInit {
   }
   
   ngOnInit(): void {    
-    this.stl_viewer=new StlViewer(document.getElementById("model"),
-    {
-      zoom:380,
-      models: [ {id:1,filename: "../../assets/stl/peter.stl",color:"#DFFF00", view_edges:true } ]
-      }
-    )
+    // this.stl_viewer=new StlViewer(document.getElementById("model"),
+    // {
+    //   zoom:380,
+    //   models: [ {id:1,filename: "../../assets/stl/peter.stl",color:"#DFFF00", view_edges:true } ]
+    // })
   }
-
 }
