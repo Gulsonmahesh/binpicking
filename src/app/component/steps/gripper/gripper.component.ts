@@ -123,7 +123,8 @@ export class GripperComponent implements OnInit {
       this.showGrippertcp = false;
       this.buttonDisabled = true;
     } else {
-      this.routeService.movetonextpage('object')
+      this.showGrippertcp = false;
+      // this.routeService.movetonextpage('object')
     }
   }
 }
