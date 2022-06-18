@@ -11,60 +11,71 @@
                 <div id="projectdetailcontainer" class="pad20">
                     <!-- <app-model *ngIf="model" (closeModelEmit) = "showModel($event)">Test;</app-model> -->
                     <h3 class="f-16 bold mb-20">Connectivity</h3>
+                    <div class="cards background_template mb-20">
+                        <p class="col-sm-12 col-xl-12 f-12 pb-6 m-0"> Scanner
+                            <app-tooltip>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            </app-tooltip>
+                        </p>
+                        <div class="d-flex align-items-center">
+                            <mat-form-field class="example-full-width mr-20" appearance="fill">
+                                <input matInput placeholder="Ex. Pizza" value="123.123.123.123">
+                            </mat-form-field>
+                            <div class="button_container mr-40">
+                                <button class="submit" (click)="getConnect('scanner')">Connect</button>
+                            </div>
+                            <div class="ml-20">
+                                <p class="m-0 f-12">Connection status</p>
+                                <p class="m-0 f-12 bold" *ngIf="!setScannerError">
+                                    <mat-icon class="iconsize_verify example-tab-icon uploadiconss">done</mat-icon>Connected
+                                </p>
+                                <p class="col-sm-12 f-12 bold" *ngIf="setScannerError">
+                                    <mat-icon class="iconsize_verify example-tab-icon uploadiconss">error</mat-icon>Disconncted
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                     <div class="col-sm-12 col-xl-12 cards background_template mb-20">
-                        <div class="container-lg col-sm-12 col-xl-12 ">
-
-                            <span class="col-sm-12 col-xl-12">
-                                <span class="col-sm-5 col-xl-5 floatleft">
+                        <div class="container-lg col-sm-12 col-xl-12">
+                            <div class="col-sm-12 col-xl-12">
+                            <span class="col-sm-5 col-xl-5 floatleft">
                             <form class="col-sm-8 col-xl-8 example-form mb-10 floatleft">
-                                <p class="col-sm-12 col-xl-12 f-12 pb-6 m-0"> Scanner
-                                    <app-tooltip>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                    </app-tooltip></p>
-                                <mat-form-field class="col-sm-6 col-xl-6 example-full-width floatleft" appearance="fill">
-                                    <input matInput placeholder="Ex. Pizza" value="123.123.123.123">
-                                </mat-form-field>
+                                
+                                
                             </form>
-                            <span class="col-sm-4 col-xl-4 floatright button_container">
-                                <button class=" submit  mr-10">Connect</button>
-                            </span>
+                            
 
                             </span>
-                            <span class="col-sm-7 col-xl-7 floatleft rightcontainer">
-                                <span class="col-sm-12 f-12">Connection status</span>
-                            <p class="col-sm-12 f-12 bold">
-                                <mat-icon class="iconsize_verify example-tab-icon uploadiconss"> done
-                                </mat-icon>Connected</p>
+                            <span class="col-sm-7 col-xl-7 floatleft rightcontainer">                                
                             </span>
-                            </span>
+                        </div>
 
                             <span class="col-sm-12 col-xl-12 floatleft">
                                 <span class="col-sm-5 col-xl-5 floatleft">
-                            <form class="col-sm-8 col-xl-8 example-form mb-10 floatleft">
-                                <p class="col-sm-12 col-xl-12 f-12 pb-6 m-0"> Robot
-                                    <app-tooltip>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                    </app-tooltip></p>
-                                <mat-form-field class="col-sm-6 col-xl-6 example-full-width floatleft" appearance="fill">
-                                    <input matInput placeholder="Ex. Pizza" value="123.123.123.123">
-                                </mat-form-field>
-                            </form>
-                            <span class="col-sm-4 col-xl-4 floatright button_container">
-                                <button class=" submit  mr-10">Connect</button>
-                            </span>
-
+                                <form class="col-sm-8 col-xl-8 example-form mb-10 floatleft">
+                                    <p class="col-sm-12 col-xl-12 f-12 pb-6 m-0"> Robot
+                                        <app-tooltip>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</app-tooltip>
+                                    </p>
+                                    <mat-form-field class="col-sm-6 col-xl-6 example-full-width floatleft" appearance="fill">
+                                        <input matInput placeholder="Ex. Pizza" value="123.123.123.123" [(ngModel)]="scanner">
+                                    </mat-form-field>
+                                </form>
+                                <span class="col-sm-4 col-xl-4 floatright button_container">
+                                <button class=" submit mr-10" (click)="getConnect('robot')">Connect</button>
+                                </span>
                             </span>
                             <span class="col-sm-7 col-xl-7 floatleft rightcontainer">
-                                <span class="col-sm-12 f-14">Connection status</span>
+                            <span class="col-sm-12 f-14">Connection status</span>
                             <p class="col-sm-12 f-12 bold">
                                 <mat-icon class="iconsize_verify example-tab-icon uploadiconss"> done
-                                </mat-icon>Connected</p>
+                                </mat-icon>Connected
+                            </p>
+                            <mat-icon></mat-icon>
                             </span>
                             </span>
                         </div>
                     </div>
                     <app-mainfooter [showdeploy]="false" (movetonext)="routeService.movetonextpage('executebin')" (movetoback)="routeService.movetonextpage('calibration')" submitname="Execute Bin Picking"></app-mainfooter>
-
                 </div>
             </div>
         </div>
