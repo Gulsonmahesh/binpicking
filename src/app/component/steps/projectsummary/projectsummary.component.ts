@@ -5,6 +5,8 @@ import { MatTableDataSource, MatRow } from '@angular/material/table';
 import { GripperService } from 'src/app/service/gripper.service';
 import { RouterService } from '../../../service/router.service';
 import { ProjectdetailsService } from 'src/app/service/projectdetails.service';
+import { ValidationService } from "../../../service/validation.service";
+import { ProjectsummaryService } from '../../../service/projectsummary.service'; 
 
 @Component({
   selector: 'app-projectsummary',
@@ -13,6 +15,7 @@ import { ProjectdetailsService } from 'src/app/service/projectdetails.service';
 })
 export class ProjectsummaryComponent implements OnInit {
   showClosePopup = false;
+  projectName = '';
   openpop() {
     this.showClosePopup = true;
   }
@@ -28,7 +31,8 @@ export class ProjectsummaryComponent implements OnInit {
   @ViewChild(MatPaginator) paginator ? : MatPaginator;
   @ViewChild(MatSort) sort ?: MatSort;
 
-  constructor(public routerService: RouterService,private gripperservice: GripperService,private projectdetailsservice:ProjectdetailsService) {
+  constructor(public routerService: RouterService,private gripperservice: GripperService,private projectdetailsservice:ProjectdetailsService,
+    private validationService: ValidationService, private projectsummaryService: ProjectsummaryService) { 
     
   }
 
@@ -82,8 +86,17 @@ export class ProjectsummaryComponent implements OnInit {
         this.dataSource = new MatTableDataSource(users);
   }
   openModal() {
-    alert("hiii")
     this.buttonpopupSelected.emit(true);
+  }
+
+  searchProject() {
+    if(this.validationService.checkEmpty(this.projectName)) {
+      alert('Please Enter Project name to search')
+      return;      
+    }
+    // this.projectsummaryService.searchProject(this.projectName.trim()).subscribe((data: any) => {
+      // this.dataSource = new MatTableDataSource(data);
+    // })
   }
 
 }
