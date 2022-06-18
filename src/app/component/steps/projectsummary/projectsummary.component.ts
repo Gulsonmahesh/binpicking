@@ -4,6 +4,8 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource, MatRow } from '@angular/material/table';
 import { GripperService } from 'src/app/service/gripper.service';
 import { RouterService } from '../../../service/router.service';
+import { ValidationService } from "../../../service/validation.service";
+import { ProjectsummaryService } from '../../../service/projectsummary.service'; 
 
 @Component({
   selector: 'app-projectsummary',
@@ -12,6 +14,7 @@ import { RouterService } from '../../../service/router.service';
 })
 export class ProjectsummaryComponent implements OnInit {
   showClosePopup = false;
+  projectName = '';
   openpop() {
     this.showClosePopup = true;
   }
@@ -27,7 +30,8 @@ export class ProjectsummaryComponent implements OnInit {
   @ViewChild(MatPaginator) paginator ? : MatPaginator;
   @ViewChild(MatSort) sort ?: MatSort;
 
-  constructor(public routerService: RouterService,private gripperservice: GripperService) { 
+  constructor(public routerService: RouterService,private gripperservice: GripperService,
+    private validationService: ValidationService, private projectsummaryService: ProjectsummaryService) { 
     
   }
 
@@ -50,10 +54,10 @@ export class ProjectsummaryComponent implements OnInit {
     this.dataSource.filter = filterValue;
   }
   ngOnInit(): void {
-    this.gripperservice.getgrippers().subscribe((data:any) => {
-      // this.gripperDetails = data;
-      console.log(data)
-    })
+    // this.gripperservice.getgrippers().subscribe((data:any) => {
+    //   this.gripperDetails = data;
+    //   console.log(data)
+    // })
         // Create 100 users
         const users: UserData[] = [];
         for (let i = 1; i <= 100; i++) { users.push(createNewUser(i)); }
@@ -62,8 +66,17 @@ export class ProjectsummaryComponent implements OnInit {
         this.dataSource = new MatTableDataSource(users);
   }
   openModal() {
-    alert("hiii")
     this.buttonpopupSelected.emit(true);
+  }
+
+  searchProject() {
+    if(this.validationService.checkEmpty(this.projectName)) {
+      alert('Please Enter Project name to search')
+      return;      
+    }
+    // this.projectsummaryService.searchProject(this.projectName.trim()).subscribe((data: any) => {
+      // this.dataSource = new MatTableDataSource(data);
+    // })
   }
 
 }

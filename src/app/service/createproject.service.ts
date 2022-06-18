@@ -14,5 +14,5 @@ export class CreateprojectService {
   }
   saveProjectDetails(project_details:any){
     return this.http.post<any>(`${BASEURL}/projects`,project_details)
-  }
+  }  
 }

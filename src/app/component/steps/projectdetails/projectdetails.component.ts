@@ -30,11 +30,11 @@ export class ProjectdetailsComponent implements OnInit {
   projectDescription = '';
 
   ngOnInit(): void {
-    this.createprojectservice.getproject_id().subscribe((data: any) => {
-      console.log(data)
-      this.project_id = data.id + 1;
-      sessionStorage.setItem('project_id', this.project_id);
-    })
+    // this.createprojectservice.getproject_id().subscribe((data: any) => {
+    //   console.log(data)
+    //   this.project_id = data.id + 1;
+    //   sessionStorage.setItem('project_id', this.project_id);
+    // })
   }
 
   createProjectDetails() {
