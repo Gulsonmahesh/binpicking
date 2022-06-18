@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RouterService } from 'src/app/service/router.service';
 import { DeployService } from '../../../service/deploy.service';
 import { ValidationService } from '../../../service/validation.service';
+import { UpdatesidebarService } from '../../../service/updatesidebar.service';
 
 @Component({
   selector: 'app-deploy',
@@ -11,7 +12,8 @@ import { ValidationService } from '../../../service/validation.service';
 export class DeployComponent implements OnInit {
 
   constructor(public routeService: RouterService, private deployService: DeployService,
-    private validationService: ValidationService) { }
+    private validationService: ValidationService, private sidebarService: UpdatesidebarService) { }
+  
   scanner = ''
   robot = '';
   setScannerError = false;
@@ -64,5 +66,24 @@ export class DeployComponent implements OnInit {
         this.setRobotError = this.showRobotStatus = true;
       })
     }
+  }
+  setSidebarstatus() {
+    if(this.setScannerError || this.setRobotError) {
+      this.sidebarService.updateSidebarStatus(7, 'error');
+    }
+    if(!this.setScannerError && !this.setRobotError) {
+      this.sidebarService.updateSidebarStatus(7, 'completed');
+    }
+  }
+  moveTonext = () => {
+    this.setScannerError = this.setRobotError = false;
+    this.setSidebarstatus();
+    this.routeService.movetonextpage('executebin')
+  }
+
+  moveToBack() {
+    this.setScannerError = this.setRobotError = false;
+    this.setSidebarstatus();
+    this.routeService.movetonextpage('calibration')
   }
 }
