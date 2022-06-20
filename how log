@@ -1,0 +1,547 @@
+[33mcommit 7a0ea70d5ec5295405bc146354572bdd848b1564[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Gulson Mahesh <mahesh.madasamy@wipro.com>
+Date:   Sat Jun 18 20:34:37 2022 +0530
+
+    Update on gripper user functionality
+
+[33mcommit b3952abd77a6aee75b01d798cafefa41d8f704b0[m
+Author: Gulson Mahesh <mahesh.madasamy@wipro.com>
+Date:   Sat Jun 18 20:02:09 2022 +0530
+
+    updating environment and navigation
+
+[33mcommit 3bd9a858f609b946148df715499bb1c278d17c56[m
+Author: Gulson Mahesh <mahesh.madasamy@wipro.com>
+Date:   Sat Jun 18 17:48:19 2022 +0530
+
+    Add side bar status on complete and error
+
+[33mcommit 2156ce203bd1174cb2ab56a29c953ed3393477b9[m
+Author: Gulson Mahesh <mahesh.madasamy@wipro.com>
+Date:   Sat Jun 18 17:38:08 2022 +0530
+
+    Add empty validation for Deploy screen
+
+[33mcommit 4463aa56bb2e7786d8205ae4b61df3abc9b89e8a[m
+Author: Gulson Mahesh <mahesh.madasamy@wipro.com>
+Date:   Sat Jun 18 15:35:49 2022 +0530
+
+    update for create project
+
+[33mcommit 7c32a2cb4f7ce9b975b912e080cd6e006be45955[m
+Merge: 063fcbe f202789
+Author: Srevin A S <srevinias@gmail.com>
+Date:   Sat Jun 18 15:27:39 2022 +0530
+
+    Merge branch 'master' of https://github.com/Gulsonmahesh/binpicking
+
+[33mcommit f2027896b34285a17c07640deed7a6a9f4e235fd[m
+Merge: 93ffec4 e9a5c5b
+Author: satya <venkatasatyanarayanakonisi@gmail.com>
+Date:   Sat Jun 18 14:31:56 2022 +0530
+
+    Merge branch 'master' of https://github.com/Gulsonmahesh/binpicking
+
+[33mcommit 93ffec49b4b14f3f30b18001f4e3a291640cf4cf[m
+Author: satya <venkatasatyanarayanakonisi@gmail.com>
+Date:   Sat Jun 18 14:29:39 2022 +0530
+
+    some more api functions required for binding
+
+[33mcommit e9a5c5b1d5cefa08388e717cf168a4f35353349f[m
+Author: Gulson Mahesh <mahesh.madasamy@wipro.com>
+Date:   Sat Jun 18 13:59:01 2022 +0530
+
+    Adding Error case on deploy screen
+
+[33mcommit 55b615063573fa0822b02ac0918d969dcf0f920f[m
+Merge: 7fbf1e7 cf62414
+Author: satya <venkatasatyanarayanakonisi@gmail.com>
+Date:   Sat Jun 18 13:40:52 2022 +0530
+
+    Merge branch 'master' of https://github.com/Gulsonmahesh/binpicking
+
+[33mcommit 7fbf1e7e0e124156e8f5be9ec0bd9e9374788357[m
+Author: satya <venkatasatyanarayanakonisi@gmail.com>
+Date:   Sat Jun 18 13:30:12 2022 +0530
+
+    api functions
+
+[33mcommit cf624148738c12a1cac4ff5b7516975564faf0c0[m
+Author: Gulson Mahesh <mahesh.madasamy@wipro.com>
+Date:   Sat Jun 18 13:18:10 2022 +0530
+
+    Adding valiadtiona dn search project function for projject summary
+
+[33mcommit 063fcbe1a6c4691b3cdb3891eb87d1f874859639[m
+Author: Srevin A S <srevinias@gmail.com>
+Date:   Fri Jun 17 17:17:59 2022 +0530
+
+    login and other deployment status changes
+    
+    login and other deployment status changes
+
+[33mcommit f9d8bc4c974226f96eab42dbdb55821ce8b6eec1[m
+Author: Srevin A S <srevinias@gmail.com>
+Date:   Wed Jun 15 19:01:21 2022 +0530
+
+    meetup on call changes
+    
+    meetup on call changes
+
+[33mcommit 6403ba004e2756dc3413797fb225b836374b2b34[m
+Author: Srevin A S <srevinias@gmail.com>
+Date:   Wed Jun 15 14:39:05 2022 +0530
+
+    mahesh changes
+    
+    mahesh changes
+
+[33mcommit 80efdc3d32f628e39581182732e446cf79d144f4[m
+Author: Srevin A S <srevinias@gmail.com>
+Date:   Wed Jun 15 14:14:54 2022 +0530
+
+    validation and tab changes
+    
+    validation and tab changes
+
+[33mcommit e26f0a3839f35c6c57a153adbeb54830a377fa6e[m
+Author: Srevin A S <srevinias@gmail.com>
+Date:   Wed Jun 15 13:12:42 2022 +0530
+
+    calibration 4th row and execute bin alignment changes
+    
+    calibration 4th row and execute bin alignment changes
+
+[33mcommit 0b16d50ab1d4db8de8b41114ee951981e9fbc7f2[m
+Author: Srevin A S <srevinias@gmail.com>
+Date:   Wed Jun 15 12:18:53 2022 +0530
+
+    login page validation done
+    
+    login page validation done
+
+[33mcommit 651031f2c80a52a27a29b34ca4505d806544193e[m
+Author: Srevin A S <srevinias@gmail.com>
+Date:   Wed Jun 15 10:31:36 2022 +0530
+
+    calibration validation done
+    
+    calibration validation done
+
+[33mcommit d24d20b61d25fedf1b2f9ee4b5d0616d531bc1c1[m
+Author: Srevin A S <srevinias@gmail.com>
+Date:   Wed Jun 15 09:27:20 2022 +0530
+
+    stl viewer changes
+    
+    stl viewer changes
+
+[33mcommit a83b352e28d2b1d72e27ba7ce24e7c90adb87f3b[m
+Merge: 3430beb e32725a
+Author: Gulson Mahesh <63383483+Gulsonmahesh@users.noreply.github.com>
+Date:   Wed Jun 15 06:12:25 2022 +0530
+
+    Merge pull request #7 from Gulsonmahesh/Sidebarissue
+    
+    Update for Object and Gripper Navigation
+
+[33mcommit e32725a8dfc2901b93e0692387cdaed62806925b[m[33m ([m[1;31morigin/Sidebarissue[m[33m, [m[1;32mSidebarissue[m[33m)[m
+Author: Gulson Mahesh <mahesh.madasamy@wipro.com>
+Date:   Wed Jun 15 06:01:19 2022 +0530
+
+    Update for Object and Gripper Navigation
+    
+    Update for Object and Gripper Navigation as discussed on jun 14
+
+[33mcommit 3430beb797d2efe232215d466f5fbb94b5d059a2[m
+Merge: 34d46d7 fe1dbd8
+Author: Gulson Mahesh <63383483+Gulsonmahesh@users.noreply.github.com>
+Date:   Tue Jun 14 11:52:37 2022 +0530
+
+    Merge pull request #6 from Gulsonmahesh/Sidebarissue
+    
+    update fopr gripper tcp naviagation
+
+[33mcommit fe1dbd898f1fd82300882977485cfd3da3618e72[m
+Author: Gulson Mahesh <mahesh.madasamy@wipro.com>
+Date:   Tue Jun 14 10:58:07 2022 +0530
+
+    update fopr gripper tcp naviagation
+
+[33mcommit 34d46d7a0e6775fb60acb33ffe2340ce7b5dc4e8[m
+Merge: 9a7a425 52c7feb
+Author: Gulson Mahesh <63383483+Gulsonmahesh@users.noreply.github.com>
+Date:   Tue Jun 14 10:11:53 2022 +0530
+
+    Merge pull request #5 from Gulsonmahesh/Sidebarissue
+    
+    Adding sidebar service
+
+[33mcommit 52c7feba82bc4f700ba01aaeea3fad51bc0e3c29[m
+Author: Gulson Mahesh <mahesh.madasamy@wipro.com>
+Date:   Tue Jun 14 10:10:24 2022 +0530
+
+    Adding sidebar service
+
+[33mcommit 9a7a425f48659822dd59824422af90483ad60619[m
+Merge: 2b17e3c ebcd483
+Author: Gulson Mahesh <63383483+Gulsonmahesh@users.noreply.github.com>
+Date:   Tue Jun 14 10:08:51 2022 +0530
+
+    Merge pull request #4 from Gulsonmahesh/Sidebarissue
+    
+    Sidebarissue
+
+[33mcommit ebcd483141e5f65cfe6fa6208adaf7f83b889a5e[m
+Author: Gulson Mahesh <mahesh.madasamy@wipro.com>
+Date:   Tue Jun 14 10:07:35 2022 +0530
+
+    Adding sidebar service
+
+[33mcommit d1d9398ac0bd0ff4fa08556c7f959503efcb5813[m
+Author: Gulson Mahesh <mahesh.madasamy@wipro.com>
+Date:   Tue Jun 14 08:20:03 2022 +0530
+
+    Adding sidebar service
+
+[33mcommit 83ee596db0c844319bc94cfac532a3e44f38f5a8[m
+Author: Gulson Mahesh <mahesh.madasamy@wipro.com>
+Date:   Tue Jun 14 07:31:26 2022 +0530
+
+    Updating  Css styles for Side bar
+    
+    Updating  Css styles for Side bar
+
+[33mcommit 9199ef66a1d7f98f05095d8e2ee887b5a050a3e6[m
+Author: Gulson Mahesh <mahesh.madasamy@wipro.com>
+Date:   Mon Jun 13 13:23:33 2022 +0530
+
+    sidebar issues
+
+[33mcommit 2b17e3cd018dc72a037549530f9e793062199dea[m
+Author: Srevin A S <srevinias@gmail.com>
+Date:   Mon Jun 13 00:26:00 2022 +0530
+
+    review changes
+    
+    review changes
+
+[33mcommit cdd551888ef6aa940ac54898567d6539dff6c99c[m
+Merge: 2538c08 f17b1a4
+Author: Gulson Mahesh <63383483+Gulsonmahesh@users.noreply.github.com>
+Date:   Thu Jun 9 07:23:42 2022 +0530
+
+    Merge pull request #3 from Gulsonmahesh/Issues
+    
+    Reverting Mesh file format
+
+[33mcommit f17b1a4e055f4816d7c4654d5f74a714bddb298e[m[33m ([m[1;31morigin/Issues[m[33m)[m
+Author: Gulson Mahesh <mahesh.madasamy@wipro.com>
+Date:   Thu Jun 9 07:22:31 2022 +0530
+
+    Reverting Mesh file format
+
+[33mcommit 2538c08e85903e9086459967a38c30fda83b3a4d[m
+Merge: db8d570 d13b16f
+Author: Gulson Mahesh <63383483+Gulsonmahesh@users.noreply.github.com>
+Date:   Thu Jun 9 07:20:46 2022 +0530
+
+    Merge pull request #2 from Gulsonmahesh/Issues
+    
+    Issues
+
+[33mcommit d13b16f36b4ec31108b9af44684450538395d1c7[m
+Author: Gulson Mahesh <mahesh.madasamy@wipro.com>
+Date:   Thu Jun 9 07:18:59 2022 +0530
+
+    Updating Place Holders for input fields
+
+[33mcommit 6081146474a7f3df6e510d98067c85e94e51716f[m
+Author: Gulson Mahesh <mahesh.madasamy@wipro.com>
+Date:   Thu Jun 9 07:08:56 2022 +0530
+
+    Fix for the upload formats
+
+[33mcommit 27fd222590f37cbf41a9225cfdad3d13ce5708ae[m
+Author: Gulson Mahesh <mahesh.madasamy@wipro.com>
+Date:   Wed Jun 8 18:12:25 2022 +0530
+
+    Update for Gripper selection Ui in robot page
+
+[33mcommit db8d57061c2ade302c8eac48310605f923fe4153[m
+Merge: 4e2513a 13aeead
+Author: Gulson Mahesh <63383483+Gulsonmahesh@users.noreply.github.com>
+Date:   Wed Jun 8 11:45:23 2022 +0530
+
+    Merge pull request #1 from Gulsonmahesh/Issues
+    
+    fix for the add robot popup
+
+[33mcommit 13aeead55a8cbefa4987c7fe32c81fd0d6c18ec4[m
+Author: Gulson Mahesh <mahesh.madasamy@wipro.com>
+Date:   Wed Jun 8 11:25:23 2022 +0530
+
+    fix for the add robot popup
+
+[33mcommit 4e2513a7d0052e374d6a6c2140951d04d8721124[m
+Author: Srevin A S <srevinias@gmail.com>
+Date:   Tue Jun 7 22:50:28 2022 +0530
+
+    review points 2
+    
+    review points 2
+
+[33mcommit fbc2932787ecae66728742f1d7bceca87e972c0b[m
+Author: Srevin A S <srevinias@gmail.com>
+Date:   Fri Jun 3 23:41:59 2022 +0530
+
+    popup changes
+    
+    popup changes
+
+[33mcommit 6470db348df26f6b240371971266860e7e906c0a[m
+Author: Gulson Mahesh <63383483+Gulsonmahesh@users.noreply.github.com>
+Date:   Fri Jun 3 07:40:52 2022 +0530
+
+    Update for Gripper Navigation
+    
+    Update for Gripper Navigation
+
+[33mcommit 4b5bf86a756a444201ee88e9c16e73877333776b[m
+Merge: 7b3b89b a491020
+Author: Srevin A S <srevinias@gmail.com>
+Date:   Thu Jun 2 23:18:58 2022 +0530
+
+    Merge branch 'master' of https://github.com/Gulsonmahesh/binpicking
+
+[33mcommit 7b3b89b8e42cc363a5cdd2b20a7a20ea219fb226[m
+Author: Srevin A S <srevinias@gmail.com>
+Date:   Thu Jun 2 20:55:30 2022 +0530
+
+    review points
+    
+    review points
+
+[33mcommit a491020a95c91cd4e454d845d7110b94044ea51d[m
+Author: Gulson Mahesh <63383483+Gulsonmahesh@users.noreply.github.com>
+Date:   Thu Jun 2 20:05:13 2022 +0530
+
+    For some UI fixes on Gripper and robot
+    
+    For some UI fixes on Gripper and robot
+
+[33mcommit 1d4670c361912a49dfa68267ffbc3256aaaf2b23[m
+Author: Gulson Mahesh <63383483+Gulsonmahesh@users.noreply.github.com>
+Date:   Thu Jun 2 19:28:59 2022 +0530
+
+    Added Alert for select both files not selected
+    
+    Added Alert for select both files not selected
+
+[33mcommit 9dd453d2c55cc73bf212e6e0c3ba37bb70dc718f[m
+Author: Gulson Mahesh <63383483+Gulsonmahesh@users.noreply.github.com>
+Date:   Thu Jun 2 16:05:50 2022 +0530
+
+    When 'Submit' is clicked, remove the 'Select Gripper' pop up
+    
+    When 'Submit' is clicked, remove the 'Select Gripper' pop up
+
+[33mcommit 5892322641263341746750fa62bfe4f84bd6a541[m
+Author: Gulson Mahesh <63383483+Gulsonmahesh@users.noreply.github.com>
+Date:   Thu Jun 2 15:47:57 2022 +0530
+
+    Update for Issue No : 13
+    
+    If a gripper is selected by clicking the radio button, then Add Gripper is clicked, the Pop up is completely erronous/ merged with some other pop up - to be fixed
+
+[33mcommit 0992d20103cffca0a17d34f0567ce247dd296e41[m
+Author: Gulson Mahesh <63383483+Gulsonmahesh@users.noreply.github.com>
+Date:   Thu Jun 2 14:20:11 2022 +0530
+
+    update css
+    
+    update css
+
+[33mcommit 933f404f267ec03e36f1b388a0dadda0404d12d1[m
+Author: Srevin A S <srevinias@gmail.com>
+Date:   Thu Jun 2 10:20:56 2022 +0530
+
+    login page changes
+    
+    login page changes
+
+[33mcommit edfd69314a00388e9d51c201430f312935fcd677[m
+Author: Srevin A S <srevinias@gmail.com>
+Date:   Wed Jun 1 22:53:46 2022 +0530
+
+    stl view changes
+    
+    stl view changes
+
+[33mcommit f29ebde8cf890dcddbd46975ed0014c8c9b129bc[m
+Author: Srevin A S <srevinias@gmail.com>
+Date:   Tue May 31 16:06:54 2022 +0530
+
+    Review point phase 2 changes
+    
+    Review point phase 2 changes
+
+[33mcommit b1acd52e4ec290d7dcb9d10629a9f7ecbc0e9a75[m
+Author: Srevin A S <srevinias@gmail.com>
+Date:   Sat May 28 23:35:46 2022 +0530
+
+    review changes
+    
+    review changes
+
+[33mcommit 44310470b78fc24d9fb3969feaca2249d6e5e098[m
+Author: Srevin A S <srevinias@gmail.com>
+Date:   Tue May 24 10:06:12 2022 +0530
+
+    review points 2
+    
+    review points 2
+
+[33mcommit ab116ae5d827bf2ec7cec7858ea2b8f047db8b28[m
+Author: Srevin A S <srevinias@gmail.com>
+Date:   Tue May 24 00:03:24 2022 +0530
+
+    review changes
+
+[33mcommit a687f5f0ed2ec6d6d40906ade710aa9e8bf1b925[m
+Merge: 7b8b0d3 22cb29b
+Author: satya <venkatasatyanarayanakonisi@gmail.com>
+Date:   Thu May 19 10:16:45 2022 +0530
+
+    Merge branch 'master' of https://github.com/Gulsonmahesh/binpicking
+
+[33mcommit 7b8b0d3ef52021eff27498bdb8b3a51fceaf8eeb[m
+Author: satya <venkatasatyanarayanakonisi@gmail.com>
+Date:   Thu May 19 10:16:38 2022 +0530
+
+    minute binding changes
+
+[33mcommit 22cb29b698c6ceba7914b5807936fbaee7a86e5f[m
+Merge: 3c86444 c99393b
+Author: Srevin A S <srevinias@gmail.com>
+Date:   Thu May 19 10:10:18 2022 +0530
+
+    Merge branch 'master' of https://github.com/Gulsonmahesh/binpicking
+
+[33mcommit c99393b2f2d93b4464fafb9ae5ac93f4af83e2a9[m
+Author: Gulson Mahesh <mahesh.madasamy@wipro.com>
+Date:   Thu May 19 08:48:17 2022 +0530
+
+    Edit Robot and Update gripper Models for Admin Robot page
+    
+    Edit Robot and Update gripper Models for Admin Robot page
+
+[33mcommit 3c86444f466ed74d9305c576b01809cae6bc41f2[m
+Author: Srevin A S <srevinias@gmail.com>
+Date:   Wed May 18 19:06:40 2022 +0530
+
+    stl viewer changes
+
+[33mcommit 3ba0047f346101a66cbf994ad8b250639e66476a[m
+Author: Gulson Mahesh <mahesh.madasamy@wipro.com>
+Date:   Wed May 18 11:24:07 2022 +0530
+
+    update for edit robot
+    
+    update for edit robot
+
+[33mcommit d0cdd52ee72e96d3b6fb2c24fb6e236ea242ca66[m
+Author: Gulson Mahesh <mahesh.madasamy@wipro.com>
+Date:   Wed May 18 08:32:35 2022 +0530
+
+    Update for Edit Gripper Model
+    
+    Update for Edit Gripper Model
+
+[33mcommit 037b99f46873e8a89c5502c6f3e3611c5843508c[m
+Author: Gulson Mahesh <mahesh.madasamy@wipro.com>
+Date:   Mon May 16 09:56:51 2022 +0530
+
+    update css
+    
+    update css
+
+[33mcommit 225f8175b03e342f50b7efdece3b5247bd2a2ea8[m
+Author: Srevin A S <srevinias@gmail.com>
+Date:   Sun May 15 18:38:49 2022 +0530
+
+    Review points
+    
+    Review points
+
+[33mcommit c0ccf1b63a0c31784fb58d2beea8ee5dd9b526b5[m
+Merge: 1f54d5b bb9775e
+Author: satya <venkatasatyanarayanakonisi@gmail.com>
+Date:   Thu May 5 09:41:31 2022 +0530
+
+    Merge branch 'master' of https://github.com/Gulsonmahesh/binpicking
+
+[33mcommit 1f54d5bb89d17e170b8dc943eff7d241f429d548[m
+Author: satya <venkatasatyanarayanakonisi@gmail.com>
+Date:   Thu May 5 09:41:25 2022 +0530
+
+    object and poses binding functions
+
+[33mcommit bb9775ee7d77e7d1a4b989cd5539659e6b82e64c[m
+Author: Gulson Mahesh <mahesh.madasamy@wipro.com>
+Date:   Wed May 4 16:38:37 2022 +0530
+
+    Adding condition for object page
+
+[33mcommit b89bf099ebadf475d4989c0e6cbb05647b4430a6[m
+Author: Srevin A S <srevinias@gmail.com>
+Date:   Wed May 4 21:23:33 2022 +0530
+
+    css changes
+
+[33mcommit 094ae221175d372d156032c4ad6431c0364a1001[m
+Merge: f36e8db 79a10b3
+Author: satya <venkatasatyanarayanakonisi@gmail.com>
+Date:   Wed May 4 10:54:57 2022 +0530
+
+    Merge branch 'master' of https://github.com/Gulsonmahesh/binpicking
+
+[33mcommit f36e8db6bc310da51604fa35ec25b3084b2732ad[m
+Author: satya <venkatasatyanarayanakonisi@gmail.com>
+Date:   Wed May 4 10:54:51 2022 +0530
+
+    Merge branch 'master' of https://github.com/Gulsonmahesh/binpicking
+
+[33mcommit 79a10b36e60b7c515a8cf2deb9801026fe8d374f[m
+Merge: c5960f4 e2e5f2c
+Author: satya <venkatasatyanarayanakonisi@gmail.com>
+Date:   Wed May 4 10:34:29 2022 +0530
+
+    Merge branch 'master' of https://github.com/Gulsonmahesh/binpicking
+
+[33mcommit c5960f4e830519c1b26dc2b03dd9ece978e51be3[m
+Author: satya <venkatasatyanarayanakonisi@gmail.com>
+Date:   Wed May 4 10:33:07 2022 +0530
+
+    gripping pose backeend binding
+
+[33mcommit e9d50bb7ef462735fbd7c22870bc24e808ed3dce[m
+Author: Gulson Mahesh <mahesh.madasamy@wipro.com>
+Date:   Wed May 4 05:17:11 2022 +0530
+
+    Adding ui work for Object page
+
+[33mcommit e2e5f2c5ac8cf09139c09b4dce003ced43ed462b[m
+Author: Gulson Mahesh <mahesh.madasamy@wipro.com>
+Date:   Tue May 3 17:34:26 2022 +0530
+
+    Adding Delete model and functionality for Robot Admin
+
+[33mcommit 96ad9d702b6506e13e0536ae2bd09528f34423ff[m
+Author: Srevin A S <srevinias@gmail.com>
+Date:   Tue May 3 23:58:55 2022 +0530
+
+    user changes
+    
+    user changes
