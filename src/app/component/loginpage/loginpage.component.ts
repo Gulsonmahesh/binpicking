@@ -141,21 +141,13 @@ export class LoginpageComponent implements OnInit {
       if (this.signInForm.controls.isAdmin.value === true) {
         // this.operator = "admin"
         const logindetails = new FormData();
-        logindetails.append(
-          'username',
-          <string>this.signInForm.controls.username.value
-        );
-        logindetails.append(
-          'password',
-          <string>this.signInForm.controls.password.value
-        );
-        console.log(this.signInForm.value);
-        this.loginService.loginDetails(logindetails).subscribe((data: any) => {
-          console.log('data', data);
-          sessionStorage.setItem(
-            'userdetails',
-            JSON.stringify(data.username, data.user_id)
-          );
+        logindetails.append("username", <string>this.signInForm.controls.username.value );
+        logindetails.append("password", <string>this.signInForm.controls.password.value );
+        console.log(this.signInForm.value)
+        this.loginService.loginDetails(logindetails).subscribe((data:any) => {
+          console.log("data",data)
+          const userDetails = {...data} 
+          sessionStorage.setItem('userdetails',JSON.stringify(userDetails));
           this.route.navigate(['/gripper']);
         });
         // this.route.navigate(['/gripper']);
@@ -165,20 +157,12 @@ export class LoginpageComponent implements OnInit {
         sessionStorage.setItem('sidebarstatus', JSON.stringify(statusArray));
         console.log(this.signInForm.value);
         const logindetails = new FormData();
-        logindetails.append(
-          'username',
-          <string>this.signInForm.controls.username.value
-        );
-        logindetails.append(
-          'password',
-          <string>this.signInForm.controls.password.value
-        );
-        this.loginService.loginDetails(logindetails).subscribe((data: any) => {
-          console.log('data', data);
-          sessionStorage.setItem(
-            'userdetails',
-            JSON.stringify(data.username, data.user_id)
-          );
+        logindetails.append("username", <string>this.signInForm.controls.username.value );
+        logindetails.append("password", <string>this.signInForm.controls.password.value );
+        this.loginService.loginDetails(logindetails).subscribe((data:any) => {
+          console.log("data",data)
+          const userDetails = {...data} 
+          sessionStorage.setItem('userdetails',JSON.stringify(userDetails));
           // this.loginService.UserDetails().subscribe((new_data:any) => {
           //  console.log(new_data)
           // });
