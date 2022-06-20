@@ -20,11 +20,13 @@
                     <div class=" d-flex align-items-center  col-xl-12 col-sm-12 mb-30 commonstyle justify-content-end">
                         <span class="col-xl-12 col-sm-12 floatleft f-16">Welcome back! Please login to your account.</span>
                     </div>
+
                     <div class="col-xl-12 col-sm-12 floatleft usename f-14 mb-15">
                         <span class="col-xl-12 col-sm-12 floatleft f-14 ">User Name</span>
                         <mat-form-field appearance="outline" class="col-12  ">
-                            <input matInput class="mt-7" formControlName="username">
+                            <input matInput class="mt-7" (ngModel)="usernamesd">
                         </mat-form-field>
+
                     </div>
                     <div class="col-xl-12 col-sm-12 floatleft f-14 mb-35">
                         <span class="col-xl-12 col-sm-12 floatleft f-14 ">Password</span>
@@ -68,7 +70,7 @@
                 <div class="col-xl-12 col-sm-12 floatleft f-14  usename">
                     <span class="col-xl-12 col-sm-12 floatleft f-14 mb-10">Please enter the code</span>
                     <mat-form-field appearance="outline" class="col-12  mb-20">
-                        <input matInput>
+                        <input matInput class="relat">
                     </mat-form-field>
                 </div>
                 <div>
