@@ -9,6 +9,7 @@ import {
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { LoginService } from 'src/app/service/login.service';
 import { ConfirmedValidator } from './confirmed.validator';
+import { ValidationService } from 'src/app/service/validation.service';
 
 export class subject {
   public password: any;
@@ -20,6 +21,7 @@ export class subject {
   styleUrls: ['./loginpage.component.scss'],
 })
 export class LoginpageComponent implements OnInit {
+  usernameid: any;
   myform: any;
   userlist: any;
   model = new subject();
@@ -41,14 +43,15 @@ export class LoginpageComponent implements OnInit {
   signinShow: boolean = true;
   errvalidation = false;
   errorvalidations = false;
-  usernamesd: any;
+  
   // isAdmin = false;
   form: FormGroup = new FormGroup({});
   constructor(
     public fb: FormBuilder,
     public router: ActivatedRoute,
     public route: Router,
-    private loginService: LoginService
+    private loginService: LoginService,
+    private validationService: ValidationService
   ) {
     this.form = fb.group(
       {
@@ -120,14 +123,18 @@ export class LoginpageComponent implements OnInit {
   }
 
   forgotPasswordClick() {
-    if (this.usernamesd == 0) {
+    if (this.validationService.checkEmpty(this.usernameid)) {
       alert('please enter use name');
-    } else {
-      this.forgotShow = true;
-      this.otpShow = false;
-      this.resetShow = false;
-      this.signinShow = false;
-    }
+     return
+    } 
+    // else{
+    //   this.forgotShow = true;
+    //   this.otpShow = false;
+    //   this.resetShow = false;
+    //   this.signinShow = false;
+    // }
+      
+    
   }
 
   onSubmit(event: any) {
