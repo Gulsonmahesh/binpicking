@@ -123,9 +123,9 @@ export class LoginpageComponent implements OnInit {
   }
 
   forgotPasswordClick() {
-    if (this.validationService.checkEmpty(this.usernameid)) {
-      alert('please enter use name');
-     return
+    if (this.validationService.checkEmpty(this.signInForm.value.username)) {
+      alert('please enter user name');
+      return
     } 
     // else{
     //   this.forgotShow = true;
