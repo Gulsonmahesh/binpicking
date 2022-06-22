@@ -39,7 +39,8 @@ export class DeployComponent implements OnInit {
       }
       this.setScannerError = this.showScannerStatus =  false;
       this.deployService.getScannerConnect(this.scanner).subscribe((data: any) => {
-          if(data?.error) {
+          console.log("data",data.status)
+          if(data.status!="success") {
             this.setScannerError = this.showScannerStatus = true;
           } else {
             this.setScannerError = this.showScannerStatus = false;
@@ -56,7 +57,7 @@ export class DeployComponent implements OnInit {
       }
       this.setRobotError = this.showRobotStatus =  false;
       this.deployService.getRobotConnect(this.scanner).subscribe((data: any) => {
-        if(data?.error) {
+        if(data.status!="success") {
           this.setRobotError = this.showRobotStatus = true;
         } else {
           this.setRobotError = this.showRobotStatus = false;

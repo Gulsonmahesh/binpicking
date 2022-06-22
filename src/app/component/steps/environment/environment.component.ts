@@ -9,16 +9,16 @@ import { EnvironmentService } from 'src/app/service/environment.service';
 export class EnvironmentComponent implements OnInit {
   imageFileName = '';
   stlFileName = '';
-  imageFile?: File;
-  stlFile?: File;  
+  imageFile?: any;
+  stlFile?: any;
   imageFileName1 = '';
   stlFileName1 = '';
-  imageFile1?: File;
-  stlFile1?: File;  
+  imageFile1?: any;
+  stlFile1?: any;
   uploadenvmnt=true;
   uploadcad=true;
-  selectedEnvFile?: File ;
-  selecteBinFile?: File ;
+  selectedEnvFile?: any ;
+  selecteBinFile?: any ;
   step1 = true;
   step2 = false;
   downloaddoc= true;
@@ -71,24 +71,24 @@ export class EnvironmentComponent implements OnInit {
       alert("Please upload both Bin and STL files");
       return;
     }
-    const master_environment_data = {
-      env_name:"environment",
-      env_file:"file need to select",
-      bin_name:"bin",
-      bin_file:"fille need to select",
-      project_id:1
-    }
+    const project_id =sessionStorage.getItem("project_id")
+    let newobjectData:FormData = new FormData();
+    newobjectData.append('env_name', "environment");
+    newobjectData.append('env_file', this.imageFile);
+    newobjectData.append('bin_name', "bin");
+    newobjectData.append('bin_file', this.imageFile1);
+    newobjectData.append('project_id', JSON.stringify(project_id));
     this.step1 = false;
     this.step2 = true;
 
-    // this.environmentservice.environmentDetails(master_environment_data).subscribe((data:any) => {
-    //   if(data.status==="success")
-    //     this.routeService.movetonextpage('calibration')
-    //   else
-    //     console.log("error occured",data)
-    //   },(error:any)=> {
-    //   console.log(error)
-    // });
+    this.environmentservice.environmentDetails(newobjectData).subscribe((data:any) => {
+      if(data.status==="success")
+        this.routeService.movetonextpage('calibration')
+      else
+        console.log("error occured",data)
+      },(error:any)=> {
+      console.log(error)
+    });
   }
 
 }

@@ -75,7 +75,7 @@
                         </ng-container>
                     </div>
                 </div>
-                <app-mainfooter *ngIf="!isAdmin" [showdeploy]="false" (movetonext)="gotoGripper(2)" (movetoback)="routeService.movetonextpage('project-details')">
+                <app-mainfooter *ngIf="!isAdmin" [showdeploy]="false" (movetonext)="gotoGripper()" (movetoback)="routeService.movetonextpage('project-details')">
                 </app-mainfooter>
             </div>
             <div class="maincontent px-2" *ngIf="showGripperModel">

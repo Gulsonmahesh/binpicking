@@ -42,35 +42,36 @@ export class RobotComponent implements OnInit {
   private sidebarService: UpdatesidebarService) { }
 
   robotDetails = [
-    {
-      robotimg: 'assets/robot.webp', manufacturename: 'Universal Robot',model: 'UR56',
-      robotname: 'UR5', reach: '1.3', payload: '10', selected: false, id:1
-    },
-    {
-      robotimg: 'assets/robot.webp', manufacturename: 'Universal Robot', model: 'UR56',
-      robotname: 'UR5', reach: '1.3', payload: '10', selected: false, id:2
-    },
-    {
-      robotimg: 'assets/robot.webp', manufacturename: 'Universal Robot', model: 'UR56',
-      robotname: 'UR5', reach: '1.3', payload: '10', selected: false, id:3
-    },
-    {
-      robotimg: 'assets/robot.webp', manufacturename: 'Universal Robot', model: 'UR56',
-      robotname: 'UR5', reach: '1.3', payload: '10', selected: false, id:4
-    },
-    {
-      robotimg: 'assets/robot.webp', manufacturename: 'Universal Robot', model: 'UR56',
-      robotname: 'UR5', reach: '1.3', payload: '10', selected: false, id:5
-    }
+    // {
+    //   robotimg: 'assets/robot.webp', manufacturename: 'Universal Robot',model: 'UR56',
+    //   robotname: 'UR5', reach: '1.3', payload: '10', selected: false, id:1
+    // },
+    // {
+    //   robotimg: 'assets/robot.webp', manufacturename: 'Universal Robot', model: 'UR56',
+    //   robotname: 'UR5', reach: '1.3', payload: '10', selected: false, id:2
+    // },
+    // {
+    //   robotimg: 'assets/robot.webp', manufacturename: 'Universal Robot', model: 'UR56',
+    //   robotname: 'UR5', reach: '1.3', payload: '10', selected: false, id:3
+    // },
+    // {
+    //   robotimg: 'assets/robot.webp', manufacturename: 'Universal Robot', model: 'UR56',
+    //   robotname: 'UR5', reach: '1.3', payload: '10', selected: false, id:4
+    // },
+    // {
+    //   robotimg: 'assets/robot.webp', manufacturename: 'Universal Robot', model: 'UR56',
+    //   robotname: 'UR5', reach: '1.3', payload: '10', selected: false, id:5
+    // }
   ];
 
 
   ngOnInit(): void {
-    this.selectedGripperId = this.grippers[0].id
+    // this.selectedGripperId = this.grippers[0].id
     this.robotId = this.robotDetails && this.robotDetails.length+1 || 1;
     this.robotservice.getrobots().subscribe((data:any) => {
-      // this.robotDetails=data;
-      // this.robotId = this.robotDetails && this.robotDetails.length || 1;
+      console.log("data",data)
+      this.robotDetails=data;
+      this.robotId = this.robotDetails && this.robotDetails.length || 1;
       console.log(this.robotDetails)
     })
 
@@ -137,14 +138,14 @@ export class RobotComponent implements OnInit {
     }
   }
 
-  gotoGripper(selected_robot_id:any) {
+  gotoGripper() {
     if(this.selectedRobot === null || this.selectedRobot === undefined || this.selectedRobot === false) {
       alert('Please Select a Robot');
       return
     }
     this.sidebarService.updateSidebarStatus(1, 'completed');
-    sessionStorage.setItem('selected_robot_id',selected_robot_id);
-    alert(selected_robot_id)
+    sessionStorage.setItem('selected_robot_id',this.selectedRobot.id);
+    console.log(this.selectedRobot)
     this.routeService.movetonextpage('gripper')
   }
   updateSelectedGripper(gripper: GripperType) {

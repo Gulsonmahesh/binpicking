@@ -29,16 +29,20 @@ export class ProjectdetailsComponent implements OnInit {
   project_id = "";
   projectName = "";
   projectDescription = '';
+  userdetails : any;
 
   ngOnInit(): void {
     if(sessionStorage.getItem('userdetails')) {
       this.userDetails = sessionStorage.getItem('userdetails')
+      this.userdetails=JSON.parse(this.userDetails)
     }
-    // this.createprojectservice.getproject_id().subscribe((data: any) => {
-    //   console.log(data)
-    //   this.project_id = data.id + 1;
-    //   sessionStorage.setItem('project_id', this.project_id);
-    // })
+
+
+    this.createprojectservice.getproject_id().subscribe((data: any) => {
+      console.log(data)
+      this.project_id = data.id + 1;
+      sessionStorage.setItem('project_id', this.project_id);
+    })
 
   }
 
@@ -46,7 +50,7 @@ export class ProjectdetailsComponent implements OnInit {
     console.log(this.project_id, this.projectName);
     const projectdetails = {
       project_name: this.projectName, description: this.projectDescription, 
-      username: this.userDetails.username, user_id: this.userDetails.user_id
+      username: this.userdetails.username, user_id: this.userdetails.user_id
     }
     
     this.createprojectservice.saveProjectDetails(projectdetails).subscribe((data: any) => {

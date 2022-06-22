@@ -16,15 +16,16 @@ export class GripperComponent implements OnInit {
   showGrippertcp = false;
   showDeleteGripperModel = false;
   isEdit = false;
-  buttonDisabled = false;  
+  buttonDisabled = false;
+
 
   gripperDetails: any = [
-    {image: 'assets/robot.webp', name:'Parallel Finger Gripper' , selected: false, id:1}, 
-    {image: 'assets/robot.webp', name:'Vaccum Gripper' , selected: false, id:2},
-    {image: 'assets/robot.webp', name:'Vaccum Gripper' , selected: false, id:3},
-    {image: 'assets/robot.webp', name:'Vaccum Gripper' , selected: false, id:4},
-    {image: 'assets/robot.webp', name:'Vaccum Gripper' , selected: false, id:5},
-    {image: 'assets/robot.webp', name:'Vaccum Gripper' , selected: false, id:6}
+    // {image: 'assets/robot.webp', name:'Parallel Finger Gripper' , selected: false, id:1},
+    // {image: 'assets/robot.webp', name:'Vaccum Gripper' , selected: false, id:2},
+    // {image: 'assets/robot.webp', name:'Vaccum Gripper' , selected: false, id:3},
+    // {image: 'assets/robot.webp', name:'Vaccum Gripper' , selected: false, id:4},
+    // {image: 'assets/robot.webp', name:'Vaccum Gripper' , selected: false, id:5},
+    // {image: 'assets/robot.webp', name:'Vaccum Gripper' , selected: false, id:6}
 
   ];
   showGripperModel = false;
@@ -32,12 +33,24 @@ export class GripperComponent implements OnInit {
   constructor(public routeService: RouterService,private gripperservice: GripperService) { }
 
   ngOnInit(): void {
+    this.isAdmin = sessionStorage.getItem('isAdmin') === 'true' ? true: false;
+    if(this.isAdmin===true){
+      this.gripperservice.getadmingrippers().subscribe((data:any) => {
+        this.gripperDetails = data;
+        console.log(data)
+
+      })
+    }
+    else{
+      this.gripperservice.getgrippers().subscribe((data:any) => {
+        this.gripperDetails = data;
+        console.log(data)
+
+      })
+
+    }
     
-    this.gripperservice.getgrippers().subscribe((data:any) => {
-      // this.gripperDetails = data;
-      console.log(data)
-    })
-    this.isAdmin= sessionStorage.getItem('isAdmin') === 'true' ? true: false;
+
   }
  
   openAddGripperModal() {
@@ -95,7 +108,14 @@ export class GripperComponent implements OnInit {
       alert("Please select a gripper");
       return;
     }
-     this.routeService.movetonextpage('object')
+    const gripper_data = {"admin_gripper_id":this.selectedGripper.id,"admin_robot_id":sessionStorage.getItem("selected_robot_id"),"project_id":5,"tcp_list":this.selectedGripper.tcp_list,"invariance_axis":this.selectedGripper.invariance_axis,
+    "invariance_lower_limit":this.selectedGripper.invariance_lower_limit,"invariance_upper_limit":this.selectedGripper.invariance_upper_limit,"stages_number":this.selectedGripper.stages_number,"invariance_flag":this.selectedGripper.invariance_flag}
+    console.log("gripper_data",this.selectedGripper)
+    this.gripperservice.createrobotgripper(gripper_data).subscribe((data:any)=>{
+      console.log("data",data)
+      this.routeService.movetonextpage('object')
+    })
+
     // this.gotogrippertcp();
   }
   addGripper() {

@@ -12,7 +12,7 @@ export class ObjectService {
     return this.http.get<any>(`${BASEURL}/user/projects/objects/`+object_id+'/'+project_id)
   }
   objectDetails(objectdata:any){
-    return this.http.post<any>(`${BASEURL}/user/projects/objects/create_object`,objectdata)
+    return this.http.post<any>(`${BASEURL}/user/projects/objects/create_object`,objectdata.object_name,objectdata.objectName)
   }
   editObjectDetails(editedobjectdata:any){
     return this.http.put<any>(`${BASEURL}/user/projects/objects/edit_object/1`,editedobjectdata)

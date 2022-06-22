@@ -17,9 +17,8 @@ export class ObjectsComponent implements OnInit {
   modelTitle = '';
   mode = '';
 
-
   addObject = new FormGroup({
-    project_id:new FormControl(null),
+    project_id:new FormControl(sessionStorage.getItem("project_id")?sessionStorage.getItem("project_id"):1),
     objectName: new FormControl('', Validators.required),
     description: new FormControl(''),
     object_name: new FormControl(''),
@@ -34,7 +33,8 @@ export class ObjectsComponent implements OnInit {
   constructor(public routeService: RouterService,private objectservice: ObjectService) { }
 
   ngOnInit(): void {
-    this.getObjectDetails(0,3)
+    const project_id = sessionStorage.getItem("project_id")
+    this.getObjectDetails(0,2)
   }
 
   imagefileupload(event: any) {
@@ -65,6 +65,7 @@ export class ObjectsComponent implements OnInit {
   //     console.log(error)
   //   });
   // }
+
   deleteObject(){
     const object_id = 1;
     this.objectservice.deleteObjectDetails(object_id).subscribe((data:any) => {
@@ -114,7 +115,13 @@ export class ObjectsComponent implements OnInit {
     console.log(this.addObject.value)
     if(this.mode !== 'edit') {
       this.addObject.patchValue({object_id: 2});
-      this.objectservice.objectDetails(this.addObject.value).subscribe((data:any) => {
+      let newobjectData:FormData = new FormData();
+      newobjectData.append('objectName', this.addObject.value.objectName);
+      newobjectData.append('object_name', this.addObject.value.object_name);
+      newobjectData.append('description', this.addObject.value.description);
+      newobjectData.append('object_file', this.addObject.value.object_file);
+      newobjectData.append('project_id', this.addObject.value.project_id);
+      this.objectservice.objectDetails(newobjectData).subscribe((data:any) => {
         if(data.status==="success") {
           this.model=false;
           this.mode = '';
@@ -126,7 +133,7 @@ export class ObjectsComponent implements OnInit {
         console.log(error)
       });
     } else {
-      this.addObject.patchValue({object_id: 1, objectName: 'Object 1'});      
+      // this.addObject.patchValue({object_id: 1, objectName: 'Object 1'});
       this.objectservice.editObjectDetails(this.addObject.value).subscribe((data:any) => {
         if(data.status==="success") {
           this.model=false;

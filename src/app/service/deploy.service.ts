@@ -11,12 +11,12 @@ export class DeployService {
   deployProject(project_id:any){
     return this.http.post<any>(`${BASEURL}/user/projects/execute_bin_picking`,project_id)
   }
-  getScannerConnect = (scannerIp: any) => {
-    return this.http.get<any>(`${BASEURL}/getScnnerconnect/${scannerIp}`)
+  getScannerConnect = (robot_ip: any) => {
+    return this.http.post<any>(`${BASEURL}/user/projects/robots/robot_connectivity`,{"robot_ip":robot_ip})
   }
 
-  getRobotConnect = (robotIp: any) => {
-    return this.http.get<any>(`${BASEURL}/getScnnerconnect/${robotIp}`)
+  getRobotConnect = (robot_ip: any) => {
+    return this.http.post<any>(`${BASEURL}/user/projects/robots/robot_connectivity`,{"robot_ip":robot_ip})
   }
 
 }

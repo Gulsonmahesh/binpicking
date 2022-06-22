@@ -13,6 +13,12 @@ export class ProjectsummaryService {
   searchProject = (projectId: any) => {
     return this.http.get<any>(`${BASEURL}/projects/${projectId}`)
   }
+  getprojects(){
+    this.http.get<any>(`${BASEURL}/user/projects/0`)
+  }
+  deleteprojects(project_id:any){
+    this.http.delete<any>(`${BASEURL}/user/projects/delete_project/`,project_id)
+  }
 
 }
 

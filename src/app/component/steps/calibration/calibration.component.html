@@ -227,9 +227,9 @@
                             <button type="submit" class="btn calibrationbtns mr-10" [disabled]="heroForm.invalid" (click)="createCalibrationData()">Download Transformation</button>
                             <!-- <button type="submit" class="btn calibrationbtns" [disabled]="heroForm.invalid">
                               Upload Transformation from file</button> -->
-                            <button class="calibrationbtns mr-10">
+                            <button type="button" class="calibrationbtns mr-10">
                                 <div class="fileUploadWrap">
-                                  <input type="file" name="file" class="form-control" id="hidden_upload_file_chatting">
+                                  <input type="file" name="file" class="form-control " id="hidden_upload_file_chatting" #imgfileUpload (change)="imagefileupload($event)">
                                 </div>
                                
             Upload Transformation from file

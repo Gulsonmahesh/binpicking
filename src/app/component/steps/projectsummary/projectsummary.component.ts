@@ -58,6 +58,12 @@ export class ProjectsummaryComponent implements OnInit {
     }
     this.showDeleteGripperModel = true;
   }
+
+  // deleteProject(project_id:any){
+  //   this.projectdetailsservice.deleteprojects(project_id).subscribe((project_data:any) => {
+  //     console.log("project_data",project_data)
+  //   })
+  // }
  
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
